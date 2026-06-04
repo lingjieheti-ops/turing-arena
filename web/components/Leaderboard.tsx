@@ -21,6 +21,9 @@ export function Leaderboard() {
   // Once we've shown real on-chain data, a transient RPC choke must NOT drop the
   // board back to sample data — keep the last good standings and retry.
   const everReal = useRef(false);
+  // The fullest board we've rendered. A later RPC-choked (partial) read must not
+  // drop agents we've already shown, so we never regress below this count.
+  const bestCount = useRef(0);
 
   useEffect(() => {
     if (!isLive()) {
@@ -39,8 +42,13 @@ export function Leaderboard() {
           }
         } else {
           everReal.current = true;
-          setAgents(data);
           setDemo(false);
+          // Adopt the read only if it's at least as complete as the best we've
+          // shown; a partial read keeps the fuller board rather than dropping rows.
+          if (data.length >= bestCount.current) {
+            bestCount.current = data.length;
+            setAgents(data);
+          }
         }
       } catch {
         if (alive && !everReal.current) {

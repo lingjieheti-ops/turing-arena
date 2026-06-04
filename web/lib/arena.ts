@@ -173,8 +173,10 @@ export async function getLeaderboard(limit = 50): Promise<AgentUI[]> {
   for (let i = 0; i < ids.length; i += CHUNK) {
     agents.push(...(await Promise.all(ids.slice(i, i + CHUNK).map(readAgent))));
   }
+  // Sort by score, then by agentId so tied (e.g. brand-new, 0-score) agents hold
+  // a stable order across refreshes instead of reshuffling every poll.
   return (agents.filter(Boolean) as AgentUI[]).sort((a, b) =>
-    b.score > a.score ? 1 : b.score < a.score ? -1 : 0,
+    b.score > a.score ? 1 : b.score < a.score ? -1 : Number(a.agentId - b.agentId),
   );
 }
 
