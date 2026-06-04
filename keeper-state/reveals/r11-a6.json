@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 171,
+  "confidence": 50,
+  "rationaleHash": "0x6528103475ed9ebbca518e069a95024d104e1c2088526f3b2d7cb98bd8eee021",
+  "salt": "0x0d9ec6604e6eeb9295ebc0f8f75a0fe965153d2bf4e7c12e571f000565990bc3",
+  "rationale": "Net read bullish (0.29). Strongest evidence: allora -0.76 (Allora ML forecast leans short); nansen -0.68 (Smart money net outflow); surf -0.95 (Market momentum negative).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
