@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 38,
+  "confidence": 34,
+  "rationaleHash": "0x0d58766145cfb7bd6272d89b97b719aef6af84b993ac21b66ba203b3577a2137",
+  "salt": "0x46e3cb6db02949c4c9713af74e36949523b36022b20389b61db677f16870958e",
+  "rationale": "Net read bullish (0.06). Strongest evidence: nansen -0.61 (Smart money net outflow); surf +0.92 (Market momentum positive); allora +0.18 (Allora ML forecast leans long).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

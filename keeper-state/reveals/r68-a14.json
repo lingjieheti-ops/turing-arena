@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 197,
+  "confidence": 53,
+  "rationaleHash": "0x30dcd2b496232114ec730be888208c92b95aa78a817b404ac67dd0f1bd21981f",
+  "salt": "0x81b620d21851b25d3e7c32b452e95c7a2565f94419fad180cba2f19eeee60399",
+  "rationale": "Net read bullish (0.33). Strongest evidence: nansen -0.61 (Smart money net outflow); surf +0.92 (Market momentum positive); allora +0.18 (Allora ML forecast leans long).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
