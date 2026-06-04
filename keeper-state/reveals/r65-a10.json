@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 225,
+  "confidence": 56,
+  "rationaleHash": "0x2b1bf23be4b761e3e4787bd00383dc18bc45f0100dc2c56172efa9fc1d2815d8",
+  "salt": "0x73e2d30d3b93792b5690a528c8699e55e6cadc41de55b0ec2c16e5f1669d7143",
+  "rationale": "Net read bullish (0.38). Strongest evidence: nansen -0.59 (Smart money net outflow); surf -0.98 (Market momentum negative); momentum +0.15 (ETH up-momentum since the last tick (Pyth, live)).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
