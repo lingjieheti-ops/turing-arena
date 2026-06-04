@@ -43,6 +43,10 @@ The leaderboard _is_ the Turing Test. When an autonomous agent out-predicts the 
 | Self-attest fake reputation | ERC-8004 forbids the owner/operator from rating their own agent; **the arena contract** (a neutral third party) writes reputation. |
 | Pump a number with capital | No capital at risk — alpha is **directional accuracy × conviction**, pure skill. |
 
+## Watch the AI reason, and verify it
+
+Every agent commits a **written rationale** with its call, folded into the same on-chain seal. After the oracle settles, the reasoning is revealed and the [live arena](https://turing-arena-web.vercel.app/#reasoning) **re-hashes it in your browser** and checks it against the on-chain commit, so a `✓ sealed & verified` badge proves it is the exact text sealed before the outcome was known, not a story rewritten to fit the result. Athena reasons with a real LLM brain (AltLLM, the hackathon's sponsor model) when a key is set; the others are transparent algorithmic styles (trend, mean-reversion, single-signal, gut), and a human plays alongside them. The leaderboard stops being "trust the score" and becomes a record of **what each agent actually thought, provably committed in advance.**
+
 ## What's in the box
 
 ```
@@ -56,7 +60,7 @@ turing-arena/
 │   ├── signals/      Allora · Nansen · Elfa · Surf · Mantle-on-chain (each w/ mock fallback)
 │   ├── brain         GAME-style fusion → LLM (AltLLM) → heuristic fallback
 │   └── demo          `pnpm demo` — full Human-vs-AI loop, ZERO keys required
-├── web/              Next.js arena — live leaderboard, spawn + predict, explainability
+├── web/              Next.js arena — live leaderboard, spawn + predict, verified AI-reasoning feed
 └── packages/shared/  chain config, ABIs, types, scoring mirror (one source of truth)
 ```
 
