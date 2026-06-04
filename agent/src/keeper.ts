@@ -38,12 +38,16 @@ import {
 } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import {
+  type Signal,
   assetId,
   chainById,
   identityRegistryAbi,
   proofOfAlphaAbi,
   reporterPriceOracleAbi,
 } from "@turing-arena/shared";
+import { decide } from "./brain";
+import { CAST } from "./personas";
+import { gatherSignals } from "./signals";
 
 // --------------------------------------------------------------------------- //
 //  Paths & durable state
@@ -90,6 +94,7 @@ interface RevealRecord {
   rationale?: string;
   name?: string;
   source?: string;
+  model?: string;
 }
 
 function revealPath(roundId: bigint, agentId: bigint): string {
@@ -597,12 +602,21 @@ function predictFor(persona: PersonaDef, roundId: bigint, price: number, mom: nu
 //  Identity: persona -> agentId (register once, then reuse)
 // --------------------------------------------------------------------------- //
 
+/// Human-readable strategy label shown as the agent's "model" on the leaderboard.
+const STRATEGY_BY_NAME: Record<string, string> = {
+  Athena: "multi-signal fusion",
+  "Allora Scout": "Allora ML inference",
+  "Momentum Max": "trend-follower",
+  "Contrarian Cora": "mean-reversion",
+  "HODLer Hank": "gut + structural long",
+};
+
 function agentCardUri(p: PersonaDef): string {
   const json = JSON.stringify({
     name: p.name,
     description: `Turing Arena ${p.kind} agent — ${p.description}`,
     kind: p.kind,
-    model: "heuristic-keeper",
+    model: STRATEGY_BY_NAME[p.name] ?? "multi-signal fusion",
     signals: p.signals,
     protocol: "erc-8004",
     skill: "proof-of-alpha",
@@ -749,17 +763,38 @@ async function openRoundAndCommit(agents: AgentsFile, price: number, cursor: Cur
   log(`  ✓ opened round #${roundId}  ${explorerTx(openHash)}`);
 
   const mom = momentumSignal(roundId, price, cursor);
+  const momLive = typeof cursor.lastPrice === "number" && cursor.lastPrice > 0;
 
-  for (const p of PERSONAS) {
-    const agentId = BigInt(agents[p.name]);
+  // Gather the signal context ONCE for the whole round: the five adapters (mock
+  // until their sponsor keys are set) plus the REAL Pyth momentum injected as a
+  // live, heavily-weighted signal, so every agent reasons over genuine market
+  // data. Each persona then filters/biases this same snapshot; Athena, when an
+  // LLM key is present, reasons over it with the model. The resulting rationale
+  // is sealed on-chain (rationaleHash) at commit and revealed verbatim after.
+  const bundle = await gatherSignals(ASSET, Number(roundId));
+  bundle.signals.push({
+    source: "momentum",
+    score: mom,
+    weight: 0.6,
+    note: `ETH ${mom >= 0 ? "up" : "down"}-momentum since the last tick${momLive ? " (Pyth, live)" : ""}`,
+    live: momLive,
+  } as Signal);
+
+  for (const persona of CAST) {
+    const idNum = agents[persona.name];
+    if (idNum === undefined) {
+      log(`     · no agentId mapped for ${persona.name}, skipping`);
+      continue;
+    }
+    const agentId = BigInt(idNum);
     try {
-      const { predictedBps, confidence, rationale } = predictFor(p, roundId, price, mom);
+      const { predictedBps, confidence, rationale, model } = await decide(bundle, persona);
       const rationaleHash = rationaleHashOf(rationale);
       const salt = randomSalt();
       const commitHash = computeCommitHash(agentId, predictedBps, confidence, rationaleHash, salt);
 
-      // PERSIST the reveal preimage BEFORE sending the commit tx, so a crash
-      // between commit and the next tick still lets us reveal.
+      // PERSIST the reveal preimage (incl. the human-readable rationale and the
+      // model that produced it) BEFORE the commit tx, so a crash still reveals.
       const rec: RevealRecord = {
         agentId: Number(agentId),
         predictedBps,
@@ -767,8 +802,9 @@ async function openRoundAndCommit(agents: AgentsFile, price: number, cursor: Cur
         rationaleHash,
         salt,
         rationale,
-        name: p.name,
+        name: persona.name,
         source: "pyth",
+        model,
       };
       writeJson(revealPath(roundId, agentId), rec);
 
@@ -778,13 +814,13 @@ async function openRoundAndCommit(agents: AgentsFile, price: number, cursor: Cur
         functionName: "commit",
         args: [roundId, agentId, commitHash],
       });
-      log(`  🔒 committed ${p.name} (#${agentId}) ${predictedBps}bps@${confidence}  ${explorerTx(h)}`);
+      log(`  🔒 committed ${persona.name} (#${agentId}) ${predictedBps}bps@${confidence} [${model}]  ${explorerTx(h)}`);
     } catch (e) {
       if (isBenignRevert(e, ["AlreadyCommitted", "CommitClosed"])) {
-        log(`     · ${p.name} commit already present / window closed`);
+        log(`     · ${persona.name} commit already present / window closed`);
         continue;
       }
-      log(`     ✗ commit failed for ${p.name}: ${(e as Error)?.message?.split("\n")[0]}`);
+      log(`     ✗ commit failed for ${persona.name}: ${(e as Error)?.message?.split("\n")[0]}`);
       // continue with the other personas — don't abort the round
     }
   }

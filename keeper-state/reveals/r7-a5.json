@@ -1,0 +1,10 @@
+{
+  "agentId": 5,
+  "predictedBps": -109,
+  "confidence": 44,
+  "rationaleHash": "0x4f7c5b68f07f985ea78d45c31390df7e3c15e780bf8e275ef62029143f35ab96",
+  "salt": "0x517bfbcaeddbc109d79cb1de6e921a45ecb4780eea9c4fc091ae08f972ce1da5",
+  "rationale": "Contrarian Cora: DOWN -109bps @ conf 44 — Mean-reversion contrarian; fades short momentum. (mom 0.16)",
+  "name": "Contrarian Cora",
+  "source": "pyth"
+}
