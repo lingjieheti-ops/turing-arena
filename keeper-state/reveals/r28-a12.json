@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -13,
+  "confidence": 32,
+  "rationaleHash": "0xefc46f177d3aa0b300a71900551cb0dc12cc328db193e6b67c3efe5db7f9d471",
+  "salt": "0x45b809c65f69b2d49a1d76166ff59d96f03e1524a203b365e55da1a07e310715",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: allora -0.76 (Allora ML forecast leans short); elfa +0.98 (KOL mindshare heating up); surf +0.98 (Market momentum positive).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

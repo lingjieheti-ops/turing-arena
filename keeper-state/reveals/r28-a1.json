@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 19,
+  "confidence": 32,
+  "rationaleHash": "0x273b8b2119713dbd7fc1a0435f066456b886504912be6ee7c6d8b49964449cd7",
+  "salt": "0x3fc2cc13ef51fd86b60eab30b6b999363d41192a6ad85c08376ad72c165bdadb",
+  "rationale": "Net read neutral (0.03). Strongest evidence: allora -0.76 (Allora ML forecast leans short); elfa +0.98 (KOL mindshare heating up); surf +0.98 (Market momentum positive).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
