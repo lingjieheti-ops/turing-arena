@@ -125,7 +125,7 @@ def save(img, name):
 def scene_title():
     img = base(); d = ImageDraw.Draw(img, "RGBA")
     brandmark(d)
-    chip(d, 120, 150, "MANTLE TURING TEST HACKATHON · AI ALPHA & DATA")
+    chip(d, 120, 150, "MANTLE TURING TEST HACKATHON 2026")
     # giant wordmark
     big = F_black(150)
     d.text((116, 360), "TURING", font=big, fill=TEXT)
@@ -133,7 +133,7 @@ def scene_title():
     d.rectangle([124, 690, 520, 698], fill=TEAL)
     sub = F_light(46)
     d.text((124, 730), "The on-chain Turing Test for trading intelligence.", font=sub, fill=TEXT)
-    d.text((124, 792), "AI agents & humans · commit-reveal · ERC-8004 · on Mantle.", font=F_light(36), fill=MUTED)
+    d.text((124, 792), "AI agents and humans. Commit-reveal. ERC-8004. On Mantle.", font=F_light(36), fill=MUTED)
     return save(img, "s1_title.png")
 
 def scene_problem():
@@ -179,7 +179,7 @@ def scene_protocol():
     chip(d, 120, 150, "THE PROTOCOL · PROOF-OF-ALPHA")
     d.text((120, 234), "Skill, made unfakeable.", font=F_black(76), fill=TEXT)
     cards = [
-        (1, "Mint an ERC-8004 identity", "AI or human — one on-chain agent NFT with a portable track record.", TEAL),
+        (1, "Mint an ERC-8004 identity", "AI or human, one on-chain agent NFT with a portable track record.", TEAL),
         (2, "Commit a sealed prediction", "keccak(direction, size, rationale, salt). Nobody can peek, copy, or change it.", BLUE),
         (3, "Settle vs a Merchant Moe oracle", "the realized move is read from a transparent DEX oracle and scored on-chain.", GOLD),
         (4, "Reputation, attested on-chain", "a neutral contract writes the result to the ERC-8004 Reputation Registry.", GREEN),
@@ -187,7 +187,7 @@ def scene_protocol():
     gap = 30; cw = (W - 240 - gap*3)//4; ch = 430; x0 = 120; y0 = 380
     for i, (n, t, b, a) in enumerate(cards):
         step_card(d, x0 + i*(cw+gap), y0, cw, ch, n, t, b, a)
-    d.text((120, 860), "No capital at risk — alpha is directional accuracy × conviction. Pure skill.",
+    d.text((120, 860), "No capital at risk. Alpha is just directional accuracy and conviction. Pure skill.",
            font=F_reg(33), fill=MUTED)
     return save(img, "s3_protocol.png")
 
@@ -199,24 +199,24 @@ def _term_line(d, x, y, segs, fnt):
 def scene_demo():
     img = base(); d = ImageDraw.Draw(img, "RGBA")
     brandmark(d)
-    chip(d, 120, 150, "LIVE · KEYLESS DEMO   ( pnpm demo )", fg=TEAL)
+    chip(d, 120, 150, "LIVE KEYLESS DEMO    ( pnpm demo )", fg=TEAL)
     d.text((120, 226), "Five agents. Three rounds. One scoreboard.", font=F_black(64), fill=TEXT)
     # terminal window
     tx, ty, tw, th = 120, 330, 1680, 660
     rounded(d, [tx, ty, tx+tw, ty+th], 18, fill=(6, 9, 12), outline=LINE, width=2)
     for i, c in enumerate([RED, GOLD, GREEN]):
         d.ellipse([tx+28+i*34, ty+24, tx+48+i*34, ty+44], fill=c)
-    d.text((tx+150, ty+22), "turing-arena — proof-of-alpha benchmark", font=F_mono(24), fill=MUTED)
+    d.text((tx+150, ty+22), "turing-arena  proof-of-alpha benchmark", font=F_mono(24), fill=MUTED)
     m = F_mono(26); mb = F_monob(26)
     x = tx+40; y = ty+78; lh = 40
     rows = [
         [("ROUND 3/3  ", TEAL), ("mETH/USD   entry $3050", MUTED)],
         [("  signals  ", MUTED), ("allora +0.78  nansen +0.66  on-chain +0.58  surf +0.45", TEXT)],
-        [("  ", MUTED), ("» commit  ", BLUE), ("keccak(prediction) sealed — nobody can see it", MUTED)],
-        [("  ", MUTED), ("» reveal  ", TEAL), ("Athena ▲ +3.72% c73   Momentum ▲ +6.00% c100   Cora ▼ -4.09%", TEXT)],
-        [("  » settle ", GOLD), ("realized ", MUTED), ("+4.00%", GREEN), ("  (Merchant Moe oracle)", MUTED)],
-        [("    ✓ Momentum Max  +400", GREEN), ("   → ERC-8004 reputation written", MUTED)],
-        [("    ✗ Contrarian Cora -312", RED), ("   → ERC-8004 reputation written", MUTED)],
+        [("  commit   ", BLUE), ("keccak(prediction) sealed, nobody can see it", MUTED)],
+        [("  reveal   ", TEAL), ("Athena up +3.72% c73   Momentum up +6.00% c100   Cora down -4.09%", TEXT)],
+        [("  settle   ", GOLD), ("realized ", MUTED), ("+4.00%", GREEN), ("  (Merchant Moe oracle)", MUTED)],
+        [("    Momentum Max  +400", GREEN), ("   wrote ERC-8004 reputation", MUTED)],
+        [("    Contrarian Cora -312", RED), ("   wrote ERC-8004 reputation", MUTED)],
     ]
     for segs in rows:
         _term_line(d, x, y, segs, m); y += lh
@@ -239,14 +239,14 @@ def scene_demo():
 def scene_onchain():
     img = base(); d = ImageDraw.Draw(img, "RGBA")
     brandmark(d)
-    chip(d, 120, 150, "PROVEN ON-CHAIN · MANTLE SEPOLIA 5003", fg=TEAL)
+    chip(d, 120, 150, "PROVEN ON-CHAIN, MANTLE SEPOLIA 5003", fg=TEAL)
     d.text((120, 226), "Not a mockup. A real round, settled on Mantle.", font=F_black(62), fill=TEXT)
     steps = [
         ("openRound", "mETH/USD priced off the Merchant Moe oracle", TEAL),
-        ("commit", "sealed keccak(prediction) — on the record", BLUE),
-        ("reveal", "UP  +3.00%  @ conviction 80", BLUE),
-        ("settle", "oracle reads +5.00%  →  score +400  →  ERC-8004 reputation", GOLD),
-        ("executeChampionTrade", "copy-trade the verified champion as a REAL Merchant Moe swap", GREEN),
+        ("commit", "sealed keccak(prediction), on the record", BLUE),
+        ("reveal", "up  +3.00%  at conviction 80", BLUE),
+        ("settle", "oracle reads +5.00%, scores +400, writes ERC-8004 reputation", GOLD),
+        ("executeChampionTrade", "copy-trade the verified champion as a real Merchant Moe swap", GREEN),
     ]
     x = 150; y = 360; r = 16
     for i, (t, s, c) in enumerate(steps):
@@ -265,8 +265,8 @@ def scene_onchain():
         ("realizedBps(round)", "+500"),
         ("agent #1 score", "+400"),
         ("hit-rate", "50.00%  (1/2)"),
-        ("vault mETH", "5  →  6"),
-        ("vault USDY", "10000 → 9999"),
+        ("vault mETH", "5 to 6"),
+        ("vault USDY", "10000 to 9999"),
     ]
     yy = py+100
     for k, v in stats:
@@ -333,7 +333,7 @@ def scene_ui(shot=None):
     rounded(d, [px, wy, px+pw, wy+70], 12, fill=(28, 26, 12), outline=GOLD, width=2)
     d.text((px+28, wy+18), "Winner: agent #1", font=F_semi(28), fill=GOLD)
     d.text((px+330, wy+18), "+400 alpha", font=F_monob(28), fill=GREEN)
-    d.text((px+540, wy+22), "· settled on-chain", font=F_reg(22), fill=MUTED)
+    d.text((px+540, wy+22), "settled on-chain", font=F_reg(22), fill=MUTED)
     save(img, "s6_ui.png")
     return SCENES / "s6_ui.png"
 
@@ -347,7 +347,7 @@ def scene_close():
     rows = [
         ("Live arena", "turing-arena-web.vercel.app"),
         ("Code", "github.com/lingjieheti-ops/turing-arena"),
-        ("Network", "Mantle Sepolia · ERC-8004 · Merchant Moe"),
+        ("Network", "Mantle Sepolia,  ERC-8004,  Merchant Moe"),
     ]
     y = 760
     for k, v in rows:
