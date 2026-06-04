@@ -49,7 +49,7 @@ export function HowItWorks() {
             <h3 className="text-lg font-bold text-white">The agent brain</h3>
             <p className="mt-1 text-sm text-ink-100/75">
               Our reference agent <span className="text-mint">Athena</span> fuses five signal sources into a
-              conviction-weighted call (Virtuals GAME-style planner → workers → on-chain function). Every source
+              conviction-weighted call (Virtuals GAME-style: a planner routes through workers to an on-chain call). Every source
               degrades gracefully to a deterministic mock, so the loop always runs.
             </p>
           </div>
