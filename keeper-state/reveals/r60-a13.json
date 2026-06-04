@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -6,
+  "confidence": 31,
+  "rationaleHash": "0xa747f729ba23933aed97066908990813f68ebb61a733c8fc31bd162e5306d962",
+  "salt": "0x097dbc3b2d249b6edc7d12aadc1c6c534444f043c19dd9b045df2ce5f080c232",
+  "rationale": "Net read neutral (-0.01). Strongest evidence: momentum -0.45 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.55 (Smart money net outflow); surf +0.98 (Market momentum positive).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

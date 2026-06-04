@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -90,
+  "confidence": 41,
+  "rationaleHash": "0xc812f5a4496850690990be0400783ff47e786406db066791baeacd8beaf16b16",
+  "salt": "0x788f68d8733c325cdf1a29aa0134dabca87e72830239dba3e14f26db594b2d40",
+  "rationale": "Net read bearish (-0.15). Strongest evidence: momentum -0.45 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.55 (Smart money net outflow); surf +0.98 (Market momentum positive).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
