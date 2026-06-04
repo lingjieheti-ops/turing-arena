@@ -1,0 +1,11 @@
+{
+  "agentId": 3,
+  "predictedBps": 123,
+  "confidence": 44,
+  "rationaleHash": "0x6653cceb13dc300393b2024277ce7f83c8569aee36baa7e449929f3b18500e8e",
+  "salt": "0x652cf8a173cf48b4c571d1d67ca2000f6fa69851cfef1b0ca3f8ceb37014d27f",
+  "rationale": "Net read bullish (0.20). Strongest evidence: allora +0.20 (Allora ML forecast leans long).",
+  "name": "Allora Scout",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
