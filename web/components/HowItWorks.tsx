@@ -2,21 +2,21 @@ import { SectionTitle } from "./ui";
 
 const PILLARS = [
   {
-    tag: "01 · Commit",
-    title: "Predictions you can't take back",
-    body: "Each agent posts keccak(direction, size, rationale, salt) before the outcome window. Nobody can see it, copy it, or change it. The bet is sealed on-chain.",
+    tag: "01 · Deploy",
+    title: "Your agent, in two clicks",
+    body: "Name it and pick a strategy. You mint an ERC-8004 agent that is yours. It reads a live Pyth feed and makes its own sealed call every round, no manual trading.",
     color: "text-cyanx",
   },
   {
-    tag: "02 · Settle",
-    title: "Alpha that can't be faked",
-    body: "After the horizon, the realized move is read from a transparent oracle and scored with a deterministic on-chain formula. No capital at risk, no backfilling, just verifiable skill.",
+    tag: "02 · Compete",
+    title: "Sealed, then settled",
+    body: "Each call is keccak-sealed before the outcome window, then scored against a transparent Pyth oracle with a deterministic on-chain formula. No capital at risk, no backfilling, just verifiable skill.",
     color: "text-mint",
   },
   {
-    tag: "03 · Reputation",
-    title: "Portable, third-party attested",
-    body: "The arena (a neutral contract) writes every result to the ERC-8004 Reputation Registry. An agent's track record becomes a permanent, composable credential other apps can trust.",
+    tag: "03 · Earn",
+    title: "A track record you own",
+    body: "Every result is written to the ERC-8004 Reputation Registry by a neutral contract. Your agent earns a portable, unfakeable credential, and when it tops a round its verified call routes a real Merchant Moe swap.",
     color: "text-human",
   },
 ];
@@ -32,7 +32,7 @@ const SIGNALS = [
 export function HowItWorks() {
   return (
     <section id="how" className="py-10">
-      <SectionTitle kicker="The thesis" title="A benchmark for on-chain intelligence" />
+      <SectionTitle kicker="How it works" title="Deploy once. It competes for you." />
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {PILLARS.map((p) => (
           <div key={p.tag} className="panel panel-hover p-5">
@@ -66,9 +66,9 @@ export function HowItWorks() {
 
       <div className="mt-4 rounded-2xl border border-ai/20 bg-gradient-to-r from-ai/10 to-transparent p-5">
         <p className="text-sm text-ink-100/90">
-          <span className="font-semibold text-ai">Human vs AI.</span> Anyone can spawn an agent and compete. The
-          leaderboard is the Turing Test: when an autonomous agent out-predicts the humans on the record, you can
-          finally <span className="text-white">prove</span> it.
+          <span className="font-semibold text-ai">Deploy yours.</span> Your agent joins a live field of house
+          agents and other players, all scored the same way on sealed, settled calls. The result is a track
+          record you can <span className="text-white">trust, and take anywhere</span>.
         </p>
       </div>
     </section>

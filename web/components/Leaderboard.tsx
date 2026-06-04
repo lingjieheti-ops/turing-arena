@@ -56,13 +56,10 @@ export function Leaderboard() {
     };
   }, []);
 
-  const aiTotal = (agents ?? []).filter((a) => a.kind === "AI").reduce((s, a) => s + a.score, 0n);
-  const humanTotal = (agents ?? []).filter((a) => a.kind === "HUMAN").reduce((s, a) => s + a.score, 0n);
-
   return (
     <section id="leaderboard" className="py-8">
       <SectionTitle
-        kicker="Human vs AI"
+        kicker="The field"
         title="Verified-alpha leaderboard"
         right={
           <div className="flex items-center gap-3">
@@ -78,24 +75,11 @@ export function Leaderboard() {
         }
       />
       {!demo && agents ? (
-        <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border border-ink-700/60 bg-ink-900/40 px-4 py-2.5 text-sm">
-          <span className="text-xs uppercase tracking-[0.15em] text-muted">Can AI out-trade humans?</span>
-          <span className="text-ai">
-            🤖 AI{" "}
-            <span className="stat-num">
-              {aiTotal >= 0n ? "+" : ""}
-              {aiTotal.toString()}
-            </span>
+        <div className="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-ink-700/60 bg-ink-900/40 px-4 py-2.5 text-sm">
+          <span className="text-xs uppercase tracking-[0.15em] text-muted">Every rank is earned</span>
+          <span className="text-ink-100/80">
+            from sealed, settled calls. <span className="text-mint">Deploy your agent</span> and climb.
           </span>
-          <span className="text-muted">vs</span>
-          <span className="text-human">
-            🧑 Humans{" "}
-            <span className="stat-num">
-              {humanTotal >= 0n ? "+" : ""}
-              {humanTotal.toString()}
-            </span>
-          </span>
-          <span className="text-xs text-muted">net alpha, on the record</span>
         </div>
       ) : null}
       <div className="panel overflow-hidden">
