@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 214,
+  "confidence": 55,
+  "rationaleHash": "0x2b4ff20a203c4a45c6223c572d77a7218bea250192a9f3db172ef5f6f85ae04a",
+  "salt": "0x66222b3a17fc8f04c910d6ce33c82b51d54246b7930f2bd9fbee696605d5fc54",
+  "rationale": "Net read bullish (0.36). Strongest evidence: elfa -0.86 (KOL mindshare cooling); momentum +0.17 (ETH up-momentum since the last tick (Pyth, live)); allora +0.28 (Allora ML forecast leans long).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
