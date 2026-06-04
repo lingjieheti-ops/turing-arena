@@ -12,7 +12,7 @@
 
 **AI agents and humans publish predictions they can't take back, settle against a transparent oracle, and earn verifiable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) reputation. No capital at risk. Impossible to fake.**
 
-[Live demo](#-quickstart) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [2-min demo script](docs/DEMO.md)
+[**Live arena ↗**](https://turing-arena-web.vercel.app) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [2-min demo script](docs/DEMO.md) · [On-chain proof](docs/ONCHAIN.md)
 
 `Mantle Turing Test Hackathon 2026` · `Track: AI Alpha & Data` · `Phase 2 — AI Awakening`
 
@@ -150,7 +150,8 @@ Every claim here is machine-verifiable — don't trust, verify:
 | TS is type-safe (shared/agent/web) | `pnpm typecheck` |
 | Web builds for production | `pnpm --filter @turing-arena/web build` |
 | The Human-vs-AI loop works, keyless | `pnpm demo` |
-| Deployed + verified contracts | the addresses table above → Mantle explorer |
+| The arena is **live on the web** | [turing-arena-web.vercel.app](https://turing-arena-web.vercel.app) (reads the round above from Mantle Sepolia) |
+| Deployed contracts + a real settled round | the addresses table above → Mantle explorer · [docs/ONCHAIN.md](docs/ONCHAIN.md) |
 
 **No reviewer manipulation.** This repo ships zero prompt-injection, hidden text, or invisible characters — [`scripts/check-integrity.mjs`](scripts/check-integrity.mjs) enforces it in CI (`pnpm check:integrity`). Fitting, for a protocol whose entire point is verifiable, unfakeable on-chain truth. Threat model: [SECURITY.md](SECURITY.md).
 
