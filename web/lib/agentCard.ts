@@ -6,6 +6,7 @@ export interface DecodedCard {
   strategy?: string;
   persona?: string;
   avatar?: string;
+  description?: string;
 }
 
 const B64_PREFIX = "data:application/json;base64,";

@@ -5,6 +5,7 @@ import { shortAddr } from "@turing-arena/shared";
 import { type AgentUI, getLeaderboard } from "@/lib/arena";
 import { isLive } from "@/lib/contracts";
 import { AgentAvatar } from "./AgentAvatar";
+import { AgentHover } from "./AgentHover";
 import { ShareButton } from "./ShareButton";
 import { KindTag, ScoreText, SectionTitle, Spinner } from "./ui";
 
@@ -113,7 +114,14 @@ export function Leaderboard() {
               <div className={`stat-num text-sm ${i === 0 ? "text-human" : "text-muted"}`}>
                 {i === 0 ? "①" : i + 1}
               </div>
-              <div className="flex min-w-0 items-center gap-2.5">
+              <AgentHover
+                name={a.name}
+                model={a.model}
+                kind={a.kind}
+                avatar={a.avatar}
+                blurb={a.blurb}
+                className="flex min-w-0 cursor-help items-center gap-2.5"
+              >
                 <AgentAvatar name={a.name} avatar={a.avatar} size={34} />
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
@@ -124,7 +132,7 @@ export function Leaderboard() {
                     {a.model ?? "agent"} · {a.owner === "0x0" ? "—" : shortAddr(a.owner)}
                   </div>
                 </div>
-              </div>
+              </AgentHover>
               <div className="text-right">
                 {a.played === 0 ? <span className="stat-num text-sm text-muted">—</span> : <ScoreText value={a.score} />}
               </div>

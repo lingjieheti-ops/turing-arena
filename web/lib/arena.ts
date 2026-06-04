@@ -33,6 +33,7 @@ export interface AgentUI {
   kind: "AI" | "HUMAN";
   model?: string;
   avatar?: string;
+  blurb?: string;
   owner: Address;
   score: bigint;
   played: number;
@@ -206,6 +207,7 @@ async function readAgent(agentId: bigint): Promise<AgentUI | null> {
       kind: card.kind === "HUMAN" ? "HUMAN" : "AI",
       model: card.model,
       avatar: card.avatar,
+      blurb: card.persona ?? card.description,
       owner,
       score: stats[0],
       played: Number(stats[1]),

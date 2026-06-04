@@ -10,6 +10,7 @@ import {
   getResultsFeed,
 } from "@/lib/reasoning";
 import { AgentAvatar } from "./AgentAvatar";
+import { AgentHover } from "./AgentHover";
 import { KindTag, ScoreText, SectionTitle, Spinner } from "./ui";
 
 export function ReasoningFeed() {
@@ -117,12 +118,19 @@ export function ReasoningFeed() {
                     return (
                       <div key={e.agentId.toString()} className="px-4 py-3">
                         <div className="flex flex-wrap items-center justify-between gap-2">
-                          <div className="flex min-w-0 items-center gap-2">
+                          <AgentHover
+                            name={am?.name}
+                            model={am?.model}
+                            kind={am?.kind}
+                            avatar={am?.avatar}
+                            blurb={am?.blurb}
+                            className="flex min-w-0 cursor-help items-center gap-2"
+                          >
                             <AgentAvatar name={am?.name} avatar={am?.avatar} size={26} />
                             <span className="truncate font-semibold text-white">{am?.name ?? `Agent #${e.agentId}`}</span>
                             {am ? <KindTag kind={am.kind} /> : null}
                             {am?.model ? <span className="hidden text-xs text-muted sm:inline">{am.model}</span> : null}
-                          </div>
+                          </AgentHover>
                           <div className="flex shrink-0 items-center gap-3 font-mono text-xs">
                             <span className={dir === "UP" ? "text-up" : "text-down"}>
                               {dir === "UP" ? "▲" : "▼"} {e.predictedBps >= 0 ? "+" : ""}
