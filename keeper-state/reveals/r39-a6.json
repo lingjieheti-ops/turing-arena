@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 176,
+  "confidence": 51,
+  "rationaleHash": "0xa3aadb0699585eeecd9f486c5981ad2784b2ecf8db11de769f10b8d955f58c80",
+  "salt": "0x25e874bb704eaf63de0ea8a8efde642f485690bf44e91bdb89590348fae9e44d",
+  "rationale": "Net read bullish (0.29). Strongest evidence: allora -0.80 (Allora ML forecast leans short); elfa -0.98 (KOL mindshare cooling); surf -0.98 (Market momentum negative).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
