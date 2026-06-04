@@ -17,7 +17,19 @@ import {
   savePending,
 } from "@/lib/commit";
 import { deployment, explorerUrl, identityRegistryAbi, proofOfAlphaAbi, targetChain } from "@/lib/contracts";
-import { type AgentCall, STRATEGIES, type Strategy, computeCall, fetchMomentum, strategyById } from "@/lib/strategy";
+import { fromOraclePrice } from "@turing-arena/shared";
+import {
+  type AgentCall,
+  type LlmConfig,
+  STRATEGIES,
+  type Strategy,
+  computeCall,
+  fetchMomentum,
+  llmCall,
+  loadLlmConfig,
+  saveLlmConfig,
+  strategyById,
+} from "@/lib/strategy";
 import { ConnectButton } from "./ConnectButton";
 
 const ZERO_HASH = "0x0000000000000000000000000000000000000000000000000000000000000000";
@@ -94,20 +106,30 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
   const [revealed, setRevealed] = useState(false);
   const [hasPreimage, setHasPreimage] = useState(false);
   const [call, setCall] = useState<AgentCall | null>(null);
+  const [llmUsed, setLlmUsed] = useState(false);
   const [autopilot, setAutopilot] = useState<boolean | null>(null);
+  const [agentPersona, setAgentPersona] = useState<string>("");
+  // deploy form (custom personality + bring-your-own-LLM)
+  const [customMode, setCustomMode] = useState(false);
+  const [deployPersona, setDeployPersona] = useState("");
+  const [showLlm, setShowLlm] = useState(false);
+  const [llmCfg, setLlmCfg] = useState<LlmConfig>({ baseUrl: "", model: "", apiKey: "" });
 
   // Load my agent + its on-chain card (name + strategy) + whether it's delegated
   // its operation to the keeper (auto-pilot).
   useEffect(() => {
+    const savedLlm = loadLlmConfig();
+    if (savedLlm) setLlmCfg(savedLlm);
     const id = loadMyAgent();
     setMyAgent(id);
     if (!id) return;
     publicClient
       .readContract({ address: deployment.identityRegistry, abi: identityRegistryAbi, functionName: "agentURI", args: [id] })
       .then((uri) => {
-        const c = decodeAgentCard(uri as string) as { name?: string; strategy?: string };
+        const c = decodeAgentCard(uri as string) as { name?: string; strategy?: string; persona?: string };
         setAgentName(c.name || `Agent #${id}`);
         setStrategy(strategyById(c.strategy));
+        setAgentPersona(c.persona ?? "");
       })
       .catch(() => setStrategy(strategyById(undefined)));
     publicClient
@@ -144,16 +166,32 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
   }, [reconcile]);
 
   // When a round is open and we haven't committed, let the agent compute its call.
+  // A custom-personality agent with a wired LLM reasons in character; otherwise it
+  // falls back to its deterministic strategy.
   useEffect(() => {
     if (phase !== "commit" || committed || !strategy) return;
     let alive = true;
-    fetchMomentum().then((m) => {
-      if (alive) setCall(computeCall(strategy, m));
-    });
+    (async () => {
+      const m = await fetchMomentum();
+      const cfg = loadLlmConfig();
+      if (agentPersona && cfg) {
+        const price = fromOraclePrice(round.entryPrice);
+        const c = await llmCall(agentPersona, m, price, cfg);
+        if (alive && c) {
+          setCall(c);
+          setLlmUsed(true);
+          return;
+        }
+      }
+      if (alive) {
+        setCall(computeCall(strategy, m));
+        setLlmUsed(false);
+      }
+    })();
     return () => {
       alive = false;
     };
-  }, [phase, committed, strategy, round.id]);
+  }, [phase, committed, strategy, agentPersona, round.id, round.entryPrice]);
 
   const wrongChain = isConnected && chainId !== targetChain.id;
   const explorer = (h: string) => `${explorerUrl}/tx/${h}`;
@@ -163,11 +201,15 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
     setMsg({ text: "Deploying your agent (ERC-8004)…", tone: "info" });
     try {
       const name = deployName.trim() || `Agent-${address?.slice(2, 6)}`;
+      const isCustom = customMode && deployPersona.trim().length > 0;
+      // Persist the optional bring-your-own-LLM (the key stays in this browser).
+      if (llmCfg.baseUrl && llmCfg.model && llmCfg.apiKey) saveLlmConfig(llmCfg);
       const card = {
         name,
         kind: "AI",
-        model: deployStrat.label,
-        strategy: deployStrat.id,
+        model: isCustom ? "custom personality" : deployStrat.label,
+        strategy: isCustom ? "custom" : deployStrat.id,
+        ...(isCustom ? { persona: deployPersona.trim() } : {}),
         protocol: "erc-8004",
         skill: "proof-of-alpha",
       };
@@ -185,7 +227,8 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
       saveMyAgent(id);
       setMyAgent(id);
       setAgentName(name);
-      setStrategy(deployStrat);
+      setStrategy(isCustom ? strategyById("custom") : deployStrat);
+      setAgentPersona(isCustom ? deployPersona.trim() : "");
       setMsg({ text: `${name} is live as agent #${id}. It trades for you now.`, tone: "ok", href: explorer(hash) });
     } catch (e) {
       setMsg({ text: friendlyError(e), tone: "err" });
@@ -342,13 +385,16 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
             className="w-full rounded-lg border border-ink-600 bg-ink-800/60 px-3 py-2 text-sm text-white outline-none focus:border-mint/40"
           />
           <div className="space-y-1.5">
-            <div className="text-xs text-muted">Pick its strategy</div>
+            <div className="text-xs text-muted">Pick its strategy, or write a custom personality</div>
             {STRATEGIES.map((s) => (
               <button
                 key={s.id}
-                onClick={() => setDeployStrat(s)}
+                onClick={() => {
+                  setDeployStrat(s);
+                  setCustomMode(false);
+                }}
                 className={`block w-full rounded-lg border px-3 py-2 text-left text-sm transition ${
-                  deployStrat.id === s.id
+                  !customMode && deployStrat.id === s.id
                     ? "border-mint/50 bg-mint/10 text-white"
                     : "border-ink-700/60 bg-ink-900/40 text-ink-100/80 hover:border-ink-600"
                 }`}
@@ -357,8 +403,66 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
                 <span className="block text-xs text-muted">{s.blurb}</span>
               </button>
             ))}
+            <button
+              onClick={() => setCustomMode(true)}
+              className={`block w-full rounded-lg border px-3 py-2 text-left text-sm transition ${
+                customMode
+                  ? "border-mint/50 bg-mint/10 text-white"
+                  : "border-ink-700/60 bg-ink-900/40 text-ink-100/80 hover:border-ink-600"
+              }`}
+            >
+              <span className="font-semibold">Custom personality</span>
+              <span className="block text-xs text-muted">Write its character, and optionally wire your own LLM.</span>
+            </button>
           </div>
-          <button className="btn-primary w-full" onClick={deploy} disabled={busy}>
+
+          {customMode ? (
+            <div className="space-y-2 rounded-lg border border-ink-700/60 bg-ink-900/40 p-3">
+              <textarea
+                value={deployPersona}
+                onChange={(e) => setDeployPersona(e.target.value)}
+                rows={3}
+                placeholder="Its personality and edge, e.g. 'a cautious value investor that only bets on strong confluence and sits out the noise'"
+                className="w-full rounded-lg border border-ink-600 bg-ink-800/60 px-3 py-2 text-sm text-white outline-none focus:border-mint/40"
+              />
+              <button onClick={() => setShowLlm(!showLlm)} className="text-xs text-mint hover:underline">
+                {showLlm ? "▾" : "▸"} Use your own LLM (optional)
+              </button>
+              {showLlm ? (
+                <div className="space-y-2">
+                  <input
+                    value={llmCfg.baseUrl}
+                    onChange={(e) => setLlmCfg({ ...llmCfg, baseUrl: e.target.value })}
+                    placeholder="API base URL, e.g. https://api.openai.com/v1"
+                    className="w-full rounded-lg border border-ink-600 bg-ink-800/60 px-3 py-2 text-sm text-white outline-none focus:border-mint/40"
+                  />
+                  <input
+                    value={llmCfg.model}
+                    onChange={(e) => setLlmCfg({ ...llmCfg, model: e.target.value })}
+                    placeholder="Model, e.g. gpt-4o-mini"
+                    className="w-full rounded-lg border border-ink-600 bg-ink-800/60 px-3 py-2 text-sm text-white outline-none focus:border-mint/40"
+                  />
+                  <input
+                    value={llmCfg.apiKey}
+                    onChange={(e) => setLlmCfg({ ...llmCfg, apiKey: e.target.value })}
+                    type="password"
+                    placeholder="API key"
+                    className="w-full rounded-lg border border-ink-600 bg-ink-800/60 px-3 py-2 text-sm text-white outline-none focus:border-mint/40"
+                  />
+                  <p className="text-[11px] leading-relaxed text-muted">
+                    Stored only in this browser, never on our server or on-chain. The endpoint must allow browser
+                    (CORS) requests, for example a local model or a CORS-enabled gateway.
+                  </p>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+
+          <button
+            className="btn-primary w-full"
+            onClick={deploy}
+            disabled={busy || (customMode && !deployPersona.trim())}
+          >
             {busy ? "Deploying…" : "Deploy agent (ERC-8004)"}
           </button>
           <a href={FAUCET_URL} target="_blank" rel="noreferrer" className="block text-xs text-mint hover:underline">
@@ -388,7 +492,9 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
                 {call ? (
                   <div className="rounded-lg border border-ink-700/60 bg-ink-900/40 px-3 py-2.5">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted">Its call this round</span>
+                      <span className="text-muted">
+                        Its call this round{llmUsed ? <span className="text-mint"> · via your LLM</span> : null}
+                      </span>
                       <span className={`font-mono ${call.direction === "UP" ? "text-up" : "text-down"}`}>
                         {call.direction === "UP" ? "▲" : "▼"} {call.predictedBps >= 0 ? "+" : ""}
                         {call.predictedBps}bps @ {call.confidence}%

@@ -41,6 +41,101 @@ export function computeCall(strat: Strategy, mom: number): AgentCall {
   return { direction, predictedBps, confidence, rationale };
 }
 
+// --------------------------------------------------------------------------- //
+//  Bring your own LLM (optional) + custom personality
+// --------------------------------------------------------------------------- //
+
+/// An OpenAI-compatible LLM the user wires to their OWN agent. Stored only in
+/// this browser (localStorage); the key never reaches our server or the chain.
+export interface LlmConfig {
+  baseUrl: string;
+  model: string;
+  apiKey: string;
+}
+
+const LLM_KEY = "ta:llm";
+
+export function saveLlmConfig(c: LlmConfig) {
+  try {
+    localStorage.setItem(LLM_KEY, JSON.stringify(c));
+  } catch {}
+}
+export function loadLlmConfig(): LlmConfig | null {
+  try {
+    const raw = localStorage.getItem(LLM_KEY);
+    if (!raw) return null;
+    const c = JSON.parse(raw) as LlmConfig;
+    return c.baseUrl && c.apiKey && c.model ? c : null;
+  } catch {
+    return null;
+  }
+}
+export function clearLlmConfig() {
+  try {
+    localStorage.removeItem(LLM_KEY);
+  } catch {}
+}
+
+/// Ask the user's own LLM (client-side, key stays in the browser) to make this
+/// agent's call IN CHARACTER. Returns null on any failure (e.g. a CORS-blocked
+/// endpoint) so the caller falls back to the deterministic strategy.
+export async function llmCall(persona: string, mom: number, price: number, cfg: LlmConfig): Promise<AgentCall | null> {
+  const character = persona.trim() || "a disciplined trading agent";
+  const system = [
+    `You are ${character}.`,
+    "You compete in Turing Arena, an on-chain ETH/USD prediction benchmark. You COMMIT a directional call you cannot take back, then it settles against a live oracle.",
+    'Respond with ONLY a JSON object: {"direction":"UP|DOWN","predictedBps":<signed int, expected move in basis points, |value|<=2000>,"confidence":<int 1-100>,"rationale":"<=2 sentences, in character"}',
+  ].join(" ");
+  const user = `ETH/USD is near $${price.toFixed(0)}. Recent momentum reads ${mom >= 0 ? "+" : ""}${mom.toFixed(2)} on a -1..1 scale. Make your call, in character.`;
+  try {
+    const res = await fetch(`${cfg.baseUrl.replace(/\/+$/, "")}/chat/completions`, {
+      method: "POST",
+      headers: { "content-type": "application/json", authorization: `Bearer ${cfg.apiKey}` },
+      body: JSON.stringify({
+        model: cfg.model,
+        temperature: 0.5,
+        messages: [
+          { role: "system", content: system },
+          { role: "user", content: user },
+        ],
+      }),
+      signal: AbortSignal.timeout(20000),
+    });
+    if (!res.ok) return null;
+    const data = (await res.json()) as { choices?: { message?: { content?: string } }[] };
+    const txt = data?.choices?.[0]?.message?.content;
+    return txt ? normalizeLlm(txt) : null;
+  } catch {
+    return null;
+  }
+}
+
+function normalizeLlm(txt: string): AgentCall | null {
+  const fenced = txt.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  const cand = fenced ? fenced[1] : txt;
+  const s = cand.indexOf("{");
+  const e = cand.lastIndexOf("}");
+  if (s === -1 || e === -1 || e < s) return null;
+  let p: { predictedBps?: unknown; bps?: unknown; confidence?: unknown; direction?: unknown; rationale?: unknown; reason?: unknown };
+  try {
+    p = JSON.parse(cand.slice(s, e + 1));
+  } catch {
+    return null;
+  }
+  let bps = Math.round(Number(p.predictedBps ?? p.bps ?? 0));
+  if (!Number.isFinite(bps)) bps = 0;
+  bps = Math.max(-2000, Math.min(2000, bps));
+  let conf = Math.round(Number(p.confidence ?? 50));
+  if (!Number.isFinite(conf)) conf = 50;
+  conf = Math.max(1, Math.min(100, conf));
+  let dir = String(p.direction ?? (bps >= 0 ? "UP" : "DOWN")).toUpperCase();
+  if (dir !== "UP" && dir !== "DOWN") dir = bps >= 0 ? "UP" : "DOWN";
+  if (dir === "UP" && bps <= 0) bps = Math.max(1, Math.abs(bps));
+  if (dir === "DOWN" && bps >= 0) bps = -Math.max(1, Math.abs(bps));
+  const rationale = String(p.rationale ?? p.reason ?? "LLM call").slice(0, 280);
+  return { direction: dir as "UP" | "DOWN", predictedBps: bps, confidence: conf, rationale };
+}
+
 const PYTH_ETH_USD = "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace";
 const PRIOR_KEY = "ta:pyth:lastEth";
 

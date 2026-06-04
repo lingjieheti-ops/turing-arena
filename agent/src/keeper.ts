@@ -843,7 +843,7 @@ const STRATEGY_BIAS: Record<string, (m: number) => number> = {
   scout: (m) => 0.15 + m * 0.6,
 };
 
-function decodeAgentCard(uri: string): { name?: string; strategy?: string } {
+function decodeAgentCard(uri: string): { name?: string; strategy?: string; persona?: string } {
   try {
     if (uri.startsWith("data:application/json;base64,")) {
       return JSON.parse(Buffer.from(uri.slice("data:application/json;base64,".length), "base64").toString("utf8"));
@@ -921,7 +921,8 @@ async function commitAutopilots(price: number, cursor: CursorFile, houseIds: Set
       continue;
     }
     const card = decodeAgentCard(uri);
-    if (!card.strategy || !STRATEGY_BIAS[card.strategy]) continue;
+    const isCustom = card.strategy === "custom" && !!card.persona;
+    if (!isCustom && (!card.strategy || !STRATEGY_BIAS[card.strategy])) continue;
 
     try {
       const e = (await publicClient.readContract({
@@ -946,7 +947,9 @@ async function commitAutopilots(price: number, cursor: CursorFile, houseIds: Set
       } as Signal);
     }
 
-    const persona = personaFromStrategy(card.name ?? `Agent #${id}`, card.strategy);
+    const persona: Persona = isCustom
+      ? { name: card.name ?? `Agent #${id}`, kind: "AI", style: card.persona as string, bias: STRATEGY_BIAS.fusion, useLlm: true }
+      : personaFromStrategy(card.name ?? `Agent #${id}`, card.strategy as string);
     try {
       const { predictedBps, confidence, rationale, model } = await decide(bundle, persona);
       const rationaleHash = rationaleHashOf(rationale);
