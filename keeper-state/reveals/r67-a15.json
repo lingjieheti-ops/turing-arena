@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 21,
+  "confidence": 32,
+  "rationaleHash": "0x81db1349086bb23f6c13a2eeae731974e5c558caec7cd0611953d5c90a8bf566",
+  "salt": "0x2311d35e188b165d56e4cf296e2fb73ef0b2cf17fee29f219a8e76fbba831c9e",
+  "rationale": "Net read neutral (0.04). Strongest evidence: nansen -0.61 (Smart money net outflow); momentum -0.23 (ETH down-momentum since the last tick (Pyth, live)); surf -0.96 (Market momentum negative).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

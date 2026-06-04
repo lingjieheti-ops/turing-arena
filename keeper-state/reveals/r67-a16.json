@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -222,
+  "confidence": 56,
+  "rationaleHash": "0x076f1ad338028116b3395b414790ec28266e3421ae25d942c9b88cb560ced687",
+  "salt": "0x756630a47c48fb3229f10c847a85862267ffa5799145cc727602b241de835c48",
+  "rationale": "Net read bearish (-0.37). Strongest evidence: nansen -0.61 (Smart money net outflow); momentum -0.23 (ETH down-momentum since the last tick (Pyth, live)); surf -0.96 (Market momentum negative).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
