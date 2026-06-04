@@ -68,9 +68,10 @@ jobs:
           PRIVATE_KEY: ${{ secrets.KEEPER_PRIVATE_KEY }}
           # Public config, safe to hardcode. Mirrors contracts/deployments/5003*.json.
           CHAIN_ID: "5003"
-          # Keep the keeper off the busy official RPC so it doesn't rate-limit
-          # users' wallet txs (which sit on the official endpoint).
-          MANTLE_SEPOLIA_RPC_URL: "https://mantle-sepolia.drpc.org"
+          # Official RPC for reliable tx submission. The frontend's heavy polling
+          # was moved to alternative endpoints (see web rpcUrls), so this endpoint
+          # is no longer saturated and leaves headroom for users' wallet txs.
+          MANTLE_SEPOLIA_RPC_URL: "https://rpc.sepolia.mantle.xyz"
           PROOF_OF_ALPHA_ADDRESS: "0x4f5AFD41BDb602C824e5a86F19E95314180144cf"
           IDENTITY_REGISTRY_ADDRESS: "0xbB174b6D9a8ca439d5B3735b6570AAD3FEE8405F"
           PRICE_ORACLE_ADDRESS: "0x31510d8a6Bbe5eEF2a315099AD2F94B504a4EEe3"
