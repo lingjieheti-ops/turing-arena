@@ -477,10 +477,11 @@ async function copyTradeChampions(cursor: CursorFile): Promise<void> {
       })) as { predictedBps: bigint };
       if (entry.predictedBps === 0n) continue;
       const long = entry.predictedBps > 0n;
-      // tokenIn is USDY when long (buy mETH) / mETH when short. Keep size small so
-      // the vault's seed capital copy-trades for many rounds. minOut 0 is fine
-      // against the deterministic testnet mock router (on mainnet: quote it).
-      const amountIn = long ? parseUnits("200", 18) : parseUnits("0.1", 18);
+      // tokenIn is USDY when long (buy mETH) / mETH when short. The testnet mock
+      // router swaps ~1:1, so keep the size small + symmetric: the champion
+      // portfolio drifts believably round-to-round instead of ballooning. minOut 0
+      // is fine against the deterministic mock (on mainnet: quote it via LBQuoter).
+      const amountIn = parseUnits("0.1", 18);
       const h = await send({
         address: CHAMPION_VAULT as Address,
         abi: championVaultAbi,
