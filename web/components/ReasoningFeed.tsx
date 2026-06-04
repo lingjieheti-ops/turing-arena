@@ -9,6 +9,7 @@ import {
   getAgentMeta,
   getResultsFeed,
 } from "@/lib/reasoning";
+import { loreFor } from "@/lib/lore";
 import { AgentAvatar } from "./AgentAvatar";
 import { AgentHover } from "./AgentHover";
 import { KindTag, ScoreText, SectionTitle, Spinner } from "./ui";
@@ -101,10 +102,13 @@ export function ReasoningFeed() {
                     </span>
                   </div>
                   {winner && r.topScore > 0n ? (
-                    <div className="flex items-center gap-1.5 text-xs text-muted">
+                    <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted">
                       🏆 best call <AgentAvatar name={winner.name} avatar={winner.avatar} size={18} />
                       <span className="font-semibold text-white">{winner.name}</span>
                       <KindTag kind={winner.kind} />
+                      {loreFor(winner.name)?.win ? (
+                        <span className="italic text-mint/80">&ldquo;{loreFor(winner.name)?.win}&rdquo;</span>
+                      ) : null}
                     </div>
                   ) : null}
                 </div>

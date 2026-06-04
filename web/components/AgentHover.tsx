@@ -111,6 +111,11 @@ export function AgentHover({
               </div>
               <p className="mt-2 text-xs leading-relaxed text-ink-100/80">{body}</p>
               {quote ? <p className="mt-2 border-l-2 border-mint/40 pl-2 text-xs italic text-muted">&ldquo;{quote}&rdquo;</p> : null}
+              {lore?.rival ? (
+                <p className="mt-2 text-[11px] text-muted">
+                  ⚔ loves to fade <span className="font-medium text-ink-100/80">{lore.rival}</span>
+                </p>
+              ) : null}
             </div>,
             document.body,
           )

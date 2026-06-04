@@ -34,6 +34,7 @@ import {
   http,
   keccak256,
   parseEventLogs,
+  parseUnits,
   toBytes,
 } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
@@ -42,6 +43,7 @@ import {
   type SignalBundle,
   assetId,
   chainById,
+  championVaultAbi,
   identityRegistryAbi,
   proofOfAlphaAbi,
   reporterPriceOracleAbi,
@@ -85,6 +87,8 @@ interface CursorFile {
   /// Last real price we pushed (USD) + when — used as a tick-to-tick momentum signal.
   lastPrice?: number;
   lastPriceAt?: number;
+  /// Highest round whose champion we've already copy-traded on Merchant Moe.
+  lastChampionRound?: number;
 }
 interface RevealRecord {
   agentId: number;
@@ -141,6 +145,11 @@ const MANTLE_DEX_ORACLE = pick(
   env.MANTLE_DEX_ORACLE_ADDRESS,
   env.NEXT_PUBLIC_MANTLE_DEX_ORACLE_ADDRESS,
   defi.mantleDexOracle,
+) as Address | undefined;
+const CHAMPION_VAULT = pick(
+  env.CHAMPION_VAULT_ADDRESS,
+  env.NEXT_PUBLIC_CHAMPION_VAULT_ADDRESS,
+  defi.championVault,
 ) as Address | undefined;
 
 const PRIVATE_KEY = (env.PRIVATE_KEY || "").trim();
@@ -431,6 +440,59 @@ async function settleDueRounds(cursor: CursorFile): Promise<void> {
   if (newLowWater !== cursor.lowWaterMark) {
     log(`  ↪ cursor lowWaterMark ${cursor.lowWaterMark} → ${newLowWater}`);
     cursor.lowWaterMark = newLowWater;
+  }
+}
+
+// --------------------------------------------------------------------------- //
+//  C.5. Copy-trade each newly-settled round's champion on Merchant Moe (real
+//       Mantle DeFi flow). The vault reads the winner's direction on-chain
+//       (unspoofable); the keeper only sizes + submits.
+// --------------------------------------------------------------------------- //
+
+async function copyTradeChampions(cursor: CursorFile): Promise<void> {
+  if (!CHAMPION_VAULT) return; // DeFi layer not deployed on this chain
+  const count = await roundCount();
+  if (count === 0n) return;
+
+  const from = Math.max(1, (cursor.lastChampionRound ?? 0) + 1);
+  for (let id = BigInt(from); id <= count; id++) {
+    let round: Round;
+    try {
+      round = await getRound(id);
+    } catch {
+      break; // RPC hiccup — resume from the same cursor next tick
+    }
+    if (!round.settled) break; // process strictly in order; stop at the first open round
+    cursor.lastChampionRound = Number(id); // mark seen regardless of outcome (vault.traded guards double-trades)
+    if (!round.hasWinner || round.topAgentId === 0n) continue;
+
+    try {
+      const entry = (await publicClient.readContract({
+        address: PROOF_OF_ALPHA as Address,
+        abi: proofOfAlphaAbi,
+        functionName: "getEntry",
+        args: [id, round.topAgentId],
+      })) as { predictedBps: bigint };
+      if (entry.predictedBps === 0n) continue;
+      const long = entry.predictedBps > 0n;
+      // tokenIn is USDY when long (buy mETH) / mETH when short. Keep size small so
+      // the vault's seed capital copy-trades for many rounds. minOut 0 is fine
+      // against the deterministic testnet mock router (on mainnet: quote it).
+      const amountIn = long ? parseUnits("200", 18) : parseUnits("0.1", 18);
+      const h = await send({
+        address: CHAMPION_VAULT as Address,
+        abi: championVaultAbi,
+        functionName: "executeChampionTrade",
+        args: [id, amountIn, 0n, BigInt(nowSec() + 600)],
+      });
+      log(`  💰 champion copy-trade round #${id} (agent #${round.topAgentId} ${long ? "LONG" : "SHORT"}) → Merchant Moe  ${explorerTx(h)}`);
+    } catch (e) {
+      if (isBenignRevert(e, ["AlreadyTraded", "NoChampion", "NoDirection", "RoundNotSettled"]) || isConcurrentKeeperError(e)) {
+        log(`  · champion trade round #${id} skipped (${(e as Error)?.message?.split("\n")[0]})`);
+      } else {
+        log(`  ✗ champion trade round #${id} failed: ${(e as Error)?.message?.split("\n")[0]}`);
+      }
+    }
   }
 }
 
@@ -1027,6 +1089,13 @@ async function tick(): Promise<void> {
 
   // C: settle everything due
   await settleDueRounds(cursor);
+
+  // C.5: copy-trade each newly-settled round's champion on Merchant Moe (real DeFi)
+  try {
+    await copyTradeChampions(cursor);
+  } catch (e) {
+    if (!isConcurrentKeeperError(e)) log(`  · champion copy-trade step error: ${(e as Error)?.message?.split("\n")[0]}`);
+  }
 
   // D: reveal personas in their reveal window
   await revealPersonas(cursor);
