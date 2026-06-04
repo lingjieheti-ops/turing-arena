@@ -525,6 +525,13 @@ const PERSONAS: PersonaDef[] = [
   { name: "Momentum Max", kind: "AI", description: "Trend-follower; leans hard into short momentum.", signals: ["momentum"] },
   { name: "Contrarian Cora", kind: "AI", description: "Mean-reversion contrarian; fades short momentum.", signals: ["momentum"] },
   { name: "HODLer Hank", kind: "HUMAN", description: "Retail human; structurally long, trades on gut.", signals: ["gut"] },
+  // Celebrity AI agents (registered once, then reused so reputation compounds).
+  { name: "Elon Musk", kind: "AI", description: "Meme-fueled moonshot trader; amplifies momentum, loves volatility.", signals: ["momentum", "elfa"] },
+  { name: "Donald Trump", kind: "AI", description: "Brash permabull; always certain the move is tremendous.", signals: ["momentum"] },
+  { name: "Justin Sun", kind: "AI", description: "Hype-driven crypto mogul; relentless upside, long and loud.", signals: ["elfa", "nansen"] },
+  { name: "Michael Saylor", kind: "AI", description: "Maximalist; structurally long forever, buys every dip.", signals: ["mantle-onchain"] },
+  { name: "Warren Buffett", kind: "AI", description: "Patient value investor; fades hype, greedy when others panic.", signals: ["momentum"] },
+  { name: "Vitalik Buterin", kind: "AI", description: "Fundamentals-first builder; weighs the long term, ignores noise.", signals: ["allora", "mantle-onchain"] },
 ];
 
 /// FNV-1a → [0,1), deterministic. (Mirrors agent/src/signals/util.hash01.)
@@ -610,6 +617,12 @@ const STRATEGY_BY_NAME: Record<string, string> = {
   "Momentum Max": "trend-follower",
   "Contrarian Cora": "mean-reversion",
   "HODLer Hank": "gut + structural long",
+  "Elon Musk": "meme momentum",
+  "Donald Trump": "permabull conviction",
+  "Justin Sun": "hype-driven momentum",
+  "Michael Saylor": "Bitcoin-maximalist long",
+  "Warren Buffett": "value contrarian",
+  "Vitalik Buterin": "fundamentals long-term",
 };
 
 function agentCardUri(p: PersonaDef): string {

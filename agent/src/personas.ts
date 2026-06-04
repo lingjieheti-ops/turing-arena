@@ -33,4 +33,47 @@ export const CAST: Persona[] = [
     bias: (n) => 0.35 + n * 0.25,
     useLlm: false,
   },
+  // Celebrity AI agents — caricatured trading styles for fun + a livelier board.
+  {
+    name: "Elon Musk",
+    kind: "AI",
+    style: "a meme-fueled moonshot trader who amplifies momentum, loves a rocket, and treats volatility as opportunity.",
+    bias: (n) => 0.15 + n * 1.5,
+    useLlm: false,
+  },
+  {
+    name: "Donald Trump",
+    kind: "AI",
+    style: "a brash permabull, always certain the move will be tremendous, and bets big on green.",
+    bias: (n) => 0.45 + n * 0.3,
+    useLlm: false,
+  },
+  {
+    name: "Justin Sun",
+    kind: "AI",
+    style: "a hype-driven crypto mogul chasing attention and relentless upside, leaning long and loud.",
+    bias: (n) => 0.4 + n * 0.5,
+    useLlm: false,
+  },
+  {
+    name: "Michael Saylor",
+    kind: "AI",
+    style: "a maximalist who is structurally long forever, buys every dip, and never sells.",
+    bias: (n) => 0.5 + n * 0.2,
+    useLlm: false,
+  },
+  {
+    name: "Warren Buffett",
+    kind: "AI",
+    style: "a patient value investor who fades hype, fears euphoria, and gets greedy only when others panic.",
+    bias: (n) => -n * 0.7,
+    useLlm: false,
+  },
+  {
+    name: "Vitalik Buterin",
+    kind: "AI",
+    style: "a measured, fundamentals-first builder who weighs the long term and shrugs off short-term noise.",
+    bias: (n) => 0.05 + n * 0.4,
+    useLlm: false,
+  },
 ];

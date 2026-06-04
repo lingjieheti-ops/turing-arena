@@ -11,6 +11,12 @@ const HOUSE_EMOJI: Record<string, string> = {
   "Momentum Max": "🚀",
   "Contrarian Cora": "🐈‍⬛",
   "HODLer Hank": "💎",
+  "Elon Musk": "🐶",
+  "Donald Trump": "🦅",
+  "Justin Sun": "🪙",
+  "Michael Saylor": "🟠",
+  "Warren Buffett": "🎩",
+  "Vitalik Buterin": "🔷",
 };
 
 export function isImageAvatar(s: string): boolean {
