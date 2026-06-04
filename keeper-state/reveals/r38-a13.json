@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -20,
+  "confidence": 32,
+  "rationaleHash": "0x90cb9b3c3cdf5206d9b9a89845716d5c16b66508a4246d0e5daf7c81f2c0e7f0",
+  "salt": "0x784782fadfe1dc58f7587ba41e60afcc616ef07ea1b601525afc5f25f2bdf14e",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: allora -0.80 (Allora ML forecast leans short); elfa -0.97 (KOL mindshare cooling); surf -0.97 (Market momentum negative).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

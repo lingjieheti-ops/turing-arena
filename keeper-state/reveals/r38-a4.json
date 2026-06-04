@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -214,
+  "confidence": 55,
+  "rationaleHash": "0x57bbe296a8b22171f48d7feaf34c186a8354b1e74611a79890e507291b5bcb4c",
+  "salt": "0x77441074823efd809b431beb03cfff54a82e7e9abfb9050c881a49e56503d6cc",
+  "rationale": "Net read bearish (-0.36). Strongest evidence: allora -0.80 (Allora ML forecast leans short); elfa -0.97 (KOL mindshare cooling); surf -0.97 (Market momentum negative).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
