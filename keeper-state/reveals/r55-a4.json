@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 22,
+  "confidence": 33,
+  "rationaleHash": "0x9d507069a70928cd13ede1aeb87f8955f7f41401fd6b0bf2ac101d2c3acf0231",
+  "salt": "0xff0aaf555379beeb3bdc8db5bc5f0bc308b10a82d77298dfd4d374ca2ff98059",
+  "rationale": "Net read neutral (0.04). Strongest evidence: elfa -0.91 (KOL mindshare cooling); allora +0.27 (Allora ML forecast leans long); nansen +0.29 (Smart money net inflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

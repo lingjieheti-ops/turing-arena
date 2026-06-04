@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 213,
+  "confidence": 55,
+  "rationaleHash": "0xc71432590e6d664d7598296885762b4483c1e73b8a393870fb0afd29e129edf6",
+  "salt": "0x32802b41e7b5d9ee88a848afee1ef1d1f1c417efa15553c79ffbb623c900297b",
+  "rationale": "Net read bullish (0.36). Strongest evidence: elfa -0.91 (KOL mindshare cooling); allora +0.27 (Allora ML forecast leans long); nansen +0.29 (Smart money net inflow).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
