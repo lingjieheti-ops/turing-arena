@@ -81,17 +81,25 @@ async function fetchEntries(id: bigint, head: RoundHead, agentIds: bigint[]): Pr
   const settlePrice = head.settlePrice ?? 0n;
   const actualBps = entryPrice > 0n ? Number(((settlePrice - entryPrice) * 10000n) / entryPrice) : 0;
 
-  // Read every agent's entry in parallel (the flaky RPC is handled by withRetry).
-  const raw = await Promise.all(
-    agentIds.map((aid) =>
-      withRetry(
-        () => publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getEntry", args: [id, aid] }),
-        2,
-      )
-        .then((e) => ({ aid, e: e as RawEntry }))
-        .catch(() => null),
-    ),
-  );
+  // Read each agent's entry in small chunks (the flaky RPC is handled by
+  // withRetry, but a wide burst across a dozen+ agents still chokes it, so we
+  // cap peak in-flight reads rather than firing all entries at once).
+  const raw: ({ aid: bigint; e: RawEntry } | null)[] = [];
+  const CHUNK = 5;
+  for (let i = 0; i < agentIds.length; i += CHUNK) {
+    raw.push(
+      ...(await Promise.all(
+        agentIds.slice(i, i + CHUNK).map((aid) =>
+          withRetry(
+            () => publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getEntry", args: [id, aid] }),
+            2,
+          )
+            .then((e) => ({ aid, e: e as RawEntry }))
+            .catch(() => null),
+        ),
+      )),
+    );
+  }
   const entries: ReasonEntry[] = raw
     .filter((x): x is { aid: bigint; e: RawEntry } => x !== null && x.e.revealed)
     .map(({ aid, e }) => ({

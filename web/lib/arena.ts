@@ -165,7 +165,14 @@ export async function getLeaderboard(limit = 50): Promise<AgentUI[]> {
   )) as bigint;
   const n = Math.min(Number(total), limit);
   const ids = Array.from({ length: n }, (_, i) => BigInt(i + 1));
-  const agents = await Promise.all(ids.map(readAgent));
+  // Read in small chunks: with a dozen+ agents, firing every agent's 4-read
+  // batch at once (e.g. 13 x 4 = 52 concurrent) chokes the flaky public RPC and
+  // silently drops agents from the board. Keep peak in-flight low instead.
+  const agents: (AgentUI | null)[] = [];
+  const CHUNK = 4;
+  for (let i = 0; i < ids.length; i += CHUNK) {
+    agents.push(...(await Promise.all(ids.slice(i, i + CHUNK).map(readAgent))));
+  }
   return (agents.filter(Boolean) as AgentUI[]).sort((a, b) =>
     b.score > a.score ? 1 : b.score < a.score ? -1 : 0,
   );
