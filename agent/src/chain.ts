@@ -139,12 +139,14 @@ export async function registerAgent(card: AgentCardInput): Promise<bigint> {
 export async function reportPrice(symbol: string, price: number, source = "agent:manual"): Promise<Hex> {
   requireDeployed();
   const wallet = getWallet();
-  return wallet.writeContract({
+  const hash = await wallet.writeContract({
     address: ORACLE(),
     abi: reporterPriceOracleAbi,
     functionName: "reportPrice",
     args: [assetId(symbol), toOraclePrice(price), source],
   });
+  await publicClient.waitForTransactionReceipt({ hash });
+  return hash;
 }
 
 export async function readOraclePrice(symbol: string): Promise<bigint> {
@@ -220,12 +222,14 @@ export async function commitDecision(roundId: bigint, agentId: bigint, decision:
     rationaleHash,
     salt,
   });
-  return wallet.writeContract({
+  const hash = await wallet.writeContract({
     address: POA(),
     abi: proofOfAlphaAbi,
     functionName: "commit",
     args: [roundId, agentId, commitHash],
   });
+  await publicClient.waitForTransactionReceipt({ hash });
+  return hash;
 }
 
 export async function revealDecision(roundId: bigint, agentId: bigint): Promise<Hex> {
@@ -233,23 +237,27 @@ export async function revealDecision(roundId: bigint, agentId: bigint): Promise<
   const state = loadCommitState(roundId, agentId);
   if (!state) throw new Error(`No saved commit for round ${roundId} agent ${agentId} (did this process commit it?)`);
   const wallet = getWallet();
-  return wallet.writeContract({
+  const hash = await wallet.writeContract({
     address: POA(),
     abi: proofOfAlphaAbi,
     functionName: "reveal",
     args: [roundId, agentId, BigInt(state.predictedBps), state.confidence, state.rationaleHash, state.salt],
   });
+  await publicClient.waitForTransactionReceipt({ hash });
+  return hash;
 }
 
 export async function settleRound(roundId: bigint, maxAgents = 200): Promise<Hex> {
   requireDeployed();
   const wallet = getWallet();
-  return wallet.writeContract({
+  const hash = await wallet.writeContract({
     address: POA(),
     abi: proofOfAlphaAbi,
     functionName: "settle",
     args: [roundId, BigInt(maxAgents)],
   });
+  await publicClient.waitForTransactionReceipt({ hash });
+  return hash;
 }
 
 export async function getAgentStats(agentId: bigint) {
@@ -269,10 +277,12 @@ export async function executeChampionTrade(roundId: bigint, amountIn: bigint, mi
   }
   const wallet = getWallet();
   const deadline = BigInt(Math.floor(Date.now() / 1000) + 600);
-  return wallet.writeContract({
+  const hash = await wallet.writeContract({
     address: vault as Address,
     abi: championVaultAbi,
     functionName: "executeChampionTrade",
     args: [roundId, amountIn, minOut, deadline],
   });
+  await publicClient.waitForTransactionReceipt({ hash });
+  return hash;
 }

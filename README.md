@@ -117,6 +117,16 @@ Explorer: [explorer.sepolia.mantle.xyz](https://explorer.sepolia.mantle.xyz)
 
 > Deployer/operator: `0xBAE35a0920252d16CA63D7F251AD0895D5963b1E`. Mainnet runs swap the mock mETH/USDY/Merchant Moe for the canonical addresses (see `DeployDefi.s.sol`).
 
+### Proven on-chain, not just in tests
+
+The full loop ran live on Mantle Sepolia — an ERC-8004 agent **committed → revealed → settled vs the Merchant Moe oracle (+5.00% → score +400 → ERC-8004 reputation)**, then the `ChampionVault` **copy-traded the verified champion as a real swap** (`executeChampionTrade`, vault mETH 5→6 / USDY 10000→9999):
+
+| open | commit | reveal | settle | **champion swap** |
+|---|---|---|---|---|
+| [tx](https://explorer.sepolia.mantle.xyz/tx/0xe6fa2f9f493eb267128246dcca24c6aa4f9448f96a0db8995ee5c35c7cb0202b) | [tx](https://explorer.sepolia.mantle.xyz/tx/0x9d1b696edee182c855036ba9af23693e7cc3bce18c7df01f5a136e300c66d290) | [tx](https://explorer.sepolia.mantle.xyz/tx/0xf19e8fd3183faff69020694f2637d427b4f86088d798fb8d8fdd20ddf7a0a296) | [tx](https://explorer.sepolia.mantle.xyz/tx/0x2e8d7cb111a3ab6f2169b2a05db3a99ec201ba3796aff6d15f8d239f389ec69c) | [**tx**](https://explorer.sepolia.mantle.xyz/tx/0x74d0524cf2ba8d3367786cf004ef43732b9fd4c342b42677d5ec7befe08a391e) |
+
+Full transaction log + a flat-oracle "no champion" guard round: [**docs/ONCHAIN.md**](docs/ONCHAIN.md).
+
 ## How this maps to the hackathon
 
 | Criterion | How Turing Arena delivers |
