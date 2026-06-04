@@ -136,9 +136,13 @@ export async function getRecentRounds(limit = 6): Promise<RoundUI[]> {
   for (let id = count; id >= 1n && ids.length < limit; id--) ids.push(id);
   // allSettled: a single dropped RPC read for one round must not blank the rest.
   const results = await Promise.allSettled(ids.map(readRound));
-  return results
+  const ok = results
     .filter((s): s is PromiseFulfilledResult<RoundUI> => s.status === "fulfilled")
     .map((s) => s.value);
+  // Rounds exist on-chain but every read dropped: that's an RPC choke, not an
+  // empty arena. Throw so callers keep last-good data instead of flashing empty.
+  if (count > 0n && ids.length > 0 && ok.length === 0) throw new Error("all round reads failed");
+  return ok;
 }
 
 export async function getActiveRound(): Promise<RoundUI | null> {

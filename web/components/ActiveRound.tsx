@@ -39,7 +39,9 @@ export function ActiveRound() {
         const r = await getActiveRound();
         if (alive) setRound(r);
       } catch {
-        if (alive) setRound(null);
+        // Transient RPC choke: keep whatever we last showed (don't flash "No
+        // live round"); the 30s poll recovers. First-load stays on the spinner.
+        if (alive) setRound((prev) => prev);
       }
     };
     load();
