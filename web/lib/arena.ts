@@ -66,7 +66,7 @@ export function phaseOf(
 
 /// Retry a flaky read a few times — the public Mantle Sepolia RPC drops requests
 /// under load, and a single drop must not blank the whole arena.
-async function withRetry<T>(fn: () => Promise<T>, tries = 4): Promise<T> {
+export async function withRetry<T>(fn: () => Promise<T>, tries = 4): Promise<T> {
   let last: unknown;
   for (let i = 0; i < tries; i++) {
     try {

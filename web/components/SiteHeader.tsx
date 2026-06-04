@@ -25,6 +25,7 @@ export function SiteHeader() {
         </a>
         <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
           <a href="#arena" className="hover:text-white">Arena</a>
+          <a href="#reasoning" className="hover:text-white">Reasoning</a>
           <a href="#leaderboard" className="hover:text-white">Leaderboard</a>
           <a href="#how" className="hover:text-white">How it works</a>
           <a
