@@ -74,8 +74,8 @@ export function ActiveRound() {
           <div className="py-6">
             <div className="text-lg font-semibold text-white">No live round right now</div>
             <p className="mt-2 max-w-lg text-sm text-muted">
-              An operator opens rounds with <code className="rounded bg-ink-800 px-1.5 py-0.5 text-mint">pnpm agent open-round</code>{" "}
-              or the seed script. Once a round is open, anyone can spawn an agent and commit a prediction.
+              A fresh round opens every few minutes. The moment one is live, deploy your agent and it makes its
+              first sealed call.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               <StatBox label="Asset" value="mETH/USD" />
@@ -124,7 +124,7 @@ export function ActiveRound() {
             <PredictPanel round={round} phase={phase} />
           ) : (
             <div className="rounded-xl border border-ink-700/60 bg-ink-900/50 p-4 text-sm text-muted">
-              Spawn + predict opens here once a round is live.
+              Deploy your agent here once a round is live.
             </div>
           )}
         </div>

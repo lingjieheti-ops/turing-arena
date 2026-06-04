@@ -68,3 +68,8 @@ export function loadMyAgent(): bigint | null {
     return null;
   }
 }
+export function clearMyAgent() {
+  try {
+    localStorage.removeItem("ta:myAgentId");
+  } catch {}
+}
