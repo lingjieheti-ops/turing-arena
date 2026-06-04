@@ -132,7 +132,7 @@ export function ReasoningFeed() {
                             </span>
                             <span className="text-xs leading-relaxed text-ink-100/70">
                               {v.text}
-                              {v.model ? <span className="text-muted"> — {v.model}</span> : null}
+                              {v.model ? <span className="text-muted"> · {v.model}</span> : null}
                             </span>
                           </div>
                         ) : null}

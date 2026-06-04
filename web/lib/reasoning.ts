@@ -54,66 +54,80 @@ async function getTotalAgents(): Promise<number> {
   return Number(n);
 }
 
-async function roundResult(id: bigint, agentIds: bigint[]): Promise<ResultRound | null> {
-  const r = (await withRetry(() =>
-    publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getRound", args: [id] }),
-  )) as {
-    title: string;
-    entryPrice: bigint;
-    settlePrice: bigint;
-    settled: boolean;
-    topAgentId: bigint;
-    topScore: bigint;
-  };
-  if (!r.settled) return null;
-  const entryPrice = r.entryPrice ?? 0n;
-  const settlePrice = r.settlePrice ?? 0n;
+interface RoundHead {
+  title: string;
+  entryPrice: bigint;
+  settlePrice: bigint;
+  settled: boolean;
+  topAgentId: bigint;
+  topScore: bigint;
+}
+
+async function fetchHead(id: bigint): Promise<{ id: bigint; head: RoundHead } | null> {
+  try {
+    const head = (await withRetry(
+      () => publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getRound", args: [id] }),
+      2,
+    )) as RoundHead;
+    return { id, head };
+  } catch {
+    return null;
+  }
+}
+
+async function fetchEntries(id: bigint, head: RoundHead, agentIds: bigint[]): Promise<ResultRound> {
+  const entryPrice = head.entryPrice ?? 0n;
+  const settlePrice = head.settlePrice ?? 0n;
   const actualBps = entryPrice > 0n ? Number(((settlePrice - entryPrice) * 10000n) / entryPrice) : 0;
 
-  const entries: ReasonEntry[] = [];
-  for (const aid of agentIds) {
-    try {
-      const e = (await withRetry(
+  // Read every agent's entry in parallel (the flaky RPC is handled by withRetry).
+  const raw = await Promise.all(
+    agentIds.map((aid) =>
+      withRetry(
         () => publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getEntry", args: [id, aid] }),
         2,
-      )) as RawEntry;
-      if (e.revealed) {
-        entries.push({
-          agentId: aid,
-          predictedBps: Number(e.predictedBps),
-          confidence: Number(e.confidence),
-          rationaleHash: e.rationaleHash,
-          scored: e.scored,
-          score: e.score,
-        });
-      }
-    } catch {
-      /* tolerate a dropped read for one agent */
-    }
-  }
-  entries.sort((a, b) => (b.score > a.score ? 1 : b.score < a.score ? -1 : 0));
-  return { id, title: r.title, entryPrice, settlePrice, actualBps, topAgentId: r.topAgentId, topScore: r.topScore, entries };
+      )
+        .then((e) => ({ aid, e: e as RawEntry }))
+        .catch(() => null),
+    ),
+  );
+  const entries: ReasonEntry[] = raw
+    .filter((x): x is { aid: bigint; e: RawEntry } => x !== null && x.e.revealed)
+    .map(({ aid, e }) => ({
+      agentId: aid,
+      predictedBps: Number(e.predictedBps),
+      confidence: Number(e.confidence),
+      rationaleHash: e.rationaleHash,
+      scored: e.scored,
+      score: e.score,
+    }))
+    .sort((a, b) => (b.score > a.score ? 1 : b.score < a.score ? -1 : 0));
+
+  return { id, title: head.title, entryPrice, settlePrice, actualBps, topAgentId: head.topAgentId, topScore: head.topScore, entries };
 }
 
 /// The last `limit` settled rounds, each with every agent's revealed call + score.
+/// Two bounded parallel passes (scan heads, then entries) so it paints fast.
 export async function getResultsFeed(limit = 3): Promise<ResultRound[]> {
   const count = (await withRetry(() =>
     publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "roundCount" }),
   )) as bigint;
   const n = await getTotalAgents();
   const agentIds = Array.from({ length: n }, (_, i) => BigInt(i + 1));
-  const out: ResultRound[] = [];
-  // Walk back from the head, but don't scan forever on a sparse history.
-  const floor = count > 12n ? count - 12n : 1n;
-  for (let id = count; id >= floor && out.length < limit; id--) {
-    try {
-      const rr = await roundResult(id, agentIds);
-      if (rr && rr.entries.length > 0) out.push(rr);
-    } catch {
-      /* skip a bad round */
-    }
-  }
-  return out;
+
+  const floor = count > 10n ? count - 10n : 1n;
+  const ids: bigint[] = [];
+  for (let id = count; id >= floor; id--) ids.push(id);
+
+  // Pass 1: find the settled rounds (parallel head reads).
+  const heads = (await Promise.all(ids.map(fetchHead))).filter(
+    (x): x is { id: bigint; head: RoundHead } => x !== null && x.head.settled,
+  );
+  const chosen = heads.slice(0, limit);
+
+  // Pass 2: pull each chosen round's entries (parallel), keep ones with reveals.
+  const rounds = await Promise.all(chosen.map(({ id, head }) => fetchEntries(id, head, agentIds)));
+  return rounds.filter((r) => r.entries.length > 0);
 }
 
 export interface VerifiedRationale {
