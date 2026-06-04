@@ -103,12 +103,19 @@ pnpm web                 # http://localhost:3000  (deploy to Vercel for the publ
 
 ## Deployed addresses (Mantle Sepolia · 5003)
 
+Explorer: [explorer.sepolia.mantle.xyz](https://explorer.sepolia.mantle.xyz)
+
 | Contract | Address |
 |---|---|
-| IdentityRegistry (ERC-8004) | `<filled after deploy — see contracts/deployments/5003.json>` |
-| ReputationRegistry (ERC-8004) | `<filled after deploy>` |
-| ReporterPriceOracle | `<filled after deploy>` |
-| **ProofOfAlpha** | `<filled after deploy>` |
+| **ProofOfAlpha** | [`0x4f5AFD41BDb602C824e5a86F19E95314180144cf`](https://explorer.sepolia.mantle.xyz/address/0x4f5AFD41BDb602C824e5a86F19E95314180144cf) |
+| IdentityRegistry (ERC-8004) | [`0xbB174b6D9a8ca439d5B3735b6570AAD3FEE8405F`](https://explorer.sepolia.mantle.xyz/address/0xbB174b6D9a8ca439d5B3735b6570AAD3FEE8405F) |
+| ReputationRegistry (ERC-8004) | [`0x3747d1bB2AaC1dC9B7AF143A21E7b559A5AAE7dB`](https://explorer.sepolia.mantle.xyz/address/0x3747d1bB2AaC1dC9B7AF143A21E7b559A5AAE7dB) |
+| ReporterPriceOracle | [`0x31510d8a6Bbe5eEF2a315099AD2F94B504a4EEe3`](https://explorer.sepolia.mantle.xyz/address/0x31510d8a6Bbe5eEF2a315099AD2F94B504a4EEe3) |
+| MantleDexOracle | [`0x53cf4b4E989dBbDd7009c5108C21AE765f82480b`](https://explorer.sepolia.mantle.xyz/address/0x53cf4b4E989dBbDd7009c5108C21AE765f82480b) |
+| ChampionVault (Merchant Moe copy-trade) | [`0x45d2b642deaea7b1441DFbedeD300131e668CA05`](https://explorer.sepolia.mantle.xyz/address/0x45d2b642deaea7b1441DFbedeD300131e668CA05) |
+| Mock mETH / Mock USDY (testnet demo) | `0xDfFe93fe7c48eBd526a06C6c5e57525a5b2409e7` / `0x21C0F50cE17beDcb1BA0Ed348f350784ac4F008D` |
+
+> Deployer/operator: `0xBAE35a0920252d16CA63D7F251AD0895D5963b1E`. Mainnet runs swap the mock mETH/USDY/Merchant Moe for the canonical addresses (see `DeployDefi.s.sol`).
 
 ## How this maps to the hackathon
 
