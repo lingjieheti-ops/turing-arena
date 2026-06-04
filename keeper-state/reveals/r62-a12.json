@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 36,
+  "confidence": 34,
+  "rationaleHash": "0xbcd6132271db0a9581866dc0e88adcd6424fe188227913a1c613df43ec1b47e3",
+  "salt": "0x5cde91168339d2fee7a91f90d4ee709b44e37ba4c2af24739a580a3923a05a6c",
+  "rationale": "Net read bullish (0.06). Strongest evidence: momentum -0.27 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.57 (Smart money net outflow); surf +1.00 (Market momentum positive).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

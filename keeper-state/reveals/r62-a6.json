@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 197,
+  "confidence": 53,
+  "rationaleHash": "0xa8303a2c0ea6789229399fb1b49ea57f66b6766a8860fa8e35e56c11d02101c8",
+  "salt": "0xcb955519583da961c0e6d03a914a9584118c9e3b5e4f2ce3ed579cd7ec585e26",
+  "rationale": "Net read bullish (0.33). Strongest evidence: momentum -0.27 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.57 (Smart money net outflow); surf +1.00 (Market momentum positive).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

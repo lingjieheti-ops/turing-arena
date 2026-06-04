@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 13,
+  "confidence": 32,
+  "rationaleHash": "0xdbb8ac2ca2541b1c57d612e1f4736cc37a90f87b49a4856071e6d7b73ec60a37",
+  "salt": "0x365c79abcac0666cb2e6dd764ab96c8e3e8b5de8ab7f4b30984e68fcc51b9ad3",
+  "rationale": "Net read neutral (0.02). Strongest evidence: momentum -0.27 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.57 (Smart money net outflow); surf +1.00 (Market momentum positive).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
