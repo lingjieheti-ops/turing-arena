@@ -17,6 +17,11 @@ const HOUSE_EMOJI: Record<string, string> = {
   "Michael Saylor": "🟠",
   "Warren Buffett": "🎩",
   "Vitalik Buterin": "🔷",
+  "Sam Altman": "🧠",
+  "Cathie Wood": "🏹",
+  "Arthur Hayes": "🎲",
+  "Peter Schiff": "🐻",
+  "Ray Dalio": "🌦️",
 };
 
 export function isImageAvatar(s: string): boolean {

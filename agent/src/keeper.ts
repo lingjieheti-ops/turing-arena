@@ -532,6 +532,11 @@ const PERSONAS: PersonaDef[] = [
   { name: "Michael Saylor", kind: "AI", description: "Maximalist; structurally long forever, buys every dip.", signals: ["mantle-onchain"] },
   { name: "Warren Buffett", kind: "AI", description: "Patient value investor; fades hype, greedy when others panic.", signals: ["momentum"] },
   { name: "Vitalik Buterin", kind: "AI", description: "Fundamentals-first builder; weighs the long term, ignores noise.", signals: ["allora", "mantle-onchain"] },
+  { name: "Sam Altman", kind: "AI", description: "AGI optimist; bets big on the exponential, moonshot-bullish.", signals: ["allora", "surf"] },
+  { name: "Cathie Wood", kind: "AI", description: "Disruptive-innovation conviction; rides growth momentum hard.", signals: ["momentum", "surf"] },
+  { name: "Arthur Hayes", kind: "AI", description: "Leverage-loving macro degen; amplifies the trend.", signals: ["momentum", "nansen"] },
+  { name: "Peter Schiff", kind: "AI", description: "Gold bug and perma-bear; fades every crypto rally.", signals: ["momentum"] },
+  { name: "Ray Dalio", kind: "AI", description: "All-weather macro; diversified, measured, low-conviction.", signals: ["allora", "mantle-onchain"] },
 ];
 
 /// FNV-1a → [0,1), deterministic. (Mirrors agent/src/signals/util.hash01.)
@@ -623,6 +628,11 @@ const STRATEGY_BY_NAME: Record<string, string> = {
   "Michael Saylor": "Bitcoin-maximalist long",
   "Warren Buffett": "value contrarian",
   "Vitalik Buterin": "fundamentals long-term",
+  "Sam Altman": "AGI moonshot",
+  "Cathie Wood": "disruptive innovation",
+  "Arthur Hayes": "leverage macro",
+  "Peter Schiff": "perma-bear gold bug",
+  "Ray Dalio": "macro all-weather",
 };
 
 function agentCardUri(p: PersonaDef): string {
@@ -1025,7 +1035,15 @@ async function tick(): Promise<void> {
   if (await hasOpenCommitWindow()) {
     log("  ✓ a commit window is already open — not opening another");
   } else {
-    await openRoundAndCommit(agents, price, cursor);
+    try {
+      await openRoundAndCommit(agents, price, cursor);
+    } catch (e) {
+      if (isConcurrentKeeperError(e)) {
+        log(`  ⏭ another keeper opened this round first — skipping (${(e as Error)?.message?.split("\n")[0]})`);
+      } else {
+        throw e;
+      }
+    }
   }
 
   // E.5: run any user-deployed agents that delegated control to us (auto-pilot).
@@ -1043,9 +1061,33 @@ async function tick(): Promise<void> {
   log("✓ tick complete");
 }
 
+/// Errors that just mean "another keeper instance got there first". When the
+/// cloud cron and a local fast loop tick at the same moment they can race on the
+/// shared operator wallet's nonce, or on already-final round state. These are
+/// harmless: the other keeper did the work, so the tick stays green, not red.
+function isConcurrentKeeperError(e: unknown): boolean {
+  const m = ((e as Error)?.message || String(e)).toLowerCase();
+  return (
+    m.includes("nonce too low") ||
+    m.includes("nonce is too low") ||
+    m.includes("already known") ||
+    m.includes("replacement transaction underpriced") ||
+    m.includes("alreadycommitted") ||
+    m.includes("alreadyrevealed") ||
+    m.includes("commitclosed") ||
+    m.includes("revealclosed") ||
+    m.includes("already settled") ||
+    m.includes("nothingcommitted")
+  );
+}
+
 tick()
   .then(() => process.exit(0))
   .catch((e) => {
+    if (isConcurrentKeeperError(e)) {
+      console.log(`↪ another keeper raced this tick (harmless): ${(e as Error)?.message?.split("\n")[0]}`);
+      process.exit(0);
+    }
     console.error(`✗ keeper tick failed: ${(e as Error)?.message || e}`);
     process.exit(1);
   });
