@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 20,
+  "confidence": 32,
+  "rationaleHash": "0x3312da1a06f3ff7f6b3a9cc0fc90e69035660374ef5f799cbff388eaf4308ffd",
+  "salt": "0x4e030e1d478a04d470884e1865dedab1fc674ff7dc2773c6a06bad7ccbbe08b0",
+  "rationale": "Net read neutral (0.03). Strongest evidence: elfa -0.91 (KOL mindshare cooling); allora +0.26 (Allora ML forecast leans long); nansen +0.28 (Smart money net inflow).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
