@@ -21,6 +21,7 @@ import { type AgentCall, STRATEGIES, type Strategy, computeCall, fetchMomentum, 
 import { ConnectButton } from "./ConnectButton";
 
 const ZERO_HASH = "0x0000000000000000000000000000000000000000000000000000000000000000";
+const ZERO_ADDR = "0x0000000000000000000000000000000000000000";
 const FAUCET_URL = "https://faucet.sepolia.mantle.xyz";
 
 const ERROR_ABI = [
@@ -93,8 +94,10 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
   const [revealed, setRevealed] = useState(false);
   const [hasPreimage, setHasPreimage] = useState(false);
   const [call, setCall] = useState<AgentCall | null>(null);
+  const [autopilot, setAutopilot] = useState<boolean | null>(null);
 
-  // Load my agent + its on-chain card (name + strategy) so it can make calls.
+  // Load my agent + its on-chain card (name + strategy) + whether it's delegated
+  // its operation to the keeper (auto-pilot).
   useEffect(() => {
     const id = loadMyAgent();
     setMyAgent(id);
@@ -107,6 +110,10 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
         setStrategy(strategyById(c.strategy));
       })
       .catch(() => setStrategy(strategyById(undefined)));
+    publicClient
+      .readContract({ address: deployment.identityRegistry, abi: identityRegistryAbi, functionName: "getAgentWallet", args: [id] })
+      .then((w) => setAutopilot((w as string).toLowerCase() !== ZERO_ADDR))
+      .catch(() => setAutopilot(false));
   }, []);
 
   // Reconcile commit/reveal state with the chain (not just localStorage).
@@ -180,6 +187,47 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
       setAgentName(name);
       setStrategy(deployStrat);
       setMsg({ text: `${name} is live as agent #${id}. It trades for you now.`, tone: "ok", href: explorer(hash) });
+    } catch (e) {
+      setMsg({ text: friendlyError(e), tone: "err" });
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  // Delegate operation to the keeper (one signature) so the agent competes every
+  // round on its own. The keeper signs the EIP-712 authorization server-side.
+  async function enableAutopilot() {
+    if (!myAgent) return;
+    setBusy(true);
+    setMsg({ text: "Setting up auto-pilot…", tone: "info" });
+    try {
+      const res = await fetch("/api/autopilot", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ agentId: myAgent.toString() }),
+      });
+      if (res.status === 503) {
+        setMsg({
+          text: "Auto-pilot isn't wired on this deployment yet. Your agent still makes its call each round below.",
+          tone: "info",
+        });
+        return;
+      }
+      if (!res.ok) throw new Error("could not fetch the delegation signature");
+      const { keeperWallet, deadline, signature } = (await res.json()) as {
+        keeperWallet: `0x${string}`;
+        deadline: string;
+        signature: `0x${string}`;
+      };
+      const hash = await writeContractAsync({
+        address: deployment.identityRegistry,
+        abi: identityRegistryAbi,
+        functionName: "setAgentWallet",
+        args: [myAgent, keeperWallet, BigInt(deadline), signature],
+      });
+      await publicClient.waitForTransactionReceipt({ hash });
+      setAutopilot(true);
+      setMsg({ text: "Auto-pilot on. Your agent now competes every round on its own.", tone: "ok", href: explorer(hash) });
     } catch (e) {
       setMsg({ text: friendlyError(e), tone: "err" });
     } finally {
@@ -317,45 +365,60 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
             Need test MNT for gas? Grab some from the faucet ↗
           </a>
         </div>
-      ) : committed && !revealed && !hasPreimage ? (
-        <p className="text-xs text-human">
-          Your agent committed from another device. Without the saved salt this browser can&apos;t reveal it.
-        </p>
-      ) : phase === "commit" && !committed ? (
-        <div className="space-y-3">
-          {call ? (
-            <div className="rounded-lg border border-ink-700/60 bg-ink-900/40 px-3 py-2.5">
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-muted">Its call this round</span>
-                <span className={`font-mono ${call.direction === "UP" ? "text-up" : "text-down"}`}>
-                  {call.direction === "UP" ? "▲" : "▼"} {call.predictedBps >= 0 ? "+" : ""}
-                  {call.predictedBps}bps @ {call.confidence}%
-                </span>
-              </div>
-              <div className="mt-1 text-xs text-ink-100/60">{call.rationale}</div>
-            </div>
-          ) : (
-            <div className="text-xs text-muted">Your agent is reading the market…</div>
-          )}
-          <button className="btn-primary w-full" onClick={commitCall} disabled={busy || !call}>
-            {busy ? "Sealing…" : "🔒 Seal my agent's call"}
-          </button>
-          <p className="text-[11px] text-muted">
-            The call is decided by your strategy and sealed on-chain. Reveal opens after the window.
-          </p>
-        </div>
-      ) : phase === "commit" && committed ? (
-        <p className="text-xs text-mint">Your agent&apos;s call is sealed. Come back after the window to reveal.</p>
-      ) : phase === "reveal" && committed && !revealed ? (
-        <button className="btn-primary w-full" onClick={reveal} disabled={busy}>
-          {busy ? "Revealing…" : "🔓 Reveal my agent's call"}
-        </button>
-      ) : phase === "reveal" && !committed ? (
-        <p className="text-xs text-muted">Your agent sat this round out.</p>
       ) : (
-        <p className="text-xs text-muted">
-          {revealed ? "Revealed. Awaiting settlement." : phase === "settled" ? "Round settled." : "Settling…"}
-        </p>
+        <div className="space-y-3">
+          {autopilot ? (
+            <div className="rounded-lg border border-mint/30 bg-mint/5 px-3 py-2 text-xs text-mint">
+              ⚡ Auto-pilot on. {agentName} competes every round on its own. Track its record on the leaderboard
+              and in the reasoning feed below.
+            </div>
+          ) : autopilot === false ? (
+            <button className="btn-primary w-full" onClick={enableAutopilot} disabled={busy}>
+              {busy ? "Working…" : "⚡ Enable auto-pilot (compete passively)"}
+            </button>
+          ) : null}
+
+          {!autopilot ? (
+            committed && !revealed && !hasPreimage ? (
+              <p className="text-xs text-human">
+                Your agent committed from another device. Without the saved salt this browser can&apos;t reveal it.
+              </p>
+            ) : phase === "commit" && !committed ? (
+              <div className="space-y-3">
+                {call ? (
+                  <div className="rounded-lg border border-ink-700/60 bg-ink-900/40 px-3 py-2.5">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-muted">Its call this round</span>
+                      <span className={`font-mono ${call.direction === "UP" ? "text-up" : "text-down"}`}>
+                        {call.direction === "UP" ? "▲" : "▼"} {call.predictedBps >= 0 ? "+" : ""}
+                        {call.predictedBps}bps @ {call.confidence}%
+                      </span>
+                    </div>
+                    <div className="mt-1 text-xs text-ink-100/60">{call.rationale}</div>
+                  </div>
+                ) : (
+                  <div className="text-xs text-muted">Your agent is reading the market…</div>
+                )}
+                <button className="btn-primary w-full" onClick={commitCall} disabled={busy || !call}>
+                  {busy ? "Sealing…" : "🔒 Seal my agent's call"}
+                </button>
+                <p className="text-[11px] text-muted">Or flip on auto-pilot above and never touch it again.</p>
+              </div>
+            ) : phase === "commit" && committed ? (
+              <p className="text-xs text-mint">Your agent&apos;s call is sealed. Come back after the window to reveal.</p>
+            ) : phase === "reveal" && committed && !revealed ? (
+              <button className="btn-primary w-full" onClick={reveal} disabled={busy}>
+                {busy ? "Revealing…" : "🔓 Reveal my agent's call"}
+              </button>
+            ) : phase === "reveal" && !committed ? (
+              <p className="text-xs text-muted">Your agent sat this round out.</p>
+            ) : (
+              <p className="text-xs text-muted">
+                {revealed ? "Revealed. Awaiting settlement." : phase === "settled" ? "Round settled." : "Settling…"}
+              </p>
+            )
+          ) : null}
+        </div>
       )}
 
       {msg ? (

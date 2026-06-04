@@ -39,13 +39,14 @@ import {
 import { privateKeyToAccount } from "viem/accounts";
 import {
   type Signal,
+  type SignalBundle,
   assetId,
   chainById,
   identityRegistryAbi,
   proofOfAlphaAbi,
   reporterPriceOracleAbi,
 } from "@turing-arena/shared";
-import { decide } from "./brain";
+import { type Persona, decide } from "./brain";
 import { CAST } from "./personas";
 import { gatherSignals } from "./signals";
 
@@ -827,6 +828,156 @@ async function openRoundAndCommit(agents: AgentsFile, price: number, cursor: Cur
 }
 
 // --------------------------------------------------------------------------- //
+//  E.5 Auto-pilot — run user-deployed agents that delegated control to us
+// --------------------------------------------------------------------------- //
+
+const ZERO32 = `0x${"0".repeat(64)}` as Hex;
+
+/// Strategy id -> conviction transform, mirroring web/lib/strategy.ts so a user
+/// agent reasons in the keeper exactly as the deploy UI advertised.
+const STRATEGY_BIAS: Record<string, (m: number) => number> = {
+  momentum: (m) => m * 1.7,
+  contrarian: (m) => -m * 1.1,
+  fusion: (m) => 0.25 + m * 0.5,
+  long: (m) => 0.35 + m * 0.25,
+  scout: (m) => 0.15 + m * 0.6,
+};
+
+function decodeAgentCard(uri: string): { name?: string; strategy?: string } {
+  try {
+    if (uri.startsWith("data:application/json;base64,")) {
+      return JSON.parse(Buffer.from(uri.slice("data:application/json;base64,".length), "base64").toString("utf8"));
+    }
+    if (uri.startsWith("data:application/json,")) {
+      return JSON.parse(decodeURIComponent(uri.slice("data:application/json,".length)));
+    }
+  } catch {
+    /* malformed card */
+  }
+  return {};
+}
+
+function personaFromStrategy(name: string, stratId: string): Persona {
+  return { name, kind: "AI", style: `a user-deployed ${stratId} agent`, bias: STRATEGY_BIAS[stratId], useLlm: false };
+}
+
+async function findOpenCommitRound(): Promise<bigint | null> {
+  const count = await roundCount();
+  const now = nowSec();
+  for (let id = count; id >= 1n && id > count - 6n; id--) {
+    try {
+      const r = await getRound(id);
+      if (!r.settled && now <= Number(r.commitDeadline)) return id;
+    } catch {
+      /* skip */
+    }
+  }
+  return null;
+}
+
+/// Each tick: find the open round and commit, on their behalf, any user agent
+/// that (a) bound our wallet via setAgentWallet and (b) carries a strategy in
+/// its card. Reveal + settle for them ride the existing per-file paths.
+async function commitAutopilots(price: number, cursor: CursorFile, houseIds: Set<number>): Promise<void> {
+  let total: bigint;
+  try {
+    total = (await publicClient.readContract({
+      address: IDENTITY_REGISTRY as Address,
+      abi: identityRegistryAbi,
+      functionName: "totalAgents",
+    })) as bigint;
+  } catch {
+    return;
+  }
+  if (Number(total) <= houseIds.size + 1) return; // only the house agents exist
+
+  const roundId = await findOpenCommitRound();
+  if (roundId === null) return;
+
+  const keeper = account().address.toLowerCase();
+  const mom = momentumSignal(roundId, price, cursor);
+  const momLive = typeof cursor.lastPrice === "number" && cursor.lastPrice > 0;
+  let bundle: SignalBundle | null = null;
+
+  for (let id = 1n; id <= total; id++) {
+    if (houseIds.has(Number(id))) continue;
+    let wallet: string;
+    let uri: string;
+    try {
+      wallet = (await publicClient.readContract({
+        address: IDENTITY_REGISTRY as Address,
+        abi: identityRegistryAbi,
+        functionName: "getAgentWallet",
+        args: [id],
+      })) as string;
+      if (wallet.toLowerCase() !== keeper) continue;
+      uri = (await publicClient.readContract({
+        address: IDENTITY_REGISTRY as Address,
+        abi: identityRegistryAbi,
+        functionName: "agentURI",
+        args: [id],
+      })) as string;
+    } catch {
+      continue;
+    }
+    const card = decodeAgentCard(uri);
+    if (!card.strategy || !STRATEGY_BIAS[card.strategy]) continue;
+
+    try {
+      const e = (await publicClient.readContract({
+        address: PROOF_OF_ALPHA as Address,
+        abi: proofOfAlphaAbi,
+        functionName: "getEntry",
+        args: [roundId, id],
+      })) as { commitHash: Hex };
+      if (e.commitHash && e.commitHash !== ZERO32) continue; // already called this round
+    } catch {
+      /* tolerate; attempt the commit anyway */
+    }
+
+    if (!bundle) {
+      bundle = await gatherSignals(ASSET, Number(roundId));
+      bundle.signals.push({
+        source: "momentum",
+        score: mom,
+        weight: 0.6,
+        note: `ETH ${mom >= 0 ? "up" : "down"}-momentum${momLive ? " (Pyth, live)" : ""}`,
+        live: momLive,
+      } as Signal);
+    }
+
+    const persona = personaFromStrategy(card.name ?? `Agent #${id}`, card.strategy);
+    try {
+      const { predictedBps, confidence, rationale, model } = await decide(bundle, persona);
+      const rationaleHash = rationaleHashOf(rationale);
+      const salt = randomSalt();
+      const commitHash = computeCommitHash(id, predictedBps, confidence, rationaleHash, salt);
+      writeJson(revealPath(roundId, id), {
+        agentId: Number(id),
+        predictedBps,
+        confidence,
+        rationaleHash,
+        salt,
+        rationale,
+        name: card.name,
+        source: "pyth",
+        model,
+      } as RevealRecord);
+      const h = await send({
+        address: PROOF_OF_ALPHA as Address,
+        abi: proofOfAlphaAbi,
+        functionName: "commit",
+        args: [roundId, id, commitHash],
+      });
+      log(`  🤖 auto-pilot committed ${card.name ?? `#${id}`} (#${id}) ${predictedBps}bps@${confidence} [${model}]  ${explorerTx(h)}`);
+    } catch (e) {
+      if (isBenignRevert(e, ["AlreadyCommitted", "CommitClosed", "NotAgentController"])) continue;
+      log(`     ✗ auto-pilot commit failed (#${id}): ${(e as Error)?.message?.split("\n")[0]}`);
+    }
+  }
+}
+
+// --------------------------------------------------------------------------- //
 //  Tick
 // --------------------------------------------------------------------------- //
 
@@ -859,6 +1010,13 @@ async function tick(): Promise<void> {
     log("  ✓ a commit window is already open — not opening another");
   } else {
     await openRoundAndCommit(agents, price, cursor);
+  }
+
+  // E.5: run any user-deployed agents that delegated control to us (auto-pilot).
+  try {
+    await commitAutopilots(price, cursor, new Set(Object.values(agents)));
+  } catch (e) {
+    log(`  ✗ auto-pilot step error: ${(e as Error)?.message?.split("\n")[0]}`);
   }
 
   // Persist tick state (price drives next tick's momentum; cursor may have moved).
