@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -31,
+  "confidence": 34,
+  "rationaleHash": "0x64770d35c015cbb0fd970c67621168bb40843248789220d080e70332a2287159",
+  "salt": "0xd3fc9d34e3b36dd5599f1f30927f2a17651dc34859861d6517e2311dc200a68d",
+  "rationale": "Net read bearish (-0.05). Strongest evidence: nansen -0.57 (Smart money net outflow); surf -0.99 (Market momentum negative); momentum -0.16 (ETH down-momentum since the last tick (Pyth, live)).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

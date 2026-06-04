@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -173,
+  "confidence": 50,
+  "rationaleHash": "0x80e10cd3ac2f9030dbb7c84f23d97bfe555968bbb755199b9ac3eee0a6d446a4",
+  "salt": "0x5d1ddcba411cfff6af58ca058a622ec5a8ea37f56cfb98aab92cd5f0713b5e63",
+  "rationale": "Net read bearish (-0.29). Strongest evidence: nansen -0.57 (Smart money net outflow); surf -0.99 (Market momentum negative); momentum -0.16 (ETH down-momentum since the last tick (Pyth, live)).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
