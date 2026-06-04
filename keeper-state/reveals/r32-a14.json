@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 128,
+  "confidence": 45,
+  "rationaleHash": "0x70fe5d3a6f30d566fcd581c13db1540fd6418eddf10161e51d364640e3199fc7",
+  "salt": "0x9d5f1854b8ff5a5479e8e40bbb6ddec1047f77ed4ac5a521be7aa68bab06e438",
+  "rationale": "Net read bullish (0.21). Strongest evidence: allora -0.85 (Allora ML forecast leans short); elfa -0.92 (KOL mindshare cooling); surf +0.95 (Market momentum positive).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
