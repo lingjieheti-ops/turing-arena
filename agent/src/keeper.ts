@@ -394,11 +394,27 @@ async function settleDueRounds(cursor: CursorFile): Promise<void> {
         });
         log(`     · settle page  ${explorerTx(h)}`);
       } catch (e) {
-        if (isBenignRevert(e, ["AlreadySettled", "NotYetSettleable"])) break;
-        log(`     ✗ settle revert: ${(e as Error)?.message?.split("\n")[0]}`);
+        // A revert here is usually benign: the round is already fully settled (a
+        // prior page landed) or not settleable yet (the chain clock is a beat
+        // behind at the boundary). Confirm against the chain so we log the real
+        // state rather than a scary "revert" for an expected case.
+        const chk = await getRound(id).catch(() => null);
+        if (chk?.settled) {
+          log(`     ✓ round #${id} fully settled`);
+        } else if (chk && nowSec() < Number(chk.settleTime)) {
+          log(`     · round #${id} not settleable yet; will retry next tick`);
+        } else if (!isBenignRevert(e, ["AlreadySettled", "NotYetSettleable"])) {
+          log(`     ✗ settle revert: ${(e as Error)?.message?.split("\n")[0]}`);
+        }
         break;
       }
-      const after = await getRound(id);
+      // Re-read whether the round finished, tolerating the flaky RPC's read lag:
+      // a stale settled:false here would queue a needless extra (reverting) page.
+      let after = await getRound(id);
+      for (let r = 0; r < 4 && !after.settled; r++) {
+        await new Promise((res) => setTimeout(res, 350));
+        after = await getRound(id);
+      }
       if (after.settled) {
         log(`     ✓ round #${id} fully settled`);
         break;
