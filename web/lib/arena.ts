@@ -57,19 +57,48 @@ export function phaseOf(
   return "settle";
 }
 
+/// Retry a flaky read a few times — the public Mantle Sepolia RPC drops requests
+/// under load, and a single drop must not blank the whole arena.
+async function withRetry<T>(fn: () => Promise<T>, tries = 4): Promise<T> {
+  let last: unknown;
+  for (let i = 0; i < tries; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      last = e;
+      await new Promise((r) => setTimeout(r, 220 * (i + 1)));
+    }
+  }
+  throw last;
+}
+
 export async function getRoundCount(): Promise<bigint> {
-  return publicClient.readContract({
-    address: POA,
-    abi: proofOfAlphaAbi,
-    functionName: "roundCount",
-  }) as Promise<bigint>;
+  return withRetry(
+    () =>
+      publicClient.readContract({
+        address: POA,
+        abi: proofOfAlphaAbi,
+        functionName: "roundCount",
+      }) as Promise<bigint>,
+  );
 }
 
 async function readRound(id: bigint): Promise<RoundUI> {
-  const [r, pc] = await Promise.all([
-    publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getRound", args: [id] }) as Promise<any>,
-    publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "participantCount", args: [id] }) as Promise<bigint>,
-  ]);
+  // getRound is essential (retry it); participantCount is best-effort (default 0).
+  const r = (await withRetry(
+    () => publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getRound", args: [id] }) as Promise<any>,
+  )) as any;
+  let pc = 0n;
+  try {
+    pc = (await publicClient.readContract({
+      address: POA,
+      abi: proofOfAlphaAbi,
+      functionName: "participantCount",
+      args: [id],
+    })) as bigint;
+  } catch {
+    /* tolerate */
+  }
   return {
     id,
     asset: symbolFromAssetId(r.asset),
@@ -92,7 +121,11 @@ export async function getRecentRounds(limit = 6): Promise<RoundUI[]> {
   const count = await getRoundCount();
   const ids: bigint[] = [];
   for (let id = count; id >= 1n && ids.length < limit; id--) ids.push(id);
-  return Promise.all(ids.map(readRound));
+  // allSettled: a single dropped RPC read for one round must not blank the rest.
+  const results = await Promise.allSettled(ids.map(readRound));
+  return results
+    .filter((s): s is PromiseFulfilledResult<RoundUI> => s.status === "fulfilled")
+    .map((s) => s.value);
 }
 
 export async function getActiveRound(): Promise<RoundUI | null> {
@@ -101,11 +134,13 @@ export async function getActiveRound(): Promise<RoundUI | null> {
 }
 
 export async function getLeaderboard(limit = 50): Promise<AgentUI[]> {
-  const total = (await publicClient.readContract({
-    address: ID,
-    abi: identityRegistryAbi,
-    functionName: "totalAgents",
-  })) as bigint;
+  const total = (await withRetry(() =>
+    publicClient.readContract({
+      address: ID,
+      abi: identityRegistryAbi,
+      functionName: "totalAgents",
+    }),
+  )) as bigint;
   const n = Math.min(Number(total), limit);
   const ids = Array.from({ length: n }, (_, i) => BigInt(i + 1));
   const agents = await Promise.all(ids.map(readAgent));
