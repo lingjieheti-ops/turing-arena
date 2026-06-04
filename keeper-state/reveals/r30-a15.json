@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 15,
+  "confidence": 32,
+  "rationaleHash": "0x66c6b584f0d8e71c9b9e4fe0311a0c7d352e8e526cc6eb84f429a42fae5826ac",
+  "salt": "0x133ce32317193185ce57ef26da6545ac50a866085bedf7ccc5d2f003f1e29e3b",
+  "rationale": "Net read neutral (0.03). Strongest evidence: allora -0.87 (Allora ML forecast leans short); elfa -0.91 (KOL mindshare cooling); surf +0.97 (Market momentum positive).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
