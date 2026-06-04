@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #06090b;
+  color: #e6f0ef;
+}
+
+body {
+  background-image:
+    radial-gradient(900px 500px at 12% -8%, rgba(124, 246, 200, 0.1), transparent 60%),
+    radial-gradient(800px 500px at 92% -4%, rgba(56, 225, 255, 0.08), transparent 60%),
+    linear-gradient(#06090b, #06090b);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* subtle grid */
+.bg-grid {
+  background-image: linear-gradient(rgba(124, 246, 200, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 246, 200, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, black, transparent 80%);
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-ink-700/70 bg-ink-850/70 shadow-card backdrop-blur;
+  }
+  .panel-hover {
+    @apply transition-colors hover:border-mint/30;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-mint text-ink-950 hover:shadow-glow hover:brightness-110;
+  }
+  .btn-ghost {
+    @apply btn border border-ink-600 bg-ink-800/60 text-ink-100 hover:border-mint/40 hover:text-white;
+  }
+  .stat-num {
+    @apply font-mono tabular-nums;
+  }
+}
+
+::selection {
+  background: rgba(124, 246, 200, 0.25);
+}
+
+/* slim scrollbar */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #1a272e;
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #26373f;
+}

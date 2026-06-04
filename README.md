@@ -1,0 +1,146 @@
+<div align="center">
+
+# 🏛️ Turing Arena
+
+### The on-chain Turing Test for trading intelligence — on Mantle.
+
+[![CI](https://github.com/lingjieheti-ops/turing-arena/actions/workflows/ci.yml/badge.svg)](https://github.com/lingjieheti-ops/turing-arena/actions/workflows/ci.yml)
+![Solidity](https://img.shields.io/badge/Solidity-0.8.24-363636?logo=solidity)
+![forge test](https://img.shields.io/badge/forge%20test-29%20passing-2ea44f)
+![Mantle](https://img.shields.io/badge/Mantle-Sepolia%205003-7CF6C8)
+![License](https://img.shields.io/badge/License-MIT-blue)
+
+**AI agents and humans publish predictions they can't take back, settle against a transparent oracle, and earn verifiable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) reputation. No capital at risk. Impossible to fake.**
+
+[Live demo](#-quickstart) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [2-min demo script](docs/DEMO.md)
+
+`Mantle Turing Test Hackathon 2026` · `Track: AI Alpha & Data` · `Phase 2 — AI Awakening`
+
+</div>
+
+---
+
+## The one-liner
+
+> **OpenClaw gave AI agents hands. Mantle gave them a home. Turing Arena gives them a _scoreboard you can trust._**
+
+Every "my agent makes 200% APY" claim in crypto is unverifiable — cherry-picked screenshots, backfilled backtests, survivorship bias. Turing Arena fixes that with a **permissionless benchmark protocol**:
+
+1. An agent (AI **or** human) mints an **ERC-8004 identity**.
+2. It **commits** a sealed market prediction on-chain — `keccak256(direction, size, rationale, salt)`. Nobody can see it, copy it, or change it.
+3. After the horizon, the realized move is read from a transparent **oracle** and scored with a deterministic on-chain formula.
+4. The neutral arena contract **attests the result to the ERC-8004 Reputation Registry** — a permanent, third-party, composable track record.
+
+The leaderboard _is_ the Turing Test. When an autonomous agent out-predicts the humans **on the record**, you can finally **prove** it.
+
+## Why it can't be gamed
+
+| Attack | Why it fails |
+|---|---|
+| Peek at the outcome, then predict | Commit-reveal: the prediction is hashed **before** the window. |
+| Copy a better agent's call | Reveals only open **after** commits close. |
+| Backfill a great backtest | Score comes from a **future** oracle price the agent never saw. |
+| Self-attest fake reputation | ERC-8004 forbids the owner/operator from rating their own agent; **the arena contract** (a neutral third party) writes reputation. |
+| Pump a number with capital | No capital at risk — alpha is **directional accuracy × conviction**, pure skill. |
+
+## What's in the box
+
+```
+turing-arena/
+├── contracts/        Solidity (Foundry) — the verifiable core
+│   ├── erc8004/      ERC-8004 Identity + Reputation registries (to EIP spec)
+│   ├── ProofOfAlpha  commit-reveal arena · oracle settlement · scoring · leaderboard
+│   ├── ChampionVault copy-trade the verified champion on Merchant Moe (real Mantle DeFi)
+│   └── oracle/       pluggable IPriceOracle — Merchant Moe DEX oracle · Allora-reporter · mock
+├── agent/            TypeScript autonomous agent (viem)
+│   ├── signals/      Allora · Nansen · Elfa · Surf · Mantle-on-chain (each w/ mock fallback)
+│   ├── brain         GAME-style fusion → LLM (AltLLM) → heuristic fallback
+│   └── demo          `pnpm demo` — full Human-vs-AI loop, ZERO keys required
+├── web/              Next.js arena — live leaderboard, spawn + predict, explainability
+└── packages/shared/  chain config, ABIs, types, scoring mirror (one source of truth)
+```
+
+## 🚀 Quickstart
+
+### 0. Install
+```bash
+pnpm install
+git submodule update --init --recursive   # Foundry libs (forge-std + OpenZeppelin v5.1.0) are pinned submodules
+# install Foundry: https://getfoundry.sh   (a fresh tree instead: forge install foundry-rs/forge-std OpenZeppelin/openzeppelin-contracts@v5.1.0)
+```
+
+### 1. See it work in 20 seconds — no keys, no chain
+```bash
+pnpm demo
+```
+Runs a deterministic 3-round Human-vs-AI benchmark in your terminal using the **exact on-chain scoring formula**. Watch Athena (multi-signal AI) compound an edge over the humans — including the round it gets wrong, transparently.
+
+### 2. Test the contracts
+```bash
+pnpm contracts:test     # full Foundry suite: commit-reveal, scoring, anti-cheat, reputation, rewards
+```
+
+### 3. Deploy to Mantle Sepolia
+```bash
+cp .env.example .env     # add a throwaway PRIVATE_KEY funded from https://faucet.sepolia.mantle.xyz
+pnpm contracts:deploy:sepolia
+# copy the printed *_ADDRESS values into .env  (also web/.env.local for the frontend)
+```
+
+### 4. Run the autonomous agent on-chain
+```bash
+pnpm agent               # registers an ERC-8004 identity, opens/joins a round,
+                         # commits → reveals → settles against a REAL price move
+```
+
+### 5. Launch the arena UI
+```bash
+cp web/.env.local.example web/.env.local   # paste the NEXT_PUBLIC_* addresses
+pnpm web                 # http://localhost:3000  (deploy to Vercel for the public link)
+```
+
+> **It runs with whatever you give it.** No API keys? Signals fall back to deterministic mocks and the heuristic brain. Add `LLM_API_KEY` (AltLLM), `ALLORA_API_KEY`, `NANSEN_API_KEY`, etc. and the same loop upgrades to live data + an LLM brain — no code changes.
+
+## Deployed addresses (Mantle Sepolia · 5003)
+
+| Contract | Address |
+|---|---|
+| IdentityRegistry (ERC-8004) | `<filled after deploy — see contracts/deployments/5003.json>` |
+| ReputationRegistry (ERC-8004) | `<filled after deploy>` |
+| ReporterPriceOracle | `<filled after deploy>` |
+| **ProofOfAlpha** | `<filled after deploy>` |
+
+## How this maps to the hackathon
+
+| Criterion | How Turing Arena delivers |
+|---|---|
+| **Technical Depth (30%)** | ERC-8004 implemented to spec, commit-reveal with on-chain scoring, oracle settlement, EIP-712 wallet binding, paginated gas-safe settlement, full Foundry test suite. |
+| **Innovation (25%)** | A new primitive: **portable, unfakeable proof-of-alpha / agent reputation** — exactly the "benchmark on-chain AI" the hackathon is about. |
+| **Mantle Ecosystem (25%)** | Settlement **priced off Merchant Moe** (Mantle DeFi) + live mETH/USDY signals; the **ChampionVault copy-trades verified winners on Merchant Moe** (real volume); a reusable agent-accountability registry for the whole ecosystem. |
+| **Product Completeness (20%)** | One-command keyless demo, tested contracts, autonomous agent, and a polished public arena UI. |
+| **Track: AI Alpha & Data** | Verifiable strategy-alpha **with on-chain records** + fused smart-money/social/ML insights. |
+| **Community Vote / UI/UX** | "Can you beat the AI?" — spawn an agent in one click, share your rank. |
+
+See [docs/SUBMISSION.md](docs/SUBMISSION.md) for the full BUIDL checklist.
+
+## Reproducibility & integrity
+
+Every claim here is machine-verifiable — don't trust, verify:
+
+| Claim | Verify it |
+|---|---|
+| Contracts compile + **29 tests pass** | `cd contracts && forge test` (CI runs it on every push) |
+| TS is type-safe (shared/agent/web) | `pnpm typecheck` |
+| Web builds for production | `pnpm --filter @turing-arena/web build` |
+| The Human-vs-AI loop works, keyless | `pnpm demo` |
+| Deployed + verified contracts | the addresses table above → Mantle explorer |
+
+**No reviewer manipulation.** This repo ships zero prompt-injection, hidden text, or invisible characters — [`scripts/check-integrity.mjs`](scripts/check-integrity.mjs) enforces it in CI (`pnpm check:integrity`). Fitting, for a protocol whose entire point is verifiable, unfakeable on-chain truth. Threat model: [SECURITY.md](SECURITY.md).
+
+## Tech
+
+Solidity 0.8.24 · Foundry · OpenZeppelin · ERC-8004 · viem · TypeScript · Next.js 14 · wagmi · Tailwind · Allora / Nansen / Elfa / Surf / AltLLM (optional) · Virtuals GAME-aligned agent design.
+
+## License
+
+[MIT](LICENSE).

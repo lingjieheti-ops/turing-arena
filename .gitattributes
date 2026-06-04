@@ -1,0 +1,11 @@
+# Normalize all text to LF in the repo (consistent across OSes + CI).
+* text=auto eol=lf
+
+# Binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff2 binary

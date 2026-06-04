@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  contracts:
+    name: Contracts (Foundry · 29 tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+      - name: forge fmt --check
+        working-directory: contracts
+        run: forge fmt --check
+      - name: forge build
+        working-directory: contracts
+        run: forge build
+      - name: forge test
+        working-directory: contracts
+        run: forge test -vvv
+
+  app:
+    name: Typecheck + web build + integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - name: Install
+        run: pnpm install
+      - name: Typecheck (shared + agent + web)
+        run: pnpm typecheck
+      - name: Build web
+        run: pnpm --filter @turing-arena/web build
+      - name: Keyless demo smoke test
+        run: NO_COLOR=1 pnpm demo
+      - name: Integrity scan (anti prompt-injection)
+        run: pnpm check:integrity

@@ -1,0 +1,44 @@
+{
+  "description": "Deterministic 3-round Human-vs-AI scenario for `pnpm demo`. Each round lists the signal reads each competitor sees; scoring uses the exact on-chain formula.",
+  "rounds": [
+    {
+      "asset": "METH/USD",
+      "title": "mETH/USD · round 1",
+      "entryPrice": 3000,
+      "settlePrice": 3066,
+      "signals": [
+        { "source": "allora", "score": 0.62, "weight": 0.3, "live": false, "note": "Allora ML forecast leans long" },
+        { "source": "nansen", "score": 0.44, "weight": 0.25, "live": false, "note": "Smart money net inflow into mETH on Mantle" },
+        { "source": "mantle-onchain", "score": 0.31, "weight": 0.2, "live": false, "note": "mETH staked supply rising on-chain" },
+        { "source": "elfa", "score": 0.5, "weight": 0.15, "live": false, "note": "KOL mindshare heating up" },
+        { "source": "surf", "score": -0.1, "weight": 0.1, "live": false, "note": "Short-term momentum slightly negative" }
+      ]
+    },
+    {
+      "asset": "MNT/USD",
+      "title": "MNT/USD · round 2 (the trap)",
+      "entryPrice": 0.82,
+      "settlePrice": 0.7954,
+      "signals": [
+        { "source": "allora", "score": 0.22, "weight": 0.3, "live": false, "note": "Allora ML mildly long" },
+        { "source": "nansen", "score": 0.18, "weight": 0.25, "live": false, "note": "Smart money slightly accumulating" },
+        { "source": "mantle-onchain", "score": -0.05, "weight": 0.2, "live": false, "note": "On-chain flows flat" },
+        { "source": "elfa", "score": 0.35, "weight": 0.15, "live": false, "note": "Social hype spiking (often a top)" },
+        { "source": "surf", "score": -0.2, "weight": 0.1, "live": false, "note": "Momentum rolling over" }
+      ]
+    },
+    {
+      "asset": "METH/USD",
+      "title": "mETH/USD · round 3",
+      "entryPrice": 3050,
+      "settlePrice": 3172,
+      "signals": [
+        { "source": "allora", "score": 0.78, "weight": 0.3, "live": false, "note": "Allora ML strongly long" },
+        { "source": "nansen", "score": 0.66, "weight": 0.25, "live": false, "note": "Heavy smart-money accumulation" },
+        { "source": "mantle-onchain", "score": 0.58, "weight": 0.2, "live": false, "note": "mETH supply + DEX TVL climbing" },
+        { "source": "elfa", "score": 0.4, "weight": 0.15, "live": false, "note": "Sentiment constructive" },
+        { "source": "surf", "score": 0.45, "weight": 0.1, "live": false, "note": "Momentum turning up" }
+      ]
+    }
+  ]
+}

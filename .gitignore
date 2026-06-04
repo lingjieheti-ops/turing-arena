@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Env / secrets — NEVER commit real keys
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# Foundry (lib/ is committed as git submodules — forge-std + OpenZeppelin v5.1.0)
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+# Builds
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Runtime artifacts
+agent/.state/
+agent/*.local.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json

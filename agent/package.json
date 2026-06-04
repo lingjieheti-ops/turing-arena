@@ -1,0 +1,28 @@
+{
+  "name": "@turing-arena/agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Autonomous ERC-8004 alpha agent for Turing Arena: fuses Allora/Nansen/Elfa/Surf/Mantle-on-chain signals into a commit-revealed prediction and settles it on Mantle.",
+  "scripts": {
+    "demo": "tsx src/demo.ts",
+    "start": "tsx src/index.ts run",
+    "register": "tsx src/index.ts register",
+    "report-price": "tsx src/index.ts report-price",
+    "open-round": "tsx src/index.ts open-round",
+    "settle": "tsx src/index.ts settle",
+    "champion": "tsx src/index.ts champion",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@turing-arena/shared": "workspace:*",
+    "dotenv": "^16.4.5",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  }
+}
