@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { createPublicClient, http } from "viem";
+import { createPublicClient, fallback, http } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { deployment, identityRegistryAbi, rpcUrl, targetChain } from "@/lib/contracts";
+import { deployment, identityRegistryAbi, rpcUrls, targetChain } from "@/lib/contracts";
 
 // Signs an EIP-712 SetAgentWallet authorization so a user can delegate operation
 // of their agent to the arena keeper in one transaction (auto-pilot). The keeper
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
   try {
     const key = (raw.startsWith("0x") ? raw : `0x${raw}`) as `0x${string}`;
     const account = privateKeyToAccount(key);
-    const pub = createPublicClient({ chain: targetChain, transport: http(rpcUrl) });
+    const pub = createPublicClient({ chain: targetChain, transport: fallback(rpcUrls.map((u) => http(u))) });
     const nonce = (await pub.readContract({
       address: deployment.identityRegistry,
       abi: identityRegistryAbi,

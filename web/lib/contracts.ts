@@ -23,8 +23,22 @@ export const deployment: Deployment = {
 
 export const targetChain = chainById(deployment.chainId);
 
-export const rpcUrl =
-  process.env.NEXT_PUBLIC_MANTLE_SEPOLIA_RPC_URL || targetChain.rpcUrls.default.http[0];
+// Frontend read endpoints. On Mantle Sepolia we prefer the less-busy
+// alternatives and keep the official public RPC LAST, so the dApp's polling
+// doesn't compete with the user's own wallet (which usually sits on the
+// official endpoint) — that contention is what rate-limits deploy txs.
+export const rpcUrls: string[] =
+  deployment.chainId === 5003
+    ? [
+        ...(process.env.NEXT_PUBLIC_MANTLE_SEPOLIA_RPC_URL ? [process.env.NEXT_PUBLIC_MANTLE_SEPOLIA_RPC_URL] : []),
+        "https://mantle-sepolia.drpc.org",
+        "https://mantle-sepolia.gateway.tenderly.co",
+        "https://mantle-sepolia-testnet.rpc.thirdweb.com",
+        "https://rpc.sepolia.mantle.xyz",
+      ]
+    : [...targetChain.rpcUrls.default.http];
+
+export const rpcUrl = rpcUrls[0];
 
 export const explorerUrl = targetChain.blockExplorers?.default.url ?? "";
 

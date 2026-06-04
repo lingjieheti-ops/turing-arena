@@ -5,8 +5,17 @@ export const mantleSepolia = defineChain({
   id: 5003,
   name: "Mantle Sepolia",
   nativeCurrency: { name: "Mantle", symbol: "MNT", decimals: 18 },
+  // Multiple endpoints so the dApp (and wallets adding the chain) can fall back
+  // when the busy public RPC rate-limits. All verified to serve chain 5003.
   rpcUrls: {
-    default: { http: ["https://rpc.sepolia.mantle.xyz"] },
+    default: {
+      http: [
+        "https://rpc.sepolia.mantle.xyz",
+        "https://mantle-sepolia.drpc.org",
+        "https://mantle-sepolia.gateway.tenderly.co",
+        "https://mantle-sepolia-testnet.rpc.thirdweb.com",
+      ],
+    },
   },
   blockExplorers: {
     default: { name: "Mantle Sepolia Explorer", url: "https://explorer.sepolia.mantle.xyz" },

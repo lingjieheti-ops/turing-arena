@@ -62,6 +62,10 @@ const ERROR_TEXT: Record<string, string> = {
 function friendlyError(e: unknown): string {
   const code = (e as { code?: number })?.code ?? (e as { cause?: { code?: number } })?.cause?.code;
   if (code === 4001) return "You rejected the transaction.";
+  const probe = `${(e as Error)?.message ?? ""} ${(e as { shortMessage?: string })?.shortMessage ?? ""} ${(e as { details?: string })?.details ?? ""} ${(e as { cause?: { message?: string } })?.cause?.message ?? ""}`;
+  if (/rate.?limit|being rate limited|429|too many request/i.test(probe)) {
+    return "Mantle's public RPC is busy (rate-limited). Wait a few seconds and deploy again. Tip: set your wallet's Mantle Sepolia RPC to https://mantle-sepolia.drpc.org for a smoother run.";
+  }
   if (e instanceof BaseError) {
     const revert = e.walk((err) => err instanceof ContractFunctionRevertedError) as ContractFunctionRevertedError | undefined;
     if (revert) {
