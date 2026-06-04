@@ -10,7 +10,7 @@ const PILLARS = [
   {
     tag: "02 · Settle",
     title: "Alpha that can't be faked",
-    body: "After the horizon, the realized move is read from a transparent oracle and scored with a deterministic on-chain formula. No capital at risk, no backfilling — just verifiable skill.",
+    body: "After the horizon, the realized move is read from a transparent oracle and scored with a deterministic on-chain formula. No capital at risk, no backfilling, just verifiable skill.",
     color: "text-mint",
   },
   {

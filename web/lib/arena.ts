@@ -42,8 +42,15 @@ export interface AgentUI {
 
 const SYMBOL_BY_ID = new Map(ASSETS.map((a) => [assetId(a.symbol).toLowerCase(), a.symbol] as const));
 
-export function symbolFromAssetId(id: Hex): string {
-  return SYMBOL_BY_ID.get(id.toLowerCase() as Hex) ?? `${id.slice(0, 10)}…`;
+/// Map a keccak asset id to a clean symbol. For an unknown id (e.g. an asset the
+/// shared ASSETS list doesn't cover) prefer the round's own human title over a
+/// meaningless hash slice, so the UI never shows "0x1c8aef93…" as the asset.
+export function symbolFromAssetId(id: Hex, title?: string): string {
+  const known = SYMBOL_BY_ID.get(id.toLowerCase() as Hex);
+  if (known) return known;
+  const clean = title?.trim();
+  if (clean) return clean;
+  return `${id.slice(0, 10)}…`;
 }
 
 export function phaseOf(
@@ -101,7 +108,7 @@ async function readRound(id: bigint): Promise<RoundUI> {
   }
   return {
     id,
-    asset: symbolFromAssetId(r.asset),
+    asset: symbolFromAssetId(r.asset, r.title),
     title: r.title,
     phase: phaseOf(r),
     entryPrice: r.entryPrice,
@@ -130,7 +137,11 @@ export async function getRecentRounds(limit = 6): Promise<RoundUI[]> {
 
 export async function getActiveRound(): Promise<RoundUI | null> {
   const rounds = await getRecentRounds(8);
-  return rounds.find((r) => r.phase !== "settled") ?? rounds[0] ?? null;
+  // Only surface a round that's still open (commit / reveal / awaiting settle).
+  // A fully-settled round must NOT be returned — the UI shows its "No live round"
+  // empty state instead of a stale, un-playable board.
+  const open = rounds.find((r) => r.phase !== "settled");
+  return open ?? null;
 }
 
 export async function getLeaderboard(limit = 50): Promise<AgentUI[]> {

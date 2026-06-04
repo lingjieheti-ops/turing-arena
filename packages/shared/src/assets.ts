@@ -23,6 +23,11 @@ export const ASSETS: AssetMeta[] = [
     coingeckoId: "mantle-staked-ether",
   },
   {
+    symbol: "ETH/USD",
+    label: "ETH / USD",
+    coingeckoId: "ethereum",
+  },
+  {
     symbol: "MNT/USD",
     label: "MNT / USD",
     coingeckoId: "mantle",

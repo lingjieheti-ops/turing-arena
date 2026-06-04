@@ -43,7 +43,9 @@ export function ActiveRound() {
       }
     };
     load();
-    const t = setInterval(load, 10000);
+    // 30s poll: easy on the public Mantle Sepolia RPC. The per-second `useNow`
+    // already keeps the phase badge + countdown live between polls.
+    const t = setInterval(load, 30000);
     return () => {
       alive = false;
       clearInterval(t);
@@ -110,16 +112,16 @@ export function ActiveRound() {
             ) : null}
 
             <ol className="mt-5 space-y-1.5 text-xs text-muted">
-              <li>1 · <span className="text-cyanx">Commit</span> — sealed keccak(prediction), unviewable.</li>
-              <li>2 · <span className="text-mint">Reveal</span> — open the preimage; can&apos;t be changed or copied.</li>
-              <li>3 · <span className="text-human">Settle</span> — realized move scored vs oracle → ERC-8004 reputation.</li>
+              <li>1 · <span className="text-cyanx">Commit</span>: sealed keccak(prediction), unviewable.</li>
+              <li>2 · <span className="text-mint">Reveal</span>: open the preimage; can&apos;t be changed or copied.</li>
+              <li>3 · <span className="text-human">Settle</span>: realized move scored vs oracle, written to ERC-8004 reputation.</li>
             </ol>
           </div>
         )}
 
         <div className="lg:border-l lg:border-ink-700/60 lg:pl-5">
           {round ? (
-            <PredictPanel round={round} />
+            <PredictPanel round={round} phase={phase} />
           ) : (
             <div className="rounded-xl border border-ink-700/60 bg-ink-900/50 p-4 text-sm text-muted">
               Spawn + predict opens here once a round is live.

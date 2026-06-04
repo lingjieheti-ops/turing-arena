@@ -100,14 +100,20 @@ export function Leaderboard() {
                 </div>
               </div>
               <div className="text-right">
-                <ScoreText value={a.score} />
+                {a.played === 0 ? <span className="stat-num text-sm text-muted">—</span> : <ScoreText value={a.score} />}
               </div>
-              <div className="stat-num text-right text-sm text-ink-100/80">{(a.accuracyBps / 100).toFixed(0)}%</div>
+              <div className="stat-num text-right text-sm text-ink-100/80">
+                {a.played === 0 ? "—" : `${(a.accuracyBps / 100).toFixed(0)}%`}
+              </div>
               <div className="stat-num hidden text-right text-sm text-muted sm:block">{a.played}</div>
               <div className="text-right">
-                <span className="stat-num text-sm text-mint" title="ERC-8004 reputation entries">
-                  ×{a.repCount}
-                </span>
+                {a.repCount === 0 ? (
+                  <span className="stat-num text-sm text-muted">—</span>
+                ) : (
+                  <span className="stat-num text-sm text-mint" title="ERC-8004 reputation entries">
+                    ×{a.repCount}
+                  </span>
+                )}
               </div>
             </div>
           ))

@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { parseEventLogs } from "viem";
+import { useCallback, useEffect, useState } from "react";
+import { BaseError, ContractFunctionRevertedError, type Hex, decodeErrorResult, parseEventLogs } from "viem";
 import { useAccount, useChainId, useWriteContract } from "wagmi";
-import type { RoundUI } from "@/lib/arena";
+import type { Phase, RoundUI } from "@/lib/arena";
 import { publicClient } from "@/lib/client";
 import {
   computeCommitHash,
@@ -19,10 +19,75 @@ import { ConnectButton } from "./ConnectButton";
 
 type Dir = "UP" | "DOWN";
 
-export function PredictPanel({ round }: { round: RoundUI }) {
+const ZERO_HASH = "0x0000000000000000000000000000000000000000000000000000000000000000";
+const FAUCET_URL = "https://faucet.sepolia.mantle.xyz";
+
+/// ProofOfAlpha's custom errors aren't in the call ABI, so we keep a tiny ABI of
+/// just the error selectors to decode revert data into a friendly message.
+const ERROR_ABI = [
+  { type: "error", name: "AlreadyCommitted", inputs: [] },
+  { type: "error", name: "CommitClosed", inputs: [] },
+  { type: "error", name: "RevealClosed", inputs: [] },
+  { type: "error", name: "AlreadyRevealed", inputs: [] },
+  { type: "error", name: "NothingCommitted", inputs: [] },
+  { type: "error", name: "BadConfidence", inputs: [] },
+  { type: "error", name: "NotAgentController", inputs: [] },
+  { type: "error", name: "BadStake", inputs: [] },
+] as const;
+
+const ERROR_TEXT: Record<string, string> = {
+  AlreadyCommitted: "You already committed this round.",
+  CommitClosed: "Commit window closed. Wait for the next round.",
+  RevealClosed: "Reveal window closed.",
+  AlreadyRevealed: "You already revealed.",
+  NothingCommitted: "No commit to reveal.",
+  BadConfidence: "Conviction must be 1–100.",
+  NotAgentController: "This wallet doesn't control that agent.",
+  BadStake: "This round needs a stake.",
+};
+
+/// Turn a thrown wallet/contract error into a short, human message.
+function friendlyError(e: unknown): string {
+  // User rejected in the wallet (MetaMask code 4001).
+  const code = (e as { code?: number })?.code ?? (e as { cause?: { code?: number } })?.cause?.code;
+  if (code === 4001) return "You rejected the transaction.";
+
+  if (e instanceof BaseError) {
+    // Decode a named custom error from the revert data.
+    const revert = e.walk((err) => err instanceof ContractFunctionRevertedError) as
+      | ContractFunctionRevertedError
+      | undefined;
+    if (revert) {
+      let name: string | undefined = revert.data?.errorName;
+      const raw: Hex | undefined = revert.raw ?? revert.signature;
+      if (!name && raw) {
+        try {
+          name = decodeErrorResult({ abi: ERROR_ABI, data: raw }).errorName;
+        } catch {
+          /* not one of ours */
+        }
+      }
+      if (name && ERROR_TEXT[name]) return ERROR_TEXT[name];
+    }
+    const msg = e.shortMessage || e.message;
+    if (/insufficient funds/i.test(msg)) {
+      return "Not enough MNT for gas. Grab some from the faucet (link below).";
+    }
+    if (/user rejected|rejected the request/i.test(msg)) return "You rejected the transaction.";
+    return msg;
+  }
+  const m = (e as { shortMessage?: string; message?: string })?.shortMessage ?? (e as Error)?.message;
+  if (m && /insufficient funds/i.test(m)) return "Not enough MNT for gas. Grab some from the faucet (link below).";
+  return m || "Something went wrong.";
+}
+
+export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phase?: Phase }) {
   const { address, isConnected } = useAccount();
   const chainId = useChainId();
   const { writeContractAsync } = useWriteContract();
+
+  // Live phase from the parent (per-second) when provided; else the round's snapshot.
+  const phase: Phase = livePhase ?? round.phase;
 
   const [myAgent, setMyAgent] = useState<bigint | null>(null);
   const [dir, setDir] = useState<Dir>("UP");
@@ -30,14 +95,46 @@ export function PredictPanel({ round }: { round: RoundUI }) {
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ text: string; tone: "ok" | "err" | "info"; href?: string } | null>(null);
+
+  // On-chain truth for this (round, agent): is there a commit, and was it revealed?
   const [committed, setCommitted] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  // Does THIS browser hold the salt/preimage needed to reveal?
+  const [hasPreimage, setHasPreimage] = useState(false);
 
   useEffect(() => {
-    const a = loadMyAgent();
-    setMyAgent(a);
-    if (a) setCommitted(Boolean(loadPending(round.id, a)));
-  }, [round.id]);
+    setMyAgent(loadMyAgent());
+  }, []);
+
+  /// Reconcile predict state with the CHAIN (not just localStorage): read the
+  /// entry for (round, agent) and derive committed/revealed from it. localStorage
+  /// only tells us whether we still hold the salt to reveal.
+  const reconcile = useCallback(async () => {
+    if (!myAgent) {
+      setCommitted(false);
+      setRevealed(false);
+      setHasPreimage(false);
+      return;
+    }
+    setHasPreimage(Boolean(loadPending(round.id, myAgent)));
+    try {
+      const entry = (await publicClient.readContract({
+        address: deployment.proofOfAlpha,
+        abi: proofOfAlphaAbi,
+        functionName: "getEntry",
+        args: [round.id, myAgent],
+      })) as { commitHash: Hex; revealed: boolean };
+      setCommitted(entry.commitHash !== ZERO_HASH);
+      setRevealed(Boolean(entry.revealed));
+    } catch {
+      // RPC hiccup: fall back to localStorage so the UI still progresses.
+      setCommitted(Boolean(loadPending(round.id, myAgent)));
+    }
+  }, [round.id, myAgent]);
+
+  useEffect(() => {
+    reconcile();
+  }, [reconcile]);
 
   const wrongChain = isConnected && chainId !== targetChain.id;
   const explorer = (h: string) => `${explorerUrl}/tx/${h}`;
@@ -61,8 +158,8 @@ export function PredictPanel({ round }: { round: RoundUI }) {
       saveMyAgent(id);
       setMyAgent(id);
       setMsg({ text: `Agent #${id} is yours.`, tone: "ok", href: explorer(hash) });
-    } catch (e: any) {
-      setMsg({ text: e?.shortMessage || e?.message || "failed", tone: "err" });
+    } catch (e) {
+      setMsg({ text: friendlyError(e), tone: "err" });
     } finally {
       setBusy(false);
     }
@@ -94,10 +191,10 @@ export function PredictPanel({ round }: { round: RoundUI }) {
         args: [round.id, myAgent, commitHash],
       });
       await publicClient.waitForTransactionReceipt({ hash });
-      setCommitted(true);
+      await reconcile();
       setMsg({ text: "Sealed on-chain. Reveal opens when the commit window closes.", tone: "ok", href: explorer(hash) });
-    } catch (e: any) {
-      setMsg({ text: e?.shortMessage || e?.message || "failed", tone: "err" });
+    } catch (e) {
+      setMsg({ text: friendlyError(e), tone: "err" });
     } finally {
       setBusy(false);
     }
@@ -120,10 +217,10 @@ export function PredictPanel({ round }: { round: RoundUI }) {
         args: [round.id, myAgent, BigInt(p.predictedBps), p.confidence, p.rationaleHash, p.salt],
       });
       await publicClient.waitForTransactionReceipt({ hash });
-      setRevealed(true);
+      await reconcile();
       setMsg({ text: "Revealed. Your call is now on the record.", tone: "ok", href: explorer(hash) });
-    } catch (e: any) {
-      setMsg({ text: e?.shortMessage || e?.message || "failed", tone: "err" });
+    } catch (e) {
+      setMsg({ text: friendlyError(e), tone: "err" });
     } finally {
       setBusy(false);
     }
@@ -137,30 +234,42 @@ export function PredictPanel({ round }: { round: RoundUI }) {
         <div className="space-y-2">
           <p className="text-xs text-muted">Connect a wallet on {targetChain.name} to enter the arena.</p>
           <ConnectButton />
-          <a
-            href="https://faucet.sepolia.mantle.xyz"
-            target="_blank"
-            rel="noreferrer"
-            className="block text-xs text-mint hover:underline"
-          >
+          <a href={FAUCET_URL} target="_blank" rel="noreferrer" className="block text-xs text-mint hover:underline">
             Need test MNT for gas? Grab some from the faucet ↗
           </a>
         </div>
       ) : wrongChain ? (
-        <p className="text-xs text-human">Switch to {targetChain.name} to play.</p>
-      ) : !myAgent ? (
-        <div className="space-y-3">
-          <input
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-            placeholder="Agent name (optional)"
-            className="w-full rounded-lg border border-ink-600 bg-ink-800/60 px-3 py-2 text-sm text-white outline-none focus:border-mint/40"
-          />
-          <button className="btn-primary w-full" onClick={spawn} disabled={busy}>
-            {busy ? "Spawning…" : "Spawn my agent (ERC-8004)"}
-          </button>
+        <div className="space-y-2">
+          <p className="text-xs text-human">You&apos;re on the wrong network.</p>
+          <ConnectButton />
         </div>
-      ) : round.phase === "commit" && !committed ? (
+      ) : !myAgent ? (
+        phase === "commit" ? (
+          <div className="space-y-3">
+            <input
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+              placeholder="Agent name (optional)"
+              className="w-full rounded-lg border border-ink-600 bg-ink-800/60 px-3 py-2 text-sm text-white outline-none focus:border-mint/40"
+            />
+            <button className="btn-primary w-full" onClick={spawn} disabled={busy}>
+              {busy ? "Spawning…" : "Spawn my agent (ERC-8004)"}
+            </button>
+            <a href={FAUCET_URL} target="_blank" rel="noreferrer" className="block text-xs text-mint hover:underline">
+              Need test MNT for gas? Grab some from the faucet ↗
+            </a>
+          </div>
+        ) : (
+          <p className="text-xs text-muted">
+            Spawn + commit opens when the next round&apos;s commit window is live.
+          </p>
+        )
+      ) : committed && !revealed && !hasPreimage ? (
+        // Committed on-chain, but this browser lacks the salt to reveal.
+        <p className="text-xs text-human">
+          This agent committed from another device. Without the saved salt this browser can&apos;t reveal it.
+        </p>
+      ) : phase === "commit" && !committed ? (
         <div className="space-y-3">
           <div className="grid grid-cols-2 gap-2">
             <button
@@ -200,15 +309,21 @@ export function PredictPanel({ round }: { round: RoundUI }) {
             {busy ? "Sealing…" : "🔒 Commit prediction"}
           </button>
         </div>
-      ) : round.phase === "commit" && committed ? (
+      ) : phase === "commit" && committed ? (
         <p className="text-xs text-mint">Committed. Come back after the commit window to reveal.</p>
-      ) : round.phase === "reveal" && !revealed ? (
+      ) : phase === "reveal" && committed && !revealed ? (
         <button className="btn-primary w-full" onClick={reveal} disabled={busy}>
           {busy ? "Revealing…" : "🔓 Reveal my call"}
         </button>
+      ) : phase === "reveal" && !committed ? (
+        <p className="text-xs text-muted">You didn&apos;t commit this round, so reveal is closed for you.</p>
       ) : (
         <p className="text-xs text-muted">
-          {revealed ? "Revealed — awaiting settlement." : round.phase === "settled" ? "Round settled." : "Settling…"}
+          {revealed
+            ? "Revealed. Awaiting settlement."
+            : phase === "settled"
+              ? "Round settled."
+              : "Settling…"}
         </p>
       )}
 
@@ -227,6 +342,14 @@ export function PredictPanel({ round }: { round: RoundUI }) {
             <a href={msg.href} target="_blank" rel="noreferrer" className="underline">
               tx ↗
             </a>
+          ) : null}
+          {msg.tone === "err" && /faucet/i.test(msg.text) ? (
+            <>
+              {" "}
+              <a href={FAUCET_URL} target="_blank" rel="noreferrer" className="underline">
+                faucet ↗
+              </a>
+            </>
           ) : null}
         </div>
       ) : null}

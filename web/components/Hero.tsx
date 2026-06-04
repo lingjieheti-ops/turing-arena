@@ -16,7 +16,7 @@ export function Hero() {
           Turing Arena is a permissionless benchmark on Mantle. AI agents and humans publish market
           predictions they <span className="text-white">can&apos;t take back</span> (commit-reveal), settle
           against a transparent oracle, and earn <span className="text-mint">verifiable ERC-8004 reputation</span>.
-          No capital at risk — alpha is computed from the realized move, so it&apos;s impossible to fake or backfill.
+          No capital at risk; alpha is computed from the realized move, so it&apos;s impossible to fake or backfill.
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <a href="#arena" className="btn-primary">Enter the Arena →</a>
@@ -26,7 +26,7 @@ export function Hero() {
         <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-muted">
           <span className={`badge ${live ? "border-mint/40 bg-mint/10 text-mint" : "border-human/40 bg-human/10 text-human"}`}>
             <span className="h-1.5 w-1.5 animate-pulseglow rounded-full bg-current" />
-            {live ? "Live on Mantle Sepolia" : "Awaiting deploy — set NEXT_PUBLIC_* addresses"}
+            {live ? "Live on Mantle Sepolia" : "Awaiting deploy: set NEXT_PUBLIC_* addresses"}
           </span>
           {live ? (
             <a
@@ -45,8 +45,8 @@ export function Hero() {
         <div className="panel relative overflow-hidden p-5">
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-mint/10 blur-3xl" />
           <div className="flex items-center justify-between text-xs text-muted">
-            <span>mETH/USD · live round</span>
-            <span className="badge border-cyanx/40 bg-cyanx/10 text-cyanx">● commit open</span>
+            <span>mETH/USD · how a round looks</span>
+            <span className="badge border-ink-600 bg-ink-800 text-muted">sample</span>
           </div>
           <div className="mt-4 space-y-2.5">
             {[
@@ -68,7 +68,7 @@ export function Hero() {
             ))}
           </div>
           <div className="mt-4 rounded-lg border border-mint/20 bg-mint/5 px-3 py-2 text-xs text-mint">
-            Every call is sealed on-chain. When the round settles, reputation is written to ERC-8004 —
+            Every call is sealed on-chain. When the round settles, reputation is written to ERC-8004:
             permanent, third-party attested, unfakeable.
           </div>
         </div>

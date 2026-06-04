@@ -5,16 +5,32 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Turing Arena — Proof-of-Alpha on Mantle",
+  metadataBase: new URL("https://turing-arena-web.vercel.app"),
+  title: "Turing Arena · Proof-of-Alpha on Mantle",
   description:
     "The on-chain Turing Test for trading intelligence. AI agents and humans publish commit-revealed predictions, settle against a transparent oracle, and earn verifiable ERC-8004 reputation on Mantle.",
   openGraph: {
-    title: "Turing Arena — can you beat the AI?",
+    title: "Turing Arena: can you beat the AI?",
     description:
       "A permissionless benchmark on Mantle where AI agents and humans prove verifiable alpha, on the record.",
     type: "website",
+    url: "/",
+    siteName: "Turing Arena",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Turing Arena: the on-chain Turing Test for trading intelligence",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image", title: "Turing Arena", description: "The on-chain Turing Test for trading intelligence — on Mantle." },
+  twitter: {
+    card: "summary_large_image",
+    title: "Turing Arena: can you beat the AI?",
+    description: "The on-chain Turing Test for trading intelligence, on Mantle.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -17,11 +17,19 @@ interface Trade {
   amountIn: bigint;
   amountOut: bigint;
   txHash: string;
+  blockNumber: bigint;
 }
+
+// The public Mantle Sepolia RPC caps/refuses a getLogs over a wide block range,
+// which silently left Copy-trades at 0. Walk back in ~9k-block windows (≤5 of
+// them) and merge, so recent trades load even on a strict RPC.
+const WINDOW = 9000n;
+const MAX_WINDOWS = 5;
 
 export function ChampionPanel() {
   const [holdings, setHoldings] = useState<{ base: bigint; quote: bigint } | null>(null);
   const [trades, setTrades] = useState<Trade[]>([]);
+  const [logsFailed, setLogsFailed] = useState(false);
 
   useEffect(() => {
     if (!hasChampionVault()) return;
@@ -41,29 +49,44 @@ export function ChampionPanel() {
       }
       try {
         const latest = await publicClient.getBlockNumber();
-        const fromBlock = latest > 100_000n ? latest - 100_000n : 0n;
-        const logs = await publicClient.getLogs({ address: vault, event: TRADE_EVENT, fromBlock, toBlock: "latest" });
-        if (alive) {
-          setTrades(
-            logs
-              .slice(-5)
-              .reverse()
-              .map((l) => ({
+        const collected: Trade[] = [];
+        let toBlock = latest;
+        let anyOk = false;
+        for (let i = 0; i < MAX_WINDOWS && toBlock > 0n; i++) {
+          const fromBlock = toBlock > WINDOW ? toBlock - WINDOW : 0n;
+          try {
+            const logs = await publicClient.getLogs({ address: vault, event: TRADE_EVENT, fromBlock, toBlock });
+            anyOk = true;
+            for (const l of logs) {
+              collected.push({
                 roundId: l.args.roundId as bigint,
                 agentId: l.args.agentId as bigint,
                 long: l.args.long as boolean,
                 amountIn: l.args.amountIn as bigint,
                 amountOut: l.args.amountOut as bigint,
                 txHash: l.transactionHash,
-              })),
-          );
+                blockNumber: l.blockNumber ?? 0n,
+              });
+            }
+          } catch {
+            /* this window failed; keep walking back */
+          }
+          if (fromBlock === 0n) break;
+          toBlock = fromBlock - 1n;
+        }
+        if (alive) {
+          // newest first, cap at 5
+          const sorted = collected.sort((a, b) => (b.blockNumber > a.blockNumber ? 1 : b.blockNumber < a.blockNumber ? -1 : 0));
+          setTrades(sorted.slice(0, 5));
+          // Only flag failure if every window failed AND we found nothing.
+          setLogsFailed(!anyOk && collected.length === 0);
         }
       } catch {
-        /* RPC may cap getLogs; holdings still render */
+        if (alive) setLogsFailed(true);
       }
     };
     load();
-    const t = setInterval(load, 20000);
+    const t = setInterval(load, 30000);
     return () => {
       alive = false;
       clearInterval(t);
@@ -81,7 +104,7 @@ export function ChampionPanel() {
         <p className="max-w-2xl text-sm text-ink-100/75">
           When a round settles, the protocol routes incentive capital into a{" "}
           <span className="text-white">real Merchant Moe swap</span> following the on-chain{" "}
-          <span className="text-mint">verified champion&apos;s</span> direction — long buys mETH, short sells it.
+          <span className="text-mint">verified champion&apos;s</span> direction: long buys mETH, short sells it.
           Verified alpha doesn&apos;t just score points; it moves real Mantle liquidity.
         </p>
 
@@ -96,11 +119,15 @@ export function ChampionPanel() {
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
               <StatBox label="Champion portfolio · mETH" value={holdings ? Number(formatUnits(holdings.base, 18)).toFixed(4) : "—"} />
               <StatBox label="Champion portfolio · USDY" value={holdings ? Number(formatUnits(holdings.quote, 18)).toFixed(2) : "—"} />
-              <StatBox label="Copy-trades" value={trades.length} />
+              <StatBox label="Copy-trades" value={logsFailed && trades.length === 0 ? "—" : trades.length} />
             </div>
             <div className="mt-4 space-y-2">
               {trades.length === 0 ? (
-                <div className="text-sm text-muted">No copy-trades yet — settle a round with a winner.</div>
+                logsFailed ? (
+                  <div className="text-sm text-muted/70">Couldn&apos;t load recent trades from the RPC. Try again shortly.</div>
+                ) : (
+                  <div className="text-sm text-muted">No copy-trades yet. Settle a round with a winner.</div>
+                )
               ) : (
                 trades.map((t) => (
                   <a
