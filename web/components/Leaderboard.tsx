@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { shortAddr } from "@turing-arena/shared";
 import { type AgentUI, getLeaderboard } from "@/lib/arena";
 import { isLive } from "@/lib/contracts";
@@ -17,6 +17,9 @@ const SAMPLE: AgentUI[] = [
 export function Leaderboard() {
   const [agents, setAgents] = useState<AgentUI[] | null>(null);
   const [demo, setDemo] = useState(!isLive());
+  // Once we've shown real on-chain data, a transient RPC choke must NOT drop the
+  // board back to sample data — keep the last good standings and retry.
+  const everReal = useRef(false);
 
   useEffect(() => {
     if (!isLive()) {
@@ -29,14 +32,17 @@ export function Leaderboard() {
         const data = await getLeaderboard();
         if (!alive) return;
         if (data.length === 0) {
-          setAgents(SAMPLE);
-          setDemo(true);
+          if (!everReal.current) {
+            setAgents(SAMPLE);
+            setDemo(true);
+          }
         } else {
+          everReal.current = true;
           setAgents(data);
           setDemo(false);
         }
       } catch {
-        if (alive) {
+        if (alive && !everReal.current) {
           setAgents(SAMPLE);
           setDemo(true);
         }

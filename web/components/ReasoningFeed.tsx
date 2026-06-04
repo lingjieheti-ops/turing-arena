@@ -1,15 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { type AgentUI, getLeaderboard } from "@/lib/arena";
-import { type ResultRound, type VerifiedRationale, fetchRationale, getResultsFeed } from "@/lib/reasoning";
+import {
+  type AgentMeta,
+  type ResultRound,
+  type VerifiedRationale,
+  fetchRationale,
+  getAgentMeta,
+  getResultsFeed,
+} from "@/lib/reasoning";
 import { KindTag, ScoreText, SectionTitle, Spinner } from "./ui";
-
-interface AgentMeta {
-  name: string;
-  kind: "AI" | "HUMAN";
-  model?: string;
-}
 
 export function ReasoningFeed() {
   const [rounds, setRounds] = useState<ResultRound[] | null>(null);
@@ -20,32 +20,43 @@ export function ReasoningFeed() {
     let alive = true;
     const load = async () => {
       try {
-        const [feed, board] = await Promise.all([getResultsFeed(3), getLeaderboard(50)]);
-        if (!alive) return;
-        const m = new Map<string, AgentMeta>();
-        for (const a of board as AgentUI[]) m.set(a.agentId.toString(), { name: a.name, kind: a.kind, model: a.model });
-        setMeta(m);
+        const feed = await getResultsFeed(3);
+        if (!alive || feed.length === 0) {
+          // Genuine empty (cold start) only shows if we never had data.
+          if (alive) setRounds((prev) => prev ?? []);
+          return;
+        }
         setRounds(feed);
-        // Fetch + verify the sealed rationale for every shown entry, in parallel.
-        const next = new Map<string, VerifiedRationale>();
+
+        // Names/kinds/models for just the agents shown (one agentURI read each).
+        const ids = [...new Set(feed.flatMap((r) => r.entries.map((e) => e.agentId.toString())))].map((s) => BigInt(s));
+        const m = await getAgentMeta(ids);
+        if (!alive) return;
+        if (m.size > 0) setMeta((prev) => new Map([...prev, ...m]));
+
+        // Fetch + verify each sealed rationale, then merge into the cache.
+        const fetched = new Map<string, VerifiedRationale>();
         await Promise.allSettled(
           feed.flatMap((r) =>
             r.entries.map((e) =>
               fetchRationale(r.id, e.agentId, e.rationaleHash).then((v) => {
-                if (v) next.set(`${r.id}-${e.agentId}`, v);
+                if (v) fetched.set(`${r.id}-${e.agentId}`, v);
               }),
             ),
           ),
         );
-        if (alive) setRats(next);
+        if (alive && fetched.size > 0) setRats((prev) => new Map([...prev, ...fetched]));
       } catch {
-        if (alive) setRounds([]);
+        // Transient RPC choke: keep the last good feed, retry on the interval.
+        if (alive) setRounds((prev) => prev);
       }
     };
-    load();
+    // Stagger the first read so it doesn't collide with the leaderboard's burst.
+    const first = setTimeout(load, 1800);
     const t = setInterval(load, 45000);
     return () => {
       alive = false;
+      clearTimeout(first);
       clearInterval(t);
     };
   }, []);

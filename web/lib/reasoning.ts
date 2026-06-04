@@ -1,4 +1,5 @@
 import { type Hex, keccak256, toBytes } from "viem";
+import { decodeAgentCard } from "./agentCard";
 import { withRetry } from "./arena";
 import { publicClient } from "./client";
 import { deployment, identityRegistryAbi, proofOfAlphaAbi } from "./contracts";
@@ -115,19 +116,59 @@ export async function getResultsFeed(limit = 3): Promise<ResultRound[]> {
   const n = await getTotalAgents();
   const agentIds = Array.from({ length: n }, (_, i) => BigInt(i + 1));
 
-  const floor = count > 10n ? count - 10n : 1n;
+  const floor = count > 7n ? count - 7n : 1n;
   const ids: bigint[] = [];
   for (let id = count; id >= floor; id--) ids.push(id);
 
-  // Pass 1: find the settled rounds (parallel head reads).
-  const heads = (await Promise.all(ids.map(fetchHead))).filter(
-    (x): x is { id: bigint; head: RoundHead } => x !== null && x.head.settled,
-  );
-  const chosen = heads.slice(0, limit);
+  // Pass 1: find the settled rounds (one bounded parallel batch of head reads).
+  const headResults = await Promise.all(ids.map(fetchHead));
+  // A total wipeout means the RPC choked, not that there are no rounds; throw so
+  // the caller keeps its last-good data and retries instead of flashing "empty".
+  if (headResults.every((h) => h === null)) throw new Error("head reads all failed");
+  const chosen = headResults
+    .filter((x): x is { id: bigint; head: RoundHead } => x !== null && x.head.settled)
+    .slice(0, limit);
 
-  // Pass 2: pull each chosen round's entries (parallel), keep ones with reveals.
-  const rounds = await Promise.all(chosen.map(({ id, head }) => fetchEntries(id, head, agentIds)));
-  return rounds.filter((r) => r.entries.length > 0);
+  // Pass 2: pull entries ONE ROUND AT A TIME (agents parallel within a round).
+  // The public RPC chokes on a wide concurrent burst, so we keep peak in-flight
+  // low rather than firing every round's reads at once.
+  const rounds: ResultRound[] = [];
+  for (const { id, head } of chosen) {
+    const rr = await fetchEntries(id, head, agentIds);
+    if (rr.entries.length > 0) rounds.push(rr);
+  }
+  return rounds;
+}
+
+export interface AgentMeta {
+  name: string;
+  kind: "AI" | "HUMAN";
+  model?: string;
+}
+
+/// Lightweight name/kind/model for a handful of agents — one agentURI read each
+/// (the card), far cheaper than the full leaderboard. Keyed by agentId string.
+export async function getAgentMeta(agentIds: bigint[]): Promise<Map<string, AgentMeta>> {
+  const m = new Map<string, AgentMeta>();
+  await Promise.all(
+    agentIds.map(async (id) => {
+      try {
+        const uri = (await withRetry(
+          () => publicClient.readContract({ address: ID, abi: identityRegistryAbi, functionName: "agentURI", args: [id] }),
+          2,
+        )) as string;
+        const card = decodeAgentCard(uri);
+        m.set(id.toString(), {
+          name: card.name || `Agent #${id}`,
+          kind: card.kind === "HUMAN" ? "HUMAN" : "AI",
+          model: card.model,
+        });
+      } catch {
+        /* skip an agent we couldn't read */
+      }
+    }),
+  );
+  return m;
 }
 
 export interface VerifiedRationale {
