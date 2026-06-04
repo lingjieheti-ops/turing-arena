@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 287,
+  "confidence": 63,
+  "rationaleHash": "0x824e229d0b0f7edb94feea3206b5261404c2caa0e1f1ff12f6871210b8a14a86",
+  "salt": "0xdf19de577b68c2da272bde9f18aed014e59d6e2caed6ccc4a720ce5dc904d5ba",
+  "rationale": "Net read bullish (0.48). Strongest evidence: momentum +0.65 (ETH up-momentum since the last tick (Pyth, live)); allora -0.84 (Allora ML forecast leans short); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
