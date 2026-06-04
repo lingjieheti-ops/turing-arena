@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -177,
+  "confidence": 51,
+  "rationaleHash": "0xa7974ec1466c2a544b52fabebc3bcad67583521a4606f15863d00d80049a33e7",
+  "salt": "0xd2c57d3e669f681bd44627c1bb02bde6a654263492a3bd2a3be396f86416feb2",
+  "rationale": "Net read bearish (-0.30). Strongest evidence: nansen -0.58 (Smart money net outflow); surf -0.99 (Market momentum negative); allora +0.28 (Allora ML forecast leans long).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

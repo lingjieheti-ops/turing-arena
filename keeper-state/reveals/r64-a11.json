@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 281,
+  "confidence": 63,
+  "rationaleHash": "0xcfebcee634dc0bd9a106c6c64c365374bc6790a458dbe03100f6a2b0cdc824a8",
+  "salt": "0xd2e4b9e3f11cd6053adf91812e9fb539818cbebb7145abf086e3a352c2f4d196",
+  "rationale": "Net read bullish (0.47). Strongest evidence: nansen -0.58 (Smart money net outflow); surf -0.99 (Market momentum negative); allora +0.28 (Allora ML forecast leans long).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

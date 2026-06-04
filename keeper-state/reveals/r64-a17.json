@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -212,
+  "confidence": 55,
+  "rationaleHash": "0x2a27fa442d43d35be15e85e18ec302e7497246f4eb2ed6cefa5cab9b9d4fa096",
+  "salt": "0x5e7d81ad34efd8d720e34288ad9b6c7a6f57bb958ac51850ee2807e2205a089d",
+  "rationale": "Net read bearish (-0.35). Strongest evidence: nansen -0.58 (Smart money net outflow); surf -0.99 (Market momentum negative); allora +0.28 (Allora ML forecast leans long).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

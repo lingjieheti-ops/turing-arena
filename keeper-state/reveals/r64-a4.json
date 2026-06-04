@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -159,
+  "confidence": 48,
+  "rationaleHash": "0xe83503e51f82061eed94e33e99bdc10e3f10bc7edcacac9ce7c4a1175771f8ca",
+  "salt": "0xd111b08379f57c0fe1d2398374f9064892c27bb95649810e757b2484511f1f83",
+  "rationale": "Net read bearish (-0.26). Strongest evidence: nansen -0.58 (Smart money net outflow); surf -0.99 (Market momentum negative); allora +0.28 (Allora ML forecast leans long).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
