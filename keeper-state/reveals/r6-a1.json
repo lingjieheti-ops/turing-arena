@@ -1,0 +1,10 @@
+{
+  "agentId": 1,
+  "predictedBps": 247,
+  "confidence": 62,
+  "rationaleHash": "0x5e23f72c0e09fecc17e78ad5d4827cec393760415e24848df9168473a5978946",
+  "salt": "0xc41a247705c4d16b7fe44199fdbae818eddcc4b2b165200be53904a69aa18d80",
+  "rationale": "Athena: UP 247bps @ conf 62 — Disciplined multi-signal quant; blended, moderate long bias. (mom 0.37)",
+  "name": "Athena",
+  "source": "pyth"
+}

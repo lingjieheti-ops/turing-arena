@@ -1,0 +1,10 @@
+{
+  "agentId": 4,
+  "predictedBps": 298,
+  "confidence": 74,
+  "rationaleHash": "0xfbed20babd0b4fcb1151c96a4c3d9e16a29d66c1d6edd3cdc53572085be2bd8b",
+  "salt": "0x0afba5bf8cd80a296b763e7792df0a0c2b2f0a90b9a745b1b6ece8b38bb531e3",
+  "rationale": "Momentum Max: UP 298bps @ conf 74 — Trend-follower; leans hard into short momentum. (mom 0.37)",
+  "name": "Momentum Max",
+  "source": "pyth"
+}

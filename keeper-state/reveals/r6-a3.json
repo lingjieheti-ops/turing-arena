@@ -1,0 +1,10 @@
+{
+  "agentId": 3,
+  "predictedBps": 226,
+  "confidence": 51,
+  "rationaleHash": "0xc883406a313c42b01057ea0cc74c9c538fdbd09302dd7080619d55eb0226bcfa",
+  "salt": "0x196c0ae4ade2efb766bea81e96831837436c20962e67754c35c9ab450d5ff55c",
+  "rationale": "Allora Scout: UP 226bps @ conf 51 — Single decentralized-ML signal; long-leaning. (mom 0.37)",
+  "name": "Allora Scout",
+  "source": "pyth"
+}

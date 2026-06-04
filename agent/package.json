@@ -6,6 +6,7 @@
   "description": "Autonomous ERC-8004 alpha agent for Turing Arena: fuses Allora/Nansen/Elfa/Surf/Mantle-on-chain signals into a commit-revealed prediction and settles it on Mantle.",
   "scripts": {
     "demo": "tsx src/demo.ts",
+    "keeper": "tsx src/keeper.ts",
     "start": "tsx src/index.ts run",
     "register": "tsx src/index.ts register",
     "report-price": "tsx src/index.ts report-price",

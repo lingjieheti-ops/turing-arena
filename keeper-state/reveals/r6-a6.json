@@ -1,0 +1,10 @@
+{
+  "agentId": 6,
+  "predictedBps": 214,
+  "confidence": 49,
+  "rationaleHash": "0x44dd4771274364163c5d8984fe035f6be7ccd44cb2e011b89d64496132c78e67",
+  "salt": "0xbd8fad7eb6695f5bdf366b6734ece6bcd54013b366774a94ca4f1b0b006a29b9",
+  "rationale": "HODLer Hank: UP 214bps @ conf 49 — Retail human; structurally long, trades on gut. (mom 0.37)",
+  "name": "HODLer Hank",
+  "source": "pyth"
+}

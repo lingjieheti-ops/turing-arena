@@ -29,6 +29,11 @@ pnpm-debug.log*
 agent/.state/
 agent/*.local.json
 
+# Keeper durable state IS committed (public reveal preimages + agent ids, no key).
+# Keep this un-ignored even if broader rules above would match it.
+!keeper-state/
+!keeper-state/**
+
 # OS / editor
 .DS_Store
 Thumbs.db
