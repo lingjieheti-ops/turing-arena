@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -36,
+  "confidence": 34,
+  "rationaleHash": "0x9637fda421fd638d9893b46d503d58b8210b19d557f4f429df64189f519410e0",
+  "salt": "0x9ed8c53115094509d8f1d78fcbdd7fe6e7468c1f2ca93d0ae7a0701b479b93aa",
+  "rationale": "Net read bearish (-0.06). Strongest evidence: allora -0.92 (Allora ML forecast leans short); elfa -0.91 (KOL mindshare cooling); momentum -0.17 (ETH down-momentum since the last tick (Pyth, live)).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
