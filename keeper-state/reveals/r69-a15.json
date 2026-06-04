@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 255,
+  "confidence": 60,
+  "rationaleHash": "0x22cd657a2c1410ea756a51f280a696b1207af6c8bdad6981b0d834e0e07ae85b",
+  "salt": "0x82d30e112a4afd557ecbdba2080db70bc5585849f7f78a2c6e0148c5c5f78a3d",
+  "rationale": "Net read bullish (0.43). Strongest evidence: momentum +0.43 (ETH up-momentum since the last tick (Pyth, live)); nansen -0.62 (Smart money net outflow); surf +0.93 (Market momentum positive).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
