@@ -30,6 +30,7 @@ import {
   saveLlmConfig,
   strategyById,
 } from "@/lib/strategy";
+import { AVATAR_PRESETS, AgentAvatar } from "./AgentAvatar";
 import { ConnectButton } from "./ConnectButton";
 
 const ZERO_HASH = "0x0000000000000000000000000000000000000000000000000000000000000000";
@@ -114,6 +115,11 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
   const [deployPersona, setDeployPersona] = useState("");
   const [showLlm, setShowLlm] = useState(false);
   const [llmCfg, setLlmCfg] = useState<LlmConfig>({ baseUrl: "", model: "", apiKey: "" });
+  // avatar — your agent's face (emoji preset or an image URL: anime, a portrait, anything)
+  const [agentAvatar, setAgentAvatar] = useState<string>("");
+  const [deployEmoji, setDeployEmoji] = useState("");
+  const [deployAvatarUrl, setDeployAvatarUrl] = useState("");
+  const deployAvatar = deployAvatarUrl.trim() || deployEmoji;
 
   // Load my agent + its on-chain card (name + strategy) + whether it's delegated
   // its operation to the keeper (auto-pilot).
@@ -126,10 +132,11 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
     publicClient
       .readContract({ address: deployment.identityRegistry, abi: identityRegistryAbi, functionName: "agentURI", args: [id] })
       .then((uri) => {
-        const c = decodeAgentCard(uri as string) as { name?: string; strategy?: string; persona?: string };
+        const c = decodeAgentCard(uri as string);
         setAgentName(c.name || `Agent #${id}`);
         setStrategy(strategyById(c.strategy));
         setAgentPersona(c.persona ?? "");
+        setAgentAvatar(c.avatar ?? "");
       })
       .catch(() => setStrategy(strategyById(undefined)));
     publicClient
@@ -210,6 +217,7 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
         model: isCustom ? "custom personality" : deployStrat.label,
         strategy: isCustom ? "custom" : deployStrat.id,
         ...(isCustom ? { persona: deployPersona.trim() } : {}),
+        ...(deployAvatar ? { avatar: deployAvatar } : {}),
         protocol: "erc-8004",
         skill: "proof-of-alpha",
       };
@@ -229,6 +237,7 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
       setAgentName(name);
       setStrategy(isCustom ? strategyById("custom") : deployStrat);
       setAgentPersona(isCustom ? deployPersona.trim() : "");
+      setAgentAvatar(deployAvatar);
       setMsg({ text: `${name} is live as agent #${id}. It trades for you now.`, tone: "ok", href: explorer(hash) });
     } catch (e) {
       setMsg({ text: friendlyError(e), tone: "err" });
@@ -344,6 +353,7 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
         <div className="text-sm font-semibold text-white">{myAgent ? "Your agent" : "Deploy your agent"}</div>
         {myAgent ? (
           <div className="flex items-center gap-2 text-xs text-muted">
+            <AgentAvatar name={agentName} avatar={agentAvatar} size={22} />
             <span>
               {agentName} · <span className="text-ai">{strategy?.label ?? "agent"}</span>
             </span>
@@ -384,6 +394,41 @@ export function PredictPanel({ round, phase: livePhase }: { round: RoundUI; phas
             placeholder="Name your agent"
             className="w-full rounded-lg border border-ink-600 bg-ink-800/60 px-3 py-2 text-sm text-white outline-none focus:border-mint/40"
           />
+
+          <div className="space-y-2 rounded-lg border border-ink-700/60 bg-ink-900/40 p-3">
+            <div className="flex items-center gap-3">
+              <AgentAvatar name={deployName} avatar={deployAvatar} size={44} />
+              <div className="min-w-0 flex-1">
+                <div className="text-xs text-muted">Give it a face (optional)</div>
+                <div className="mt-1.5 flex flex-wrap gap-1">
+                  {AVATAR_PRESETS.map((em) => (
+                    <button
+                      key={em}
+                      type="button"
+                      onClick={() => {
+                        setDeployEmoji(em);
+                        setDeployAvatarUrl("");
+                      }}
+                      className={`grid h-7 w-7 place-items-center rounded-md border text-base leading-none transition ${
+                        !deployAvatarUrl.trim() && deployEmoji === em
+                          ? "border-mint/50 bg-mint/10"
+                          : "border-ink-700/60 bg-ink-900/40 hover:border-ink-600"
+                      }`}
+                    >
+                      {em}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <input
+              value={deployAvatarUrl}
+              onChange={(e) => setDeployAvatarUrl(e.target.value)}
+              placeholder="…or paste an image URL (anime, a portrait, anything)"
+              className="w-full rounded-lg border border-ink-600 bg-ink-800/60 px-3 py-2 text-sm text-white outline-none focus:border-mint/40"
+            />
+          </div>
+
           <div className="space-y-1.5">
             <div className="text-xs text-muted">Pick its strategy, or write a custom personality</div>
             {STRATEGIES.map((s) => (

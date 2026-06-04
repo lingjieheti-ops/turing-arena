@@ -144,6 +144,7 @@ export interface AgentMeta {
   name: string;
   kind: "AI" | "HUMAN";
   model?: string;
+  avatar?: string;
 }
 
 /// Lightweight name/kind/model for a handful of agents — one agentURI read each
@@ -162,6 +163,7 @@ export async function getAgentMeta(agentIds: bigint[]): Promise<Map<string, Agen
           name: card.name || `Agent #${id}`,
           kind: card.kind === "HUMAN" ? "HUMAN" : "AI",
           model: card.model,
+          avatar: card.avatar,
         });
       } catch {
         /* skip an agent we couldn't read */

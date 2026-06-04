@@ -9,6 +9,7 @@ import {
   getAgentMeta,
   getResultsFeed,
 } from "@/lib/reasoning";
+import { AgentAvatar } from "./AgentAvatar";
 import { KindTag, ScoreText, SectionTitle, Spinner } from "./ui";
 
 export function ReasoningFeed() {
@@ -100,7 +101,8 @@ export function ReasoningFeed() {
                   </div>
                   {winner && r.topScore > 0n ? (
                     <div className="flex items-center gap-1.5 text-xs text-muted">
-                      🏆 best call <span className="font-semibold text-white">{winner.name}</span>
+                      🏆 best call <AgentAvatar name={winner.name} avatar={winner.avatar} size={18} />
+                      <span className="font-semibold text-white">{winner.name}</span>
                       <KindTag kind={winner.kind} />
                     </div>
                   ) : null}
@@ -116,6 +118,7 @@ export function ReasoningFeed() {
                       <div key={e.agentId.toString()} className="px-4 py-3">
                         <div className="flex flex-wrap items-center justify-between gap-2">
                           <div className="flex min-w-0 items-center gap-2">
+                            <AgentAvatar name={am?.name} avatar={am?.avatar} size={26} />
                             <span className="truncate font-semibold text-white">{am?.name ?? `Agent #${e.agentId}`}</span>
                             {am ? <KindTag kind={am.kind} /> : null}
                             {am?.model ? <span className="hidden text-xs text-muted sm:inline">{am.model}</span> : null}

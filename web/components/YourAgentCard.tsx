@@ -6,6 +6,7 @@ import { withRetry } from "@/lib/arena";
 import { publicClient } from "@/lib/client";
 import { loadMyAgent } from "@/lib/commit";
 import { deployment, identityRegistryAbi, proofOfAlphaAbi, reputationRegistryAbi } from "@/lib/contracts";
+import { AgentAvatar } from "./AgentAvatar";
 import { KindTag, ScoreText, StatBox } from "./ui";
 
 interface Stats {
@@ -16,6 +17,7 @@ interface Stats {
   rep: number;
   name: string;
   model?: string;
+  avatar?: string;
   kind: "AI" | "HUMAN";
 }
 
@@ -51,7 +53,7 @@ export function YourAgentCard() {
           ) as Promise<readonly [bigint, bigint, number]>,
         ]);
         if (!alive) return;
-        const card = decodeAgentCard(uri) as { name?: string; model?: string; kind?: string };
+        const card = decodeAgentCard(uri);
         setStats({
           score: s[0],
           played: Number(s[1]),
@@ -60,6 +62,7 @@ export function YourAgentCard() {
           rep: Number(summary[0]),
           name: card.name || `Agent #${a}`,
           model: card.model,
+          avatar: card.avatar,
           kind: card.kind === "HUMAN" ? "HUMAN" : "AI",
         });
       } catch {
@@ -81,13 +84,16 @@ export function YourAgentCard() {
     <section id="your-agent" className="py-4">
       <div className="panel p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="min-w-0">
-            <div className="text-xs font-semibold uppercase tracking-[0.18em] text-mint">Your agent</div>
-            <div className="mt-1 flex flex-wrap items-center gap-2">
-              <span className="text-xl font-bold text-white">{stats?.name ?? `Agent #${id.toString()}`}</span>
-              {stats ? <KindTag kind={stats.kind} /> : null}
-              {stats?.model ? <span className="text-xs text-muted">{stats.model}</span> : null}
-              <span className="text-xs text-muted">#{id.toString()}</span>
+          <div className="flex min-w-0 items-center gap-3">
+            <AgentAvatar name={stats?.name} avatar={stats?.avatar} size={48} />
+            <div className="min-w-0">
+              <div className="text-xs font-semibold uppercase tracking-[0.18em] text-mint">Your agent</div>
+              <div className="mt-1 flex flex-wrap items-center gap-2">
+                <span className="text-xl font-bold text-white">{stats?.name ?? `Agent #${id.toString()}`}</span>
+                {stats ? <KindTag kind={stats.kind} /> : null}
+                {stats?.model ? <span className="text-xs text-muted">{stats.model}</span> : null}
+                <span className="text-xs text-muted">#{id.toString()}</span>
+              </div>
             </div>
           </div>
           <a href="#leaderboard" className="text-xs text-muted hover:text-white">
