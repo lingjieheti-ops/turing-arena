@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 195,
+  "confidence": 53,
+  "rationaleHash": "0x0fb3b938d4c937ffe217227cd58084bde2b01ce28082a34818fc7e9abf629753",
+  "salt": "0x8c10f56d975acad5862f05fc30a51224c63b95aa8fce4abcedf49ae06412f590",
+  "rationale": "Net read bullish (0.33). Strongest evidence: allora -0.90 (Allora ML forecast leans short); momentum -0.24 (ETH down-momentum since the last tick (Pyth, live)); elfa -0.94 (KOL mindshare cooling).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
