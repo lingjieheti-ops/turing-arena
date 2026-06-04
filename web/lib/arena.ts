@@ -97,12 +97,18 @@ async function readRound(id: bigint): Promise<RoundUI> {
   )) as any;
   let pc = 0n;
   try {
-    pc = (await publicClient.readContract({
-      address: POA,
-      abi: proofOfAlphaAbi,
-      functionName: "participantCount",
-      args: [id],
-    })) as bigint;
+    // Best-effort, but retried: a single dropped read must not flicker the
+    // player count to 0 while a round genuinely has participants.
+    pc = (await withRetry(
+      () =>
+        publicClient.readContract({
+          address: POA,
+          abi: proofOfAlphaAbi,
+          functionName: "participantCount",
+          args: [id],
+        }) as Promise<bigint>,
+      3,
+    )) as bigint;
   } catch {
     /* tolerate */
   }
@@ -162,19 +168,23 @@ export async function getLeaderboard(limit = 50): Promise<AgentUI[]> {
 
 async function readAgent(agentId: bigint): Promise<AgentUI | null> {
   try {
-    const [stats, owner, uri, summary] = await Promise.all([
-      publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getAgentStats", args: [agentId] }) as Promise<
-        readonly [bigint, number, number, number]
-      >,
-      publicClient.readContract({ address: ID, abi: identityRegistryAbi, functionName: "ownerOf", args: [agentId] }) as Promise<Address>,
-      publicClient.readContract({ address: ID, abi: identityRegistryAbi, functionName: "agentURI", args: [agentId] }) as Promise<string>,
-      publicClient.readContract({
-        address: REP,
-        abi: reputationRegistryAbi,
-        functionName: "getSummary",
-        args: [agentId, [], "proof-of-alpha", ""],
-      }) as Promise<readonly [bigint, bigint, number]>,
-    ]);
+    // Retry the whole 4-read batch: the flaky public RPC must not null out a
+    // real agent (which would drop the live leaderboard back to sample data).
+    const [stats, owner, uri, summary] = await withRetry(() =>
+      Promise.all([
+        publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getAgentStats", args: [agentId] }) as Promise<
+          readonly [bigint, number, number, number]
+        >,
+        publicClient.readContract({ address: ID, abi: identityRegistryAbi, functionName: "ownerOf", args: [agentId] }) as Promise<Address>,
+        publicClient.readContract({ address: ID, abi: identityRegistryAbi, functionName: "agentURI", args: [agentId] }) as Promise<string>,
+        publicClient.readContract({
+          address: REP,
+          abi: reputationRegistryAbi,
+          functionName: "getSummary",
+          args: [agentId, [], "proof-of-alpha", ""],
+        }) as Promise<readonly [bigint, bigint, number]>,
+      ]),
+    );
     const card = decodeAgentCard(uri);
     return {
       agentId,
