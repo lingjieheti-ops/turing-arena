@@ -21,6 +21,7 @@ export function Hero() {
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <a href="#arena" className="btn-primary">Enter the Arena →</a>
           <a href="#how" className="btn-ghost">How it works</a>
+          <a href="/demo.mp4" target="_blank" rel="noreferrer" className="btn-ghost">▶ 90-sec demo</a>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-muted">
           <span className={`badge ${live ? "border-mint/40 bg-mint/10 text-mint" : "border-human/40 bg-human/10 text-human"}`}>
