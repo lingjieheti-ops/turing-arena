@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -156,
+  "confidence": 48,
+  "rationaleHash": "0x596ee3b72f085cd57a3251f626bd641e10df98300d670f8402e771ecba37f154",
+  "salt": "0xb16de9bb26f687e557e0284a51d5e798da97acba668bf104beef9f7f6651bacb",
+  "rationale": "Net read bearish (-0.26). Strongest evidence: allora -0.91 (Allora ML forecast leans short); elfa -0.92 (KOL mindshare cooling); momentum +0.14 (ETH up-momentum since the last tick (Pyth, live)).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
