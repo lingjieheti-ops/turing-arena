@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 151,
+  "confidence": 48,
+  "rationaleHash": "0x61059c6293e932efa932e7024ca545d63079c59b0350a080067605021ef954c0",
+  "salt": "0xe146159a251f2baf64718a2ecd62f052b22d3108f4d9f39f20942d9f3c55ccad",
+  "rationale": "Net read bullish (0.25). Strongest evidence: momentum +0.30 (ETH up-momentum since the last tick (Pyth, live)); nansen -0.56 (Smart money net outflow); surf +0.99 (Market momentum positive).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

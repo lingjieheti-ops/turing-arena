@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 135,
+  "confidence": 46,
+  "rationaleHash": "0x65dbda5dda78085980bb57bdc9218333e9a7a5ac409c55008abcce4068d2274d",
+  "salt": "0x9394d3d629927c33b2536f3650227867f5cb3c213add5e75fe99f9383ab33803",
+  "rationale": "Net read bullish (0.22). Strongest evidence: momentum +0.30 (ETH up-momentum since the last tick (Pyth, live)); nansen -0.56 (Smart money net outflow); surf +0.99 (Market momentum positive).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

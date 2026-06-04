@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 251,
+  "confidence": 59,
+  "rationaleHash": "0x6fbf0bee285d4824755d43866f2cf33d74f8f2c96e82b0f0a9fe110780fa08b6",
+  "salt": "0x77e2702e80e49e68954ead0c73b9b7b69adb700c929aa8fe4f6abc53173e9125",
+  "rationale": "Net read bullish (0.42). Strongest evidence: momentum +0.30 (ETH up-momentum since the last tick (Pyth, live)); nansen -0.56 (Smart money net outflow); surf +0.99 (Market momentum positive).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
