@@ -158,13 +158,20 @@ def scene_problem():
 
 def step_card(d, x, y, w, h, n, title, body, accent=TEAL):
     rounded(d, [x, y, x+w, y+h], 22, fill=PANEL, outline=LINE, width=2)
-    d.ellipse([x+28, y+28, x+82, y+82], outline=accent, width=3)
-    d.text((x+44, y+38), str(n), font=F_monob(34), fill=accent)
-    for i, ln in enumerate(wrap(d, title, F_semi(34), w-180)):
-        d.text((x+110, y+30 + i*40), ln, font=F_semi(34), fill=TEXT)
-    yy = y + 110
-    for ln in wrap(d, body, F_reg(27), w-70):
-        d.text((x+36, yy), ln, font=F_reg(27), fill=MUTED); yy += 36
+    # number badge (top-left), number centered in it
+    d.ellipse([x+30, y+30, x+78, y+78], outline=accent, width=3)
+    num = str(n); nb = d.textbbox((0, 0), num, font=F_monob(30))
+    d.text((x+54-(nb[2]-nb[0])/2, y+39), num, font=F_monob(30), fill=accent)
+    # title spans full card width BELOW the badge (so it never collides with the number)
+    tfont = F_semi(31)
+    tlines = wrap(d, title, tfont, w-64)
+    ty = y + 100
+    for i, ln in enumerate(tlines):
+        d.text((x+32, ty + i*40), ln, font=tfont, fill=TEXT)
+    # body starts below the wrapped title — dynamic, so no overlap regardless of title length
+    yy = ty + len(tlines)*40 + 16
+    for ln in wrap(d, body, F_reg(25), w-60):
+        d.text((x+32, yy), ln, font=F_reg(25), fill=MUTED); yy += 33
 
 def scene_protocol():
     img = base(); d = ImageDraw.Draw(img, "RGBA")
@@ -387,12 +394,9 @@ def build_clip(sid, idx):
     vo = AUDIO / f"{sid}.mp3"
     dur = ffprobe_dur(vo) + 1.0
     out = ASSETS / f"clip_{idx:02d}.mp4"
-    frames = int(dur*FPS)
-    # gentle ken-burns zoom + fade in/out; pad audio
-    zexpr = "min(zoom+0.00022,1.045)"
-    vf = (f"scale={W}:{H},zoompan=z='{zexpr}':d={frames}:"
-          f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={FPS},"
-          f"fade=t=in:st=0:d=0.4,fade=t=out:st={dur-0.4:.2f}:d=0.4,format=yuv420p")
+    # STATIC frame (no ken-burns) — gentle fade in/out only, no swaying
+    vf = (f"scale={W}:{H},format=yuv420p,"
+          f"fade=t=in:st=0:d=0.4,fade=t=out:st={dur-0.4:.2f}:d=0.4")
     af = f"afade=t=in:st=0:d=0.25,afade=t=out:st={dur-0.4:.2f}:d=0.4,apad=whole_dur={dur}"
     cmd = ["ffmpeg","-y","-loop","1","-i",str(png),"-i",str(vo),
            "-filter_complex",f"[0:v]{vf}[v];[1:a]{af}[a]",
