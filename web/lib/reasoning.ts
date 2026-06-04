@@ -155,7 +155,7 @@ export async function getAgentMeta(agentIds: bigint[]): Promise<Map<string, Agen
       try {
         const uri = (await withRetry(
           () => publicClient.readContract({ address: ID, abi: identityRegistryAbi, functionName: "agentURI", args: [id] }),
-          2,
+          5,
         )) as string;
         const card = decodeAgentCard(uri);
         m.set(id.toString(), {
