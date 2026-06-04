@@ -454,7 +454,9 @@ async function copyTradeChampions(cursor: CursorFile): Promise<void> {
   const count = await roundCount();
   if (count === 0n) return;
 
-  const from = Math.max(1, (cursor.lastChampionRound ?? 0) + 1);
+  // Continue from where we left off; on a cold start only copy-trade the last
+  // few settled rounds rather than back-filling the entire history at once.
+  const from = cursor.lastChampionRound != null ? cursor.lastChampionRound + 1 : Math.max(1, Number(count) - 6);
   for (let id = BigInt(from); id <= count; id++) {
     let round: Round;
     try {
