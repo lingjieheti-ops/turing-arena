@@ -73,6 +73,13 @@ jobs:
           IDENTITY_REGISTRY_ADDRESS: "0xbB174b6D9a8ca439d5B3735b6570AAD3FEE8405F"
           PRICE_ORACLE_ADDRESS: "0x31510d8a6Bbe5eEF2a315099AD2F94B504a4EEe3"
           MANTLE_DEX_ORACLE_ADDRESS: "0x53cf4b4E989dBbDd7009c5108C21AE765f82480b"
+          # Generous windows: GitHub's */5 cron is best-effort and often runs
+          # late, so each phase must outlast a delayed or skipped tick. A reveal
+          # window wider than the cron interval guarantees a tick lands inside it
+          # to reveal the personas before settlement.
+          KEEPER_COMMIT_SECONDS: "900" # 15 min commit
+          KEEPER_REVEAL_SECONDS: "600" # 10 min reveal (>> 5 min cron)
+          KEEPER_SETTLE_SECONDS: "240" # 4 min before settle
         run: pnpm --filter @turing-arena/agent keeper
 
       - name: Commit & push keeper-state
