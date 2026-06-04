@@ -469,6 +469,16 @@ async function copyTradeChampions(cursor: CursorFile): Promise<void> {
     if (!round.hasWinner || round.topAgentId === 0n) continue;
 
     try {
+      // Skip rounds already copy-traded (vault idempotency guard) without
+      // provoking an AlreadyTraded revert that would look like a failure in logs.
+      const already = (await publicClient.readContract({
+        address: CHAMPION_VAULT as Address,
+        abi: championVaultAbi,
+        functionName: "traded",
+        args: [id],
+      })) as boolean;
+      if (already) continue;
+
       const entry = (await publicClient.readContract({
         address: PROOF_OF_ALPHA as Address,
         abi: proofOfAlphaAbi,
