@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -41,
+  "confidence": 35,
+  "rationaleHash": "0x809c19a4128449f0c6dbcf5d4ed3ede62c3ea9262ea8ff624697bba470a91f5a",
+  "salt": "0x04cd9c7ae05c6a36ef0dd0c1423bcdbb0971ff23f1350c2de58e4148e0731a26",
+  "rationale": "Net read bearish (-0.07). Strongest evidence: allora -0.87 (Allora ML forecast leans short); momentum -0.23 (ETH down-momentum since the last tick (Pyth, live)); elfa -0.90 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
