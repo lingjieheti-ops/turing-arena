@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 55,
+  "confidence": 36,
+  "rationaleHash": "0xa429669d2945204bc394f09a3c9b9c5726bff2842f4d4662e6e69210b1b7ea72",
+  "salt": "0xbfe3e3e8ddd3d2b6540cb2416ab7fe29803bf586605f35410527a57787040801",
+  "rationale": "Net read bullish (0.09). Strongest evidence: nansen -0.60 (Smart money net outflow); surf -0.97 (Market momentum negative); allora +0.26 (Allora ML forecast leans long).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
