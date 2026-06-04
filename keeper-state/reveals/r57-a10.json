@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 216,
+  "confidence": 55,
+  "rationaleHash": "0xa758b5924ab601933656b0175147dd5ef00b7193c6fa73d0387d9563aec084a9",
+  "salt": "0x9ca54707efdb81ab5941e7030704307e0f02a43d31b755ec8df9ce9065556699",
+  "rationale": "Net read bullish (0.36). Strongest evidence: elfa -0.90 (KOL mindshare cooling); momentum -0.22 (ETH down-momentum since the last tick (Pyth, live)); allora +0.25 (Allora ML forecast leans long).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

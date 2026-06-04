@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 290,
+  "confidence": 64,
+  "rationaleHash": "0x7b675127d8eab65143149e34d04899a243abfdba45f3b7d010a6ea1abff05e1b",
+  "salt": "0xe48eb1fb242c44f831dd1ee39c5228a48a827b68f7a427328e051f72e65dd8cc",
+  "rationale": "Net read bullish (0.48). Strongest evidence: elfa -0.90 (KOL mindshare cooling); momentum -0.22 (ETH down-momentum since the last tick (Pyth, live)); allora +0.25 (Allora ML forecast leans long).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

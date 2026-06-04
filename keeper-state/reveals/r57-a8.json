@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 17,
+  "confidence": 32,
+  "rationaleHash": "0x7d1ad84fa05dec43319e320809b5f7f5e8a3de2a4441b4853a667f51677c618f",
+  "salt": "0x7c5c5d52eb1f847ab964ff6161e0a3cce1937c374a721e52a57db0cb7e01393b",
+  "rationale": "Net read neutral (0.03). Strongest evidence: elfa -0.90 (KOL mindshare cooling); momentum -0.22 (ETH down-momentum since the last tick (Pyth, live)); allora +0.25 (Allora ML forecast leans long).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
