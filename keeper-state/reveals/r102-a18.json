@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 34,
+  "confidence": 34,
+  "rationaleHash": "0x574946a89f7f81c74103e30b666c975f3e88e1dfb899f4c40575524ac47da07e",
+  "salt": "0xf8afd188d7666a7814069a94dd131e78d582a581fda4ef43207b3502e276ce1c",
+  "rationale": "Net read bullish (0.06). Strongest evidence: momentum +0.43 (ETH up-momentum since the last tick (Pyth, live)); allora +0.20 (Allora ML forecast leans long); elfa -0.29 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
