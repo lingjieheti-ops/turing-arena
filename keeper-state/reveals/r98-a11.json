@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 258,
+  "confidence": 60,
+  "rationaleHash": "0xd3061e0f96da7dca6c242b1dafad35d7cda5ebd1b1f9dd9021a3d040a55160ad",
+  "salt": "0xd2e8281dbf681f134a79b607097df14229eb3689ce4324c049226cfa719e240b",
+  "rationale": "Net read bullish (0.43). Strongest evidence: momentum -0.67 (ETH down-momentum since the last tick (Pyth, live)); allora -0.83 (Allora ML forecast leans short); nansen -0.63 (Smart money net outflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
