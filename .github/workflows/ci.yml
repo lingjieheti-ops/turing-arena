@@ -3,6 +3,11 @@ name: CI
 on:
   push:
     branches: [main]
+    # The keeper commits keeper-state/ (reveals, cursor) every few minutes; those
+    # data-only pushes must not trigger a full CI run.
+    paths-ignore:
+      - "keeper-state/**"
+      - "media/**"
   pull_request:
 
 jobs:
