@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -27,
+  "confidence": 33,
+  "rationaleHash": "0xb0537092b8bf6080ad6b6d6ca53e51bd64218378cc92ce2f711fb6dd50214a6c",
+  "salt": "0xa2d02b8367bc72e8449341ad61eff7735831d7c8b6aa3b750cdd068a272f62e2",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: momentum -0.42 (ETH down-momentum since the last tick (Pyth, live)); allora +0.18 (Allora ML forecast leans long); nansen +0.21 (Smart money net inflow).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
