@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 82,
+  "confidence": 40,
+  "rationaleHash": "0x6dfac558cf21106faf731dafa9e8ef409535c8d40dd646951fb5943b65b33c6d",
+  "salt": "0x1879f9c35fa254b36e326182ce54d07bd13bcbd86baa7593e3840c58bbd23569",
+  "rationale": "Net read bullish (0.14). Strongest evidence: momentum +0.12 (ETH up-momentum since the last tick (Pyth, live)); allora +0.19 (Allora ML forecast leans long); nansen +0.21 (Smart money net inflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
