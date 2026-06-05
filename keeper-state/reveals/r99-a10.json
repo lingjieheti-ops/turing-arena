@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 190,
+  "confidence": 52,
+  "rationaleHash": "0x89ff63e29311211055bc540905def3dcd2a8fd9e7af16485f596a35449875872",
+  "salt": "0x6eb1ecc3d0bebc2b45efd8ed43946e00e409a8de4da81b70f6202edff1a12282",
+  "rationale": "Net read bullish (0.32). Strongest evidence: allora -0.83 (Allora ML forecast leans short); nansen -0.62 (Smart money net outflow); elfa +0.99 (KOL mindshare heating up).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

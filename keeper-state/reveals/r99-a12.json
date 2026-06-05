@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 70,
+  "confidence": 38,
+  "rationaleHash": "0x3b33c5d2ec3a83e3f0af6e23ebd67b67161ca7162a773931bc02dde56c2b56c6",
+  "salt": "0x4297515180ba3f74ce04a62bdc2aace52ab08e139334792a13d9f9f2c1a34cca",
+  "rationale": "Net read bullish (0.12). Strongest evidence: allora -0.83 (Allora ML forecast leans short); nansen -0.62 (Smart money net outflow); elfa +0.99 (KOL mindshare heating up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
