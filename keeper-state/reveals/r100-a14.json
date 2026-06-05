@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 395,
+  "confidence": 76,
+  "rationaleHash": "0x7077daaef151e68b45dfd7ecf18819e99cf139e1a105be63adc0009ebeef495f",
+  "salt": "0x784f7f1c7ecab2d3ccfa6e6ec60b96b187143a10a942fb7c4aff89a0eced1a3b",
+  "rationale": "Net read bullish (0.66). Strongest evidence: momentum +0.97 (ETH up-momentum since the last tick (Pyth, live)); allora +0.22 (Allora ML forecast leans long); nansen +0.18 (Smart money net inflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
