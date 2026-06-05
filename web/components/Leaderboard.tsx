@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { shortAddr } from "@turing-arena/shared";
 import { type AgentUI, getLeaderboard } from "@/lib/arena";
 import { isLive } from "@/lib/contracts";
+import { type Stance, getLatestStances } from "@/lib/reasoning";
 import { AgentAvatar } from "./AgentAvatar";
 import { AgentHover } from "./AgentHover";
+import { BattleCardButton } from "./BattleCard";
 import { ShareButton } from "./ShareButton";
 import { KindTag, ScoreText, SectionTitle, Spinner } from "./ui";
 
@@ -25,6 +27,25 @@ export function Leaderboard() {
   // The fullest board we've rendered. A later RPC-choked (partial) read must not
   // drop agents we've already shown, so we never regress below this count.
   const bestCount = useRef(0);
+  // Each agent's latest sealed call → the hover card's "current mood".
+  const [stances, setStances] = useState<Map<string, Stance>>(new Map());
+
+  useEffect(() => {
+    if (!isLive()) return;
+    let alive = true;
+    const load = () =>
+      getLatestStances()
+        .then((s) => {
+          if (alive && s.size) setStances(s);
+        })
+        .catch(() => {});
+    load();
+    const t = setInterval(load, 30000);
+    return () => {
+      alive = false;
+      clearInterval(t);
+    };
+  }, []);
 
   useEffect(() => {
     if (!isLive()) {
@@ -80,6 +101,7 @@ export function Leaderboard() {
                 <span className="h-1.5 w-1.5 animate-pulseglow rounded-full bg-mint" /> live · auto-refresh
               </span>
             )}
+            {agents && agents.length > 0 ? <BattleCardButton agents={agents} /> : null}
             <ShareButton />
           </div>
         }
@@ -120,6 +142,7 @@ export function Leaderboard() {
                 kind={a.kind}
                 avatar={a.avatar}
                 blurb={a.blurb}
+                mood={stances.get(a.agentId.toString())}
                 className="flex min-w-0 cursor-help items-center gap-2.5"
               >
                 <AgentAvatar name={a.name} avatar={a.avatar} size={34} />

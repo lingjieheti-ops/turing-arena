@@ -148,6 +148,58 @@ export async function getResultsFeed(limit = 3): Promise<ResultRound[]> {
   return rounds;
 }
 
+export interface Stance {
+  bps: number;
+  conf: number;
+}
+
+/// Each agent's most recent sealed call (direction + conviction) from the latest
+/// settled round — the "current mood" shown in the hover card. Best-effort and
+/// light (one round's entries); returns an empty map on any RPC hiccup.
+export async function getLatestStances(): Promise<Map<string, Stance>> {
+  const m = new Map<string, Stance>();
+  try {
+    const count = (await withRetry(() =>
+      publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "roundCount" }),
+    )) as bigint;
+    if (count === 0n) return m;
+    const n = await getTotalAgents();
+    const agentIds = Array.from({ length: n }, (_, i) => BigInt(i + 1));
+
+    // Most recent settled round.
+    const floor = count > 6n ? count - 6n : 1n;
+    let round: { id: bigint; head: RoundHead } | null = null;
+    for (let id = count; id >= floor; id--) {
+      const r = await fetchHead(id);
+      if (r?.head.settled) {
+        round = r;
+        break;
+      }
+    }
+    if (!round) return m;
+
+    const CHUNK = 5;
+    for (let i = 0; i < agentIds.length; i += CHUNK) {
+      const batch = await Promise.all(
+        agentIds.slice(i, i + CHUNK).map((aid) =>
+          withRetry(
+            () => publicClient.readContract({ address: POA, abi: proofOfAlphaAbi, functionName: "getEntry", args: [round!.id, aid] }),
+            2,
+          )
+            .then((e) => ({ aid, e: e as RawEntry }))
+            .catch(() => null),
+        ),
+      );
+      for (const x of batch) {
+        if (x?.e.revealed) m.set(x.aid.toString(), { bps: Number(x.e.predictedBps), conf: Number(x.e.confidence) });
+      }
+    }
+  } catch {
+    /* mood is best-effort */
+  }
+  return m;
+}
+
 export interface AgentMeta {
   name: string;
   kind: "AI" | "HUMAN";

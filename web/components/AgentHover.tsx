@@ -11,7 +11,7 @@ const DELAY = 1300;
 const R = 13;
 const CIRC = 2 * Math.PI * R;
 const CARD_W = 280;
-const CARD_H = 172;
+const CARD_H = 210;
 
 type Phase = "idle" | "charging" | "shown";
 
@@ -21,6 +21,7 @@ export function AgentHover({
   kind,
   avatar,
   blurb,
+  mood,
   className,
   children,
 }: {
@@ -29,6 +30,7 @@ export function AgentHover({
   kind?: "AI" | "HUMAN";
   avatar?: string;
   blurb?: string;
+  mood?: { bps: number; conf: number };
   className?: string;
   children: ReactNode;
 }) {
@@ -114,6 +116,15 @@ export function AgentHover({
               {lore?.rival ? (
                 <p className="mt-2 text-[11px] text-muted">
                   ⚔ loves to fade <span className="font-medium text-ink-100/80">{lore.rival}</span>
+                </p>
+              ) : null}
+              {mood ? (
+                <p className="mt-1.5 border-t border-ink-700/50 pt-1.5 text-[11px]">
+                  <span className="text-muted">mood now: </span>
+                  <span className={mood.bps >= 0 ? "text-up" : "text-down"}>
+                    {mood.bps >= 0 ? "📈 leaning bullish" : "📉 calling the top"} ({mood.bps >= 0 ? "+" : ""}
+                    {mood.bps}bps @ {mood.conf}%)
+                  </span>
                 </p>
               ) : null}
             </div>,

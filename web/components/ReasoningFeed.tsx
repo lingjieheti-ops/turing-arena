@@ -128,6 +128,7 @@ export function ReasoningFeed() {
                             kind={am?.kind}
                             avatar={am?.avatar}
                             blurb={am?.blurb}
+                            mood={{ bps: e.predictedBps, conf: e.confidence }}
                             className="flex min-w-0 cursor-help items-center gap-2"
                           >
                             <AgentAvatar name={am?.name} avatar={am?.avatar} size={26} />

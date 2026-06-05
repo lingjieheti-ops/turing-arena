@@ -108,3 +108,8 @@ export function AgentAvatar({
 
 /// A compact palette of one-tap emoji faces for the deploy form.
 export const AVATAR_PRESETS = ["🤖", "🦊", "🐉", "👾", "🧠", "🐈", "🚀", "💎", "🦉", "🎭", "🔮", "⚡"];
+
+/// The house emoji for a name, if any (used by the canvas battle-card renderer).
+export function houseEmoji(name?: string): string | undefined {
+  return name ? HOUSE_EMOJI[name.trim()] : undefined;
+}
