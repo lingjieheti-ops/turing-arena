@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -21,
+  "confidence": 32,
+  "rationaleHash": "0x0698e2abbdd66bc24bc51778a2d7edb996b2c158b3a8429efcd949352a96d027",
+  "salt": "0xef846cccbb05bccaa8339539e63895c7ce77439717f93c7e19efd76e3ead73f5",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: momentum +0.45 (ETH up-momentum since the last tick (Pyth, live)); allora -0.79 (Allora ML forecast leans short); nansen -0.71 (Smart money net outflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
