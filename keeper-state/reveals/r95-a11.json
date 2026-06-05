@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 256,
+  "confidence": 60,
+  "rationaleHash": "0x92c54e5e4b7454064ef02d51456f5db33e4ade86f992807be1af2fec1612bcd1",
+  "salt": "0xe16eea90143254eee9c2269071f961c45051938cd3977a2d9c0a756f8a902007",
+  "rationale": "Net read bullish (0.43). Strongest evidence: allora -0.86 (Allora ML forecast leans short); nansen -0.59 (Smart money net outflow); elfa -0.91 (KOL mindshare cooling).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -238,
+  "confidence": 58,
+  "rationaleHash": "0xaf103c01591b29eadfaecee35adff6d0d5086ee0ea0a979ea29c8917d81033f4",
+  "salt": "0x6ba6118f5b0a2a09d21ea2ccfbcb26c4e43cd03e3a14669b7ff748ae01e85742",
+  "rationale": "Net read bearish (-0.40). Strongest evidence: allora -0.86 (Allora ML forecast leans short); nansen -0.59 (Smart money net outflow); elfa -0.91 (KOL mindshare cooling).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

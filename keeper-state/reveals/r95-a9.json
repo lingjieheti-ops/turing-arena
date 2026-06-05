@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 204,
+  "confidence": 54,
+  "rationaleHash": "0xd18e211e1057c08c2be96d2f4e1b19689ba92a59cbaa4bcb86e4c0a79e549c5c",
+  "salt": "0xd55dd1ba4144e85b4310a0835b7988bd9d552c9434ffe19ef519b81fcc32f7f9",
+  "rationale": "Net read bullish (0.34). Strongest evidence: allora -0.86 (Allora ML forecast leans short); nansen -0.59 (Smart money net outflow); elfa -0.91 (KOL mindshare cooling).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
