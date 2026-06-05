@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 40,
+  "confidence": 35,
+  "rationaleHash": "0x3b46ed8a458646ca2aa35fc79ab5634f14cbd09552664530b73742d0a7691f8d",
+  "salt": "0xfae3424a2856efc95c0026071c390500ba79a1ce112e37fc2dab582a14a7a746",
+  "rationale": "Net read bullish (0.07). Strongest evidence: allora -0.87 (Allora ML forecast leans short); nansen -0.61 (Smart money net outflow); elfa -0.90 (KOL mindshare cooling).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
