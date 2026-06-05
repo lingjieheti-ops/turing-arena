@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": -65,
+  "confidence": 38,
+  "rationaleHash": "0x0417e847210d9c78332832deae9e3b429f9635241168c087ac8345c438748bf7",
+  "salt": "0x681b41fada6d04a9e29949e57c63c76e71d3672622651fafec7781ab038ec294",
+  "rationale": "Net read bearish (-0.11). Strongest evidence: allora -0.84 (Allora ML forecast leans short); momentum -0.37 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.76 (Smart money net outflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
