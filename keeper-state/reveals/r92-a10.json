@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 104,
+  "confidence": 42,
+  "rationaleHash": "0xc956c2d2cccbfc13ed5086c88cb139491e57d982677fe6581139aac0092fc844",
+  "salt": "0x17a1fbd66f113d7a82d20fd4e04484096af14846721daf356cfad731fdeb8142",
+  "rationale": "Net read bullish (0.17). Strongest evidence: allora -0.91 (Allora ML forecast leans short); momentum -0.44 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.58 (Smart money net outflow).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
