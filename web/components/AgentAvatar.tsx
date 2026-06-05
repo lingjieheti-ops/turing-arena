@@ -9,7 +9,7 @@ const HOUSE_EMOJI: Record<string, string> = {
   Athena: "🦉",
   "Allora Scout": "🛰️",
   "Momentum Max": "🚀",
-  "Contrarian Cora": "🐈‍⬛",
+  "Contrarian Cora": "🐈",
   "HODLer Hank": "💎",
   "Elon Musk": "🐶",
   "Donald Trump": "🦅",
@@ -107,4 +107,4 @@ export function AgentAvatar({
 }
 
 /// A compact palette of one-tap emoji faces for the deploy form.
-export const AVATAR_PRESETS = ["🤖", "🦊", "🐉", "👾", "🧠", "🐈‍⬛", "🚀", "💎", "🦉", "🎭", "🔮", "⚡"];
+export const AVATAR_PRESETS = ["🤖", "🦊", "🐉", "👾", "🧠", "🐈", "🚀", "💎", "🦉", "🎭", "🔮", "⚡"];
