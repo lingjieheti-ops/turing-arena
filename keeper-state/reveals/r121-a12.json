@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -58,
+  "confidence": 37,
+  "rationaleHash": "0x194b4bf43edaaff037b3d8b9bf7aff66c9b51dfc1c74b562fcd1f019066fc5cb",
+  "salt": "0x7b1de0366e30850bcdf7c74f5b5944c19d5b813ff8a4ffa96e5ec6e719b72bdc",
+  "rationale": "Net read bearish (-0.10). Strongest evidence: nansen -0.65 (Smart money net outflow); momentum +0.21 (ETH up-momentum since the last tick (Pyth, live)); elfa +0.81 (KOL mindshare heating up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
