@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 51,
+  "confidence": 36,
+  "rationaleHash": "0x1d46d1cbeab43e1085baec4ddfc555ec5f3091a6f5417901bb328365eb031e51",
+  "salt": "0xa225f638521612a5dd7096583992f80b4bbcc00951557bffbb47571d14b11cbd",
+  "rationale": "Net read bullish (0.09). Strongest evidence: nansen -0.65 (Smart money net outflow); elfa +0.83 (KOL mindshare heating up); surf +0.97 (Market momentum positive).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

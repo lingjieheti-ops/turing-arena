@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 91,
+  "confidence": 41,
+  "rationaleHash": "0x540244a638f8ed75c6afd17c679d98e0284825ac86cfa4cdbaf490028114e98d",
+  "salt": "0x726fdca74b28ec555f5ddfd949f5c79df2e826f08ddc1774ac558141a7b05e98",
+  "rationale": "Net read bullish (0.15). Strongest evidence: nansen -0.65 (Smart money net outflow); elfa +0.83 (KOL mindshare heating up); surf +0.97 (Market momentum positive).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

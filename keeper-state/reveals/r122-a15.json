@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 209,
+  "confidence": 54,
+  "rationaleHash": "0xb482ffcb924aed6efc052a643fda8f3f91d7ecd1f3b41feac97982223fd9c8fc",
+  "salt": "0x1a94a3afe1c6b77a771039ebb88298f81572c0b51226f34cb0ff024fe4914d5a",
+  "rationale": "Net read bullish (0.35). Strongest evidence: nansen -0.65 (Smart money net outflow); elfa +0.83 (KOL mindshare heating up); surf +0.97 (Market momentum positive).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
