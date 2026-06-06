@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 266,
+  "confidence": 61,
+  "rationaleHash": "0x6d5c8e2262c1670f1901be2e764ec0eb537832c3825c2f967d21e4594f71d608",
+  "salt": "0x61c7851be7687c9ca3d82ee0c84e525a71b6cfb815a1b553319292e7daa8744a",
+  "rationale": "Net read bullish (0.44). Strongest evidence: momentum +0.29 (ETH up-momentum since the last tick (Pyth, live)); nansen -0.68 (Smart money net outflow); elfa +0.87 (KOL mindshare heating up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
