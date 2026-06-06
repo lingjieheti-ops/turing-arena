@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 161,
+  "confidence": 49,
+  "rationaleHash": "0xcc37b956457686536409dbdfa1b6f0e97077a06969f9f7e612ceb55ecd19cf4c",
+  "salt": "0xde469b7f1546c4b4182f6014b908a4d94a573c6854e520a8e0555260f921dfa1",
+  "rationale": "Net read bullish (0.27). Strongest evidence: nansen -0.66 (Smart money net outflow); elfa +0.82 (KOL mindshare heating up); surf +0.96 (Market momentum positive).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

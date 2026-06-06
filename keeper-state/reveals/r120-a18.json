@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 7,
+  "confidence": 31,
+  "rationaleHash": "0xf31edb7a07e74e7961a59132a13a8dd5b609ea2c08962a5dc2ff6ebdbbd7b5ec",
+  "salt": "0xcf7bc5dc126656f2a212cc61c1b46f2f2e012b7c18ef3d22a24528bb53a40f95",
+  "rationale": "Net read neutral (0.01). Strongest evidence: nansen -0.66 (Smart money net outflow); elfa +0.82 (KOL mindshare heating up); surf +0.96 (Market momentum positive).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

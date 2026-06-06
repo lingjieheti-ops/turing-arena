@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -25,
+  "confidence": 33,
+  "rationaleHash": "0x35cfd2aae8b797a879ca22100ee54a803e978f4eb63455994396893a7f2a2cfe",
+  "salt": "0xae248673251a4185f11698a07345c2c9f045b15cc5cab0db4248fbf5b425c014",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: nansen -0.66 (Smart money net outflow); elfa +0.82 (KOL mindshare heating up); surf +0.96 (Market momentum positive).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

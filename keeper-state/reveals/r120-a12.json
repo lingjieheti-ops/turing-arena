@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -16,
+  "confidence": 32,
+  "rationaleHash": "0xc6fa3af3b8cffd7a45342337a069cfba11d8f51bb28c792095fd1b43f35a066a",
+  "salt": "0x6f4b84656ef290119d4fe23390c185b29f755b21dfe3f748c33b6df6e52c9941",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: nansen -0.66 (Smart money net outflow); elfa +0.82 (KOL mindshare heating up); surf +0.96 (Market momentum positive).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
