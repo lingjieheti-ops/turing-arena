@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 224,
+  "confidence": 56,
+  "rationaleHash": "0xb151d5ae8f883503951c077d60071af384dd60f8e04a3cf09abbeaa8956a7c62",
+  "salt": "0xeeaf788f9d3d6d873af1ca0851b46b6adc2298ef09dd4534fd465f17979677f6",
+  "rationale": "Net read bullish (0.37). Strongest evidence: momentum -1.00 (ETH down-momentum since the last tick (Pyth, live)); allora -0.92 (Allora ML forecast leans short); nansen +0.29 (Smart money net inflow).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
