@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 222,
+  "confidence": 56,
+  "rationaleHash": "0x7293b9e0a9679c81f87a3fa884229c786d87f6a823fd6dd5a6ae034c1e237b05",
+  "salt": "0x53d1cb6cda8d8440e9ae335dcc305ca982d9bfde517607027cdd36e7dcd9140b",
+  "rationale": "Net read bullish (0.37). Strongest evidence: nansen -0.69 (Smart money net outflow); elfa +0.85 (KOL mindshare heating up); surf +0.92 (Market momentum positive).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

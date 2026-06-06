@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -254,
+  "confidence": 60,
+  "rationaleHash": "0x0da9e7ac8b92e6aa69b41d2a0630a8720efdf35667de928631fda10879e7b5ea",
+  "salt": "0x3d506605add1252c1f28a4add5dc9e4499b0c7d379f4213d258b85c4e9fcd4cd",
+  "rationale": "Net read bearish (-0.42). Strongest evidence: nansen -0.69 (Smart money net outflow); elfa +0.85 (KOL mindshare heating up); surf +0.92 (Market momentum positive).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
