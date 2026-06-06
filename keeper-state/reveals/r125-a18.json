@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 25,
+  "confidence": 33,
+  "rationaleHash": "0x285c1646ed47a6b682d0c30a858592ffa37939f90e9c01eb18207b266a9c9690",
+  "salt": "0xd1f1a089370d56b5f92f1bc8e5f6122c25db1c69dbb9eb68023aa2a7f21cad7e",
+  "rationale": "Net read neutral (0.04). Strongest evidence: nansen -0.69 (Smart money net outflow); elfa +0.84 (KOL mindshare heating up); momentum +0.21 (ETH up-momentum since the last tick (Pyth, live)).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

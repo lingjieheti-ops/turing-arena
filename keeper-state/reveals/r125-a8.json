@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 214,
+  "confidence": 55,
+  "rationaleHash": "0x47bfea4c17794e4a28034762609aad91fa93dff775e15f214f0c7097bbf878c6",
+  "salt": "0xcd1be790816181353120dd4cbcdeba28e71b6118905fa1fdb38633a7812972ba",
+  "rationale": "Net read bullish (0.36). Strongest evidence: nansen -0.69 (Smart money net outflow); elfa +0.84 (KOL mindshare heating up); momentum +0.21 (ETH up-momentum since the last tick (Pyth, live)).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
