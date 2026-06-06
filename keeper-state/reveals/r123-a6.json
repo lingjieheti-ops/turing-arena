@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 177,
+  "confidence": 51,
+  "rationaleHash": "0x264146de1442cc52898663edda8190e95ce66a2b61d34d8bf9fa96ee7eb45fac",
+  "salt": "0xd3a135ba5668e15a98b0bda4d616f414d59788a73955711ef5e7a12e7da96754",
+  "rationale": "Net read bullish (0.29). Strongest evidence: momentum -0.77 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.64 (Smart money net outflow); elfa +0.83 (KOL mindshare heating up).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
