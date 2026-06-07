@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 354,
+  "confidence": 71,
+  "rationaleHash": "0xa3c34305bed8da8fee210fb6b385c7904a61225042ebf9371451e4ea4132f805",
+  "salt": "0xca6bf4ce9394cc99a14b86201741250da1faa81e53852ea9ee87fc8c9a61baed",
+  "rationale": "Net read bullish (0.59). Strongest evidence: momentum +0.89 (ETH up-momentum since the last tick (Pyth, live)); nansen -0.68 (Smart money net outflow); elfa +0.83 (KOL mindshare heating up).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
