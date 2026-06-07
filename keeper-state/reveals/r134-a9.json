@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 290,
+  "confidence": 64,
+  "rationaleHash": "0xe0bc862d63959669c3cb028babab74bbc284e1d9fea970efa5f31a64c4b3eece",
+  "salt": "0x8f936609d157005dbd4f8e4fcd97ecaef13ff5beff3fa84d085c62a86a6743de",
+  "rationale": "Net read bullish (0.48). Strongest evidence: nansen -0.65 (Smart money net outflow); elfa +0.74 (KOL mindshare heating up); surf +0.94 (Market momentum positive).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
