@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 492,
+  "confidence": 87,
+  "rationaleHash": "0xd2897091b405bb6c508c87dd73fd2bba11764afcfc859ef73611f2f793f2efed",
+  "salt": "0xc0a0546f1f4da795c872276deafb83d784720d3d8dcf5e0432d0011eb0f2d46a",
+  "rationale": "Net read bullish (0.82). Strongest evidence: momentum +1.00 (ETH up-momentum since the last tick (Pyth, live)); nansen -0.64 (Smart money net outflow); elfa +0.76 (KOL mindshare heating up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

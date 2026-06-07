@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 440,
+  "confidence": 81,
+  "rationaleHash": "0x878992b169df9e15998356f96643f99786e15d24addcbb198851963c6ad5a949",
+  "salt": "0x3a09db2a957cc727847b933c85ef09e2da6d224374952bbfced67bd7438050a1",
+  "rationale": "Net read bullish (0.73). Strongest evidence: momentum +1.00 (ETH up-momentum since the last tick (Pyth, live)); nansen -0.64 (Smart money net outflow); elfa +0.76 (KOL mindshare heating up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
