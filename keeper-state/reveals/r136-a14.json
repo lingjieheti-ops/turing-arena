@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 226,
+  "confidence": 56,
+  "rationaleHash": "0x08c7fb1c6d8c2d2c2a76e32faf185b462f0aabbed193f5cd3c9338ff6bad66bc",
+  "salt": "0x8c4f12eb55c18b79a5dddc97bdb814db8eaa918df6c5e8642c885a763fa2b103",
+  "rationale": "Net read bullish (0.38). Strongest evidence: nansen -0.66 (Smart money net outflow); elfa +0.72 (KOL mindshare heating up); surf +0.92 (Market momentum positive).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

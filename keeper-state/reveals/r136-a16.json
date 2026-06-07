@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 97,
+  "confidence": 41,
+  "rationaleHash": "0xb9ffab3e5b6269390af6caa40083d1ad9a08d4ca04df6f67e45cddf81cf9cca6",
+  "salt": "0x3bbfe5a72b2e222134b6f08eb368a1e4239cb3fc970ad560799825234f8acc8c",
+  "rationale": "Net read bullish (0.16). Strongest evidence: nansen -0.66 (Smart money net outflow); elfa +0.72 (KOL mindshare heating up); surf +0.92 (Market momentum positive).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
