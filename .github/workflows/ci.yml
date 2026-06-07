@@ -10,12 +10,18 @@ on:
       - "media/**"
   pull_request:
 
+# Run the JS-based actions (checkout / setup-node / pnpm) on Node 24 instead of
+# the deprecated Node 20 runtime, so CI emits no "Node.js 20 actions are
+# deprecated" annotations and keeps working after Node 20 leaves the runners.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   contracts:
     name: Contracts (Foundry · 29 tests)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           submodules: recursive
       - name: Install Foundry
@@ -34,9 +40,9 @@ jobs:
     name: Typecheck + web build + integrity
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4 # version comes from package.json "packageManager"
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
           cache: pnpm

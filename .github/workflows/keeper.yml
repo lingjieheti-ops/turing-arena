@@ -24,6 +24,10 @@ concurrency:
 permissions:
   contents: write # to push keeper-state/ back to the repo
 
+# Run the JS-based actions on Node 24, not the deprecated Node 20 runtime.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   tick:
     name: Keeper tick
@@ -44,13 +48,13 @@ jobs:
             echo "KEEPER_PRIVATE_KEY is not set; skipping this tick. Add the repo secret to go live."
           fi
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         if: steps.gate.outputs.ok == 'true'
 
       - uses: pnpm/action-setup@v4 # version comes from package.json "packageManager"
         if: steps.gate.outputs.ok == 'true'
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         if: steps.gate.outputs.ok == 'true'
         with:
           node-version: 20
