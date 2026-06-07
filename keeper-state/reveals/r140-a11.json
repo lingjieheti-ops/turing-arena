@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 288,
+  "confidence": 64,
+  "rationaleHash": "0x2292a0f08ebc1fdf1e17321f856715455a02bfb11e284740b0d8d1e022b8d8f8",
+  "salt": "0x1830710d2b9c7e992ef4526f94414e19a2f515a950605be343acaabfcfdba1b7",
+  "rationale": "Net read bullish (0.48). Strongest evidence: momentum -0.84 (ETH down-momentum since the last tick (Pyth, live)); elfa +0.91 (KOL mindshare heating up); surf +0.92 (Market momentum positive).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
