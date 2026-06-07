@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 8,
+  "confidence": 31,
+  "rationaleHash": "0xe7566573a139a2d7033d1a80b056212f7382e2da8823aac700317043a9ee6cea",
+  "salt": "0x10f46200f6e819dfcdba7e7b73f47b607acebeb8694a77702a4c6364ac0c3503",
+  "rationale": "Net read neutral (0.01). Strongest evidence: momentum -1.00 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.67 (Smart money net outflow); elfa +0.73 (KOL mindshare heating up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
