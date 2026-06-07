@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -183,
+  "confidence": 51,
+  "rationaleHash": "0x7bb410de27b4f5b453cc217b59ee3858fd0ffe8f343be01b69c85cdd9443c1e6",
+  "salt": "0x4fa1b0b7c4bbd613f33e5f4350126b63844edb5439176b3c69bc97320ebc650f",
+  "rationale": "Net read bearish (-0.30). Strongest evidence: momentum -1.00 (ETH down-momentum since the last tick (Pyth, live)); nansen -0.63 (Smart money net outflow); elfa +0.76 (KOL mindshare heating up).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
