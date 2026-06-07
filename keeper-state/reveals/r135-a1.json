@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 46,
+  "confidence": 35,
+  "rationaleHash": "0x95244729e2917d5089a90f86ccd1e00a9f034cffb98e419f0a0e0e08fa9cf03d",
+  "salt": "0x3c4d9a983c4699f146a344e30ffaa5146597936afc2a87bd959160e9c98b1250",
+  "rationale": "Net read bullish (0.08). Strongest evidence: nansen -0.65 (Smart money net outflow); elfa +0.75 (KOL mindshare heating up); surf +0.95 (Market momentum positive).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
