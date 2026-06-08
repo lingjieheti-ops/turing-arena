@@ -85,10 +85,13 @@ export function ChampionPanel() {
         if (alive) setLogsFailed(true);
       }
     };
-    load();
+    // Below the fold + a multi-window getLogs walk — stagger it well off the
+    // cold-load burst so it doesn't compete with the above-the-fold reads.
+    const first = setTimeout(load, 1500);
     const t = setInterval(load, 30000);
     return () => {
       alive = false;
+      clearTimeout(first);
       clearInterval(t);
     };
   }, []);

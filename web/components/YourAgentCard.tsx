@@ -69,10 +69,11 @@ export function YourAgentCard() {
         /* keep last good */
       }
     };
-    load();
+    const first = setTimeout(load, 700);
     const t = setInterval(load, 20000);
     return () => {
       alive = false;
+      clearTimeout(first);
       clearInterval(t);
     };
   }, []);

@@ -8,6 +8,7 @@ import { type Stance, getLatestStances } from "@/lib/reasoning";
 import { AgentAvatar } from "./AgentAvatar";
 import { AgentHover } from "./AgentHover";
 import { BattleCardButton } from "./BattleCard";
+import { GrudgeMatches } from "./GrudgeMatches";
 import { ShareButton } from "./ShareButton";
 import { KindTag, ScoreText, SectionTitle, Spinner } from "./ui";
 
@@ -17,6 +18,14 @@ const SAMPLE: AgentUI[] = [
   { agentId: 3n, name: "HODLer Hank", kind: "HUMAN", model: "gut", owner: "0x0", score: 96n, played: 9, correct: 5, accuracyBps: 5556, repCount: 9 },
   { agentId: 4n, name: "Contrarian Cora", kind: "AI", model: "mean-reversion", owner: "0x0", score: -64n, played: 9, correct: 4, accuracyBps: 4444, repCount: 9 },
 ] as unknown as AgentUI[];
+
+/// A quick, fun "form" tag derived from the agent's own verified record.
+function formBadge(a: AgentUI): { icon: string; title: string } | null {
+  if (a.played === 0) return null;
+  if (a.accuracyBps >= 6000 && a.score > 0n) return { icon: "🔥", title: "on a hot streak" };
+  if (a.score < 0n) return { icon: "🧊", title: "ice cold" };
+  return null;
+}
 
 export function Leaderboard() {
   const [agents, setAgents] = useState<AgentUI[] | null>(null);
@@ -39,10 +48,13 @@ export function Leaderboard() {
           if (alive && s.size) setStances(s);
         })
         .catch(() => {});
-    load();
+    // Stagger the first read so the mood pass doesn't pile onto the cold-load
+    // RPC burst (leaderboard + active round + feed all hitting at t=0).
+    const first = setTimeout(load, 1100);
     const t = setInterval(load, 30000);
     return () => {
       alive = false;
+      clearTimeout(first);
       clearInterval(t);
     };
   }, []);
@@ -79,10 +91,11 @@ export function Leaderboard() {
         }
       }
     };
-    load();
+    const first = setTimeout(load, 300);
     const t = setInterval(load, 15000);
     return () => {
       alive = false;
+      clearTimeout(first);
       clearInterval(t);
     };
   }, []);
@@ -114,6 +127,7 @@ export function Leaderboard() {
           </span>
         </div>
       ) : null}
+      {agents && agents.length > 0 ? <GrudgeMatches agents={agents} /> : null}
       <div className="panel overflow-hidden">
         <div className="grid grid-cols-[2.4rem_1fr_5rem_5rem_4rem] items-center gap-2 border-b border-ink-700/60 px-4 py-2.5 text-[11px] uppercase tracking-wider text-muted sm:grid-cols-[2.4rem_1fr_6rem_6rem_5rem_6rem]">
           <div>#</div>
@@ -150,6 +164,11 @@ export function Leaderboard() {
                   <div className="flex items-center gap-2">
                     <span className="truncate font-semibold text-white">{a.name}</span>
                     <KindTag kind={a.kind} />
+                    {formBadge(a) ? (
+                      <span className="shrink-0 text-xs leading-none" title={formBadge(a)!.title}>
+                        {formBadge(a)!.icon}
+                      </span>
+                    ) : null}
                   </div>
                   <div className="truncate text-xs text-muted">
                     {a.model ?? "agent"} · {a.owner === "0x0" ? "—" : shortAddr(a.owner)}
