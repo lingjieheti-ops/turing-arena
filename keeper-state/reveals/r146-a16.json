@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 330,
+  "confidence": 69,
+  "rationaleHash": "0xf68b28c694ff084a7ba054c1aad08474942df726955d0561cca401b7935a2713",
+  "salt": "0xcc8b9cc91101a67962e4809ead2fac8da68384c2cce0af312f7764a5256417f3",
+  "rationale": "Net read bullish (0.55). Strongest evidence: momentum +0.82 (BTC/USD up-momentum since the last tick (Pyth, live)); limitless +0.92 (Limitless (Base) BTC 96% up / 4% down); nansen -0.61 (Smart money net outflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
