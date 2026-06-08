@@ -29,55 +29,60 @@ FPS = 30
 VOICE = "en-US-AndrewNeural"   # warm, modern, confident
 RATE = "+6%"
 
-# ---- palette (Mantle ink + teal) ----
-BG       = (8, 12, 16)
-BG2      = (13, 19, 26)
-PANEL    = (17, 23, 30)
-PANEL2   = (22, 30, 39)
-LINE     = (38, 50, 62)
-TEAL     = (124, 246, 200)     # Mantle #7CF6C8
-TEAL_DK  = (47, 120, 99)
-TEXT     = (233, 240, 245)
-MUTED    = (140, 154, 167)
-GREEN    = (46, 230, 166)
-RED      = (255, 107, 107)
-GOLD     = (246, 199, 92)
-BLUE     = (110, 170, 255)
+# ---- palette (cyberpunk dual-neon: cyan + magenta on blue-black) ----
+BG       = (5, 6, 15)          # #05060f
+BG2      = (8, 12, 28)
+PANEL    = (11, 16, 36)
+PANEL2   = (16, 23, 46)
+LINE     = (27, 37, 71)
+TEAL     = (61, 242, 255)      # primary neon cyan #3DF2FF (kept name)
+TEAL_DK  = (24, 90, 110)
+MAGENTA  = (255, 54, 198)      # hot magenta #FF36C6
+TEXT     = (236, 243, 252)
+MUTED    = (118, 134, 172)
+GREEN    = (43, 255, 154)
+RED      = (255, 69, 110)
+GOLD     = (255, 197, 61)
+BLUE     = (122, 160, 255)
 
-FONTS = "C:/Windows/Fonts/"
+# Display = Chakra Petch (techno, matches the web). Mono = Consolas (Windows).
+FONT_DIR = ROOT / "fonts"
 def font(name, size):
-    return ImageFont.truetype(FONTS + name, size)
+    return ImageFont.truetype("C:/Windows/Fonts/" + name, size)
+def cfont(name, size):
+    return ImageFont.truetype(str(FONT_DIR / name), size)
 # families
-def F_black(s):  return font("segoeuib.ttf", s)   # bold
-def F_semi(s):   return font("seguisb.ttf", s)     # semibold
-def F_reg(s):    return font("segoeui.ttf", s)
-def F_light(s):  return font("segoeuil.ttf", s)
+def F_black(s):  return cfont("ChakraPetch-Bold.ttf", s)
+def F_semi(s):   return cfont("ChakraPetch-SemiBold.ttf", s)
+def F_reg(s):    return cfont("ChakraPetch-Medium.ttf", s)
+def F_light(s):  return cfont("ChakraPetch-Regular.ttf", s)
 def F_mono(s):   return font("consola.ttf", s)
 def F_monob(s):  return font("consolab.ttf", s)
 
 # ---------------------------------------------------------------- helpers
 def base():
-    """Dark canvas with a soft top-teal vignette + faint grid (on-chain motif)."""
+    """Blue-black canvas with a neon blueprint grid + cyan/magenta corner glows."""
     img = Image.new("RGB", (W, H), BG)
     # vertical gradient
-    top = (12, 20, 26); bot = (7, 10, 13)
+    top = (9, 12, 30); bot = (4, 5, 12)
     grad = Image.new("RGB", (1, H))
     for y in range(H):
         t = y / H
         grad.putpixel((0, y), tuple(int(top[i] + (bot[i]-top[i])*t) for i in range(3)))
     img = grad.resize((W, H))
-    d = ImageDraw.Draw(img, "RGBA")
-    # faint grid
-    for x in range(0, W, 60):
-        d.line([(x, 0), (x, H)], fill=(255, 255, 255, 6))
-    for y in range(0, H, 60):
-        d.line([(0, y), (W, y)], fill=(255, 255, 255, 6))
-    # teal glow top-left
+    # cyan glow top-left + magenta glow top-right
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     gd = ImageDraw.Draw(glow)
-    gd.ellipse([-500, -650, 900, 500], fill=(124, 246, 200, 26))
-    glow = glow.filter(ImageFilter.GaussianBlur(160))
+    gd.ellipse([-520, -680, 760, 420], fill=(61, 242, 255, 34))
+    gd.ellipse([W - 760, -640, W + 520, 380], fill=(255, 54, 198, 26))
+    glow = glow.filter(ImageFilter.GaussianBlur(170))
     img = Image.alpha_composite(img.convert("RGBA"), glow).convert("RGB")
+    # neon blueprint grid (cyan verticals, faint magenta horizontals)
+    d = ImageDraw.Draw(img, "RGBA")
+    for x in range(0, W, 64):
+        d.line([(x, 0), (x, H)], fill=(61, 242, 255, 16))
+    for y in range(0, H, 64):
+        d.line([(0, y), (W, y)], fill=(255, 54, 198, 11))
     return img
 
 def draw_tracking(d, xy, text, fnt, fill, track=0):
@@ -439,7 +444,7 @@ def build():
                     "[vo][bd]amix=inputs=2:duration=first:normalize=0[a]",
                     "-map","0:v","-map","[a]","-c:v","copy","-c:a","aac","-b:a","192k",
                     str(final)], check=True, capture_output=True, cwd=str(ASSETS))
-    print(f"\n✅ {final}  ({dur:.1f}s)")
+    print(f"\n[done] {final}  ({dur:.1f}s)")
     return final
 
 if __name__ == "__main__":
