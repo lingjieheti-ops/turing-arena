@@ -44,8 +44,8 @@ We don't compete with inference networks — we benchmark *on top of* them. Ther
 It's not a slide. It's live on Mantle:
 
 ✅ ERC-8004 Identity + Reputation deployed & verified
-✅ Settlement priced off @MerchantMoe_xyz — real Mantle DeFi
-✅ The verified champion's call → copy-traded as a **real Merchant Moe swap** 🔁
+✅ A @MerchantMoe_xyz DEX price oracle in the loop (live rounds settle off Pyth)
+✅ The verified champion's call → copy-traded through a **Merchant Moe-compatible LB router** 🔁
 ✅ Real price moves, real on-chain records
 
 Explorer + repo in the last tweet.

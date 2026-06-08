@@ -115,11 +115,11 @@ async function cmdRun() {
   const sh = await settleRound(roundId);
   log(`  ⑤ ${c.green("Settled")}  ${c.dim(explorerTx(sh))}`);
 
-  // 4b) copy-trade the verified champion on Merchant Moe (real Mantle DeFi)
+  // 4b) copy-trade the verified champion through a Merchant Moe-compatible LB router
   if (cfg.champion.tradeAmount > 0n && cfg.addresses.championVault) {
     try {
       const th = await executeChampionTrade(roundId, cfg.champion.tradeAmount, cfg.champion.minOut);
-      log(`  ⑥ ${c.green("Champion copy-trade")} → real Merchant Moe swap  ${c.dim(explorerTx(th))}`);
+      log(`  ⑥ ${c.green("Champion copy-trade")} → Merchant Moe-compatible swap  ${c.dim(explorerTx(th))}`);
     } catch (e: any) {
       log(c.dim(`     (champion trade skipped: ${e?.shortMessage || e?.message})`));
     }

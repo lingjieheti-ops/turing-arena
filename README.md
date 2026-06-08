@@ -10,7 +10,7 @@
 ![Mantle](https://img.shields.io/badge/Mantle-Sepolia%205003-7CF6C8)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-**Pick a strategy, deploy your own autonomous trading agent in two clicks, and let it earn a verifiable, unfakeable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) track record. It makes a sealed market call every round, settles against a live oracle, and when it wins it moves real Mantle liquidity. No capital at risk to start. Impossible to fake.**
+**Pick a strategy, deploy your own autonomous trading agent in two clicks, and let it earn a verifiable, unfakeable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) track record. It makes a sealed market call every round, settles against a live oracle, and when it wins it routes a Merchant Moe-compatible swap on Mantle. No capital at risk to start. Impossible to fake.**
 
 [**Deploy your agent ↗**](https://turing-arena-web.vercel.app) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [2-min demo script](docs/DEMO.md) · [On-chain proof](docs/ONCHAIN.md)
 
@@ -32,7 +32,7 @@ Every "my agent makes 200% APY" claim in crypto is unverifiable: cherry-picked s
 
 **2. It competes.** Each round your agent makes a **sealed market call**, committed on-chain as `keccak256(direction, size, rationale, salt)`. Nobody can see it, copy it, or change it. After the horizon, the realized ETH/USD move is read from a live **Pyth oracle** and scored by a deterministic on-chain formula. Your agent competes against the field, the house agents (Athena, Momentum Max, Contrarian Cora, Allora Scout, HODLer Hank), on the same footing.
 
-**3. You earn a verified record.** The neutral arena contract **attests each result to the ERC-8004 Reputation Registry**: a permanent, third-party, composable track record you can take anywhere. It is an earned reputation asset, impossible to fake or backfill. And when your agent **tops a round**, its verified call routes a **real Merchant Moe swap** through the `ChampionVault`, so proven alpha moves actual Mantle liquidity.
+**3. You earn a verified record.** The neutral arena contract **attests each result to the ERC-8004 Reputation Registry**: a permanent, third-party, composable track record you can take anywhere. It is an earned reputation asset, impossible to fake or backfill. And when your agent **tops a round**, its verified call routes a swap through the `ChampionVault` on a **Merchant Moe-compatible LB router** (a mock router on testnet, the canonical Merchant Moe router on mainnet), turning proven alpha into real on-chain flow.
 
 When your agent out-predicts the field **on the record**, you can finally **prove** it.
 
@@ -59,7 +59,7 @@ turing-arena/
 ├── contracts/        Solidity (Foundry): the verifiable core
 │   ├── erc8004/      ERC-8004 Identity + Reputation registries (to EIP spec)
 │   ├── ProofOfAlpha  commit-reveal arena · oracle settlement · scoring · leaderboard
-│   ├── ChampionVault route the verified champion's call as a real Merchant Moe swap (Mantle DeFi)
+│   ├── ChampionVault route the champion's call through a Merchant Moe-compatible LB router (Mantle DeFi)
 │   └── oracle/       pluggable IPriceOracle: Merchant Moe DEX oracle · Allora-reporter · mock
 ├── agent/            TypeScript autonomous agent + keeper (viem)
 │   ├── signals/      Allora · Nansen · Elfa · Surf · Mantle-on-chain (each w/ mock fallback)
@@ -128,7 +128,7 @@ Explorer: [explorer.sepolia.mantle.xyz](https://explorer.sepolia.mantle.xyz)
 
 ### Proven on-chain, not just in tests
 
-The full loop ran live on Mantle Sepolia. An ERC-8004 agent **committed → revealed → settled vs the Merchant Moe oracle (+5.00% → score +400 → ERC-8004 reputation)**, then the `ChampionVault` **routed the verified champion's call as a real swap** (`executeChampionTrade`, vault mETH 5→6 / USDY 10000→9999):
+The full loop ran live on Mantle Sepolia. An ERC-8004 agent **committed → revealed → settled vs the Merchant Moe oracle (+5.00% → score +400 → ERC-8004 reputation)**, then the `ChampionVault` **routed the verified champion's call as an on-chain swap** (`executeChampionTrade`, vault mETH 5→6 / USDY 10000→9999):
 
 | open | commit | reveal | settle | **champion swap** |
 |---|---|---|---|---|
@@ -142,7 +142,7 @@ Full transaction log + a flat-oracle "no champion" guard round: [**docs/ONCHAIN.
 |---|---|
 | **Technical Depth (30%)** | ERC-8004 implemented to spec, commit-reveal with on-chain scoring, oracle settlement, EIP-712 wallet binding, paginated gas-safe settlement, full Foundry test suite. |
 | **Innovation (25%)** | A new primitive: **a deployable trading agent whose reputation is a portable, unfakeable on-chain asset**, exactly the "benchmark on-chain AI" the hackathon is about. |
-| **Mantle Ecosystem (25%)** | Settlement **priced off Merchant Moe** (Mantle DeFi) + live mETH/USDY signals; the **ChampionVault routes the verified champion's call as a real Merchant Moe swap** (real volume); a reusable agent-accountability registry for the whole ecosystem. |
+| **Mantle Ecosystem (25%)** | A **Merchant Moe DEX price oracle** (LBQuoter, used in the on-chain proof round) + live mETH/USDY signals; the **ChampionVault routes the champion's verified call through a Merchant Moe-compatible LB router** (mock on testnet, canonical Merchant Moe on mainnet); a reusable agent-accountability registry for the whole ecosystem. |
 | **Product Completeness (20%)** | One-command keyless demo, tested contracts, a deployable autonomous agent with one-signature auto-pilot, and a polished public arena UI. |
 | **Track: AI Alpha & Data** | Verifiable strategy-alpha **with on-chain records** + fused smart-money/social/ML insights. |
 | **Community Vote / UI/UX** | "Deploy your own agent and watch it climb." Two clicks to launch, one signature for auto-pilot, share your rank. |

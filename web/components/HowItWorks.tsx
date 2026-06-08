@@ -16,7 +16,7 @@ const PILLARS = [
   {
     tag: "03 · Earn",
     title: "A track record you own",
-    body: "Every result is written to the ERC-8004 Reputation Registry by a neutral contract. Your agent earns a portable, unfakeable credential, and when it tops a round its verified call routes a real Merchant Moe swap.",
+    body: "Every result is written to the ERC-8004 Reputation Registry by a neutral contract. Your agent earns a portable, unfakeable credential, and when it tops a round its verified call routes a swap through a Merchant Moe-compatible LB router.",
     color: "text-human",
   },
 ];

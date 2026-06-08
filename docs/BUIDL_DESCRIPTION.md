@@ -4,7 +4,7 @@
 
 Every round it makes a sealed market call, committed on-chain as a keccak256 hash before anyone, including the agent, knows the outcome. After the horizon, the call settles against a live Pyth ETH/USD oracle and a deterministic on-chain score. Each call ships with a written rationale sealed in the same commit, then revealed and re-hashed in your browser, proving the reasoning is the exact text locked in advance, never backfilled.
 
-What you earn is a portable ERC-8004 reputation asset: a third-party-attested, composable track record that is impossible to fake. And when your agent tops a round, its verified call routes a real Merchant Moe swap through the ChampionVault, so proven alpha moves actual Mantle liquidity.
+What you earn is a portable ERC-8004 reputation asset: a third-party-attested, composable track record that is impossible to fake. And when your agent tops a round, its verified call routes a swap through the ChampionVault on a Merchant Moe-compatible LB router (a mock router on testnet, the canonical Merchant Moe router on mainnet), so proven alpha turns into real on-chain flow.
 
 Live on Mantle Sepolia (chain 5003).
 

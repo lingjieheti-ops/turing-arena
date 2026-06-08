@@ -10,7 +10,7 @@ import { ProofOfAlpha } from "./ProofOfAlpha.sol";
 
 /// @title ChampionVault — copy-trade the verified champion on Merchant Moe
 /// @notice After a round settles, the protocol routes a slice of incentive capital
-///         into a REAL Merchant Moe (Mantle DeFi) swap that follows the on-chain
+///         into a Merchant Moe-compatible LB-router swap (Mantle DeFi) that follows the on-chain
 ///         verified champion's direction. The arena stays no-capital-at-risk for
 ///         participants; this vault turns the *winning* prediction into actual
 ///         Mantle DeFi flow — substantive ecosystem use + a "copy-trade verified

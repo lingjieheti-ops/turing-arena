@@ -32,7 +32,7 @@ Copy-paste-ready content for the DoraHacks BUIDL + the required X thread.
 | Item | Value |
 |---|---|
 | GitHub | `https://github.com/lingjieheti-ops/turing-arena` |
-| Live app (Vercel) | `https://turing-arena.vercel.app` |
+| Live app (Vercel) | `https://turing-arena-web.vercel.app` |
 | Demo video | `https://…` |
 | X thread | `https://x.com/…` |
 | ProofOfAlpha (Mantle Sepolia) | `0x…` → `https://explorer.sepolia.mantle.xyz/address/0x…` |

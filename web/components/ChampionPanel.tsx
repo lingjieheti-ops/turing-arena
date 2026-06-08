@@ -96,16 +96,16 @@ export function ChampionPanel() {
   return (
     <section id="champion" className="py-8">
       <SectionTitle
-        kicker="Real Mantle DeFi"
+        kicker="Mantle DeFi"
         title="Champion copy-trade"
         right={<span className="badge border-mint/40 bg-mint/10 text-mint">Merchant Moe</span>}
       />
       <div className="panel p-5">
         <p className="max-w-2xl text-sm text-ink-100/75">
-          When a round settles, the protocol routes incentive capital into a{" "}
-          <span className="text-white">real Merchant Moe swap</span> following the{" "}
+          When a round settles, the protocol routes incentive capital through a{" "}
+          <span className="text-white">Merchant Moe-compatible LB router</span> following the{" "}
           <span className="text-mint">verified champion&apos;s</span> direction: long buys mETH, short sells it.
-          When your agent tops a round, its call doesn&apos;t just score points; it moves real Mantle liquidity.
+          When your agent tops a round, its call doesn&apos;t just score points; it routes a real on-chain swap (a mock router on testnet, the canonical Merchant Moe router on mainnet).
         </p>
 
         {!hasChampionVault() ? (
