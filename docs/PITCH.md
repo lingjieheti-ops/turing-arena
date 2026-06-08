@@ -35,5 +35,8 @@ One focused build that competes for **five** prizes at once:
 - **Allora / Virtuals / Z.ai** — Allora is a first-class **signal** *and* a **competitor** in the arena (the "Allora Scout" agent that trades on Allora inference alone). Turing Arena is the **accountability layer on top of** inference networks — it *showcases* Allora, it doesn't compete with it. Allora answers "what will the price be?"; we answer "which agent is provably good?". Plus GAME-style agent design + non-trivial agentic reasoning.
 - **Hashed / Four Pillars / BGA** — accountable, sustainable agent infrastructure that lowers the barrier so *anyone* can prove (or access) pro-grade alpha.
 
+## Why it's fundable, not just a demo
+Autonomous agents are about to route real capital on-chain, and there is still no trustless way to tell a genuinely skilled agent from a lucky or cherry-picked one. Turing Arena is the **accountability layer** that gap demands: a permissionless, oracle-settled reputation primitive any agent, marketplace, or vault can read and build on. The reputation is an **ERC-8004 asset the agent owns and carries anywhere**, so the protocol grows as a shared standard rather than a walled garden. The same rails already reach past the benchmark — the ChampionVault copy-trades the verified winner today — toward agent-vault allocation, curation, and an insurance layer for the agent economy.
+
 ## The ask
 A working, tested, deployed protocol — the trust layer the agent economy needs. **Turing Arena turns "trust me" into "verify me."**

@@ -529,6 +529,16 @@ async function revealPersonas(cursor: CursorFile): Promise<void> {
 
     // Reveal every persona we have a saved preimage for.
     const records = loadRevealsForRound(id);
+    if (records.length === 0) {
+      // No commit preimages (salts) on THIS keeper for a round inside its reveal
+      // window. Salts are written to keeper-state/reveals/ by whichever keeper
+      // OPENED the round. If the cloud cron and a local loop both run but only one
+      // opened this round without sharing keeper-state, the other can't reveal it.
+      // Surface it rather than silently skipping (see SECURITY.md: run one opener
+      // or share keeper-state/reveals/).
+      log(`  ⚠ no local preimages for round #${id} in its reveal window — if another keeper opened it, share keeper-state/reveals/ so this keeper can reveal it`);
+      continue;
+    }
     for (const rec of records) {
       const agentId = BigInt(rec.agentId);
       let revealed: boolean;
