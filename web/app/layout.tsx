@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
+import { Chakra_Petch, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Providers } from "./providers";
+
+const display = Chakra_Petch({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://turing-arena-web.vercel.app"),
@@ -35,11 +49,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${mono.variable}`}>
       <body className="min-h-screen font-sans antialiased">
         <Providers>
+          {/* Fixed ambient cyberpunk layers: neon grid + faint CRT scanlines. */}
+          <div className="pointer-events-none fixed inset-0 -z-10 bg-grid" />
+          <div className="pointer-events-none fixed inset-0 -z-10 bg-scanlines opacity-50" />
           <div className="relative">
-            <div className="pointer-events-none absolute inset-0 -z-10 bg-grid" />
             <SiteHeader />
             <main className="mx-auto w-full max-w-6xl px-4 pb-24 pt-6 sm:px-6">{children}</main>
             <Footer />

@@ -8,48 +8,105 @@
 
 html,
 body {
-  background-color: #06090b;
-  color: #e6f0ef;
+  background-color: #05060f;
+  color: #d8e2f4;
 }
 
 body {
   background-image:
-    radial-gradient(900px 500px at 12% -8%, rgba(124, 246, 200, 0.1), transparent 60%),
-    radial-gradient(800px 500px at 92% -4%, rgba(56, 225, 255, 0.08), transparent 60%),
-    linear-gradient(#06090b, #06090b);
+    radial-gradient(900px 520px at 8% -10%, rgba(61, 242, 255, 0.12), transparent 60%),
+    radial-gradient(820px 520px at 95% -6%, rgba(255, 54, 198, 0.1), transparent 62%),
+    linear-gradient(#05060f, #05060f);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
 }
 
-/* subtle grid */
+/* Neon blueprint grid — cyan verticals, faint magenta horizontals. */
 .bg-grid {
-  background-image: linear-gradient(rgba(124, 246, 200, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124, 246, 200, 0.04) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(180deg, black, transparent 80%);
+  background-image:
+    linear-gradient(rgba(61, 242, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 54, 198, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(180deg, black, transparent 78%);
+}
+
+/* Faint CRT scanlines, fixed full-screen, never interactive. */
+.bg-scanlines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 0, 0, 0.16) 3px,
+    transparent 4px
+  );
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
 }
 
 @layer components {
   .panel {
-    @apply rounded-2xl border border-ink-700/70 bg-ink-850/70 shadow-card backdrop-blur;
+    @apply rounded-lg border border-ink-700 bg-ink-850/65 shadow-card backdrop-blur;
   }
   .panel-hover {
-    @apply transition-colors hover:border-mint/30;
+    @apply transition-colors hover:border-mint/40;
   }
   .badge {
-    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium;
+    @apply inline-flex items-center gap-1 rounded-sm border px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide;
   }
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold uppercase tracking-wide transition-all disabled:cursor-not-allowed disabled:opacity-50;
   }
   .btn-primary {
-    @apply btn bg-mint text-ink-950 hover:shadow-glow hover:brightness-110;
+    @apply btn bg-mint text-ink-950 shadow-glow hover:brightness-110;
   }
   .btn-ghost {
-    @apply btn border border-ink-600 bg-ink-800/60 text-ink-100 hover:border-mint/40 hover:text-white;
+    @apply btn border border-mint/40 bg-mint/[0.06] text-mint hover:bg-mint/[0.12] hover:shadow-glow;
   }
   .stat-num {
     @apply font-mono tabular-nums;
+  }
+  /* Angular HUD frame — cuts the top-right + bottom-left corners. */
+  .hud {
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  }
+}
+
+/* Neon glow text. */
+.neon {
+  text-shadow: 0 0 8px rgba(61, 242, 255, 0.55), 0 0 22px rgba(61, 242, 255, 0.3);
+}
+.neon-hot {
+  text-shadow: 0 0 8px rgba(255, 54, 198, 0.55), 0 0 22px rgba(255, 54, 198, 0.3);
+}
+
+/* Chromatic-split "glitch" for the hero title — constant RGB fringe + an
+   occasional jitter. Cheap, reliable (no pseudo-element clipping games). */
+.glitch {
+  text-shadow: -2px 0 rgba(255, 54, 198, 0.5), 2px 0 rgba(61, 242, 255, 0.5), 0 0 18px rgba(61, 242, 255, 0.22);
+  animation: glitch-jit 6s steps(1, end) infinite;
+}
+@keyframes glitch-jit {
+  0%,
+  95%,
+  100% {
+    transform: translate(0, 0);
+  }
+  96% {
+    transform: translate(-2px, 1px);
+    text-shadow: 2px 0 rgba(255, 54, 198, 0.75), -2px 0 rgba(61, 242, 255, 0.75), 0 0 18px rgba(61, 242, 255, 0.22);
+  }
+  97% {
+    transform: translate(2px, -1px);
+  }
+  98% {
+    transform: translate(-1px, 0);
   }
 }
 
@@ -84,18 +141,21 @@ body {
 }
 
 ::selection {
-  background: rgba(124, 246, 200, 0.25);
+  background: rgba(255, 54, 198, 0.3);
 }
 
-/* slim scrollbar */
+/* Neon scrollbar. */
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
+*::-webkit-scrollbar-track {
+  background: #080c1c;
+}
 *::-webkit-scrollbar-thumb {
-  background: #1a272e;
-  border-radius: 8px;
+  background: #1b2547;
+  box-shadow: inset 0 0 0 1px rgba(61, 242, 255, 0.25);
 }
 *::-webkit-scrollbar-thumb:hover {
-  background: #26373f;
+  background: #2a3760;
 }
