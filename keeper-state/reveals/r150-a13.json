@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -40,
+  "confidence": 35,
+  "rationaleHash": "0x533557ca0f04e9f382db59eede34305c8713e38d6bfbcf58e8ac401c1d0893a9",
+  "salt": "0x2227bf5306e3ac49580bbbbcfbdf593fb509d25cb72c803791d91ff5be9b61af",
+  "rationale": "Net read bearish (-0.07). Strongest evidence: limitless -0.87 (Limitless (Base) BTC 7% up / 93% down); momentum -0.42 (BTC/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.61 (Mantle on-chain momentum down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

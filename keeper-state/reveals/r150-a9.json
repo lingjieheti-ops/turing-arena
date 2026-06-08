@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 218,
+  "confidence": 55,
+  "rationaleHash": "0x6bf063fcd18b65db3df1c18a60abfeca2266e1063f8752d01555d004f3c0c0cf",
+  "salt": "0x9df8db1d5b0c432a1579e2a90ca528c7858bc5d3be5153d3a647051bc657d4ae",
+  "rationale": "Net read bullish (0.36). Strongest evidence: limitless -0.87 (Limitless (Base) BTC 7% up / 93% down); momentum -0.42 (BTC/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.61 (Mantle on-chain momentum down).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

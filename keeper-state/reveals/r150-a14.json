@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 23,
+  "confidence": 33,
+  "rationaleHash": "0xbdf5ad0dac357b6e1c2657c98941f210be821b7c77ff99d6eaee210112f4971d",
+  "salt": "0xcbe46ab693a0a65ed36d4da5c7b9e0cc410663ee5df848be7ba5773321532dc7",
+  "rationale": "Net read neutral (0.04). Strongest evidence: limitless -0.87 (Limitless (Base) BTC 7% up / 93% down); momentum -0.42 (BTC/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.61 (Mantle on-chain momentum down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
