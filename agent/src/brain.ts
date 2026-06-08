@@ -50,7 +50,35 @@ export async function decide(bundle: SignalBundle, persona: Persona = ATHENA): P
   }
 
   const direction = predictedBps > 0 ? "UP" : predictedBps < 0 ? "DOWN" : "FLAT";
-  return { direction, predictedBps, confidence, rationale, signals, model };
+  return { direction, predictedBps, confidence, rationale: sanitizeRationale(rationale), signals, model };
+}
+
+/// Strip invisible / zero-width / control characters from an agent's rationale
+/// before it is hashed on-chain and published to keeper-state/reveals/*.json.
+/// Sanitizing at this single chokepoint keeps the on-chain commit hash and the
+/// revealed text byte-identical (the frontend re-hashes the published text to
+/// prove the call was not rewritten after the outcome). Untrusted LLM output
+/// could otherwise smuggle invisible characters into the published repo, hiding
+/// text from a human reviewer and tripping the CI integrity scan. Built from
+/// numeric code points so this source stays plain visible ASCII; a no-op on the
+/// deterministic heuristic rationale, so existing behavior is unchanged.
+function isInvisibleCodePoint(c: number): boolean {
+  if (c === 0x09 || c === 0x0a || c === 0x0d) return false; // keep tab / newline (collapsed below)
+  if (c < 0x20) return true; // C0 control
+  if (c >= 0x7f && c <= 0x9f) return true; // DEL + C1 control
+  if (c >= 0x200b && c <= 0x200f) return true; // zero-width + LTR/RTL marks
+  if (c >= 0x2028 && c <= 0x202e) return true; // line/para separators + bidi overrides
+  if (c >= 0x2060 && c <= 0x206f) return true; // word-joiner + invisible math + deprecated
+  if (c === 0xfeff) return true; // BOM / zero-width no-break space
+  return false;
+}
+
+function sanitizeRationale(s: string): string {
+  let out = "";
+  for (const ch of s) {
+    if (!isInvisibleCodePoint(ch.codePointAt(0) ?? 0)) out += ch;
+  }
+  return out.replace(/\s+/g, " ").trim().slice(0, 600);
 }
 
 function buildRationale(signals: Signal[], net: number): string {

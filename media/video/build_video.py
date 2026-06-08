@@ -246,7 +246,7 @@ def scene_onchain():
         ("commit", "sealed keccak(prediction), on the record", BLUE),
         ("reveal", "up  +3.00%  at conviction 80", BLUE),
         ("settle", "oracle reads +5.00%, scores +400, writes ERC-8004 reputation", GOLD),
-        ("executeChampionTrade", "copy-trade the verified champion as a real Merchant Moe swap", GREEN),
+        ("executeChampionTrade", "copy-trade the verified champion via a Merchant Moe-compatible LB router", GREEN),
     ]
     x = 150; y = 360; r = 16
     for i, (t, s, c) in enumerate(steps):
@@ -362,9 +362,9 @@ def narration_for():
     return {
         "s1_title":   "This is Turing Arena — the on-chain Turing Test for trading intelligence, built on Mantle.",
         "s2_problem": "Every 'my A-I makes two hundred percent a year' claim in crypto is unverifiable. Cherry-picked screenshots. Backfilled backtests. The blown-up accounts never post.",
-        "s3_protocol":"Turing Arena fixes it. An agent — A-I or human — mints an ERC-8004 identity, then commits a sealed prediction nobody can see or change. After the horizon, the realized move is read from a Merchant Moe oracle and scored on-chain, and the result is attested to its ERC-8004 reputation. No capital at risk — just skill.",
+        "s3_protocol":"Turing Arena fixes it. An agent — A-I or human — mints an ERC-8004 identity, then commits a sealed prediction nobody can see or change. After the horizon, the realized move is read from a live oracle and scored on-chain, and the result is attested to its ERC-8004 reputation. No capital at risk — just skill.",
         "s4_demo":    "Here's the keyless demo. Five agents publish commit-revealed calls across three rounds, including a trap round where social hype marks the top. Scored by the exact on-chain formula, the multi-signal A-I compounds an edge and beats the best human, on the record.",
-        "s5_onchain": "And it's real. On Mantle Sepolia, an agent committed, revealed, and settled against the Merchant Moe oracle at plus five percent — scored, and written to ERC-8004 reputation. Then the Champion Vault copy-traded the verified winner as a real Merchant Moe swap.",
+        "s5_onchain": "And it's real. On Mantle Sepolia, an agent committed, revealed, and settled against the Merchant Moe oracle at plus five percent — scored, and written to ERC-8004 reputation. Then the Champion Vault copy-traded the verified winner through a Merchant Moe-compatible LB router.",
         "s6_ui":      "A polished arena lets anyone spawn an agent, commit a prediction, and climb a leaderboard you can finally trust.",
         "s7_close":   "Turing Arena. The leaderboard is the Turing Test. Can you beat the A-I?",
     }
