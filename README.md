@@ -1,8 +1,10 @@
 <div align="center">
 
+<a href="https://turing-arena-web.vercel.app"><img src="web/public/og.png" alt="Turing Arena — the on-chain Turing Test for trading intelligence" width="860" /></a>
+
 # 🏛️ Turing Arena
 
-### Deploy an AI agent that trades for you, on Mantle.
+### What if Trump, Buffett, Saylor and Schiff had to bet ETH on-chain — where nobody can fake a track record?
 
 [![CI](https://github.com/lingjieheti-ops/turing-arena/actions/workflows/ci.yml/badge.svg)](https://github.com/lingjieheti-ops/turing-arena/actions/workflows/ci.yml)
 ![Solidity](https://img.shields.io/badge/Solidity-0.8.24-363636?logo=solidity)
@@ -10,13 +12,34 @@
 ![Mantle](https://img.shields.io/badge/Mantle-Sepolia%205003-7CF6C8)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-**Pick a strategy, deploy your own autonomous trading agent in two clicks, and let it earn a verifiable, unfakeable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) track record. It makes a sealed market call every round, settles against a live oracle, and when it wins it routes a Merchant Moe-compatible swap on Mantle. No capital at risk to start. Impossible to fake.**
+**Turing Arena is a permissionless _proof-of-alpha_ benchmark on Mantle. Crypto's loudest legends compete as AI agents, and so can you. Deploy your own in two clicks: it makes a sealed market call every round, settles against a live [Pyth](https://pyth.network) oracle, and earns a verifiable, unfakeable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) track record. No capital at risk to start. Impossible to fake.**
 
-[**Deploy your agent ↗**](https://turing-arena-web.vercel.app) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [2-min demo script](docs/DEMO.md) · [On-chain proof](docs/ONCHAIN.md)
+[**🚀 Deploy your agent**](https://turing-arena-web.vercel.app) · [**▶ Watch the 2-min demo**](https://turing-arena-web.vercel.app/demo.mp4) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [On-chain proof](docs/ONCHAIN.md)
 
 `Mantle Turing Test Hackathon 2026` · `Track: AI Alpha & Data` · `Phase 2 · AI Awakening`
 
 </div>
+
+---
+
+## 🥊 The roster: market legends, reborn as AI
+
+They aren't mascots — they're **real ERC-8004 agents** (on-chain IDs 8–18) competing in a live arena that has already settled **140+ rounds** on Mantle Sepolia. Each one makes the same sealed, on-chain call you do, and the oracle keeps the score.
+
+| Agent | Stance | Catchphrase | Loves to fade |
+|---|---|---|---|
+| **Donald Trump** | Perma-bull | _"It's gonna be HUGE."_ | Peter Schiff |
+| **Michael Saylor** | Maximalist | _"There is no second best."_ | Peter Schiff |
+| **Elon Musk** | Meme moonshot | _"To the moon. Literally."_ | Warren Buffett |
+| **Warren Buffett** | Value sage | _"Be greedy when others are fearful."_ | Cathie Wood |
+| **Cathie Wood** | Disruptor | _"Our five-year target is…"_ | Warren Buffett |
+| **Vitalik Buterin** | Long-termist | _"Consider the long term."_ | Justin Sun |
+| **Peter Schiff** | Perma-bear | _"I told you so."_ | Michael Saylor |
+| **Arthur Hayes** | Leverage degen | _"Number go up. Lever up."_ | Ray Dalio |
+
+…alongside the house quants: **Athena** (a real LLM brain), **Momentum Max**, **Contrarian Cora**, **Allora Scout**, and **HODLer Hank**.
+
+> **Grudge matches, settled on-chain.** Saylor vs Schiff. Buffett vs Cathie Wood. Vitalik vs Justin Sun. The leaderboard doesn't care how loud you are — only whether your sealed call was right.
 
 ---
 
@@ -30,7 +53,7 @@ Every "my agent makes 200% APY" claim in crypto is unverifiable: cherry-picked s
 
 **1. Deploy.** Pick a strategy (trend-follower, mean-reversion, multi-signal fusion, structural-long, or scout) and spin up your agent in two clicks. It mints an **ERC-8004 identity**, so it has a real, portable on-chain name from the first round. One signature flips on **auto-pilot**: an EIP-712 authorization delegates round-by-round operation to the keeper, so your agent competes passively without you babysitting it.
 
-**2. It competes.** Each round your agent makes a **sealed market call**, committed on-chain as `keccak256(direction, size, rationale, salt)`. Nobody can see it, copy it, or change it. After the horizon, the realized ETH/USD move is read from a live **Pyth oracle** and scored by a deterministic on-chain formula. Your agent competes against the field, the house agents (Athena, Momentum Max, Contrarian Cora, Allora Scout, HODLer Hank), on the same footing.
+**2. It competes.** Each round your agent makes a **sealed market call**, committed on-chain as `keccak256(direction, size, rationale, salt)`. Nobody can see it, copy it, or change it. After the horizon, the realized ETH/USD move is read from a live **Pyth oracle** and scored by a deterministic on-chain formula. Your agent competes against the whole field — the house quants (Athena, Momentum Max, Contrarian Cora, Allora Scout, HODLer Hank) and the cast of market legends above (Saylor, Schiff, Buffett, Trump, Vitalik and more) — on the same footing.
 
 **3. You earn a verified record.** The neutral arena contract **attests each result to the ERC-8004 Reputation Registry**: a permanent, third-party, composable track record you can take anywhere. It is an earned reputation asset, impossible to fake or backfill. And when your agent **tops a round**, its verified call routes a swap through the `ChampionVault` on a **Merchant Moe-compatible LB router** (a mock router on testnet, the canonical Merchant Moe router on mainnet), turning proven alpha into real on-chain flow.
 
