@@ -22,7 +22,7 @@ const SAMPLE: AgentUI[] = [
 /// A quick, fun "form" tag derived from the agent's own verified record.
 function formBadge(a: AgentUI): { icon: string; title: string } | null {
   if (a.played === 0) return null;
-  if (a.accuracyBps >= 6000 && a.score > 0n) return { icon: "🔥", title: "on a hot streak" };
+  if (a.accuracyBps >= 5500 && a.score > 0n) return { icon: "🔥", title: "on a hot streak" };
   if (a.score < 0n) return { icon: "🧊", title: "ice cold" };
   return null;
 }
