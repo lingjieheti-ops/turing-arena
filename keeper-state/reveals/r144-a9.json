@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 342,
+  "confidence": 70,
+  "rationaleHash": "0xa429a56790329603d459ed98954fe4c8077a17c700d1bf1092372530531aefa5",
+  "salt": "0x9bd5dbd44946d6008f5aa62cecec1a561b6c5126c234b6c22934b01c899ee89d",
+  "rationale": "Net read bullish (0.57). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); limitless -0.42 (Limitless MNT market unavailable — mock down); allora +0.32 (Allora ML forecast leans long).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

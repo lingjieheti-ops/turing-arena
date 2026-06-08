@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 457,
+  "confidence": 83,
+  "rationaleHash": "0xc238c908a65d21ac92068ac561a5168ceba2da6d49f80756f890cf1079e5072a",
+  "salt": "0x7cf579783e4e59d00339d21213d779977c130f2d1a69087a5257a068c653795b",
+  "rationale": "Net read bullish (0.76). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); limitless -0.42 (Limitless MNT market unavailable — mock down); allora +0.32 (Allora ML forecast leans long).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

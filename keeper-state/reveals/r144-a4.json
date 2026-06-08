@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 409,
+  "confidence": 78,
+  "rationaleHash": "0x335c7e0aae4d94fd9cffe6610c44f3da33a6d8d30e04242e9011b004ddfd174f",
+  "salt": "0x66fe209d8a65e5125f284a94ac7a614762e4973ce7c75c928f622044d950a33f",
+  "rationale": "Net read bullish (0.68). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); limitless -0.42 (Limitless MNT market unavailable — mock down); allora +0.32 (Allora ML forecast leans long).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
