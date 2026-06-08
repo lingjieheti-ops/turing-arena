@@ -819,8 +819,12 @@ function computeCommitHash(
 async function hasOpenCommitWindow(): Promise<boolean> {
   const count = await roundCount();
   const now = nowSec();
-  // Scan from the head backward; the open one (if any) is recent.
-  for (let id = count; id >= 1n; id--) {
+  // An open commit window is always among the most recent rounds (a round opens
+  // roughly every tick and the commit window is only minutes long), so bound the
+  // scan to the head. The old head-to-1 walk did a getRound RPC for EVERY round
+  // every tick — O(rounds) reads that itself fed the project's RPC contention.
+  const floor = count > 6n ? count - 6n : 1n;
+  for (let id = count; id >= floor; id--) {
     let round: Round;
     try {
       round = await getRound(id);
@@ -828,8 +832,6 @@ async function hasOpenCommitWindow(): Promise<boolean> {
       continue;
     }
     if (!round.settled && now <= Number(round.commitDeadline)) return true;
-    // Once we pass a settled round at the head we can stop early-ish; but cheap
-    // enough to keep scanning a few. Stop after we go below a settled head run.
   }
   return false;
 }
@@ -1095,52 +1097,81 @@ async function tick(): Promise<void> {
 
   const cursor = readJson<CursorFile>(CURSOR_PATH, { lowWaterMark: 0 });
 
-  // A + B: real price → both oracles
-  const { price, source } = await getRealEthUsd();
-  log(`  price ETH/USD = $${price.toFixed(2)} (source ${source})`);
-  await pushPrices(price, source);
+  // A + B: real ETH/USD price → both oracles. Best-effort: an outage of BOTH
+  // Pyth Hermes and CoinGecko must NOT block settling or revealing already-open
+  // rounds, which read the on-chain oracle, not this fetched value. So a price
+  // failure degrades to "settle/reveal only" rather than aborting the whole tick.
+  const priced = await getRealEthUsd().catch((e) => {
+    log(`  ⚠ no ETH/USD price this tick (${(e as Error)?.message?.split("\n")[0]}) — settle/reveal only`);
+    return null;
+  });
+  if (priced) {
+    log(`  price ETH/USD = $${priced.price.toFixed(2)} (source ${priced.source})`);
+    await runPhase("price push", () => pushPrices(priced.price, priced.source));
+  }
 
-  // C: settle everything due
-  await settleDueRounds(cursor);
+  // C: settle everything due (reads the on-chain oracle; no fetched price needed)
+  await runPhase("settle", () => settleDueRounds(cursor));
 
-  // C.5: copy-trade each newly-settled round's champion on Merchant Moe (real DeFi)
+  // C.5: copy-trade each newly-settled round's champion (Merchant Moe-compatible)
   try {
     await copyTradeChampions(cursor);
   } catch (e) {
     if (!isConcurrentKeeperError(e)) log(`  · champion copy-trade step error: ${(e as Error)?.message?.split("\n")[0]}`);
   }
 
-  // D: reveal personas in their reveal window
-  await revealPersonas(cursor);
+  // D: reveal personas in their reveal window (no fetched price needed)
+  await runPhase("reveal", () => revealPersonas(cursor));
 
-  // E: keep a commit window open
-  if (await hasOpenCommitWindow()) {
-    log("  ✓ a commit window is already open — not opening another");
-  } else {
-    try {
-      await openRoundAndCommit(agents, price, cursor);
-    } catch (e) {
-      if (isConcurrentKeeperError(e)) {
-        log(`  ⏭ another keeper opened this round first — skipping (${(e as Error)?.message?.split("\n")[0]})`);
-      } else {
-        throw e;
+  // E: keep a commit window open (needs a fresh price for the agents' calls)
+  if (priced) {
+    if (await hasOpenCommitWindow()) {
+      log("  ✓ a commit window is already open — not opening another");
+    } else {
+      try {
+        await openRoundAndCommit(agents, priced.price, cursor);
+      } catch (e) {
+        if (isConcurrentKeeperError(e)) {
+          log(`  ⏭ another keeper opened this round first — skipping (${(e as Error)?.message?.split("\n")[0]})`);
+        } else {
+          throw e;
+        }
       }
     }
+
+    // E.5: run any user-deployed agents that delegated control to us (auto-pilot).
+    try {
+      await commitAutopilots(priced.price, cursor, new Set(Object.values(agents)));
+    } catch (e) {
+      log(`  ✗ auto-pilot step error: ${(e as Error)?.message?.split("\n")[0]}`);
+    }
+
+    // Price drives next tick's momentum.
+    cursor.lastPrice = priced.price;
+    cursor.lastPriceAt = nowSec();
+  } else {
+    log("  ⏭ skipping round-open + auto-pilot (no price this tick)");
   }
 
-  // E.5: run any user-deployed agents that delegated control to us (auto-pilot).
-  try {
-    await commitAutopilots(price, cursor, new Set(Object.values(agents)));
-  } catch (e) {
-    log(`  ✗ auto-pilot step error: ${(e as Error)?.message?.split("\n")[0]}`);
-  }
-
-  // Persist tick state (price drives next tick's momentum; cursor may have moved).
-  cursor.lastPrice = price;
-  cursor.lastPriceAt = nowSec();
+  // Persist tick state (cursor may have advanced during settle/reveal).
   writeJson(CURSOR_PATH, cursor);
 
   log("✓ tick complete");
+}
+
+/// Run a keeper phase, degrading a cross-keeper race (the cloud cron and the
+/// local loop share one wallet) to "skip this phase, finish the rest of the
+/// tick" instead of aborting the whole tick. Real errors still propagate.
+async function runPhase(label: string, fn: () => Promise<void>): Promise<void> {
+  try {
+    await fn();
+  } catch (e) {
+    if (isConcurrentKeeperError(e)) {
+      log(`  ⏭ ${label} raced another keeper — skipping, will retry next tick`);
+    } else {
+      throw e;
+    }
+  }
 }
 
 /// Errors that just mean "another keeper instance got there first". When the

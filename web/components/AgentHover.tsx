@@ -38,6 +38,7 @@ export function AgentHover({
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [mounted, setMounted] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -45,6 +46,24 @@ export function AgentHover({
       if (timer.current) clearTimeout(timer.current);
     };
   }, []);
+
+  const dismiss = () => {
+    if (timer.current) clearTimeout(timer.current);
+    setPhase("idle");
+  };
+
+  // Dismiss while shown/charging if the page scrolls: the card is position:fixed
+  // at the trigger coords, so a scroll (which fires no mousemove) would otherwise
+  // leave it stranded over the wrong row. Capture-phase catches nested scrollers.
+  useEffect(() => {
+    if (phase === "idle") return;
+    const onScroll = () => {
+      if (timer.current) clearTimeout(timer.current);
+      setPhase("idle");
+    };
+    window.addEventListener("scroll", onScroll, true);
+    return () => window.removeEventListener("scroll", onScroll, true);
+  }, [phase]);
 
   const enter = (e: ReactMouseEvent) => {
     setPos({ x: e.clientX, y: e.clientY });
@@ -55,9 +74,16 @@ export function AgentHover({
   const moveTrack = (e: ReactMouseEvent) => {
     if (phase !== "shown") setPos({ x: e.clientX, y: e.clientY });
   };
-  const leave = () => {
+  // Keyboard / screen-reader path: focus shows the card immediately (no need to
+  // "hold" a hover for 1.3s), anchored to the element's box since there's no cursor.
+  const focusShow = () => {
+    const el = wrapRef.current;
+    if (el) {
+      const r = el.getBoundingClientRect();
+      setPos({ x: r.left, y: r.bottom });
+    }
     if (timer.current) clearTimeout(timer.current);
-    setPhase("idle");
+    setPhase("shown");
   };
 
   const lore = loreFor(name);
@@ -78,7 +104,17 @@ export function AgentHover({
   } as CSSProperties;
 
   return (
-    <div className={className} onMouseEnter={enter} onMouseMove={moveTrack} onMouseLeave={leave}>
+    <div
+      ref={wrapRef}
+      className={className}
+      tabIndex={0}
+      aria-label={name ? `${name} — ${stance}` : undefined}
+      onMouseEnter={enter}
+      onMouseMove={moveTrack}
+      onMouseLeave={dismiss}
+      onFocus={focusShow}
+      onBlur={dismiss}
+    >
       {children}
       {mounted && phase === "charging"
         ? createPortal(
@@ -98,6 +134,7 @@ export function AgentHover({
       {mounted && phase === "shown"
         ? createPortal(
             <div
+              role="tooltip"
               style={{ position: "fixed", left, top, width: CARD_W, zIndex: 70, pointerEvents: "none", animation: "ta-pop 120ms ease-out" }}
               className="rounded-xl border border-mint/25 bg-ink-950/95 p-3 shadow-glow backdrop-blur"
             >
@@ -121,8 +158,8 @@ export function AgentHover({
               {mood ? (
                 <p className="mt-1.5 border-t border-ink-700/50 pt-1.5 text-[11px]">
                   <span className="text-muted">mood now: </span>
-                  <span className={mood.bps >= 0 ? "text-up" : "text-down"}>
-                    {mood.bps >= 0 ? "📈 leaning bullish" : "📉 calling the top"} ({mood.bps >= 0 ? "+" : ""}
+                  <span className={mood.bps > 0 ? "text-up" : mood.bps < 0 ? "text-down" : "text-muted"}>
+                    {mood.bps > 0 ? "📈 leaning bullish" : mood.bps < 0 ? "📉 calling the top" : "➖ on the fence"} ({mood.bps >= 0 ? "+" : ""}
                     {mood.bps}bps @ {mood.conf}%)
                   </span>
                 </p>
