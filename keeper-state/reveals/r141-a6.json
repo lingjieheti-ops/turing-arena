@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 255,
+  "confidence": 60,
+  "rationaleHash": "0x30c0009c63512c58598d33d0920dc2df7f30bed48cac422298c9ece7947855c2",
+  "salt": "0x3c574cb9364a31f30872f7a39749aa62c27af43d0770786832ec00d07493e28f",
+  "rationale": "Net read bullish (0.42). Strongest evidence: momentum +0.23 (ETH up-momentum since the last tick (Pyth, live)); elfa +0.90 (KOL mindshare heating up); surf +0.92 (Market momentum positive).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
