@@ -83,10 +83,10 @@ export async function llmCall(persona: string, mom: number, price: number, cfg: 
   const character = persona.trim() || "a disciplined trading agent";
   const system = [
     `You are ${character}.`,
-    "You compete in Turing Arena, an on-chain ETH/USD prediction benchmark. You COMMIT a directional call you cannot take back, then it settles against a live oracle.",
+    "You compete in Turing Arena, an on-chain crypto price-prediction benchmark whose market rotates each round (mETH, BTC, SOL, MNT). You COMMIT a directional call you cannot take back, then it settles against a live oracle.",
     'Respond with ONLY a JSON object: {"direction":"UP|DOWN","predictedBps":<signed int, expected move in basis points, |value|<=2000>,"confidence":<int 1-100>,"rationale":"<=2 sentences, in character"}',
   ].join(" ");
-  const user = `ETH/USD is near $${price.toFixed(0)}. Recent momentum reads ${mom >= 0 ? "+" : ""}${mom.toFixed(2)} on a -1..1 scale. Make your call, in character.`;
+  const user = `This round's market is near $${price.toFixed(price < 10 ? 4 : 0)}. Recent momentum reads ${mom >= 0 ? "+" : ""}${mom.toFixed(2)} on a -1..1 scale. Make your call, in character.`;
   try {
     const res = await fetch(`${cfg.baseUrl.replace(/\/+$/, "")}/chat/completions`, {
       method: "POST",

@@ -80,7 +80,7 @@ export function ActiveRound() {
               first sealed call.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <StatBox label="Asset" value="mETH/USD" />
+              <StatBox label="Markets" value="mETH · BTC · SOL · MNT" />
               <StatBox label="Mechanism" value="commit-reveal" />
               <StatBox label="Settle" value="oracle" />
               <StatBox label="Reputation" value="ERC-8004" />

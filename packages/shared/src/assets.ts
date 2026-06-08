@@ -32,6 +32,18 @@ export const ASSETS: AssetMeta[] = [
     label: "MNT / USD",
     coingeckoId: "mantle",
   },
+  // The arena rotates across these liquid markets each round (keeper rotation),
+  // so the benchmark isn't a monotone ETH bet.
+  {
+    symbol: "BTC/USD",
+    label: "BTC / USD",
+    coingeckoId: "bitcoin",
+  },
+  {
+    symbol: "SOL/USD",
+    label: "SOL / USD",
+    coingeckoId: "solana",
+  },
   {
     symbol: "USDY/USD",
     label: "USDY / USD",

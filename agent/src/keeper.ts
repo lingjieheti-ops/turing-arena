@@ -4,12 +4,14 @@
  * ONE invocation == ONE "tick". No blocking loops; the process exits when the
  * tick finishes (a GitHub Actions cron drives the cadence). Each tick, in order:
  *
- *   A. Fetch a REAL ETH/USD price (Pyth Hermes, CoinGecko fallback).
- *   B. Push it to BOTH oracles (ReporterPriceOracle + the MockLBQuoter behind
- *      MantleDexOracle) so rounds on either oracle settle at the real price.
+ *   A. Fetch REAL prices for every rotation market (Pyth Hermes, CoinGecko
+ *      fallback) — mETH, BTC, SOL, MNT — so the arena isn't a monotone ETH bet.
+ *   B. Report EVERY market to the ReporterPriceOracle (+ the ETH price to the
+ *      MockLBQuoter behind MantleDexOracle) so any in-flight round settles fresh.
  *   C. Settle every due round (paginated, idempotent).
  *   D. Reveal our AI personas inside their reveal window.
- *   E. Keep a commit window open: open a fresh round + commit all 5 personas.
+ *   E. Keep a commit window open: open a fresh round on the next rotation market
+ *      and commit the full cast of personas.
  *
  * Durable state lives in repo-root `keeper-state/` (committed to git — it only
  * holds public reveal preimages + the persona agentIds, never the key):
@@ -84,11 +86,19 @@ interface AgentsFile {
 interface CursorFile {
   /// Highest roundId that is fully settled and never needs scanning again.
   lowWaterMark: number;
-  /// Last real price we pushed (USD) + when — used as a tick-to-tick momentum signal.
+  /// Last ETH price we pushed (USD) + when — kept for back-compat / the DeFi route.
   lastPrice?: number;
   lastPriceAt?: number;
+  /// Per-market last price (USD) for the per-market tick-to-tick momentum signal.
+  lastPrices?: Record<string, { price: number; at: number }>;
   /// Highest round whose champion we've already copy-traded on Merchant Moe.
   lastChampionRound?: number;
+}
+
+/// Resolve a round's on-chain asset id back to a known rotation market.
+function marketByAssetId(asset: Hex): Market | undefined {
+  const a = asset.toLowerCase();
+  return ALL_MARKETS.find((m) => assetId(m.symbol).toLowerCase() === a);
 }
 interface RevealRecord {
   agentId: number;
@@ -154,10 +164,44 @@ const CHAMPION_VAULT = pick(
 
 const PRIVATE_KEY = (env.PRIVATE_KEY || "").trim();
 
-/// Arena asset for the rounds the keeper opens. The DefiMock route is keyed on
-/// METH/USD; we settle it against the same real ETH/USD price (mETH≈ETH for the
-/// benchmark) so either oracle resolves to a real market number.
-const ASSET = env.KEEPER_ASSET || "METH/USD";
+/// The benchmark ROTATES across several liquid markets so the arena isn't a
+/// monotone "ETH up/down" — each round is a fresh battlefield (mETH, BTC, SOL,
+/// and Mantle's own MNT). Every market settles on the SAME ReporterPriceOracle,
+/// fed each tick from its Pyth Hermes feed (CoinGecko fallback). The mETH market
+/// keeps the "METH/USD" symbol so the existing 140+ rounds stay continuous, and
+/// it also drives the mETH/USDY DeFi champion-copy-trade route.
+interface Market {
+  symbol: string; // arena asset symbol, keccak'd into the round's asset id
+  label: string; // human round title, e.g. "BTC/USD"
+  pyth: string; // Pyth Hermes price-feed id (verified)
+  cg: string; // CoinGecko id for the fallback fetch
+}
+
+const ALL_MARKETS: Market[] = [
+  { symbol: "METH/USD", label: "mETH/USD", pyth: "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace", cg: "ethereum" },
+  { symbol: "BTC/USD", label: "BTC/USD", pyth: "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43", cg: "bitcoin" },
+  { symbol: "SOL/USD", label: "SOL/USD", pyth: "0xef0d8b6fda2ceba41da15d4095d1da392a0d2f8ed0c6c7bc0f4cfac8c280b56d", cg: "solana" },
+  { symbol: "MNT/USD", label: "MNT/USD", pyth: "0x4e3037c822d852d79af3ac80e35eb420ee3b870dca49f9344a38ef4773fb0585", cg: "mantle" },
+];
+
+const ETH_MARKET = ALL_MARKETS[0]; // mETH/USD — also drives the DeFi champion route
+
+/// The active rotation. `KEEPER_ASSET=METH/USD` forces single-market mode (an
+/// instant rollback to the original ETH-only behavior); `KEEPER_MARKETS=METH/USD,BTC/USD`
+/// customizes the set; default = rotate all four.
+const MARKETS: Market[] = (() => {
+  const only = (env.KEEPER_ASSET || "").trim();
+  if (only) {
+    const m = ALL_MARKETS.find((x) => x.symbol === only);
+    return m ? [m] : [{ symbol: only, label: only, pyth: ALL_MARKETS[0].pyth, cg: ALL_MARKETS[0].cg }];
+  }
+  const wanted = (env.KEEPER_MARKETS || "").split(",").map((s) => s.trim()).filter(Boolean);
+  if (wanted.length) {
+    const set = ALL_MARKETS.filter((m) => wanted.includes(m.symbol));
+    if (set.length) return set;
+  }
+  return ALL_MARKETS;
+})();
 
 /// Round windows (seconds from now): commit / reveal-end / settle.
 const COMMIT_SECS = Number(env.KEEPER_COMMIT_SECONDS || 600);
@@ -165,9 +209,6 @@ const REVEAL_SECS = Number(env.KEEPER_REVEAL_SECONDS || 300);
 const SETTLE_SECS = Number(env.KEEPER_SETTLE_SECONDS || 180);
 
 const SETTLE_PAGE = 200; // participants processed per settle() call
-
-// Pyth Hermes ETH/USD price feed id.
-const PYTH_ETH_USD = "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace";
 
 // --------------------------------------------------------------------------- //
 //  Minimal extra ABIs (MantleDexOracle.quoter + MockLBQuoter.setPrice/price)
@@ -232,49 +273,83 @@ function isBenignRevert(e: unknown, names: string[]): boolean {
 //  A. Real price
 // --------------------------------------------------------------------------- //
 
-async function fetchPythEthUsd(): Promise<number | null> {
+/// ONE Hermes request for ALL feed ids — parallel per-feed requests get
+/// throttled (only some resolve), which would both collapse the rotation and
+/// leave in-flight rounds without a fresh settle price. Returns symbol -> USD
+/// price for every market whose feed parsed. Each parsed entry carries its feed
+/// `id` (no 0x prefix) which we map back to the market.
+async function fetchPythBatch(markets: Market[]): Promise<Map<string, number>> {
+  const out = new Map<string, number>();
   try {
-    const url = `https://hermes.pyth.network/v2/updates/price/latest?ids[]=${PYTH_ETH_USD}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(12_000) });
-    if (!res.ok) return null;
+    const q = markets.map((m) => `ids[]=${m.pyth}`).join("&");
+    const res = await fetch(`https://hermes.pyth.network/v2/updates/price/latest?${q}`, {
+      signal: AbortSignal.timeout(12_000),
+    });
+    if (!res.ok) return out;
     const json: any = await res.json();
-    const parsed = json?.parsed;
-    const p = parsed?.[0]?.price;
-    if (!p) return null;
-    const value = Number(p.price) * 10 ** Number(p.expo);
-    return Number.isFinite(value) && value > 0 ? value : null;
+    for (const entry of (json?.parsed ?? []) as any[]) {
+      const id = String(entry?.id ?? "").replace(/^0x/, "").toLowerCase();
+      const m = markets.find((x) => x.pyth.replace(/^0x/, "").toLowerCase() === id);
+      const p = entry?.price;
+      if (!m || !p) continue;
+      const value = Number(p.price) * 10 ** Number(p.expo);
+      if (Number.isFinite(value) && value > 0) out.set(m.symbol, value);
+    }
   } catch {
-    return null;
+    /* fall through — the per-market CoinGecko fallback fills any gaps */
   }
+  return out;
 }
 
-async function fetchCoinGeckoEthUsd(): Promise<number | null> {
+async function fetchCoinGecko(cgId: string): Promise<number | null> {
   try {
-    const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd", {
+    const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${cgId}&vs_currencies=usd`, {
       signal: AbortSignal.timeout(12_000),
     });
     if (!res.ok) return null;
     const json: any = await res.json();
-    const v = Number(json?.ethereum?.usd);
+    const v = Number(json?.[cgId]?.usd);
     return Number.isFinite(v) && v > 0 ? v : null;
   } catch {
     return null;
   }
 }
 
-/// Reject 0 / absurd values so a feed glitch never settles a round at a bad price.
+/// Reject 0 / NaN / absurd values so a feed glitch never settles at a bad price.
+/// Bounds span sub-dollar (MNT ~$0.5) to six figures (BTC), since the arena is
+/// multi-market now.
 function sane(price: number | null): price is number {
-  return price !== null && Number.isFinite(price) && price > 50 && price < 1_000_000;
+  return price !== null && Number.isFinite(price) && price > 0.0001 && price < 5_000_000;
 }
 
-async function getRealEthUsd(): Promise<{ price: number; source: string }> {
-  const pyth = await fetchPythEthUsd();
-  if (sane(pyth)) return { price: pyth, source: "pyth" };
-  log("  ⚠ Pyth Hermes unavailable/insane — falling back to CoinGecko");
-  const cg = await fetchCoinGeckoEthUsd();
-  if (sane(cg)) return { price: cg, source: "coingecko" };
-  throw new Error("No sane ETH/USD price from Pyth or CoinGecko this tick");
+interface PricedMarket {
+  market: Market;
+  price: number;
+  source: string;
 }
+
+/// Fetch every rotation market this tick: ONE batched Pyth request, with a
+/// per-market CoinGecko fallback for any feed that didn't resolve. Returns only
+/// the markets that resolved — every in-flight round's market must be reported
+/// each tick so it settles fresh, so we always try the whole set. A single bad
+/// feed never aborts the tick or settles a round on a stale number.
+async function getAllMarketPrices(): Promise<PricedMarket[]> {
+  const pyth = await fetchPythBatch(MARKETS);
+  const out: PricedMarket[] = [];
+  for (const market of MARKETS) {
+    const pp = pyth.get(market.symbol) ?? null;
+    if (sane(pp)) {
+      out.push({ market, price: pp, source: "pyth" });
+      continue;
+    }
+    const cg = await fetchCoinGecko(market.cg);
+    if (sane(cg)) out.push({ market, price: cg, source: "coingecko" });
+    else log(`  ⚠ no sane price for ${market.label} this tick (Pyth + CoinGecko both down)`);
+  }
+  return out;
+}
+
+const fmtUsd = (p: number): string => p.toFixed(p < 10 ? 4 : 2);
 
 const to1e8 = (usd: number): bigint => BigInt(Math.round(usd * 1e8));
 const to1e18 = (usd: number): bigint => BigInt(Math.round(usd * 1e6)) * 10n ** 12n; // 1e18 without FP overflow
@@ -283,23 +358,28 @@ const to1e18 = (usd: number): bigint => BigInt(Math.round(usd * 1e6)) * 10n ** 1
 //  B. Push the real price to BOTH oracles
 // --------------------------------------------------------------------------- //
 
-async function pushPrices(price: number, source: string): Promise<void> {
-  const aid = assetId(ASSET);
-  // ReporterPriceOracle (1e8 USD)
-  try {
-    const h = await send({
-      address: REPORTER_ORACLE as Address,
-      abi: reporterPriceOracleAbi,
-      functionName: "reportPrice",
-      args: [aid, to1e8(price), `pyth:${source}`],
-    });
-    log(`  ✓ reportPrice ${ASSET} = $${price.toFixed(2)} (1e8)  ${explorerTx(h)}`);
-  } catch (e) {
-    log(`  ✗ reportPrice failed: ${(e as Error)?.message?.split("\n")[0]}`);
+async function pushAllPrices(priced: PricedMarket[]): Promise<void> {
+  // Report EVERY resolved market to the ReporterPriceOracle each tick (1e8 USD),
+  // so any in-flight round — on any market — settles against a fresh price.
+  for (const { market, price, source } of priced) {
+    try {
+      const h = await send({
+        address: REPORTER_ORACLE as Address,
+        abi: reporterPriceOracleAbi,
+        functionName: "reportPrice",
+        args: [assetId(market.symbol), to1e8(price), `pyth:${source}`],
+      });
+      log(`  ✓ reportPrice ${market.label} = $${fmtUsd(price)} (1e8)  ${explorerTx(h)}`);
+    } catch (e) {
+      if (isConcurrentKeeperError(e)) log(`  ⏭ reportPrice ${market.label} raced another keeper — skipping`);
+      else log(`  ✗ reportPrice ${market.label} failed: ${(e as Error)?.message?.split("\n")[0]}`);
+    }
   }
 
-  // MockLBQuoter behind MantleDexOracle (quote-token out per 1e18 base → set 1e18 USD)
-  if (MANTLE_DEX_ORACLE) {
+  // Also drive the MockLBQuoter behind MantleDexOracle with the ETH price — the
+  // champion copy-trade DeFi route is the mETH/USDY pair.
+  const eth = priced.find((p) => p.market.symbol === ETH_MARKET.symbol);
+  if (MANTLE_DEX_ORACLE && eth) {
     try {
       const quoter = (await publicClient.readContract({
         address: MANTLE_DEX_ORACLE,
@@ -310,9 +390,9 @@ async function pushPrices(price: number, source: string): Promise<void> {
         address: quoter,
         abi: mockQuoterAbi,
         functionName: "setPrice",
-        args: [to1e18(price)],
+        args: [to1e18(eth.price)],
       });
-      log(`  ✓ MockLBQuoter.setPrice = $${price.toFixed(2)} (1e18) @ ${quoter}  ${explorerTx(h)}`);
+      log(`  ✓ MockLBQuoter.setPrice = $${eth.price.toFixed(2)} (1e18) @ ${quoter}  ${explorerTx(h)}`);
     } catch (e) {
       // Real LBQuoter on mainnet has no setPrice — that's fine, settlement just
       // reads live DEX liquidity there. On testnet this is the mock and works.
@@ -640,9 +720,20 @@ function clampInt(x: number, lo: number, hi: number): number {
 
 /// Short-momentum read in [-1,1]. Real when we have a prior tick price; otherwise
 /// a deterministic per-(round,price-bucket) pseudo-signal so calls still vary.
-function momentumSignal(roundId: bigint, price: number, cursor: CursorFile): number {
-  if (typeof cursor.lastPrice === "number" && cursor.lastPrice > 0) {
-    const chg = (price - cursor.lastPrice) / cursor.lastPrice; // fractional move since last tick
+function lastPriceFor(symbol: string, cursor: CursorFile): number | undefined {
+  const m = cursor.lastPrices?.[symbol]?.price;
+  if (typeof m === "number" && m > 0) return m;
+  // Back-compat: the ETH market used to live in cursor.lastPrice.
+  if (symbol === ETH_MARKET.symbol && typeof cursor.lastPrice === "number" && cursor.lastPrice > 0) {
+    return cursor.lastPrice;
+  }
+  return undefined;
+}
+
+function momentumSignal(roundId: bigint, symbol: string, price: number, cursor: CursorFile): number {
+  const prev = lastPriceFor(symbol, cursor);
+  if (typeof prev === "number" && prev > 0) {
+    const chg = (price - prev) / prev; // fractional move since last tick (this market)
     // Scale a small fractional move into a bounded conviction read.
     const m = Math.max(-1, Math.min(1, chg * 120));
     if (Math.abs(m) > 0.02) return m;
@@ -846,21 +937,26 @@ async function hasOpenCommitWindow(): Promise<boolean> {
   return false;
 }
 
-async function openRoundAndCommit(agents: AgentsFile, price: number, cursor: CursorFile): Promise<void> {
+async function openRoundAndCommit(
+  agents: AgentsFile,
+  market: Market,
+  price: number,
+  cursor: CursorFile,
+): Promise<void> {
   const now = nowSec();
   const commitDeadline = BigInt(now + COMMIT_SECS);
   const revealDeadline = commitDeadline + BigInt(REVEAL_SECS);
   const settleTime = revealDeadline + BigInt(SETTLE_SECS);
 
-  log(`  ＋ opening a fresh round for ${ASSET} (commit ${COMMIT_SECS}s / reveal ${REVEAL_SECS}s / settle ${SETTLE_SECS}s)`);
+  log(`  ＋ opening a fresh round for ${market.label} (commit ${COMMIT_SECS}s / reveal ${REVEAL_SECS}s / settle ${SETTLE_SECS}s)`);
   const openHash = await wallet().writeContract({
     address: PROOF_OF_ALPHA as Address,
     abi: proofOfAlphaAbi,
     functionName: "openRound",
     args: [
-      assetId(ASSET),
+      assetId(market.symbol),
       REPORTER_ORACLE as Address,
-      "ETH/USD live - real Pyth price",
+      `${market.label} live - real Pyth price`,
       commitDeadline,
       revealDeadline,
       settleTime,
@@ -871,10 +967,10 @@ async function openRoundAndCommit(agents: AgentsFile, price: number, cursor: Cur
   const logs = parseEventLogs({ abi: proofOfAlphaAbi, logs: receipt.logs, eventName: "RoundOpened" });
   const roundId = logs[0]?.args?.roundId as bigint | undefined;
   if (roundId === undefined) throw new Error("openRound: could not parse roundId from logs");
-  log(`  ✓ opened round #${roundId}  ${explorerTx(openHash)}`);
+  log(`  ✓ opened round #${roundId} (${market.label})  ${explorerTx(openHash)}`);
 
-  const mom = momentumSignal(roundId, price, cursor);
-  const momLive = typeof cursor.lastPrice === "number" && cursor.lastPrice > 0;
+  const mom = momentumSignal(roundId, market.symbol, price, cursor);
+  const momLive = lastPriceFor(market.symbol, cursor) !== undefined;
 
   // Gather the signal context ONCE for the whole round: the five adapters (mock
   // until their sponsor keys are set) plus the REAL Pyth momentum injected as a
@@ -882,12 +978,12 @@ async function openRoundAndCommit(agents: AgentsFile, price: number, cursor: Cur
   // data. Each persona then filters/biases this same snapshot; Athena, when an
   // LLM key is present, reasons over it with the model. The resulting rationale
   // is sealed on-chain (rationaleHash) at commit and revealed verbatim after.
-  const bundle = await gatherSignals(ASSET, Number(roundId));
+  const bundle = await gatherSignals(market.symbol, Number(roundId));
   bundle.signals.push({
     source: "momentum",
     score: mom,
     weight: 0.6,
-    note: `ETH ${mom >= 0 ? "up" : "down"}-momentum since the last tick${momLive ? " (Pyth, live)" : ""}`,
+    note: `${market.label} ${mom >= 0 ? "up" : "down"}-momentum since the last tick${momLive ? " (Pyth, live)" : ""}`,
     live: momLive,
   } as Signal);
 
@@ -988,7 +1084,7 @@ async function findOpenCommitRound(): Promise<bigint | null> {
 /// Each tick: find the open round and commit, on their behalf, any user agent
 /// that (a) bound our wallet via setAgentWallet and (b) carries a strategy in
 /// its card. Reveal + settle for them ride the existing per-file paths.
-async function commitAutopilots(price: number, cursor: CursorFile, houseIds: Set<number>): Promise<void> {
+async function commitAutopilots(priced: PricedMarket[], cursor: CursorFile, houseIds: Set<number>): Promise<void> {
   let total: bigint;
   try {
     total = (await publicClient.readContract({
@@ -1004,9 +1100,17 @@ async function commitAutopilots(price: number, cursor: CursorFile, houseIds: Set
   const roundId = await findOpenCommitRound();
   if (roundId === null) return;
 
+  // Reason on the OPEN round's ACTUAL market (it may be BTC / SOL / MNT this round).
+  const openMarket = marketByAssetId((await getRound(roundId)).asset) ?? ETH_MARKET;
+  const marketPrice =
+    priced.find((p) => p.market.symbol === openMarket.symbol)?.price ??
+    lastPriceFor(openMarket.symbol, cursor) ??
+    priced[0]?.price ??
+    0;
+
   const keeper = account().address.toLowerCase();
-  const mom = momentumSignal(roundId, price, cursor);
-  const momLive = typeof cursor.lastPrice === "number" && cursor.lastPrice > 0;
+  const mom = momentumSignal(roundId, openMarket.symbol, marketPrice, cursor);
+  const momLive = lastPriceFor(openMarket.symbol, cursor) !== undefined;
   let bundle: SignalBundle | null = null;
 
   for (let id = 1n; id <= total; id++) {
@@ -1047,12 +1151,12 @@ async function commitAutopilots(price: number, cursor: CursorFile, houseIds: Set
     }
 
     if (!bundle) {
-      bundle = await gatherSignals(ASSET, Number(roundId));
+      bundle = await gatherSignals(openMarket.symbol, Number(roundId));
       bundle.signals.push({
         source: "momentum",
         score: mom,
         weight: 0.6,
-        note: `ETH ${mom >= 0 ? "up" : "down"}-momentum${momLive ? " (Pyth, live)" : ""}`,
+        note: `${openMarket.label} ${mom >= 0 ? "up" : "down"}-momentum${momLive ? " (Pyth, live)" : ""}`,
         live: momLive,
       } as Signal);
     }
@@ -1107,17 +1211,16 @@ async function tick(): Promise<void> {
 
   const cursor = readJson<CursorFile>(CURSOR_PATH, { lowWaterMark: 0 });
 
-  // A + B: real ETH/USD price → both oracles. Best-effort: an outage of BOTH
-  // Pyth Hermes and CoinGecko must NOT block settling or revealing already-open
-  // rounds, which read the on-chain oracle, not this fetched value. So a price
-  // failure degrades to "settle/reveal only" rather than aborting the whole tick.
-  const priced = await getRealEthUsd().catch((e) => {
-    log(`  ⚠ no ETH/USD price this tick (${(e as Error)?.message?.split("\n")[0]}) — settle/reveal only`);
-    return null;
-  });
-  if (priced) {
-    log(`  price ETH/USD = $${priced.price.toFixed(2)} (source ${priced.source})`);
-    await runPhase("price push", () => pushPrices(priced.price, priced.source));
+  // A + B: fetch EVERY rotation market and push them all on-chain, so any
+  // in-flight round — on any market — settles against a fresh price. Best-effort:
+  // both Pyth and CoinGecko being down for a market just drops it this tick and
+  // degrades to "settle/reveal only" rather than aborting the whole tick.
+  const priced = await getAllMarketPrices();
+  if (priced.length > 0) {
+    log(`  prices: ${priced.map((p) => `${p.market.label} $${fmtUsd(p.price)}`).join("  ·  ")}`);
+    await runPhase("price push", () => pushAllPrices(priced));
+  } else {
+    log("  ⚠ no market prices this tick — settle/reveal only");
   }
 
   // C: settle everything due (reads the on-chain oracle; no fetched price needed)
@@ -1133,13 +1236,17 @@ async function tick(): Promise<void> {
   // D: reveal personas in their reveal window (no fetched price needed)
   await runPhase("reveal", () => revealPersonas(cursor));
 
-  // E: keep a commit window open (needs a fresh price for the agents' calls)
-  if (priced) {
+  // E: keep a commit window open. Rotate the market by round number so the arena
+  // cycles mETH -> BTC -> SOL -> MNT -> ... (over the markets priced this tick).
+  if (priced.length > 0) {
     if (await hasOpenCommitWindow()) {
       log("  ✓ a commit window is already open — not opening another");
     } else {
+      const count = await roundCount();
+      const choice = priced[Number(count % BigInt(priced.length))];
+      log(`  🎲 this round's market: ${choice.market.label}`);
       try {
-        await openRoundAndCommit(agents, priced.price, cursor);
+        await openRoundAndCommit(agents, choice.market, choice.price, cursor);
       } catch (e) {
         if (isConcurrentKeeperError(e)) {
           log(`  ⏭ another keeper opened this round first — skipping (${(e as Error)?.message?.split("\n")[0]})`);
@@ -1151,16 +1258,21 @@ async function tick(): Promise<void> {
 
     // E.5: run any user-deployed agents that delegated control to us (auto-pilot).
     try {
-      await commitAutopilots(priced.price, cursor, new Set(Object.values(agents)));
+      await commitAutopilots(priced, cursor, new Set(Object.values(agents)));
     } catch (e) {
       log(`  ✗ auto-pilot step error: ${(e as Error)?.message?.split("\n")[0]}`);
     }
 
-    // Price drives next tick's momentum.
-    cursor.lastPrice = priced.price;
-    cursor.lastPriceAt = nowSec();
+    // Update per-market momentum baselines for next tick.
+    cursor.lastPrices = cursor.lastPrices ?? {};
+    for (const p of priced) cursor.lastPrices[p.market.symbol] = { price: p.price, at: nowSec() };
+    const eth = priced.find((p) => p.market.symbol === ETH_MARKET.symbol);
+    if (eth) {
+      cursor.lastPrice = eth.price;
+      cursor.lastPriceAt = nowSec();
+    }
   } else {
-    log("  ⏭ skipping round-open + auto-pilot (no price this tick)");
+    log("  ⏭ skipping round-open + auto-pilot (no prices this tick)");
   }
 
   // Persist tick state (cursor may have advanced during settle/reveal).
