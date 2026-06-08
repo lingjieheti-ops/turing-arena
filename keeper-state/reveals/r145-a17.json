@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -190,
+  "confidence": 52,
+  "rationaleHash": "0xf33ddd22e01914c6526d27be62d5068e7192af9266961543f03bf07922ebdca6",
+  "salt": "0x94161fd29d5a379ec7550bc7611cabce90be1d5e452957a983b0ab57ffcc1e96",
+  "rationale": "Net read bearish (-0.32). Strongest evidence: momentum -0.90 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless -0.98 (Limitless (Base) ETH 1% up / 99% down); elfa +0.87 (KOL mindshare heating up).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
