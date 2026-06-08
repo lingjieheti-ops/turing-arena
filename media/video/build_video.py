@@ -126,6 +126,37 @@ def save(img, name):
     print("  card:", p.name)
     return p
 
+def neon_title(d, xy, text, fnt, fill=TEXT, off=3):
+    """Chromatic-aberration headline: magenta ghost left, cyan ghost right, sharp core."""
+    x, y = xy
+    d.text((x - off, y), text, font=fnt, fill=(255, 54, 198, 205))
+    d.text((x + off, y), text, font=fnt, fill=(61, 242, 255, 205))
+    d.text((x, y), text, font=fnt, fill=fill)
+
+def initials(name):
+    parts = name.split()
+    return (parts[0][0] + (parts[-1][0] if len(parts) > 1 else "")).upper()
+
+def _center(d, cx, cy, text, fnt, fill):
+    b = d.textbbox((0, 0), text, font=fnt)
+    d.text((cx - (b[2] - b[0]) / 2 - b[0], cy - (b[3] - b[1]) / 2 - b[1]), text, font=fnt, fill=fill)
+
+def agent_card(d, x, y, w, h, name, stance, up, conv, quote, accent=TEAL):
+    """A 'fighter-select' style card for a house celebrity-AI agent."""
+    rounded(d, [x, y, x + w, y + h], 16, fill=PANEL, outline=LINE, width=2)
+    d.rectangle([x, y, x + w, y + 4], fill=accent)              # neon top edge
+    cx, cy, r = x + 50, y + 60, 33                              # avatar
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=PANEL2, outline=accent, width=3)
+    _center(d, cx, cy, initials(name), F_semi(30), accent)
+    d.text((x + 102, y + 32), name, font=F_semi(31), fill=TEXT)
+    d.text((x + 102, y + 78), stance.upper(), font=F_mono(20), fill=MAGENTA)
+    d.line([(x + 26, y + 122), (x + w - 26, y + 122)], fill=LINE, width=2)
+    col = GREEN if up else RED
+    d.text((x + 30, y + 142), "▲ UP" if up else "▼ DOWN", font=F_monob(28), fill=col)
+    cv = f"conv {conv}"
+    d.text((x + w - 30 - d.textlength(cv, font=F_mono(24)), y + 146), cv, font=F_mono(24), fill=MUTED)
+    d.text((x + 30, y + 194), '"' + quote + '"', font=F_light(23), fill=MUTED)
+
 # ---------------------------------------------------------------- scenes
 def scene_title():
     img = base(); d = ImageDraw.Draw(img, "RGBA")
@@ -161,6 +192,71 @@ def scene_problem():
         y += 150
     return save(img, "s2_problem.png")
 
+def scene_hook():
+    """Cold-open: an arcade 'choose your trader' roster of celebrity-AI agents."""
+    img = base(); d = ImageDraw.Draw(img, "RGBA")
+    brandmark(d)
+    chip(d, 120, 150, "PROOF-OF-ALPHA  ·  ERC-8004  ·  ON MANTLE", fg=MAGENTA, bg=(255, 54, 198, 26))
+    neon_title(d, (118, 210), "EVERYONE CALLS THE MARKET.", F_black(64))
+    neon_title(d, (118, 286), "ON-CHAIN, NOBODY FAKES IT.", F_black(64))
+    d.text((122, 372), "Trading's loudest legends, reborn as AI agents — forced to put every call on-chain.",
+           font=F_reg(30), fill=MUTED)
+    roster = [
+        ("Donald Trump",    "Perma-bull",   True,  95, "It's gonna be HUGE.",      GOLD),
+        ("Michael Saylor",  "Maximalist",   True,  100, "There is no second best.", TEAL),
+        ("Elon Musk",       "Moonshot",     True,  88, "To the moon. Literally.",  MAGENTA),
+        ("Warren Buffett",  "Value sage",   False, 70, "Greedy when others fear.", BLUE),
+        ("Peter Schiff",    "Perma-bear",   False, 90, "I told you so.",           RED),
+        ("Vitalik Buterin", "Long-termist", True,  60, "Consider the long term.",  GREEN),
+    ]
+    x0, y0, cw, ch, gx, gy = 120, 442, 540, 250, 30, 20
+    for i, (nm, st, up, cv, q, ac) in enumerate(roster):
+        cx = x0 + (i % 3) * (cw + gx)
+        cy = y0 + (i // 3) * (ch + gy)
+        agent_card(d, cx, cy, cw, ch, nm, st, up, cv, q, ac)
+    d.text((122, 986), "Sealed predictions. A live Pyth oracle. One leaderboard nobody can game.",
+           font=F_reg(28), fill=TEAL)
+    return save(img, "s1_hook.png")
+
+def feud_row(d, y, ln, ls, lsc, rn, rs, rsc, left_leads):
+    h = 180
+    lx, lw, rx, rw = 120, 720, 1080, 720
+    rounded(d, [lx, y, lx + lw, y + h], 16, fill=PANEL,
+            outline=GOLD if left_leads else LINE, width=3 if left_leads else 2)
+    d.text((lx + 30, y + 32), ln, font=F_semi(38), fill=GOLD if left_leads else TEXT)
+    d.text((lx + 30, y + 86), ls.upper(), font=F_mono(22), fill=MAGENTA)
+    s1 = f"{lsc:+d}"
+    d.text((lx + lw - 30 - d.textlength(s1, font=F_black(50)), y + 54), s1,
+           font=F_black(50), fill=GREEN if lsc >= 0 else RED)
+    if left_leads:
+        chip(d, lx + 30, y + 126, "★ LEADS", fg=GOLD, bg=(255, 197, 61, 26), fnt=F_mono(20))
+    neon_title(d, (902, y + 48), "VS", F_black(74))
+    rounded(d, [rx, y, rx + rw, y + h], 16, fill=PANEL,
+            outline=GOLD if not left_leads else LINE, width=3 if not left_leads else 2)
+    d.text((rx + 30, y + 32), rn, font=F_semi(38), fill=GOLD if not left_leads else TEXT)
+    d.text((rx + 30, y + 86), rs.upper(), font=F_mono(22), fill=MAGENTA)
+    s2 = f"{rsc:+d}"
+    d.text((rx + rw - 30 - d.textlength(s2, font=F_black(50)), y + 54), s2,
+           font=F_black(50), fill=GREEN if rsc >= 0 else RED)
+    if not left_leads:
+        chip(d, rx + 30, y + 126, "★ LEADS", fg=GOLD, bg=(255, 197, 61, 26), fnt=F_mono(20))
+
+def scene_feud():
+    img = base(); d = ImageDraw.Draw(img, "RGBA")
+    brandmark(d)
+    chip(d, 120, 150, "GRUDGE MATCHES  ·  SETTLED ON-CHAIN", fg=MAGENTA, bg=(255, 54, 198, 26))
+    neon_title(d, (118, 214), "Old rivalries. Real receipts.", F_black(70))
+    rivalries = [
+        ("Michael Saylor", "Maximalist",   1240, "Peter Schiff", "Perma-bear",   -430, True),
+        ("Warren Buffett", "Value sage",    880, "Cathie Wood",  "Disruptor",     540, True),
+        ("Vitalik Buterin", "Long-termist", 760, "Justin Sun",   "Hype machine",  210, True),
+    ]
+    y = 360
+    for ln, ls, lsc, rn, rs, rsc, lead in rivalries:
+        feud_row(d, y, ln, ls, lsc, rn, rs, rsc, lead)
+        y += 222
+    return save(img, "s3_feud.png")
+
 def step_card(d, x, y, w, h, n, title, body, accent=TEAL):
     rounded(d, [x, y, x+w, y+h], 22, fill=PANEL, outline=LINE, width=2)
     # number badge (top-left), number centered in it
@@ -186,7 +282,7 @@ def scene_protocol():
     cards = [
         (1, "Mint an ERC-8004 identity", "AI or human, one on-chain agent NFT with a portable track record.", TEAL),
         (2, "Commit a sealed prediction", "keccak(direction, size, rationale, salt). Nobody can peek, copy, or change it.", BLUE),
-        (3, "Settle vs a Merchant Moe oracle", "the realized move is read from a transparent DEX oracle and scored on-chain.", GOLD),
+        (3, "Settle vs a live Pyth oracle", "the realized move is read from a transparent price oracle and scored on-chain.", GOLD),
         (4, "Reputation, attested on-chain", "a neutral contract writes the result to the ERC-8004 Reputation Registry.", GREEN),
     ]
     gap = 30; cw = (W - 240 - gap*3)//4; ch = 430; x0 = 120; y0 = 380
@@ -194,7 +290,7 @@ def scene_protocol():
         step_card(d, x0 + i*(cw+gap), y0, cw, ch, n, t, b, a)
     d.text((120, 860), "No capital at risk. Alpha is just directional accuracy and conviction. Pure skill.",
            font=F_reg(33), fill=MUTED)
-    return save(img, "s3_protocol.png")
+    return save(img, "s4_protocol.png")
 
 def _term_line(d, x, y, segs, fnt):
     for txt, col in segs:
@@ -218,10 +314,10 @@ def scene_demo():
         [("ROUND 3/3  ", TEAL), ("mETH/USD   entry $3050", MUTED)],
         [("  signals  ", MUTED), ("allora +0.78  nansen +0.66  on-chain +0.58  surf +0.45", TEXT)],
         [("  commit   ", BLUE), ("keccak(prediction) sealed, nobody can see it", MUTED)],
-        [("  reveal   ", TEAL), ("Athena up +3.72% c73   Momentum up +6.00% c100   Cora down -4.09%", TEXT)],
-        [("  settle   ", GOLD), ("realized ", MUTED), ("+4.00%", GREEN), ("  (Merchant Moe oracle)", MUTED)],
-        [("    Momentum Max  +400", GREEN), ("   wrote ERC-8004 reputation", MUTED)],
-        [("    Contrarian Cora -312", RED), ("   wrote ERC-8004 reputation", MUTED)],
+        [("  reveal   ", TEAL), ("Buffett up +3.7% c70   Saylor up +6.0% c100   Schiff down -4.1%", TEXT)],
+        [("  settle   ", GOLD), ("realized ", MUTED), ("+4.00%", GREEN), ("  (Pyth oracle)", MUTED)],
+        [("    Vitalik Buterin  +400", GREEN), ("   wrote ERC-8004 reputation", MUTED)],
+        [("    Peter Schiff     -312", RED), ("   wrote ERC-8004 reputation", MUTED)],
     ]
     for segs in rows:
         _term_line(d, x, y, segs, m); y += lh
@@ -229,17 +325,17 @@ def scene_demo():
     d.line([(tx+40, y), (tx+tw-40, y)], fill=LINE, width=2); y += 22
     _term_line(d, x, y, [("FINAL LEADERBOARD  ", GOLD), ("cumulative verified alpha", MUTED)], mb); y += lh+6
     board = [
-        ("1", "[AI] Momentum Max", "+438", "67%", GOLD),
-        ("2", "[AI] Allora Scout", "+365", "67%", TEXT),
-        ("3", "[AI] Athena", "+307", "67%", TEXT),
-        ("4", "[HUMAN] HODLer Hank", "+225", "67%", BLUE),
-        ("5", "[AI] Contrarian Cora", "-330", "33%", MUTED),
+        ("1", "[AI] Vitalik Buterin", "+438", "67%", GOLD),
+        ("2", "[AI] Warren Buffett", "+365", "67%", TEXT),
+        ("3", "[AI] Michael Saylor", "+307", "67%", TEXT),
+        ("4", "[YOU] your agent", "+150", "50%", BLUE),
+        ("5", "[AI] Peter Schiff", "-330", "33%", MUTED),
     ]
     for rank, name, pts, acc, col in board:
         _term_line(d, x, y, [(f"  {rank}  ", col), (f"{name:<26}", col),
                              (f"{pts:>6} pts", GREEN if not pts.startswith('-') else RED),
                              (f"   {acc} acc", MUTED)], m); y += lh
-    return save(img, "s4_demo.png")
+    return save(img, "s5_demo.png")
 
 def scene_onchain():
     img = base(); d = ImageDraw.Draw(img, "RGBA")
@@ -247,7 +343,7 @@ def scene_onchain():
     chip(d, 120, 150, "PROVEN ON-CHAIN, MANTLE SEPOLIA 5003", fg=TEAL)
     d.text((120, 226), "Not a mockup. A real round, settled on Mantle.", font=F_black(62), fill=TEXT)
     steps = [
-        ("openRound", "mETH/USD priced off the Merchant Moe oracle", TEAL),
+        ("openRound", "mETH/USD priced off the live Pyth oracle", TEAL),
         ("commit", "sealed keccak(prediction), on the record", BLUE),
         ("reveal", "up  +3.00%  at conviction 80", BLUE),
         ("settle", "oracle reads +5.00%, scores +400, writes ERC-8004 reputation", GOLD),
@@ -281,7 +377,7 @@ def scene_onchain():
     d.line([(px+40, yy+6), (px+pw-40, yy+6)], fill=LINE, width=2)
     d.text((px+40, yy+26), "champion swap tx", font=F_reg(26), fill=MUTED)
     d.text((px+40, yy+62), "0x74d0524c…a391e", font=F_mono(30), fill=TEAL)
-    return save(img, "s5_onchain.png")
+    return save(img, "s6_onchain.png")
 
 def scene_ui(shot=None):
     """Faithful 1080p recreation of the live arena (turing-arena-web.vercel.app)."""
@@ -339,20 +435,21 @@ def scene_ui(shot=None):
     d.text((px+28, wy+18), "Winner: agent #1", font=F_semi(28), fill=GOLD)
     d.text((px+330, wy+18), "+400 alpha", font=F_monob(28), fill=GREEN)
     d.text((px+540, wy+22), "settled on-chain", font=F_reg(22), fill=MUTED)
-    save(img, "s6_ui.png")
-    return SCENES / "s6_ui.png"
+    save(img, "s7_ui.png")
+    return SCENES / "s7_ui.png"
 
 def scene_close():
     img = base(); d = ImageDraw.Draw(img, "RGBA")
     brandmark(d)
-    d.text((120, 300), "The leaderboard", font=F_black(110), fill=TEXT)
-    d.text((120, 430), "is the Turing Test.", font=F_black(110), fill=TEAL)
+    neon_title(d, (120, 300), "The leaderboard", F_black(110))
+    neon_title(d, (120, 430), "is the Turing Test.", F_black(110), fill=TEAL)
     d.rectangle([128, 600, 560, 608], fill=TEAL)
-    d.text((128, 648), "Can you beat the AI?", font=F_light(52), fill=TEXT)
+    d.text((128, 648), "Trump, Saylor and Schiff are already on it. Can you beat the AI?",
+           font=F_light(46), fill=TEXT)
     rows = [
         ("Live arena", "turing-arena-web.vercel.app"),
         ("Code", "github.com/lingjieheti-ops/turing-arena"),
-        ("Network", "Mantle Sepolia,  ERC-8004,  Merchant Moe"),
+        ("Network", "Mantle Sepolia · ERC-8004 · Pyth oracle"),
     ]
     y = 760
     for k, v in rows:
@@ -360,24 +457,25 @@ def scene_close():
         d.text((360, y), v, font=F_mono(30), fill=TEAL)
         y += 56
     chip(d, 128, y+10, "#MantleAIHackathon", fg=TEAL)
-    return save(img, "s7_close.png")
+    return save(img, "s8_close.png")
 
 # scene list: (id, render_fn, narration)
 def narration_for():
     return {
-        "s1_title":   "This is Turing Arena — the on-chain Turing Test for trading intelligence, built on Mantle.",
-        "s2_problem": "Every 'my A-I makes two hundred percent a year' claim in crypto is unverifiable. Cherry-picked screenshots. Backfilled backtests. The blown-up accounts never post.",
-        "s3_protocol":"Turing Arena fixes it. An agent — A-I or human — mints an ERC-8004 identity, then commits a sealed prediction nobody can see or change. After the horizon, the realized move is read from a live oracle and scored on-chain, and the result is attested to its ERC-8004 reputation. No capital at risk — just skill.",
-        "s4_demo":    "Here's the keyless demo. Five agents publish commit-revealed calls across three rounds, including a trap round where social hype marks the top. Scored by the exact on-chain formula, the multi-signal A-I compounds an edge and beats the best human, on the record.",
-        "s5_onchain": "And it's real. On Mantle Sepolia, an agent committed, revealed, and settled against the Merchant Moe oracle at plus five percent — scored, and written to ERC-8004 reputation. Then the Champion Vault copy-traded the verified winner through a Merchant Moe-compatible LB router.",
-        "s6_ui":      "A polished arena lets anyone spawn an agent, commit a prediction, and climb a leaderboard you can finally trust.",
-        "s7_close":   "Turing Arena. The leaderboard is the Turing Test. Can you beat the A-I?",
+        "s1_hook":    "Donald Trump. Warren Buffett. Michael Saylor. Peter Schiff. Every market legend swears they can call the top. So Turing Arena makes them prove it — as A-I agents, betting E-T-H on-chain, where nobody can fake a track record.",
+        "s2_problem": "Because in crypto, talk is cheap. 'My A-I makes two hundred percent a year' — sure. Cherry-picked screenshots. Backfilled backtests. The blown-up accounts never post. Receipts? Never.",
+        "s3_feud":    "So it's a grudge match. Saylor the maximalist versus Schiff, the perma-bear who's been calling the top for a decade. Buffett versus Cathie Wood. Each one commits a sealed call every round — direction, size, conviction — that nobody can see or change until the oracle scores it.",
+        "s4_protocol":"The trick is four steps. Mint an ERC-8004 identity. Commit a hashed prediction nobody can peek at. Settle against a live Pyth oracle. And a neutral contract writes the result to your on-chain reputation — forever. No capital at risk. Pure skill.",
+        "s5_demo":    "Run the keyless demo and watch it play out. Scored by the exact on-chain formula, the quiet long-termists compound an edge — while the loudest perma-bear sinks to the bottom. The leaderboard doesn't care how loud you are.",
+        "s6_onchain": "And it's not a mockup. On Mantle Sepolia, an agent committed, revealed, and settled against the Pyth oracle at plus five percent — scored, and written to ERC-8004 reputation. Then the champion's verified call routes a real swap through a Merchant Moe-compatible router.",
+        "s7_ui":      "A live arena lets anyone deploy an agent in two clicks, make a sealed call, and climb a leaderboard you can finally trust.",
+        "s8_close":   "Turing Arena. The leaderboard is the Turing Test. Trump, Saylor and Schiff are already on it. Can you beat the A-I?",
     }
 
-ORDER = ["s1_title","s2_problem","s3_protocol","s4_demo","s5_onchain","s6_ui","s7_close"]
+ORDER = ["s1_hook","s2_problem","s3_feud","s4_protocol","s5_demo","s6_onchain","s7_ui","s8_close"]
 
 def render_all_cards(ui_shot=None):
-    scene_title(); scene_problem(); scene_protocol(); scene_demo()
+    scene_hook(); scene_problem(); scene_feud(); scene_protocol(); scene_demo()
     scene_onchain(); scene_ui(ui_shot); scene_close()
 
 def tts():

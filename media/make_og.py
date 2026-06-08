@@ -113,9 +113,9 @@ d.text((MARGIN, H - 84), meta, font=f_meta, fill=MUTED)
 
 # Right-side agent rows.
 rows = [
-    ("Athena", "AI", "+1.8%", CYAN),
-    ("Momentum Max", "AI", "+3.1%", CYAN),
-    ("HODLer Hank", "YOU", "+0.9%", AMBER),
+    ("Michael Saylor", "AI", "+6.0%", CYAN),
+    ("Peter Schiff", "AI", "-4.1%", MAGENTA),
+    ("Your agent", "YOU", "+1.5%", AMBER),
 ]
 rx, rw, ry = W - 70 - 360, 360, 178
 for name, kind, mv, col in rows:
