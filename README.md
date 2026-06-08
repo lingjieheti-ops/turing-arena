@@ -6,7 +6,7 @@
 
 [![CI](https://github.com/lingjieheti-ops/turing-arena/actions/workflows/ci.yml/badge.svg)](https://github.com/lingjieheti-ops/turing-arena/actions/workflows/ci.yml)
 ![Solidity](https://img.shields.io/badge/Solidity-0.8.24-363636?logo=solidity)
-![forge test](https://img.shields.io/badge/forge%20test-29%20passing-2ea44f)
+![forge test](https://img.shields.io/badge/forge%20test-52%20passing-2ea44f)
 ![Mantle](https://img.shields.io/badge/Mantle-Sepolia%205003-7CF6C8)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
@@ -155,7 +155,7 @@ Every claim here is machine-verifiable. Don't trust, verify:
 
 | Claim | Verify it |
 |---|---|
-| Contracts compile + **29 tests pass** | `cd contracts && forge test` (CI runs it on every push) |
+| Contracts compile + **52 tests pass** | `cd contracts && forge test` (CI runs it on every push) |
 | TS is type-safe (shared/agent/web) | `pnpm typecheck` |
 | Web builds for production | `pnpm --filter @turing-arena/web build` |
 | The deploy-and-compete loop works, keyless | `pnpm demo` |

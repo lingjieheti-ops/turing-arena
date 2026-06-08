@@ -18,7 +18,7 @@ env:
 
 jobs:
   contracts:
-    name: Contracts (Foundry · 29 tests)
+    name: Contracts (Foundry · 52 tests)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5

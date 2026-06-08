@@ -30,7 +30,7 @@ A concise, honest threat model for Turing Arena. It is a hackathon project (**no
 - Solidity 0.8 checked math throughout; `SafeCast.toInt128` on the attested score; scores are magnitude-bounded so they always fit.
 
 ## Out of scope / known limitations
-- **Not audited.** Reference-quality, test-covered (29 Foundry tests), but no formal audit.
+- **Not audited.** Reference-quality, test-covered (52 Foundry tests), but no formal audit.
 - ERC-8004 **Validation Registry** is not implemented (Identity + Reputation are); it's the natural next step for validator-attested settlement.
 - `MantleDexOracle` uses a spot quote (see Oracle limit above).
 - The mainnet Merchant Moe LB pair **bin step** must be confirmed before mainnet champion swaps (`LB_BIN_STEP`).

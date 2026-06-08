@@ -2,6 +2,7 @@
 pragma solidity ^0.8.24;
 
 import { Test } from "forge-std/Test.sol";
+import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 import { IdentityRegistry } from "../src/erc8004/IdentityRegistry.sol";
 import { ReputationRegistry } from "../src/erc8004/ReputationRegistry.sol";
 import { ProofOfAlpha } from "../src/ProofOfAlpha.sol";
@@ -279,5 +280,295 @@ contract ProofOfAlphaTest is Test {
         (int256 sA, uint32 pA,,) = poa.getAgentStats(agentAI);
         assertEq(sA, 0, "no score without reveal");
         assertEq(pA, 0, "not counted as played");
+    }
+
+    // ----------------------- no-winner + sweepUnclaimed ------------------ //
+
+    /// Flat oracle: price unchanged -> actualBps == 0 -> every score 0 ->
+    /// hasWinner stays false even though agents revealed correctly-shaped bets.
+    function test_flatOracle_noWinner() public {
+        uint256 roundId = _open(0);
+        bytes32 s = keccak256("s");
+        bytes32 rA = _commit(roundId, ai, agentAI, 200, 80, s);
+        vm.warp(commitDeadline + 1);
+        vm.prank(ai);
+        poa.reveal(roundId, agentAI, 200, 80, rA, s);
+
+        vm.warp(settleTime);
+        // settle price == entry price ($100) -> 0 bps move
+        poa.settle(roundId, 100);
+
+        ProofOfAlpha.Round memory r = poa.getRound(roundId);
+        assertTrue(r.settled, "settled");
+        assertFalse(r.hasWinner, "flat move -> no winner");
+        assertEq(r.topAgentId, 0, "no champion");
+        assertEq(r.topScore, 0, "top score zero");
+        assertEq(poa.realizedBps(roundId), 0, "0 bps realized");
+    }
+
+    /// Staked round where NOBODY wins (flat oracle) -> prize pool is stuck and
+    /// can ONLY be recovered by the owner via sweepUnclaimed.
+    function test_sweepUnclaimed_recoversStuckStakedPool() public {
+        uint256 stake = 1 ether;
+        uint256 roundId = _open(stake);
+        vm.deal(ai, stake);
+        vm.deal(human, stake);
+
+        bytes32 sA = keccak256("a");
+        bytes32 sH = keccak256("h");
+        bytes32 rA = keccak256(abi.encodePacked("rationale", agentAI, int256(300)));
+        bytes32 rH = keccak256(abi.encodePacked("rationale", agentHuman, int256(-300)));
+        bytes32 hA = poa.computeCommit(agentAI, 300, 90, rA, sA);
+        bytes32 hH = poa.computeCommit(agentHuman, -300, 90, rH, sH);
+        vm.prank(ai);
+        poa.commit{ value: stake }(roundId, agentAI, hA);
+        vm.prank(human);
+        poa.commit{ value: stake }(roundId, agentHuman, hH);
+
+        vm.warp(commitDeadline + 1);
+        vm.prank(ai);
+        poa.reveal(roundId, agentAI, 300, 90, rA, sA);
+        vm.prank(human);
+        poa.reveal(roundId, agentHuman, -300, 90, rH, sH);
+
+        vm.warp(settleTime);
+        // flat oracle: price unchanged -> 0 bps -> nobody scores positive
+        poa.settle(roundId, 100);
+
+        ProofOfAlpha.Round memory r = poa.getRound(roundId);
+        assertFalse(r.hasWinner, "no winner");
+        assertEq(r.prizePool, 2 * stake, "pool funded but stuck");
+        assertEq(address(poa).balance, 2 * stake, "contract holds pool");
+
+        // winner-claim path is unavailable (no winner) -> sweepUnclaimed is the
+        // only recovery, owner-only.
+        address recipient = makeAddr("recipient");
+        poa.sweepUnclaimed(roundId, recipient); // test contract is owner
+        assertEq(recipient.balance, 2 * stake, "owner recovered stuck pool");
+        assertEq(poa.getRound(roundId).prizePool, 0, "pool drained");
+    }
+
+    function test_revert_sweepUnclaimed_notOwner() public {
+        uint256 roundId = _open(0);
+        vm.warp(settleTime);
+        poa.settle(roundId, 0); // empty round settles immediately
+        vm.prank(human);
+        vm.expectRevert(abi.encodeWithSelector(Ownable.OwnableUnauthorizedAccount.selector, human));
+        poa.sweepUnclaimed(roundId, human);
+    }
+
+    function test_revert_sweepUnclaimed_whenHasWinner() public {
+        uint256 stake = 1 ether;
+        uint256 roundId = _open(stake);
+        vm.deal(ai, stake);
+
+        bytes32 sA = keccak256("a");
+        bytes32 rA = keccak256(abi.encodePacked("rationale", agentAI, int256(300)));
+        bytes32 hA = poa.computeCommit(agentAI, 300, 90, rA, sA);
+        vm.prank(ai);
+        poa.commit{ value: stake }(roundId, agentAI, hA);
+
+        vm.warp(commitDeadline + 1);
+        vm.prank(ai);
+        poa.reveal(roundId, agentAI, 300, 90, rA, sA);
+
+        vm.warp(settleTime);
+        oracle.setPrice(ASSET, 103e8); // +300 bps -> AI wins
+        poa.settle(roundId, 100);
+
+        assertTrue(poa.getRound(roundId).hasWinner, "has winner");
+        // a winner exists -> sweep is blocked (winner must claim instead)
+        vm.expectRevert(abi.encodeWithSelector(ProofOfAlpha.NotWinner.selector, roundId, agentAI));
+        poa.sweepUnclaimed(roundId, makeAddr("x"));
+    }
+
+    function test_revert_sweepUnclaimed_noPrizePool() public {
+        // a no-winner round but with stake == 0 -> nothing to sweep.
+        uint256 roundId = _open(0);
+        bytes32 s = keccak256("s");
+        bytes32 rA = _commit(roundId, ai, agentAI, 200, 80, s);
+        vm.warp(commitDeadline + 1);
+        vm.prank(ai);
+        poa.reveal(roundId, agentAI, 200, 80, rA, s);
+        vm.warp(settleTime);
+        poa.settle(roundId, 100); // flat -> no winner, but pool is 0
+        assertFalse(poa.getRound(roundId).hasWinner, "no winner");
+        vm.expectRevert(abi.encodeWithSelector(ProofOfAlpha.NoPrizePool.selector, roundId));
+        poa.sweepUnclaimed(roundId, makeAddr("x"));
+    }
+
+    function test_revert_sweepUnclaimed_notSettled() public {
+        uint256 roundId = _open(1 ether);
+        vm.expectRevert(abi.encodeWithSelector(ProofOfAlpha.NotSettled.selector, roundId));
+        poa.sweepUnclaimed(roundId, makeAddr("x"));
+    }
+
+    /// Everyone-wrong staked round also yields no winner (all scores negative) ->
+    /// pool stuck -> sweepable.
+    function test_sweepUnclaimed_allWrong() public {
+        uint256 stake = 1 ether;
+        uint256 roundId = _open(stake);
+        vm.deal(ai, stake);
+        vm.deal(human, stake);
+
+        bytes32 sA = keccak256("a");
+        bytes32 sH = keccak256("h");
+        // both bet UP...
+        bytes32 rA = keccak256(abi.encodePacked("rationale", agentAI, int256(300)));
+        bytes32 rH = keccak256(abi.encodePacked("rationale", agentHuman, int256(300)));
+        bytes32 hA = poa.computeCommit(agentAI, 300, 90, rA, sA);
+        bytes32 hH = poa.computeCommit(agentHuman, 300, 90, rH, sH);
+        vm.prank(ai);
+        poa.commit{ value: stake }(roundId, agentAI, hA);
+        vm.prank(human);
+        poa.commit{ value: stake }(roundId, agentHuman, hH);
+
+        vm.warp(commitDeadline + 1);
+        vm.prank(ai);
+        poa.reveal(roundId, agentAI, 300, 90, rA, sA);
+        vm.prank(human);
+        poa.reveal(roundId, agentHuman, 300, 90, rH, sH);
+
+        vm.warp(settleTime);
+        oracle.setPrice(ASSET, 95e8); // ...but price DROPS -500 bps -> both wrong
+        poa.settle(roundId, 100);
+
+        ProofOfAlpha.Round memory r = poa.getRound(roundId);
+        assertFalse(r.hasWinner, "all wrong -> no winner");
+        assertEq(r.prizePool, 2 * stake, "pool stuck");
+        poa.sweepUnclaimed(roundId, makeAddr("treasury"));
+        assertEq(poa.getRound(roundId).prizePool, 0, "swept");
+    }
+
+    /// All committed but NONE revealed (staked) -> no winner -> pool stuck -> sweep.
+    function test_sweepUnclaimed_allUnrevealed() public {
+        uint256 stake = 1 ether;
+        uint256 roundId = _open(stake);
+        vm.deal(ai, stake);
+
+        bytes32 sA = keccak256("a");
+        bytes32 rA = keccak256(abi.encodePacked("rationale", agentAI, int256(300)));
+        bytes32 hA = poa.computeCommit(agentAI, 300, 90, rA, sA);
+        vm.prank(ai);
+        poa.commit{ value: stake }(roundId, agentAI, hA); // never reveals
+
+        vm.warp(settleTime);
+        oracle.setPrice(ASSET, 105e8); // would have won, but no reveal -> 0 points
+        poa.settle(roundId, 100);
+
+        ProofOfAlpha.Round memory r = poa.getRound(roundId);
+        assertFalse(r.hasWinner, "unrevealed -> no winner");
+        assertEq(r.prizePool, stake, "stake forfeited to pool, stuck");
+        poa.sweepUnclaimed(roundId, makeAddr("treasury"));
+        assertEq(poa.getRound(roundId).prizePool, 0, "swept");
+    }
+
+    // ----------------------------- tie + single ------------------------- //
+
+    /// Two agents with the SAME positive score: `score > topScore` is strict, so
+    /// the FIRST one processed (first to commit/reveal) keeps the championship.
+    function test_tieOnTopScore_firstRevealedWins() public {
+        uint256 roundId = _open(0);
+        bytes32 s = keccak256("s");
+        // identical bets -> identical scores; AI committed first -> processed first.
+        bytes32 rA = _commit(roundId, ai, agentAI, 100, 50, s);
+        bytes32 rH = _commit(roundId, human, agentHuman, 100, 50, s);
+
+        vm.warp(commitDeadline + 1);
+        vm.prank(ai);
+        poa.reveal(roundId, agentAI, 100, 50, rA, s);
+        vm.prank(human);
+        poa.reveal(roundId, agentHuman, 100, 50, rH, s);
+
+        vm.warp(settleTime);
+        oracle.setPrice(ASSET, 102e8); // +200 bps -> each scores +100
+        poa.settle(roundId, 100);
+
+        (int256 sA,,,) = poa.getAgentStats(agentAI);
+        (int256 sH2,,,) = poa.getAgentStats(agentHuman);
+        assertEq(sA, 100, "ai score");
+        assertEq(sH2, 100, "human score (tied)");
+
+        ProofOfAlpha.Round memory r = poa.getRound(roundId);
+        assertTrue(r.hasWinner, "has a winner");
+        assertEq(r.topAgentId, agentAI, "tie broken in favor of first processed (AI)");
+        assertEq(r.topScore, 100, "top score");
+    }
+
+    function test_singleEntryRound_winnerTakesPool() public {
+        uint256 stake = 1 ether;
+        uint256 roundId = _open(stake);
+        vm.deal(ai, stake);
+
+        bytes32 sA = keccak256("a");
+        bytes32 rA = keccak256(abi.encodePacked("rationale", agentAI, int256(300)));
+        bytes32 hA = poa.computeCommit(agentAI, 300, 90, rA, sA);
+        vm.prank(ai);
+        poa.commit{ value: stake }(roundId, agentAI, hA);
+
+        vm.warp(commitDeadline + 1);
+        vm.prank(ai);
+        poa.reveal(roundId, agentAI, 300, 90, rA, sA);
+
+        vm.warp(settleTime);
+        oracle.setPrice(ASSET, 104e8); // +400 bps -> the lone agent wins
+        poa.settle(roundId, 100);
+
+        ProofOfAlpha.Round memory r = poa.getRound(roundId);
+        assertTrue(r.settled, "settled");
+        assertEq(r.topAgentId, agentAI, "lone agent is champion");
+        assertEq(poa.participantCount(roundId), 1, "single entry");
+
+        uint256 balBefore = ai.balance;
+        vm.prank(ai);
+        poa.claimReward(roundId, agentAI);
+        assertEq(ai.balance - balBefore, stake, "lone winner takes own stake back");
+    }
+
+    // --------------------------- settle(roundId, 0) --------------------- //
+
+    /// An EMPTY round (no participants) with maxAgents == 0: the loop range is
+    /// [0, 0) and cursor already equals length (0) -> the round settles at once.
+    function test_settleZero_emptyRound_settles() public {
+        uint256 roundId = _open(0);
+        vm.warp(settleTime);
+        oracle.setPrice(ASSET, 108e8); // +800 bps move, but nobody played
+        poa.settle(roundId, 0);
+
+        ProofOfAlpha.Round memory r = poa.getRound(roundId);
+        assertTrue(r.settled, "empty round settled even with maxAgents=0");
+        assertEq(r.settlePrice, 108e8, "settle price still captured");
+        assertEq(poa.realizedBps(roundId), 800, "realized move recorded");
+        assertFalse(r.hasWinner, "no participants -> no winner");
+    }
+
+    /// A NON-EMPTY round with maxAgents == 0: settlePrice is captured on this
+    /// call, but ZERO agents are processed and the round is NOT yet settled.
+    function test_settleZero_nonEmptyRound_capturesPriceButProcessesNobody() public {
+        uint256 roundId = _open(0);
+        bytes32 s = keccak256("s");
+        bytes32 rA = _commit(roundId, ai, agentAI, 200, 80, s);
+        vm.warp(commitDeadline + 1);
+        vm.prank(ai);
+        poa.reveal(roundId, agentAI, 200, 80, rA, s);
+
+        vm.warp(settleTime);
+        oracle.setPrice(ASSET, 102e8); // +200 bps
+        poa.settle(roundId, 0); // capture price, process nobody
+
+        ProofOfAlpha.Round memory r = poa.getRound(roundId);
+        assertFalse(r.settled, "not settled: cursor < participants");
+        assertEq(r.settlePrice, 102e8, "settle price captured on first call");
+        assertEq(r.settleCursor, 0, "no agents processed");
+        // agent not yet scored
+        (int256 sA, uint32 pA,,) = poa.getAgentStats(agentAI);
+        assertEq(sA, 0, "score not yet applied");
+        assertEq(pA, 0, "not yet counted as played");
+
+        // a follow-up page processes the agent and finishes settlement.
+        poa.settle(roundId, 100);
+        assertTrue(poa.getRound(roundId).settled, "now settled");
+        (int256 sA2,,,) = poa.getAgentStats(agentAI);
+        assertEq(sA2, 160, "score applied after processing"); // +200 * 80/100
     }
 }

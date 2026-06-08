@@ -2,6 +2,7 @@
 pragma solidity ^0.8.24;
 
 import { Test } from "forge-std/Test.sol";
+import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 import { IdentityRegistry } from "../src/erc8004/IdentityRegistry.sol";
 import { ReputationRegistry } from "../src/erc8004/ReputationRegistry.sol";
 import { ProofOfAlpha } from "../src/ProofOfAlpha.sol";
@@ -141,5 +142,69 @@ contract DefiLayerTest is Test {
         vm.prank(human);
         vm.expectRevert(abi.encodeWithSelector(ChampionVault.NotKeeper.selector, human));
         vault.executeChampionTrade(roundId, 100e18, 0, block.timestamp + 1);
+    }
+
+    // --------------------------- vault admin ----------------------------- //
+
+    function test_withdraw_byOwner() public {
+        // vault was seeded with 1000e18 quote in setUp.
+        address to = makeAddr("treasury");
+        vault.withdraw(quote, to, 250e18); // test contract is the owner
+        assertEq(quote.balanceOf(to), 250e18, "owner withdrew incentive capital");
+        (, uint256 q) = vault.holdings();
+        assertEq(q, 750e18, "vault balance reduced");
+    }
+
+    function test_revert_withdraw_nonOwner() public {
+        vm.prank(human);
+        vm.expectRevert(abi.encodeWithSelector(Ownable.OwnableUnauthorizedAccount.selector, human));
+        vault.withdraw(quote, human, 1e18);
+    }
+
+    function test_setKeeper_byOwner() public {
+        address keeper = makeAddr("keeper");
+        assertFalse(vault.isKeeper(keeper));
+        vault.setKeeper(keeper, true);
+        assertTrue(vault.isKeeper(keeper), "keeper enabled");
+
+        // the new keeper can now execute a trade.
+        uint256 roundId = _runRound(200, 80, -150, 60, 3060e18);
+        vm.prank(keeper);
+        uint256 out = vault.executeChampionTrade(roundId, 10e18, 0, block.timestamp + 1);
+        assertEq(out, 10e18, "keeper executed");
+
+        // and the owner can revoke it.
+        vault.setKeeper(keeper, false);
+        assertFalse(vault.isKeeper(keeper), "keeper revoked");
+    }
+
+    function test_revert_setKeeper_nonOwner() public {
+        vm.prank(human);
+        vm.expectRevert(abi.encodeWithSelector(Ownable.OwnableUnauthorizedAccount.selector, human));
+        vault.setKeeper(makeAddr("k"), true);
+    }
+
+    /// NoDirection guards a champion whose revealed predictedBps == 0. Reaching it
+    /// organically is impossible (a 0-direction bet scores 0, so it can never BE
+    /// the champion — hasWinner requires score > 0), so it is a *defensive* guard.
+    /// We exercise it by mocking the entry the vault reads back to predictedBps==0
+    /// on an otherwise real, settled, has-winner round.
+    function test_revert_noDirection_defensiveGuard() public {
+        uint256 roundId = _runRound(200, 80, -150, 60, 3060e18);
+        ProofOfAlpha.Round memory r = poa.getRound(roundId);
+        assertTrue(r.hasWinner, "round has a champion");
+
+        // Force getEntry(roundId, champion) to report predictedBps == 0.
+        ProofOfAlpha.Entry memory zeroDir = poa.getEntry(roundId, r.topAgentId);
+        zeroDir.predictedBps = 0;
+        vm.mockCall(
+            address(poa),
+            abi.encodeWithSelector(ProofOfAlpha.getEntry.selector, roundId, r.topAgentId),
+            abi.encode(zeroDir)
+        );
+
+        vm.expectRevert(abi.encodeWithSelector(ChampionVault.NoDirection.selector, roundId));
+        vault.executeChampionTrade(roundId, 10e18, 0, block.timestamp + 1);
+        vm.clearMockedCalls();
     }
 }

@@ -96,6 +96,43 @@ contract IdentityRegistryTest is Test {
         id.setAgentWallet(a, hot, deadline, sig);
     }
 
+    function test_revert_setAgentWallet_expiredDeadline() public {
+        vm.prank(owner);
+        uint256 a = id.register("ipfs://a");
+
+        (address hot, uint256 hotPk) = makeAddrAndKey("hot");
+        // sign with a deadline, then warp past it so it's expired at submit time.
+        uint256 deadline = block.timestamp + 1 hours;
+        bytes memory sig = _signWallet(hotPk, a, hot, id.walletNonce(a), deadline);
+        vm.warp(deadline + 1);
+
+        vm.prank(owner);
+        vm.expectRevert(abi.encodeWithSelector(IdentityRegistry.SignatureExpired.selector, deadline));
+        id.setAgentWallet(a, hot, deadline, sig);
+    }
+
+    /// A consumed signature cannot be replayed: setAgentWallet bumps the nonce, so
+    /// re-submitting the same (nonce-0) signature recovers a different signer ->
+    /// InvalidWalletSignature.
+    function test_revert_setAgentWallet_signatureReplay() public {
+        vm.prank(owner);
+        uint256 a = id.register("ipfs://a");
+
+        (address hot, uint256 hotPk) = makeAddrAndKey("hot");
+        uint256 deadline = block.timestamp + 1 days;
+        bytes memory sig = _signWallet(hotPk, a, hot, id.walletNonce(a), deadline); // nonce 0
+
+        vm.prank(owner);
+        id.setAgentWallet(a, hot, deadline, sig);
+        assertEq(id.walletNonce(a), 1, "nonce consumed");
+
+        // replay the SAME signature -> registry now expects nonce 1, so the
+        // recovered signer no longer equals `hot`.
+        vm.prank(owner);
+        vm.expectRevert(); // InvalidWalletSignature(hot, <someOtherAddr>)
+        id.setAgentWallet(a, hot, deadline, sig);
+    }
+
     function _signWallet(uint256 pk, uint256 agentId, address newWallet, uint256 nonce, uint256 deadline)
         internal
         view

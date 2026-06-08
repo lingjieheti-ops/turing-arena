@@ -4,6 +4,7 @@ pragma solidity ^0.8.24;
 import { Test } from "forge-std/Test.sol";
 import { IdentityRegistry } from "../src/erc8004/IdentityRegistry.sol";
 import { ReputationRegistry } from "../src/erc8004/ReputationRegistry.sol";
+import { IReputationRegistry } from "../src/erc8004/IERC8004.sol";
 
 contract ReputationRegistryTest is Test {
     IdentityRegistry id;
@@ -78,6 +79,57 @@ contract ReputationRegistryTest is Test {
         address[] memory none = new address[](0);
         (uint64 count,,) = rep.getSummary(agentId, none, "alpha", "");
         assertEq(count, 0);
+    }
+
+    /// The agent's controller may append a response to a client's feedback.
+    function test_appendResponse_byController() public {
+        vm.prank(clientA);
+        rep.giveFeedback(agentId, 90, 0, "alpha", "", "", "", keccak256("h"));
+
+        vm.expectEmit(true, true, true, true, address(rep));
+        emit IReputationRegistry.ResponseAppended(
+            agentId, clientA, 0, agentOwner, "ipfs://response", keccak256("resp")
+        );
+        vm.prank(agentOwner); // owner controls the agent
+        rep.appendResponse(agentId, clientA, 0, "ipfs://response", keccak256("resp"));
+    }
+
+    function test_revert_appendResponse_notController() public {
+        vm.prank(clientA);
+        rep.giveFeedback(agentId, 90, 0, "alpha", "", "", "", keccak256("h"));
+
+        vm.prank(clientB); // not the agent's owner/operator
+        vm.expectRevert(
+            abi.encodeWithSelector(ReputationRegistry.NotAgentController.selector, agentId, clientB)
+        );
+        rep.appendResponse(agentId, clientA, 0, "ipfs://response", keccak256("resp"));
+    }
+
+    function test_revert_appendResponse_unknownFeedbackIndex() public {
+        // controller responding to a non-existent feedback index reverts.
+        vm.prank(agentOwner);
+        vm.expectRevert(
+            abi.encodeWithSelector(ReputationRegistry.NoSuchFeedback.selector, agentId, clientA, 0)
+        );
+        rep.appendResponse(agentId, clientA, 0, "ipfs://x", bytes32(0));
+    }
+
+    /// Feedback is keyed by author (msg.sender): a different client cannot revoke
+    /// someone else's feedback — their own (empty) array has no index 0, so the
+    /// call reverts NoSuchFeedback against the *caller*, not the original author.
+    function test_revert_revokeFeedback_byNonAuthor() public {
+        vm.prank(clientA);
+        rep.giveFeedback(agentId, 50, 0, "alpha", "", "", "", bytes32(0));
+
+        vm.prank(clientB); // not the author
+        vm.expectRevert(
+            abi.encodeWithSelector(ReputationRegistry.NoSuchFeedback.selector, agentId, clientB, 0)
+        );
+        rep.revokeFeedback(agentId, 0);
+
+        // clientA's original feedback is still intact (not revoked).
+        (,,,, bool revoked) = rep.readFeedback(agentId, clientA, 0);
+        assertFalse(revoked, "non-author cannot revoke author's feedback");
     }
 
     function test_getIdentityRegistry() public view {
