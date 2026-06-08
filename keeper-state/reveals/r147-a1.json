@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -80,
+  "confidence": 39,
+  "rationaleHash": "0xb5184a0edabe41b079e3438b3ce1618d81e3ec302b39253dcf196d11c1f574f6",
+  "salt": "0xd0d9e56f10c739e4a232521a3f11e359d24a5bf1d4583e02257adaff3b37fec7",
+  "rationale": "Net read bearish (-0.13). Strongest evidence: limitless -0.63 (Limitless (Base) SOL 19% up / 81% down); nansen -0.76 (Smart money net outflow); allora +0.63 (Allora ML forecast leans long).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

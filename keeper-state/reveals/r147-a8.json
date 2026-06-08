@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -30,
+  "confidence": 34,
+  "rationaleHash": "0x52896bac3652a3467e30bf62b46a3db464eb681c25fdfbdcd94d67db66b2be48",
+  "salt": "0xcd7bf285c4c0f2a2a8a3a6d3a3477cc6ea7ce617281c63b08c2ea869e1900c8e",
+  "rationale": "Net read bearish (-0.05). Strongest evidence: limitless -0.63 (Limitless (Base) SOL 19% up / 81% down); nansen -0.76 (Smart money net outflow); allora +0.63 (Allora ML forecast leans long).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
