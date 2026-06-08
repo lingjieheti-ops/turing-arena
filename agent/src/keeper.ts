@@ -684,7 +684,7 @@ const PERSONAS: PersonaDef[] = [
     name: "Athena",
     kind: "AI",
     description: "Disciplined multi-signal quant; blended, moderate long bias.",
-    signals: ["allora", "nansen", "elfa", "surf", "mantle-onchain"],
+    signals: ["allora", "nansen", "elfa", "surf", "mantle-onchain", "limitless"],
   },
   { name: "Allora Scout", kind: "AI", description: "Single decentralized-ML signal; long-leaning.", signals: ["allora"] },
   { name: "Momentum Max", kind: "AI", description: "Trend-follower; leans hard into short momentum.", signals: ["momentum"] },

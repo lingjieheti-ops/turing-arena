@@ -31,6 +31,9 @@ export const cfg = {
     nansen: { key: (env.NANSEN_API_KEY || "").trim(), base: (env.NANSEN_BASE_URL || "https://api.nansen.ai/api/beta").replace(/\/$/, "") },
     elfa: { key: (env.ELFA_API_KEY || "").trim(), base: (env.ELFA_BASE_URL || "https://api.elfa.ai").replace(/\/$/, "") },
     surf: { key: (env.SURF_API_KEY || "").trim(), base: (env.SURF_BASE_URL || "https://api.asksurf.ai").replace(/\/$/, "") },
+    // Limitless Exchange (Base) prediction markets — public, no key. Configurable
+    // so a different prediction-market source can be swapped in via env.
+    limitless: { base: (env.LIMITLESS_API_URL || "https://api.limitless.exchange").replace(/\/$/, "") },
   },
   windows: {
     commit: Number(env.ROUND_COMMIT_SECONDS || 180),

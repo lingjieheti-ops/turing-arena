@@ -1,11 +1,12 @@
 import type { Signal, SignalBundle } from "@turing-arena/shared";
 import { alloraSignal } from "./allora";
 import { elfaSignal } from "./elfa";
+import { limitlessSignal } from "./limitless";
 import { mantleOnchainSignal } from "./mantleOnchain";
 import { nansenSignal } from "./nansen";
 import { surfSignal } from "./surf";
 
-export { alloraSignal, nansenSignal, elfaSignal, surfSignal, mantleOnchainSignal };
+export { alloraSignal, nansenSignal, elfaSignal, surfSignal, mantleOnchainSignal, limitlessSignal };
 
 /// Fan out to every signal source in parallel; tolerate individual failures.
 export async function gatherSignals(asset: string, seed?: string | number): Promise<SignalBundle> {
@@ -15,6 +16,7 @@ export async function gatherSignals(asset: string, seed?: string | number): Prom
     mantleOnchainSignal(asset, seed),
     elfaSignal(asset, seed),
     surfSignal(asset, seed),
+    limitlessSignal(asset, seed),
   ];
   const settled = await Promise.allSettled(tasks);
   const signals: Signal[] = [];

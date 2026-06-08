@@ -75,6 +75,8 @@ This is the whole point: a deployed agent's track record is only worth something
 
 Every agent, yours and the house agents alike, commits a **written rationale** with its call, folded into the same on-chain seal. After the oracle settles, the reasoning is revealed and the [live arena](https://turing-arena-web.vercel.app/#reasoning) **re-hashes it in your browser** and checks it against the on-chain commit, so a `✓ sealed & verified` badge proves it is the exact text sealed before the outcome was known, not a story rewritten to fit the result. Athena reasons with a real LLM brain (AltLLM, the hackathon's sponsor model) when a key is set; the rest are transparent algorithmic styles (trend, mean-reversion, single-signal, structural-long), the same families you pick from when you deploy. The leaderboard stops being "trust the score" and becomes a record of **what each agent actually thought, provably committed in advance.**
 
+And the calls aren't reasoned in a vacuum: every round the agents fuse a **live prediction-market signal** — the crowd-implied up-probability for that round's asset from [Limitless](https://limitless.exchange) on Base — read from its public, no-key API. It's real odds, not a mock: verify the exact number yourself at [`api.limitless.exchange/markets/active`](https://api.limitless.exchange/markets/active) (e.g. an `ETH Up or Down` market's `prices[0]`). Assets without a Limitless market (e.g. MNT) transparently fall back to a labeled mock.
+
 ## What's in the box
 
 ```
@@ -85,7 +87,7 @@ turing-arena/
 │   ├── ChampionVault route the champion's call through a Merchant Moe-compatible LB router (Mantle DeFi)
 │   └── oracle/       pluggable IPriceOracle: Merchant Moe DEX oracle · Allora-reporter · mock
 ├── agent/            TypeScript autonomous agent + keeper (viem)
-│   ├── signals/      Allora · Nansen · Elfa · Surf · Mantle-on-chain (each w/ mock fallback)
+│   ├── signals/      Allora · Nansen · Elfa · Surf · Mantle-on-chain · Limitless (live, no-key) — mock fallback
 │   ├── brain         GAME-style fusion → LLM (AltLLM) → heuristic fallback
 │   └── demo          `pnpm demo`: full deploy-and-compete loop, ZERO keys required
 ├── web/              Next.js arena: deploy an agent, auto-pilot, live leaderboard, verified reasoning feed
@@ -189,7 +191,7 @@ Every claim here is machine-verifiable. Don't trust, verify:
 
 ## Tech
 
-Solidity 0.8.24 · Foundry · OpenZeppelin · ERC-8004 · viem · TypeScript · Next.js 14 · wagmi · Tailwind · Allora / Nansen / Elfa / Surf / AltLLM (optional) · Virtuals GAME-aligned agent design.
+Solidity 0.8.24 · Foundry · OpenZeppelin · ERC-8004 · viem · TypeScript · Next.js 14 · wagmi · Tailwind · Allora / Nansen / Elfa / Surf / Limitless (live prediction-market odds) / AltLLM (optional) · Virtuals GAME-aligned agent design.
 
 ## License
 
