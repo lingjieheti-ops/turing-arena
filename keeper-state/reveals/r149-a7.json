@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 219,
+  "confidence": 56,
+  "rationaleHash": "0x195c5ebe085a007ddef41cec3ca371829184321c187a0e61c68227b87a887226",
+  "salt": "0x3eba7425649f770c28df4391d82e989311fa33fd3d40ca0ae597471db651c2ed",
+  "rationale": "Net read bullish (0.37). Strongest evidence: limitless +0.59 (Limitless (Base) ETH 80% up / 20% down); elfa +0.84 (KOL mindshare heating up); surf +0.85 (Market momentum positive).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

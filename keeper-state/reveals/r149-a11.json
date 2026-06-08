@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 311,
+  "confidence": 66,
+  "rationaleHash": "0x45cf6ec747ff24524ff0ce7dee9b8692f809afade49954df0845820d3f93ee8a",
+  "salt": "0xb16bbe2e0bdf0ea787b1d39fed19f99721d068d9a570bdd6a46a51fecb5891c4",
+  "rationale": "Net read bullish (0.52). Strongest evidence: elfa +0.84 (KOL mindshare heating up); surf +0.85 (Market momentum positive); nansen +0.31 (Smart money net inflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
