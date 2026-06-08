@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -31,
+  "confidence": 34,
+  "rationaleHash": "0xfbb9b943864292f11fb9e9b142343527c289f7781cdb99fa67e5f0eee2c74d0d",
+  "salt": "0x0407aaffd05d761444a1a02f371d08bcd2f302b2552f0d9c637a85df7c961a5d",
+  "rationale": "Net read bearish (-0.05). Strongest evidence: momentum -1.00 (ETH down-momentum since the last tick (Pyth, live)); elfa +0.90 (KOL mindshare heating up); surf +0.91 (Market momentum positive).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

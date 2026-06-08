@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 98,
+  "confidence": 41,
+  "rationaleHash": "0x394f85f7f23658fbabb65321f51f5d8e66358cc5b3825d66494cc5682344ff91",
+  "salt": "0x67adabcfd889bf3d571a700adfc11a33136a3a83491c9e1fda0288dbde2c928b",
+  "rationale": "Net read bullish (0.16). Strongest evidence: momentum -1.00 (ETH down-momentum (Pyth, live)); elfa +0.90 (KOL mindshare heating up); surf +0.91 (Market momentum positive).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

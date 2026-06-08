@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -11,
+  "confidence": 31,
+  "rationaleHash": "0xa45769b4375f811c32361d444970e66ff4ade6ca8d385de378d3df608c1852db",
+  "salt": "0x65b24185fa942b67160985083496e15e4df1ff92f78cfbe5c9bcf69bd8e0859c",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: momentum -1.00 (ETH down-momentum since the last tick (Pyth, live)); elfa +0.90 (KOL mindshare heating up); surf +0.91 (Market momentum positive).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

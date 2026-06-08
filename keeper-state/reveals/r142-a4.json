@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -175,
+  "confidence": 50,
+  "rationaleHash": "0x8d19f8902a6294280020c5454cb2172c43a357858a4409b65b81652a1c8bf974",
+  "salt": "0x832c7352ab82eb671e6968c0effe6637693ecf570e93eb76765cc501c50be5aa",
+  "rationale": "Net read bearish (-0.29). Strongest evidence: momentum -1.00 (ETH down-momentum since the last tick (Pyth, live)); elfa +0.90 (KOL mindshare heating up); surf +0.91 (Market momentum positive).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
