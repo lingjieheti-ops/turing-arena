@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 168,
+  "confidence": 50,
+  "rationaleHash": "0xd27773684eff1790f2f9a32856f6c6c766067ca8b80d25d972e1c26262d48aab",
+  "salt": "0xd5b304ab824c776cd15da3d2b1d0ee11efa25d15c426e3af5a212add5d5fa3e2",
+  "rationale": "Net read bullish (0.28). Strongest evidence: nansen -0.79 (Smart money net outflow); allora +0.66 (Allora ML forecast leans long); elfa +0.91 (KOL mindshare heating up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

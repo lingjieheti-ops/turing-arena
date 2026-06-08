@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 70,
+  "confidence": 38,
+  "rationaleHash": "0x0a610528c13791e2a0ea9e6674b2859c133eaf1f65c2aa59ddd999db06bd5c99",
+  "salt": "0x5268baa6b6cf20ffa6537cd6498303fcff4fe0df38bd5a22d02c67f3cc0260e4",
+  "rationale": "Net read bullish (0.12). Strongest evidence: nansen -0.79 (Smart money net outflow); allora +0.66 (Allora ML forecast leans long); elfa +0.91 (KOL mindshare heating up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

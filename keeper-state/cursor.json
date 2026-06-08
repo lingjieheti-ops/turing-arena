@@ -1,6 +1,24 @@
 {
-  "lowWaterMark": 140,
-  "lastPrice": 1665.80314772,
-  "lastPriceAt": 1780901782,
-  "lastChampionRound": 141
+  "lowWaterMark": 141,
+  "lastPrice": 1667.3750822700001,
+  "lastPriceAt": 1780916907,
+  "lastChampionRound": 142,
+  "lastPrices": {
+    "METH/USD": {
+      "price": 1667.3750822700001,
+      "at": 1780916907
+    },
+    "BTC/USD": {
+      "price": 63071.74155114,
+      "at": 1780916907
+    },
+    "SOL/USD": {
+      "price": 66.06,
+      "at": 1780916907
+    },
+    "MNT/USD": {
+      "price": 0.54723677,
+      "at": 1780916907
+    }
+  }
 }
