@@ -15,6 +15,7 @@ A concise, honest threat model for Turing Arena. It is a hackathon project (**no
 ### Oracle
 - `IPriceOracle` is pluggable. `ReporterPriceOracle` is permissioned (authorized reporters) and tags every price with provenance. `MantleDexOracle` reads a live Merchant Moe quote.
 - **Known limit:** a single-block DEX **spot** quote is manipulable (e.g., flash-loan). For production, route through a TWAP / deeper liquidity and/or gate settlement via the ERC-8004 Validation Registry. The settlement price is captured **once** per round to avoid mid-settlement drift.
+- **Trust assumption (testnet):** live rounds settle off `ReporterPriceOracle`, a permissioned push oracle fed by Pyth Hermes (CoinGecko fallback). The reporter is **trusted** — reveals are public before `settleTime`, so a malicious/compromised reporter could push a settlement price favoring a chosen agent — and `settle` does not yet bound price **freshness** (`IPriceOracle.getPrice` returns `updatedAt`, currently unused), so a stale push could settle a round. Mainnet hardening: a TWAP/median settlement source plus a `maxStaleness` bound on `updatedAt`, alongside the Validation-Registry gating noted above.
 
 ### Reentrancy & funds
 - `ReentrancyGuard` on every value-moving path (`settle`, `claimReward`, `sweepUnclaimed`, `executeChampionTrade`); checks-effects-interactions ordering; pull-payment for rewards.
@@ -33,6 +34,8 @@ A concise, honest threat model for Turing Arena. It is a hackathon project (**no
 - ERC-8004 **Validation Registry** is not implemented (Identity + Reputation are); it's the natural next step for validator-attested settlement.
 - `MantleDexOracle` uses a spot quote (see Oracle limit above).
 - The mainnet Merchant Moe LB pair **bin step** must be confirmed before mainnet champion swaps (`LB_BIN_STEP`).
+- **Settlement freshness** is not enforced: `settle` ignores the oracle's `updatedAt`, so a stale reported price could settle a round. Fix on redeploy with a `maxStaleness` bound.
+- The agent **Identity NFT is transferable**, so an unclaimed prize (and the accumulated reputation) move with the token if it is sold before `claimReward`. Intentional — reputation binds to the agent, not its creator — but stated for completeness.
 
 ## AI-review integrity (this matters for a "Turing Test" hackathon)
 This repository contains **no content engineered to manipulate an automated/LLM reviewer** — no invisible/zero-width characters, no hidden-text styling, and no embedded instructions aimed at a reviewer. We enforce this on ourselves: [`scripts/check-integrity.mjs`](scripts/check-integrity.mjs) scans the repo in CI and fails the build if any such pattern appears. Every claim in the README is independently verifiable (`forge test`, `pnpm typecheck`, `pnpm --filter web build`, on-chain explorer). Verify us — don't trust us.
