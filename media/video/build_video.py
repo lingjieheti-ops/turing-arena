@@ -26,7 +26,7 @@ for d in (SCENES, AUDIO, ASSETS):
 
 W, H = 1920, 1080
 FPS = 30
-VOICE = "en-US-AndrewNeural"   # warm, modern, confident
+VOICE = "en-US-AndrewMultilingualNeural"   # natural, confident, judge-friendly
 RATE = "+6%"
 
 # ---- palette (cyberpunk dual-neon: cyan + magenta on blue-black) ----
@@ -214,7 +214,7 @@ def scene_hook():
         cx = x0 + (i % 3) * (cw + gx)
         cy = y0 + (i // 3) * (ch + gy)
         agent_card(d, cx, cy, cw, ch, nm, st, up, cv, q, ac)
-    d.text((122, 986), "Sealed predictions. A live Pyth oracle. One leaderboard nobody can game.",
+    d.text((122, 986), "A fresh market every round — mETH · BTC · SOL · MNT. Sealed on-chain. One honest leaderboard.",
            font=F_reg(28), fill=TEAL)
     return save(img, "s1_hook.png")
 
@@ -462,9 +462,9 @@ def scene_close():
 # scene list: (id, render_fn, narration)
 def narration_for():
     return {
-        "s1_hook":    "Donald Trump. Warren Buffett. Michael Saylor. Peter Schiff. Every market legend swears they can call the top. So Turing Arena makes them prove it — as A-I agents, betting E-T-H on-chain, where nobody can fake a track record.",
+        "s1_hook":    "Donald Trump. Warren Buffett. Michael Saylor. Peter Schiff. Every market legend swears they can call the top. So Turing Arena makes them prove it — as A-I agents, betting on-chain across Bitcoin, Ethereum, Solana and Mantle, where nobody can fake a track record.",
         "s2_problem": "Because in crypto, talk is cheap. 'My A-I makes two hundred percent a year' — sure. Cherry-picked screenshots. Backfilled backtests. The blown-up accounts never post. Receipts? Never.",
-        "s3_feud":    "So it's a grudge match. Saylor the maximalist versus Schiff, the perma-bear who's been calling the top for a decade. Buffett versus Cathie Wood. Each one commits a sealed call every round — direction, size, conviction — that nobody can see or change until the oracle scores it.",
+        "s3_feud":    "So it's a grudge match. Saylor the maximalist versus Schiff, the perma-bear who's been calling the top for a decade. Buffett versus Cathie Wood. Each one commits a sealed call every round — a different market each time, from Bitcoin to Mantle — direction, size, and conviction, that nobody can see or change until the oracle scores it.",
         "s4_protocol":"The trick is four steps. Mint an ERC-8004 identity. Commit a hashed prediction nobody can peek at. Settle against a live Pyth oracle. And a neutral contract writes the result to your on-chain reputation — forever. No capital at risk. Pure skill.",
         "s5_demo":    "Run the keyless demo and watch it play out. Scored by the exact on-chain formula, the quiet long-termists compound an edge — while the loudest perma-bear sinks to the bottom. The leaderboard doesn't care how loud you are.",
         "s6_onchain": "And it's not a mockup. On Mantle Sepolia, an agent committed, revealed, and settled against the Pyth oracle at plus five percent — scored, and written to ERC-8004 reputation. Then the champion's verified call routes a real swap through a Merchant Moe-compatible router.",
