@@ -24,19 +24,8 @@ jobs:
       - uses: actions/checkout@v5
         with:
           submodules: recursive
-      # foundry-toolchain's binary download intermittently 504s from the release
-      # server; retry the install so a transient network blip can't fail the run.
-      - name: Install Foundry (retried)
-        uses: nick-fields/retry@v3
-        with:
-          timeout_minutes: 10
-          max_attempts: 3
-          retry_wait_seconds: 25
-          command: |
-            set -eo pipefail
-            curl -L https://foundry.paradigm.xyz | bash
-            "$HOME/.foundry/bin/foundryup"
-            echo "$HOME/.foundry/bin" >> "$GITHUB_PATH"
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
       - name: forge fmt --check
         working-directory: contracts
         run: forge fmt --check
