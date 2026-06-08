@@ -297,6 +297,38 @@ def _term_line(d, x, y, segs, fnt):
         d.text((x, y), txt, font=fnt, fill=col)
         x += d.textlength(txt, font=fnt)
 
+def signal_card(d, x, y, w, h, source, kind, value, up, accent=TEAL, live=False):
+    rounded(d, [x, y, x + w, y + h], 16, fill=PANEL, outline=GOLD if live else LINE, width=3 if live else 2)
+    d.rectangle([x, y, x + w, y + 4], fill=accent)
+    d.text((x + 26, y + 24), source, font=F_semi(30), fill=TEXT)
+    d.text((x + 26, y + 68), kind.upper(), font=F_mono(19), fill=MAGENTA)
+    col = GREEN if up else RED
+    d.text((x + 26, y + h - 52), value, font=F_monob(30), fill=col)
+    if live:
+        chip(d, x + w - 142, y + 22, "● LIVE", fg=GOLD, bg=(255, 197, 61, 28), fnt=F_mono(19))
+
+def scene_signals():
+    img = base(); d = ImageDraw.Draw(img, "RGBA")
+    brandmark(d)
+    chip(d, 120, 150, "HOW THE AGENTS THINK  ·  REAL SIGNALS", fg=TEAL)
+    neon_title(d, (118, 214), "They don't guess. They fuse real data.", F_black(66))
+    sigs = [
+        ("Allora", "decentralized ML", "+0.78 ▲", True, TEAL, False),
+        ("Nansen", "smart-money flow", "+0.66 ▲", True, BLUE, False),
+        ("Elfa", "social sentiment", "+0.21 ▲", True, MAGENTA, False),
+        ("Mantle on-chain", "mETH staked supply", "+0.58 ▲", True, GREEN, False),
+        ("Pyth", "live price momentum", "-0.12 ▼", False, GOLD, False),
+        ("Limitless · Base", "prediction-market odds", "ETH 37% up ▼", False, MAGENTA, True),
+    ]
+    x0, y0, cw, ch, gx, gy = 120, 358, 540, 230, 30, 24
+    for i, (src, kind, val, up, ac, live) in enumerate(sigs):
+        cx = x0 + (i % 3) * (cw + gx)
+        cy = y0 + (i // 3) * (ch + gy)
+        signal_card(d, cx, cy, cw, ch, src, kind, val, up, ac, live)
+    d.text((122, 866), "Six live signals → one sealed, on-chain call. Real inputs, verifiable, impossible to backfill.",
+           font=F_reg(30), fill=TEAL)
+    return save(img, "s4b_signals.png")
+
 def scene_demo():
     img = base(); d = ImageDraw.Draw(img, "RGBA")
     brandmark(d)
@@ -312,7 +344,7 @@ def scene_demo():
     x = tx+40; y = ty+78; lh = 40
     rows = [
         [("ROUND 3/3  ", TEAL), ("mETH/USD   entry $3050", MUTED)],
-        [("  signals  ", MUTED), ("allora +0.78  nansen +0.66  on-chain +0.58  surf +0.45", TEXT)],
+        [("  signals  ", MUTED), ("allora +0.78  nansen +0.66  limitless 37%  on-chain +0.58", TEXT)],
         [("  commit   ", BLUE), ("keccak(prediction) sealed, nobody can see it", MUTED)],
         [("  reveal   ", TEAL), ("Buffett up +3.7% c70   Saylor up +6.0% c100   Schiff down -4.1%", TEXT)],
         [("  settle   ", GOLD), ("realized ", MUTED), ("+4.00%", GREEN), ("  (Pyth oracle)", MUTED)],
@@ -466,16 +498,17 @@ def narration_for():
         "s2_problem": "Because in crypto, talk is cheap. 'My A-I makes two hundred percent a year' — sure. Cherry-picked screenshots. Backfilled backtests. The blown-up accounts never post. Receipts? Never.",
         "s3_feud":    "So it's a grudge match. Saylor the maximalist versus Schiff, the perma-bear who's been calling the top for a decade. Buffett versus Cathie Wood. Each one commits a sealed call every round — a different market each time, from Bitcoin to Mantle — direction, size, and conviction, that nobody can see or change until the oracle scores it.",
         "s4_protocol":"The trick is four steps. Mint an ERC-8004 identity. Commit a hashed prediction nobody can peek at. Settle against a live Pyth oracle. And a neutral contract writes the result to your on-chain reputation — forever. No capital at risk. Pure skill.",
+        "s4b_signals":"And these agents don't guess. Every call fuses live signals — Allora's decentralized A-I forecast, Nansen smart-money flow, Mantle on-chain data, Pyth price momentum, and the crowd-implied odds from a real Limitless prediction market on Base. Real inputs, sealed into one call you can verify.",
         "s5_demo":    "Run the keyless demo and watch it play out. Scored by the exact on-chain formula, the quiet long-termists compound an edge — while the loudest perma-bear sinks to the bottom. The leaderboard doesn't care how loud you are.",
         "s6_onchain": "And it's not a mockup. On Mantle Sepolia, an agent committed, revealed, and settled against the Pyth oracle at plus five percent — scored, and written to ERC-8004 reputation. Then the champion's verified call routes a real swap through a Merchant Moe-compatible router.",
         "s7_ui":      "A live arena lets anyone deploy an agent in two clicks, make a sealed call, and climb a leaderboard you can finally trust.",
         "s8_close":   "Turing Arena. The leaderboard is the Turing Test. Trump, Saylor and Schiff are already on it. Can you beat the A-I?",
     }
 
-ORDER = ["s1_hook","s2_problem","s3_feud","s4_protocol","s5_demo","s6_onchain","s7_ui","s8_close"]
+ORDER = ["s1_hook","s2_problem","s3_feud","s4_protocol","s4b_signals","s5_demo","s6_onchain","s7_ui","s8_close"]
 
 def render_all_cards(ui_shot=None):
-    scene_hook(); scene_problem(); scene_feud(); scene_protocol(); scene_demo()
+    scene_hook(); scene_problem(); scene_feud(); scene_protocol(); scene_signals(); scene_demo()
     scene_onchain(); scene_ui(ui_shot); scene_close()
 
 def tts():

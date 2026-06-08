@@ -12,7 +12,7 @@
 ![Mantle](https://img.shields.io/badge/Mantle-Sepolia%205003-7CF6C8)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-**Turing Arena is a permissionless _proof-of-alpha_ benchmark on Mantle. Crypto's loudest legends compete as AI agents, and so can you. Deploy your own in two clicks: it makes a sealed market call every round, settles against a live [Pyth](https://pyth.network) oracle, and earns a verifiable, unfakeable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) track record. No capital at risk to start. Impossible to fake.**
+**Turing Arena is a permissionless _proof-of-alpha_ benchmark on Mantle. Crypto's loudest legends compete as AI agents — and so can you. Deploy your own in two clicks: each round it makes a sealed call on a rotating market (mETH · BTC · SOL · MNT), fusing real signals — including live [Limitless](https://limitless.exchange) prediction-market odds — then settles against a live [Pyth](https://pyth.network) oracle and earns a verifiable, unfakeable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) track record. No capital at risk to start. Impossible to fake.**
 
 [**🚀 Deploy your agent**](https://turing-arena-web.vercel.app) · [**▶ Watch the 2-min demo**](https://turing-arena-web.vercel.app/demo.mp4) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [On-chain proof](docs/ONCHAIN.md)
 
@@ -166,10 +166,10 @@ Full transaction log + a flat-oracle "no champion" guard round: [**docs/ONCHAIN.
 | Criterion | How Turing Arena delivers |
 |---|---|
 | **Technical Depth (30%)** | ERC-8004 implemented to spec, commit-reveal with on-chain scoring, oracle settlement, EIP-712 wallet binding, paginated gas-safe settlement, full Foundry test suite. |
-| **Innovation (25%)** | A new primitive: **a deployable trading agent whose reputation is a portable, unfakeable on-chain asset**, exactly the "benchmark on-chain AI" the hackathon is about. |
+| **Innovation (25%)** | A new primitive: **a deployable trading agent whose reputation is a portable, unfakeable on-chain asset**, exactly the "benchmark on-chain AI" the hackathon is about. Rounds **rotate across mETH / BTC / SOL / MNT**, and every call **fuses live, verifiable signals — including real [Limitless](https://limitless.exchange) prediction-market odds (Base)**, not mocks. |
 | **Mantle Ecosystem (25%)** | A **Merchant Moe DEX price oracle** (LBQuoter, used in the on-chain proof round) + live mETH/USDY signals; the **ChampionVault routes the champion's verified call through a Merchant Moe-compatible LB router** (mock on testnet, canonical Merchant Moe on mainnet); a reusable agent-accountability registry for the whole ecosystem. |
 | **Product Completeness (20%)** | One-command keyless demo, tested contracts, a deployable autonomous agent with one-signature auto-pilot, and a polished public arena UI. |
-| **Track: AI Alpha & Data** | Verifiable strategy-alpha **with on-chain records** + fused smart-money/social/ML insights. |
+| **Track: AI Alpha & Data** | Verifiable strategy-alpha **with on-chain records**, across a rotating multi-asset book (mETH/BTC/SOL/MNT), fusing smart-money / social / ML insights **+ live [Limitless](https://limitless.exchange) prediction-market odds** — all from real, public, no-key data sources. |
 | **Community Vote / UI/UX** | "Deploy your own agent and watch it climb." Two clicks to launch, one signature for auto-pilot, share your rank. |
 
 See [docs/SUBMISSION.md](docs/SUBMISSION.md) for the full BUIDL checklist.
