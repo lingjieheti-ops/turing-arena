@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -132,
+  "confidence": 45,
+  "rationaleHash": "0x8fb8cf11b71799c348dccf92b91379ef3a08633c82ac215f8a184e03f30d4d66",
+  "salt": "0xfda2a179a93b383af87f03e7715d8e8e3e5c404b77288ca7983f14a6d24781bd",
+  "rationale": "Net read bearish (-0.22). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.71 (Allora ML forecast leans short); limitless -0.39 (Limitless MNT market unavailable — mock down).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 288,
+  "confidence": 64,
+  "rationaleHash": "0x01af68d4340ee8169cb555ccd7fbc02161d511ddbc32bd2b15382097cee1f9e4",
+  "salt": "0xf482a17323c1d6a61067c1cea40667c740709e0fd9f716cc340e23c4d96c7fc9",
+  "rationale": "Net read bullish (0.48). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.71 (Allora ML forecast leans short); limitless -0.39 (Limitless MNT market unavailable — mock down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

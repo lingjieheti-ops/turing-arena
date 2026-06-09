@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 270,
+  "confidence": 62,
+  "rationaleHash": "0x3749c5d4d5988561303ace9392bc3e70454866bc829a4300e24429a21baca210",
+  "salt": "0x8182816d77d6ad6bc4fa89eb7a16c11a854cae83074d0399f448a8b636a27073",
+  "rationale": "Net read bullish (0.45). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.71 (Allora ML forecast leans short); limitless -0.39 (Limitless MNT market unavailable — mock down).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
