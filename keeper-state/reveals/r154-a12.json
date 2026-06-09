@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 35,
+  "confidence": 34,
+  "rationaleHash": "0x079e2391d20fe03667943da4049e4b0a2d86e532399bc15b907aeacb27baae47",
+  "salt": "0x8e1b26072a14ec32f34c42138bd8f9b8b351d9d179e089a2b828e8fdd9925cd9",
+  "rationale": "Net read bullish (0.06). Strongest evidence: momentum -0.55 (BTC/USD down-momentum since the last tick (Pyth, live)); limitless +0.54 (Limitless (Base) BTC 77% up / 23% down); mantle-onchain -0.64 (Mantle on-chain momentum down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
