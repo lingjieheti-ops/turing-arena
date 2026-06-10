@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -394,
+  "confidence": 76,
+  "rationaleHash": "0xda264a09692a529b261b8417e185a2b3a2d17f46640c006670cf921623392bde",
+  "salt": "0xd91b0ec441a7fbdae452b82d9d627ee970e2ce0b72f782f77bd6c102b8aeda0a",
+  "rationale": "Net read bearish (-0.66). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); mantle-onchain -0.90 (Mantle on-chain momentum down); nansen -0.68 (Smart money net outflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

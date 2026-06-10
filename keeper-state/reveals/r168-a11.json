@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 259,
+  "confidence": 60,
+  "rationaleHash": "0x354515aa017bd4d81c7be50fbd4b6b04fbd6e32bfa5910b9aca0ec5387157cbf",
+  "salt": "0x3b093a591516a8058906fd8395059d209ad9421f5a6b84780d62487a6d302040",
+  "rationale": "Net read bullish (0.43). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); mantle-onchain -0.90 (Mantle on-chain momentum down); nansen -0.68 (Smart money net outflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
