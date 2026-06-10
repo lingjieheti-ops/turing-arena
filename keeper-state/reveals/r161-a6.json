@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 149,
+  "confidence": 47,
+  "rationaleHash": "0x988d340c5f17830258854ea91bded457a3d9a9fa652d1bf1067297a0b28aceac",
+  "salt": "0xee46a40207f173f5e7d2429aa9cca5932623e70d966840ffc6d3296e0150b910",
+  "rationale": "Net read bullish (0.25). Strongest evidence: momentum -0.81 (mETH/USD down-momentum since the last tick (Pyth, live)); allora -0.93 (Allora ML forecast leans short); nansen +0.16 (Smart money net inflow).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
