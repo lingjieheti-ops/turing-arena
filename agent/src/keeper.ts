@@ -190,19 +190,26 @@ interface Market {
 
 // ---- novelty feeds (all public, no API key — anyone can verify the number) ----
 
-/// Live CS2 concurrent players from the public Steam API.
+/// Live CS2 concurrent players from the public Steam API. Steam occasionally
+/// rejects a first request from datacenter IPs (the CI runner), so try twice.
 async function fetchCs2Players(): Promise<number | null> {
-  try {
-    const res = await fetch("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=730", {
-      signal: AbortSignal.timeout(12_000),
-    });
-    if (!res.ok) return null;
-    const json: any = await res.json();
-    const v = Number(json?.response?.player_count);
-    return Number.isFinite(v) && v > 0 ? v : null;
-  } catch {
-    return null;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const res = await fetch("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=730", {
+        headers: { accept: "application/json", "user-agent": "turing-arena-keeper/1.0" },
+        signal: AbortSignal.timeout(12_000),
+      });
+      if (res.ok) {
+        const json: any = await res.json();
+        const v = Number(json?.response?.player_count);
+        if (Number.isFinite(v) && v > 0) return v;
+      }
+    } catch {
+      /* retry once */
+    }
+    if (attempt === 0) await new Promise((r) => setTimeout(r, 2_000));
   }
+  return null;
 }
 
 /// Ethereum mainnet gas price (gwei) from a public RPC.
