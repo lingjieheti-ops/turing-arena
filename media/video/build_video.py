@@ -214,7 +214,7 @@ def scene_hook():
         cx = x0 + (i % 3) * (cw + gx)
         cy = y0 + (i // 3) * (ch + gy)
         agent_card(d, cx, cy, cw, ch, nm, st, up, cv, q, ac)
-    d.text((122, 986), "A fresh market every round — mETH · BTC · SOL · MNT. Sealed on-chain. One honest leaderboard.",
+    d.text((122, 986), "A fresh battlefield every round — mETH · BTC · SOL · MNT · CS2 players · ETH gas · BTC mempool.",
            font=F_reg(28), fill=TEAL)
     return save(img, "s1_hook.png")
 
@@ -256,6 +256,41 @@ def scene_feud():
         feud_row(d, y, ln, ls, lsc, rn, rs, rsc, lead)
         y += 222
     return save(img, "s3_feud.png")
+
+def scene_markets():
+    """The battlefields: 4 price markets + 3 live novelty feeds (real values that
+    were reported on-chain — see the explorer txs in README)."""
+    img = base(); d = ImageDraw.Draw(img, "RGBA")
+    brandmark(d)
+    chip(d, 120, 150, "THE BATTLEFIELDS  ·  A NEW MARKET EVERY ROUND", fg=MAGENTA, bg=(255, 54, 198, 26))
+    neon_title(d, (118, 214), "If it moves, it's a market.", F_black(72))
+    # top row: the four price markets (compact)
+    prices = [("mETH/USD", "$1,635.03", TEAL), ("BTC/USD", "$61,603", GOLD),
+              ("SOL/USD", "$64.45", BLUE), ("MNT/USD", "$0.5358", GREEN)]
+    x0, y0, cw, ch, gx = 120, 360, 405, 150, 20
+    for i, (nm, val, ac) in enumerate(prices):
+        x = x0 + i * (cw + gx)
+        rounded(d, [x, y0, x + cw, y0 + ch], 14, fill=PANEL, outline=LINE, width=2)
+        d.rectangle([x, y0, x + cw, y0 + 4], fill=ac)
+        d.text((x + 24, y0 + 22), nm, font=F_semi(28), fill=TEXT)
+        d.text((x + 24, y0 + 70), val, font=F_monob(34), fill=ac)
+        d.text((x + 24, y0 + 116), "PYTH ORACLE", font=F_mono(17), fill=MUTED)
+    # bottom row: the three novelty battlefields (hero-sized, gold LIVE)
+    fun = [("CS2 PLAYERS", "749,385 players", "Steam Web API - live"),
+           ("ETH GAS", "0.1279 gwei", "public RPC - eth_gasPrice"),
+           ("BTC MEMPOOL", "103,410 txs", "mempool.space - live")]
+    fw, fh, fy = 545, 250, 560
+    for i, (nm, val, src) in enumerate(fun):
+        x = 120 + i * (fw + 22)
+        rounded(d, [x, fy, x + fw, fy + fh], 16, fill=PANEL, outline=GOLD, width=3)
+        d.rectangle([x, fy, x + fw, fy + 4], fill=MAGENTA)
+        d.text((x + 28, fy + 26), nm, font=F_semi(34), fill=TEXT)
+        chip(d, x + fw - 132, fy + 24, "● LIVE", fg=GOLD, bg=(255, 197, 61, 28), fnt=F_mono(19))
+        d.text((x + 28, fy + 92), val, font=F_monob(44), fill=GREEN)
+        d.text((x + 28, fy + 170), src.upper(), font=F_mono(19), fill=MUTED)
+    d.text((122, 866), "Real public feeds, pushed on-chain with provenance. Skill that wins everywhere can't be one lucky pair.",
+           font=F_reg(29), fill=TEAL)
+    return save(img, "s3b_markets.png")
 
 def step_card(d, x, y, w, h, n, title, body, accent=TEAL):
     rounded(d, [x, y, x+w, y+h], 22, fill=PANEL, outline=LINE, width=2)
@@ -481,7 +516,7 @@ def scene_close():
     rows = [
         ("Live arena", "turing-arena-web.vercel.app"),
         ("Code", "github.com/lingjieheti-ops/turing-arena"),
-        ("Network", "Mantle Sepolia · ERC-8004 · Pyth oracle"),
+        ("Network", "Mantle Sepolia · ERC-8004 · 7 live markets"),
     ]
     y = 760
     for k, v in rows:
@@ -494,9 +529,10 @@ def scene_close():
 # scene list: (id, render_fn, narration)
 def narration_for():
     return {
-        "s1_hook":    "Donald Trump. Warren Buffett. Michael Saylor. Peter Schiff. Every market legend swears they can call the top. So Turing Arena makes them prove it — as A-I agents, betting on-chain across Bitcoin, Ethereum, Solana and Mantle, where nobody can fake a track record.",
+        "s1_hook":    "Donald Trump. Warren Buffett. Michael Saylor. Peter Schiff. Every market legend swears they can call the top. So Turing Arena makes them prove it — as A-I agents, betting on-chain across Bitcoin, Solana, Mantle — even live CS2 player counts — where nobody can fake a track record.",
         "s2_problem": "Because in crypto, talk is cheap. 'My A-I makes two hundred percent a year' — sure. Cherry-picked screenshots. Backfilled backtests. The blown-up accounts never post. Receipts? Never.",
-        "s3_feud":    "So it's a grudge match. Saylor the maximalist versus Schiff, the perma-bear who's been calling the top for a decade. Buffett versus Cathie Wood. Each one commits a sealed call every round — a different market each time, from Bitcoin to Mantle — direction, size, and conviction, that nobody can see or change until the oracle scores it.",
+        "s3_feud":    "So it's a grudge match. Saylor the maximalist versus Schiff, the perma-bear who's been calling the top for a decade. Buffett versus Cathie Wood. Each one commits a sealed call every round — direction, size, and conviction — that nobody can see or change until the oracle scores it.",
+        "s3b_markets":"And the battlefield rotates every round. Bitcoin. Solana. Mantle's own M-N-T. Then it gets fun — live CS2 player counts. Ethereum gas. The Bitcoin mempool. Real public feeds, pushed on-chain with provenance. An agent has to be smart everywhere, not lucky once.",
         "s4_protocol":"The trick is four steps. Mint an ERC-8004 identity. Commit a hashed prediction nobody can peek at. Settle against a live Pyth oracle. And a neutral contract writes the result to your on-chain reputation — forever. No capital at risk. Pure skill.",
         "s4b_signals":"And these agents don't guess. Every call fuses live signals — Allora's decentralized A-I forecast, Nansen smart-money flow, Mantle on-chain data, Pyth price momentum, and the crowd-implied odds from a real Limitless prediction market on Base. Real inputs, sealed into one call you can verify.",
         "s5_demo":    "Run the keyless demo and watch it play out. Scored by the exact on-chain formula, the quiet long-termists compound an edge — while the loudest perma-bear sinks to the bottom. The leaderboard doesn't care how loud you are.",
@@ -505,10 +541,10 @@ def narration_for():
         "s8_close":   "Turing Arena. The leaderboard is the Turing Test. Trump, Saylor and Schiff are already on it. Can you beat the A-I?",
     }
 
-ORDER = ["s1_hook","s2_problem","s3_feud","s4_protocol","s4b_signals","s5_demo","s6_onchain","s7_ui","s8_close"]
+ORDER = ["s1_hook","s2_problem","s3_feud","s3b_markets","s4_protocol","s4b_signals","s5_demo","s6_onchain","s7_ui","s8_close"]
 
 def render_all_cards(ui_shot=None):
-    scene_hook(); scene_problem(); scene_feud(); scene_protocol(); scene_signals(); scene_demo()
+    scene_hook(); scene_problem(); scene_feud(); scene_markets(); scene_protocol(); scene_signals(); scene_demo()
     scene_onchain(); scene_ui(ui_shot); scene_close()
 
 def tts():

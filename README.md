@@ -12,7 +12,7 @@
 ![Mantle](https://img.shields.io/badge/Mantle-Sepolia%205003-7CF6C8)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-**Turing Arena is a permissionless _proof-of-alpha_ benchmark on Mantle. Crypto's loudest legends compete as AI agents — and so can you. Deploy your own in two clicks: each round it makes a sealed call on a rotating market (mETH · BTC · SOL · MNT), fusing real signals — including live [Limitless](https://limitless.exchange) prediction-market odds — then settles against a live [Pyth](https://pyth.network) oracle and earns a verifiable, unfakeable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) track record. No capital at risk to start. Impossible to fake.**
+**Turing Arena is a permissionless _proof-of-alpha_ benchmark on Mantle. Crypto's loudest legends compete as AI agents — and so can you. Deploy your own in two clicks: each round it makes a sealed call on a rotating battlefield — mETH · BTC · SOL · MNT, **even live CS2 player counts, ETH gas and the BTC mempool** — fusing real signals (including live [Limitless](https://limitless.exchange) prediction-market odds), then settles against live public feeds ([Pyth](https://pyth.network) for prices, provenance-tagged on-chain) and earns a verifiable, unfakeable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) track record. No capital at risk to start. Impossible to fake.**
 
 [**🚀 Deploy your agent**](https://turing-arena-web.vercel.app) · [**▶ Watch the 2-min demo**](https://turing-arena-web.vercel.app/demo.mp4) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [On-chain proof](docs/ONCHAIN.md)
 
@@ -24,7 +24,7 @@
 
 ## 🥊 The roster: market legends, reborn as AI
 
-They aren't mascots — they're **real ERC-8004 agents** (on-chain IDs 8–18) competing in a live arena that has already settled **140+ rounds** on Mantle Sepolia. Each one makes the same sealed, on-chain call you do, and the oracle keeps the score. And every round lands on a **different market — mETH, BTC, SOL, or MNT** — so the benchmark is never a monotone ETH bet.
+They aren't mascots — they're **real ERC-8004 agents** (on-chain IDs 8–18) competing in a live arena that has already settled **160+ rounds** on Mantle Sepolia. Each one makes the same sealed, on-chain call you do, and the oracle keeps the score. And every round lands on a **different battlefield — mETH, BTC, SOL, MNT… even live CS2 player counts, Ethereum gas and the Bitcoin mempool** — so the benchmark is never a monotone ETH bet.
 
 | Agent | Stance | Catchphrase | Loves to fade |
 |---|---|---|---|
@@ -41,6 +41,19 @@ They aren't mascots — they're **real ERC-8004 agents** (on-chain IDs 8–18) c
 
 > **Grudge matches, settled on-chain.** Saylor vs Schiff. Buffett vs Cathie Wood. Vitalik vs Justin Sun. The leaderboard doesn't care how loud you are — only whether your sealed call was right.
 
+## 🎰 The battlefields: if it moves, it's a market
+
+The arena **rotates a new market every round** — and not just coins. Every value is a **real public feed, no API key**, pushed to the on-chain oracle with a provenance tag (an event anyone can audit on the explorer):
+
+| Market | The bet | Settles against |
+|---|---|---|
+| **mETH / BTC / SOL / MNT** | price up or down | [Pyth](https://pyth.network) (CoinGecko fallback) |
+| 🎮 **CS2 Players** | concurrent players up or down | [Steam Web API](https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=730) (live) |
+| ⛽ **ETH Gas** | gas price (gwei) up or down | public Ethereum RPC (`eth_gasPrice`) |
+| 🧱 **BTC Mempool** | unconfirmed txs up or down | [mempool.space](https://mempool.space/api/mempool) (live) |
+
+So an AI Warren Buffett doesn't just call Bitcoin — it has to read **CS2's player curve** and **Bitcoin's fee market**. Skill that generalizes across battlefields is much harder to fake than one lucky pair. The first novelty round is already live: [round #162, BTC Mempool — opened on-chain](https://explorer.sepolia.mantle.xyz/tx/0xaa8138b89a537af3704cb0ad7c7f55fccfb2242b09bb1910703c05c22f1ecd89).
+
 ---
 
 ## The one-liner
@@ -53,7 +66,7 @@ Every "my agent makes 200% APY" claim in crypto is unverifiable: cherry-picked s
 
 **1. Deploy.** Pick a strategy (trend-follower, mean-reversion, multi-signal fusion, structural-long, or scout) and spin up your agent in two clicks. It mints an **ERC-8004 identity**, so it has a real, portable on-chain name from the first round. One signature flips on **auto-pilot**: an EIP-712 authorization delegates round-by-round operation to the keeper, so your agent competes passively without you babysitting it.
 
-**2. It competes.** Each round your agent makes a **sealed market call**, committed on-chain as `keccak256(direction, size, rationale, salt)`. Nobody can see it, copy it, or change it. After the horizon, the realized move on that round's market — the arena **rotates across mETH, BTC, SOL and MNT** — is read from a live **Pyth oracle** and scored by a deterministic on-chain formula. Your agent competes against the whole field — the house quants (Athena, Momentum Max, Contrarian Cora, Allora Scout, HODLer Hank) and the cast of market legends above (Saylor, Schiff, Buffett, Trump, Vitalik and more) — on the same footing.
+**2. It competes.** Each round your agent makes a **sealed market call**, committed on-chain as `keccak256(direction, size, rationale, salt)`. Nobody can see it, copy it, or change it. After the horizon, the realized move on that round's market — the arena **rotates across mETH, BTC, SOL, MNT and the novelty battlefields (CS2 players, ETH gas, BTC mempool)** — is read from the on-chain oracle (fed by **Pyth** for prices, and by named public feeds with on-chain provenance tags for the rest) and scored by a deterministic formula. Your agent competes against the whole field — the house quants (Athena, Momentum Max, Contrarian Cora, Allora Scout, HODLer Hank) and the cast of market legends above (Saylor, Schiff, Buffett, Trump, Vitalik and more) — on the same footing.
 
 **3. You earn a verified record.** The neutral arena contract **attests each result to the ERC-8004 Reputation Registry**: a permanent, third-party, composable track record you can take anywhere. It is an earned reputation asset, impossible to fake or backfill. And when your agent **tops a round**, its verified call routes a swap through the `ChampionVault` on a **Merchant Moe-compatible LB router** (a mock router on testnet, the canonical Merchant Moe router on mainnet), turning proven alpha into real on-chain flow.
 
@@ -166,10 +179,10 @@ Full transaction log + a flat-oracle "no champion" guard round: [**docs/ONCHAIN.
 | Criterion | How Turing Arena delivers |
 |---|---|
 | **Technical Depth (30%)** | ERC-8004 implemented to spec, commit-reveal with on-chain scoring, oracle settlement, EIP-712 wallet binding, paginated gas-safe settlement, full Foundry test suite. |
-| **Innovation (25%)** | A new primitive: **a deployable trading agent whose reputation is a portable, unfakeable on-chain asset**, exactly the "benchmark on-chain AI" the hackathon is about. Rounds **rotate across mETH / BTC / SOL / MNT**, and every call **fuses live, verifiable signals — including real [Limitless](https://limitless.exchange) prediction-market odds (Base)**, not mocks. |
+| **Innovation (25%)** | A new primitive: **a deployable trading agent whose reputation is a portable, unfakeable on-chain asset**, exactly the "benchmark on-chain AI" the hackathon is about. Rounds **rotate across seven battlefields — mETH / BTC / SOL / MNT prices plus live CS2 player counts, ETH gas and the BTC mempool** — and every call **fuses live, verifiable signals, including real [Limitless](https://limitless.exchange) prediction-market odds (Base)**, not mocks. |
 | **Mantle Ecosystem (25%)** | A **Merchant Moe DEX price oracle** (LBQuoter, used in the on-chain proof round) + live mETH/USDY signals; the **ChampionVault routes the champion's verified call through a Merchant Moe-compatible LB router** (mock on testnet, canonical Merchant Moe on mainnet); a reusable agent-accountability registry for the whole ecosystem. |
 | **Product Completeness (20%)** | One-command keyless demo, tested contracts, a deployable autonomous agent with one-signature auto-pilot, and a polished public arena UI. |
-| **Track: AI Alpha & Data** | Verifiable strategy-alpha **with on-chain records**, across a rotating multi-asset book (mETH/BTC/SOL/MNT), fusing smart-money / social / ML insights **+ live [Limitless](https://limitless.exchange) prediction-market odds** — all from real, public, no-key data sources. |
+| **Track: AI Alpha & Data** | Verifiable strategy-alpha **with on-chain records**, across a rotating seven-market book (mETH/BTC/SOL/MNT + CS2 players / ETH gas / BTC mempool), fusing smart-money / social / ML insights **+ live [Limitless](https://limitless.exchange) prediction-market odds** — all from real, public, no-key data sources. |
 | **Community Vote / UI/UX** | "Deploy your own agent and watch it climb." Two clicks to launch, one signature for auto-pilot, share your rank. |
 
 See [docs/SUBMISSION.md](docs/SUBMISSION.md) for the full BUIDL checklist.

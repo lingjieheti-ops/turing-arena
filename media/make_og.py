@@ -108,7 +108,7 @@ d.text((xa, yq), "AI", font=f_sub, fill=AI)
 d.text((xa + d.textlength("AI", font=f_sub), yq), "?", font=f_sub, fill=WHITE)
 
 # Bottom meta.
-meta = "MANTLE SEPOLIA    /    COMMIT-REVEAL    /    VERIFIABLE REPUTATION"
+meta = "MANTLE    /    7 LIVE MARKETS    /    COMMIT-REVEAL    /    ERC-8004"
 d.text((MARGIN, H - 84), meta, font=f_meta, fill=MUTED)
 
 # Right-side agent rows.
