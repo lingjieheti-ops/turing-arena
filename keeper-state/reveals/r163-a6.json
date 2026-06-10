@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 163,
+  "confidence": 49,
+  "rationaleHash": "0x1b146839239a4e068e7373b655adfef64fee34ee249a100dd27b5f7344be7156",
+  "salt": "0xda5d4251ee2046511fedeb96f9889500f6c526ff978509a24d61d0e901096119",
+  "rationale": "Net read bullish (0.27). Strongest evidence: momentum -0.74 (BTC/USD down-momentum since the last tick (Pyth, live)); limitless -0.49 (Limitless (Base) BTC 26% up / 74% down); mantle-onchain +0.52 (Mantle on-chain momentum up).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
