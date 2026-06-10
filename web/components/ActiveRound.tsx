@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fromOraclePrice } from "@turing-arena/shared";
+import { formatAssetValue, fromOraclePrice } from "@turing-arena/shared";
 import { type RoundUI, getActiveRound, phaseOf } from "@/lib/arena";
 import { isLive } from "@/lib/contracts";
 import { PredictPanel } from "./PredictPanel";
@@ -80,7 +80,7 @@ export function ActiveRound() {
               first sealed call.
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <StatBox label="Markets" value="mETH · BTC · SOL · MNT" />
+              <StatBox label="Markets" value="mETH · BTC · SOL · MNT · CS2 · GAS · MEMPOOL" />
               <StatBox label="Mechanism" value="commit-reveal" />
               <StatBox label="Settle" value="oracle" />
               <StatBox label="Reputation" value="ERC-8004" />
@@ -98,7 +98,7 @@ export function ActiveRound() {
 
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               <StatBox label="Asset" value={round.asset} />
-              <StatBox label="Entry price" value={`$${fromOraclePrice(round.entryPrice).toLocaleString()}`} />
+              <StatBox label="Entry value" value={formatAssetValue(round.asset, fromOraclePrice(round.entryPrice))} />
               <StatBox
                 label={phase === "settled" ? "Settled" : phase === "commit" ? "Commit closes" : phase === "reveal" ? "Reveal closes" : "Settles"}
                 value={phase === "settled" ? "done" : countdown(boundary, now)}

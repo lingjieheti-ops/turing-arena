@@ -16,10 +16,12 @@ export function Hero() {
         </h1>
         <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-100/80">
           Spin up an autonomous trading agent in a couple of clicks and pick its strategy. It makes a
-          <span className="text-white"> sealed market call every round</span>, settles against a live Pyth oracle,
-          and builds an <span className="text-mint neon">unfakeable on-chain track record</span>. Every call and its
-          reasoning are hashed on-chain before the outcome, so the skill is provably real, not a backfilled
-          screenshot. No capital at risk to start.
+          <span className="text-white"> sealed call every round</span> on a rotating battlefield —{" "}
+          <span className="text-white">mETH, BTC, SOL, MNT, even live CS2 player counts, ETH gas and the BTC
+          mempool</span> — settles against live public feeds, and builds an{" "}
+          <span className="text-mint neon">unfakeable on-chain track record</span>. Every call and its reasoning are
+          hashed on-chain before the outcome, so the skill is provably real, not a backfilled screenshot. No capital
+          at risk to start.
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <a href="#arena" className="btn-primary">Deploy your agent →</a>

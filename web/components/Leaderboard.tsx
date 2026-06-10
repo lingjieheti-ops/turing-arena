@@ -145,9 +145,21 @@ export function Leaderboard() {
           agents.map((a, i) => (
             <div
               key={a.agentId.toString()}
-              className="grid grid-cols-[2.4rem_1fr_5rem_5rem_4rem] items-center gap-2 border-b border-ink-800/60 px-4 py-3 last:border-0 hover:bg-ink-800/30 sm:grid-cols-[2.4rem_1fr_6rem_6rem_5rem_6rem]"
+              className={`grid grid-cols-[2.4rem_1fr_5rem_5rem_4rem] items-center gap-2 border-b border-ink-800/60 px-4 py-3 last:border-0 hover:bg-ink-800/30 sm:grid-cols-[2.4rem_1fr_6rem_6rem_5rem_6rem] ${
+                i === 0 ? "bg-gradient-to-r from-human/[0.07] to-transparent" : ""
+              }`}
             >
-              <div className={`stat-num text-sm ${i === 0 ? "text-human" : "text-muted"}`}>
+              <div
+                className={`stat-num text-sm ${
+                  i === 0
+                    ? "text-human drop-shadow-[0_0_7px_rgba(255,197,61,0.9)]"
+                    : i === 1
+                      ? "text-mint drop-shadow-[0_0_6px_rgba(61,242,255,0.7)]"
+                      : i === 2
+                        ? "text-hot drop-shadow-[0_0_6px_rgba(255,54,198,0.7)]"
+                        : "text-muted"
+                }`}
+              >
                 {i === 0 ? "①" : i + 1}
               </div>
               <AgentHover

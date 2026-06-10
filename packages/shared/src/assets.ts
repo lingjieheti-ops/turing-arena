@@ -12,6 +12,8 @@ export interface AssetMeta {
   /// Mantle MAINNET token address (informational / on-chain signal reader).
   token?: Address;
   coingeckoId?: string;
+  /// Display unit for oracle values ("usd" default; novelty markets differ).
+  unit?: "usd" | "players" | "gwei" | "txs";
 }
 
 /// Assets the arena benchmarks. mETH + USDY are Mantle's flagship RWA / LST.
@@ -50,8 +52,36 @@ export const ASSETS: AssetMeta[] = [
     token: "0x5bE26527e817998A7206475496fDE1E68957c5A6", // Mantle mainnet USDY (Ondo)
     coingeckoId: "ondo-us-dollar-yield",
   },
+  // Novelty battlefields — real public feeds (Steam / public RPC / mempool.space)
+  // reported on-chain with provenance tags. If it moves, it's a market.
+  {
+    symbol: "CS2-PLAYERS",
+    label: "CS2 Players",
+    unit: "players",
+  },
+  {
+    symbol: "ETHGAS-GWEI",
+    label: "ETH Gas",
+    unit: "gwei",
+  },
+  {
+    symbol: "BTC-MEMPOOL",
+    label: "BTC Mempool",
+    unit: "txs",
+  },
 ];
 
 export function assetBySymbol(symbol: string): AssetMeta | undefined {
   return ASSETS.find((a) => a.symbol === symbol);
+}
+
+/// Format an oracle value in its market's native unit: "$63,071.74" for price
+/// markets, "714,161 players" / "0.1499 gwei" / "105,481 txs" for novelty ones.
+export function formatAssetValue(symbol: string, value: number): string {
+  const unit = assetBySymbol(symbol)?.unit ?? "usd";
+  if (unit === "usd") {
+    return `$${value.toLocaleString("en-US", { maximumFractionDigits: value < 10 ? 4 : 2 })}`;
+  }
+  const n = value >= 100 ? Math.round(value).toLocaleString("en-US") : value.toFixed(4);
+  return `${n} ${unit}`;
 }

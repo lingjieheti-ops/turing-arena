@@ -57,12 +57,17 @@ const config: Config = {
           from: { transform: "translateY(-100%)" },
           to: { transform: "translateY(100vh)" },
         },
+        ticker: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         pulseglow: "pulseglow 2.4s ease-in-out infinite",
         rise: "rise 0.4s ease-out both",
         flicker: "flicker 4s linear infinite",
         scan: "scan 7s linear infinite",
+        ticker: "ticker 32s linear infinite",
       },
     },
   },

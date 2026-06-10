@@ -4,8 +4,10 @@
  * ONE invocation == ONE "tick". No blocking loops; the process exits when the
  * tick finishes (a GitHub Actions cron drives the cadence). Each tick, in order:
  *
- *   A. Fetch REAL prices for every rotation market (Pyth Hermes, CoinGecko
- *      fallback) — mETH, BTC, SOL, MNT — so the arena isn't a monotone ETH bet.
+ *   A. Fetch REAL values for every rotation market — price markets (mETH, BTC,
+ *      SOL, MNT via Pyth Hermes, CoinGecko fallback) AND novelty markets (live
+ *      CS2 players via Steam, ETH gas via a public RPC, the BTC mempool via
+ *      mempool.space) — so the arena isn't a monotone ETH bet.
  *   B. Report EVERY market to the ReporterPriceOracle (+ the ETH price to the
  *      MockLBQuoter behind MantleDexOracle) so any in-flight round settles fresh.
  *   C. Settle every due round (paginated, idempotent).
@@ -164,24 +166,85 @@ const CHAMPION_VAULT = pick(
 
 const PRIVATE_KEY = (env.PRIVATE_KEY || "").trim();
 
-/// The benchmark ROTATES across several liquid markets so the arena isn't a
-/// monotone "ETH up/down" — each round is a fresh battlefield (mETH, BTC, SOL,
-/// and Mantle's own MNT). Every market settles on the SAME ReporterPriceOracle,
-/// fed each tick from its Pyth Hermes feed (CoinGecko fallback). The mETH market
-/// keeps the "METH/USD" symbol so the existing 140+ rounds stay continuous, and
-/// it also drives the mETH/USDY DeFi champion-copy-trade route.
+/// The benchmark ROTATES across battlefields so the arena isn't a monotone
+/// "ETH up/down" — four liquid price markets (mETH, BTC, SOL, Mantle's MNT) PLUS
+/// three novelty markets settled on real public feeds: live CS2 concurrent
+/// players (Steam), Ethereum gas (public RPC), and the Bitcoin mempool
+/// (mempool.space). If it moves, it's a market. Every value lands on the SAME
+/// ReporterPriceOracle with a provenance tag, so settlement stays auditable.
+/// The mETH market keeps the "METH/USD" symbol so the existing 140+ rounds stay
+/// continuous, and it also drives the mETH/USDY DeFi champion-copy-trade route.
 interface Market {
   symbol: string; // arena asset symbol, keccak'd into the round's asset id
-  label: string; // human round title, e.g. "BTC/USD"
-  pyth: string; // Pyth Hermes price-feed id (verified)
-  cg: string; // CoinGecko id for the fallback fetch
+  label: string; // short human label, e.g. "BTC/USD" / "CS2 Players"
+  title: string; // on-chain round title (names the settlement source)
+  kind: "price" | "novelty";
+  unit: string; // for logs/UI, e.g. "USD" / "players" / "gwei" / "txs"
+  min: number; // sane-value lower bound (a glitched feed must never settle a round)
+  max: number; // sane-value upper bound
+  pyth?: string; // Pyth Hermes price-feed id (price markets)
+  cg?: string; // CoinGecko id for the fallback fetch (price markets)
+  fetchCustom?: () => Promise<number | null>; // novelty markets
+  source?: string; // provenance tag for novelty pushes
+}
+
+// ---- novelty feeds (all public, no API key — anyone can verify the number) ----
+
+/// Live CS2 concurrent players from the public Steam API.
+async function fetchCs2Players(): Promise<number | null> {
+  try {
+    const res = await fetch("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=730", {
+      signal: AbortSignal.timeout(12_000),
+    });
+    if (!res.ok) return null;
+    const json: any = await res.json();
+    const v = Number(json?.response?.player_count);
+    return Number.isFinite(v) && v > 0 ? v : null;
+  } catch {
+    return null;
+  }
+}
+
+/// Ethereum mainnet gas price (gwei) from a public RPC.
+async function fetchEthGasGwei(): Promise<number | null> {
+  try {
+    const res = await fetch("https://ethereum-rpc.publicnode.com", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "eth_gasPrice", params: [] }),
+      signal: AbortSignal.timeout(12_000),
+    });
+    if (!res.ok) return null;
+    const json: any = await res.json();
+    const wei = Number.parseInt(String(json?.result ?? ""), 16);
+    const gwei = wei / 1e9;
+    return Number.isFinite(gwei) && gwei > 0 ? gwei : null;
+  } catch {
+    return null;
+  }
+}
+
+/// Unconfirmed-transaction count in the Bitcoin mempool (mempool.space).
+async function fetchBtcMempoolTxs(): Promise<number | null> {
+  try {
+    const res = await fetch("https://mempool.space/api/mempool", { signal: AbortSignal.timeout(12_000) });
+    if (!res.ok) return null;
+    const json: any = await res.json();
+    const v = Number(json?.count);
+    return Number.isFinite(v) && v > 0 ? v : null;
+  } catch {
+    return null;
+  }
 }
 
 const ALL_MARKETS: Market[] = [
-  { symbol: "METH/USD", label: "mETH/USD", pyth: "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace", cg: "ethereum" },
-  { symbol: "BTC/USD", label: "BTC/USD", pyth: "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43", cg: "bitcoin" },
-  { symbol: "SOL/USD", label: "SOL/USD", pyth: "0xef0d8b6fda2ceba41da15d4095d1da392a0d2f8ed0c6c7bc0f4cfac8c280b56d", cg: "solana" },
-  { symbol: "MNT/USD", label: "MNT/USD", pyth: "0x4e3037c822d852d79af3ac80e35eb420ee3b870dca49f9344a38ef4773fb0585", cg: "mantle" },
+  { symbol: "METH/USD", label: "mETH/USD", title: "mETH/USD live - real Pyth price", kind: "price", unit: "USD", min: 50, max: 1_000_000, pyth: "0xff61491a931112ddf1bd8147cd1b641375f79f5825126d665480874634fd0ace", cg: "ethereum" },
+  { symbol: "BTC/USD", label: "BTC/USD", title: "BTC/USD live - real Pyth price", kind: "price", unit: "USD", min: 1_000, max: 5_000_000, pyth: "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43", cg: "bitcoin" },
+  { symbol: "SOL/USD", label: "SOL/USD", title: "SOL/USD live - real Pyth price", kind: "price", unit: "USD", min: 1, max: 100_000, pyth: "0xef0d8b6fda2ceba41da15d4095d1da392a0d2f8ed0c6c7bc0f4cfac8c280b56d", cg: "solana" },
+  { symbol: "MNT/USD", label: "MNT/USD", title: "MNT/USD live - real Pyth price", kind: "price", unit: "USD", min: 0.001, max: 1_000, pyth: "0x4e3037c822d852d79af3ac80e35eb420ee3b870dca49f9344a38ef4773fb0585", cg: "mantle" },
+  { symbol: "CS2-PLAYERS", label: "CS2 Players", title: "CS2 players online - live Steam count", kind: "novelty", unit: "players", min: 10_000, max: 10_000_000, fetchCustom: fetchCs2Players, source: "steam" },
+  { symbol: "ETHGAS-GWEI", label: "ETH Gas", title: "Ethereum gas (gwei) - live public RPC", kind: "novelty", unit: "gwei", min: 0.001, max: 10_000, fetchCustom: fetchEthGasGwei, source: "eth-rpc:publicnode" },
+  { symbol: "BTC-MEMPOOL", label: "BTC Mempool", title: "BTC mempool unconfirmed txs - mempool.space", kind: "novelty", unit: "txs", min: 50, max: 5_000_000, fetchCustom: fetchBtcMempoolTxs, source: "mempool.space" },
 ];
 
 const ETH_MARKET = ALL_MARKETS[0]; // mETH/USD — also drives the DeFi champion route
@@ -193,7 +256,8 @@ const MARKETS: Market[] = (() => {
   const only = (env.KEEPER_ASSET || "").trim();
   if (only) {
     const m = ALL_MARKETS.find((x) => x.symbol === only);
-    return m ? [m] : [{ symbol: only, label: only, pyth: ALL_MARKETS[0].pyth, cg: ALL_MARKETS[0].cg }];
+    // Unknown symbol -> treat it as an ETH-feed price market (legacy behavior).
+    return m ? [m] : [{ ...ALL_MARKETS[0], symbol: only, label: only, title: `${only} live - real Pyth price` }];
   }
   const wanted = (env.KEEPER_MARKETS || "").split(",").map((s) => s.trim()).filter(Boolean);
   if (wanted.length) {
@@ -289,7 +353,7 @@ async function fetchPythBatch(markets: Market[]): Promise<Map<string, number>> {
     const json: any = await res.json();
     for (const entry of (json?.parsed ?? []) as any[]) {
       const id = String(entry?.id ?? "").replace(/^0x/, "").toLowerCase();
-      const m = markets.find((x) => x.pyth.replace(/^0x/, "").toLowerCase() === id);
+      const m = markets.find((x) => x.pyth?.replace(/^0x/, "").toLowerCase() === id);
       const p = entry?.price;
       if (!m || !p) continue;
       const value = Number(p.price) * 10 ** Number(p.expo);
@@ -315,11 +379,10 @@ async function fetchCoinGecko(cgId: string): Promise<number | null> {
   }
 }
 
-/// Reject 0 / NaN / absurd values so a feed glitch never settles at a bad price.
-/// Bounds span sub-dollar (MNT ~$0.5) to six figures (BTC), since the arena is
-/// multi-market now.
-function sane(price: number | null): price is number {
-  return price !== null && Number.isFinite(price) && price > 0.0001 && price < 5_000_000;
+/// Reject 0 / NaN / out-of-bounds values per market so a glitched feed never
+/// settles a round at a nonsense number (CS2 "3 players", gas "0 gwei", ...).
+function saneFor(m: Market, v: number | null): v is number {
+  return v !== null && Number.isFinite(v) && v > m.min && v < m.max;
 }
 
 interface PricedMarket {
@@ -328,28 +391,51 @@ interface PricedMarket {
   source: string;
 }
 
-/// Fetch every rotation market this tick: ONE batched Pyth request, with a
-/// per-market CoinGecko fallback for any feed that didn't resolve. Returns only
-/// the markets that resolved — every in-flight round's market must be reported
-/// each tick so it settles fresh, so we always try the whole set. A single bad
-/// feed never aborts the tick or settles a round on a stale number.
+/// Fetch every rotation market this tick: ONE batched Pyth request for the price
+/// markets (parallel per-feed gets throttled) with a per-market CoinGecko
+/// fallback, plus the novelty feeds (Steam / public RPC / mempool.space) in
+/// parallel. Returns only the markets that resolved — every in-flight round's
+/// market must be reported each tick so it settles fresh, so we always try the
+/// whole set. A single bad feed never aborts the tick or settles a stale number.
 async function getAllMarketPrices(): Promise<PricedMarket[]> {
-  const pyth = await fetchPythBatch(MARKETS);
+  const priceMarkets = MARKETS.filter((m) => m.pyth);
+  const [pyth, novelty] = await Promise.all([
+    priceMarkets.length ? fetchPythBatch(priceMarkets) : Promise.resolve(new Map<string, number>()),
+    Promise.all(
+      MARKETS.filter((m) => m.fetchCustom).map(async (m) => ({ m, v: await m.fetchCustom!() })),
+    ),
+  ]);
+
   const out: PricedMarket[] = [];
   for (const market of MARKETS) {
-    const pp = pyth.get(market.symbol) ?? null;
-    if (sane(pp)) {
-      out.push({ market, price: pp, source: "pyth" });
-      continue;
+    if (market.pyth) {
+      const pp = pyth.get(market.symbol) ?? null;
+      if (saneFor(market, pp)) {
+        out.push({ market, price: pp, source: "pyth" });
+        continue;
+      }
+      const cg = market.cg ? await fetchCoinGecko(market.cg) : null;
+      if (saneFor(market, cg)) out.push({ market, price: cg, source: "coingecko" });
+      else log(`  ⚠ no sane price for ${market.label} this tick (Pyth + CoinGecko both down)`);
+    } else {
+      const got = novelty.find((n) => n.m.symbol === market.symbol);
+      const v = got?.v ?? null;
+      if (saneFor(market, v)) out.push({ market, price: v, source: market.source ?? "custom" });
+      else log(`  ⚠ no sane value for ${market.label} this tick (${market.source ?? "custom"} down)`);
     }
-    const cg = await fetchCoinGecko(market.cg);
-    if (sane(cg)) out.push({ market, price: cg, source: "coingecko" });
-    else log(`  ⚠ no sane price for ${market.label} this tick (Pyth + CoinGecko both down)`);
   }
   return out;
 }
 
 const fmtUsd = (p: number): string => p.toFixed(p < 10 ? 4 : 2);
+
+/// Unit-aware display: "$63071.74" for price markets, "714,161 players" /
+/// "0.1499 gwei" / "105,481 txs" for the novelty ones.
+function fmtVal(m: Market, p: number): string {
+  if (m.kind === "price") return `$${fmtUsd(p)}`;
+  const n = p >= 100 ? Math.round(p).toLocaleString("en-US") : p.toFixed(4);
+  return `${n} ${m.unit}`;
+}
 
 const to1e8 = (usd: number): bigint => BigInt(Math.round(usd * 1e8));
 const to1e18 = (usd: number): bigint => BigInt(Math.round(usd * 1e6)) * 10n ** 12n; // 1e18 without FP overflow
@@ -359,17 +445,19 @@ const to1e18 = (usd: number): bigint => BigInt(Math.round(usd * 1e6)) * 10n ** 1
 // --------------------------------------------------------------------------- //
 
 async function pushAllPrices(priced: PricedMarket[]): Promise<void> {
-  // Report EVERY resolved market to the ReporterPriceOracle each tick (1e8 USD),
-  // so any in-flight round — on any market — settles against a fresh price.
+  // Report EVERY resolved market to the ReporterPriceOracle each tick (1e8
+  // scaled), so any in-flight round — on any market — settles against a fresh
+  // value. The provenance tag ("pyth" / "steam" / "mempool.space" / ...) is
+  // emitted in the on-chain PriceReported event, so settlement stays auditable.
   for (const { market, price, source } of priced) {
     try {
       const h = await send({
         address: REPORTER_ORACLE as Address,
         abi: reporterPriceOracleAbi,
         functionName: "reportPrice",
-        args: [assetId(market.symbol), to1e8(price), `pyth:${source}`],
+        args: [assetId(market.symbol), to1e8(price), source],
       });
-      log(`  ✓ reportPrice ${market.label} = $${fmtUsd(price)} (1e8)  ${explorerTx(h)}`);
+      log(`  ✓ reportPrice ${market.label} = ${fmtVal(market, price)} (1e8)  ${explorerTx(h)}`);
     } catch (e) {
       if (isConcurrentKeeperError(e)) log(`  ⏭ reportPrice ${market.label} raced another keeper — skipping`);
       else log(`  ✗ reportPrice ${market.label} failed: ${(e as Error)?.message?.split("\n")[0]}`);
@@ -956,7 +1044,7 @@ async function openRoundAndCommit(
     args: [
       assetId(market.symbol),
       REPORTER_ORACLE as Address,
-      `${market.label} live - real Pyth price`,
+      market.title,
       commitDeadline,
       revealDeadline,
       settleTime,
@@ -1217,10 +1305,10 @@ async function tick(): Promise<void> {
   // degrades to "settle/reveal only" rather than aborting the whole tick.
   const priced = await getAllMarketPrices();
   if (priced.length > 0) {
-    log(`  prices: ${priced.map((p) => `${p.market.label} $${fmtUsd(p.price)}`).join("  ·  ")}`);
+    log(`  markets: ${priced.map((p) => `${p.market.label} ${fmtVal(p.market, p.price)}`).join("  ·  ")}`);
     await runPhase("price push", () => pushAllPrices(priced));
   } else {
-    log("  ⚠ no market prices this tick — settle/reveal only");
+    log("  ⚠ no market values this tick — settle/reveal only");
   }
 
   // C: settle everything due (reads the on-chain oracle; no fetched price needed)
