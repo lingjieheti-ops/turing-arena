@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 378,
+  "confidence": 74,
+  "rationaleHash": "0xbdad10d69463c6c7129380e871c238d892d13f493c9f0f2e023151613f5e533f",
+  "salt": "0x8a81d738de0408eb45c8341d38e856ff62752f08b91e5bd5d669b8fbaf9efe3f",
+  "rationale": "Net read bullish (0.63). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); allora -0.40 (Allora ML forecast leans short); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

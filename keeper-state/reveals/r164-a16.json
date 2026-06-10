@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 394,
+  "confidence": 76,
+  "rationaleHash": "0x91d3fd62e103f40a68172077f766367b54b38216d7cfec49fc41feebda72447a",
+  "salt": "0x11fd1ae49450d95e188103db025b21450ce05991bf87b3a5cb66305dddb77c3d",
+  "rationale": "Net read bullish (0.66). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); allora -0.40 (Allora ML forecast leans short); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

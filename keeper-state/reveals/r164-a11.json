@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 341,
+  "confidence": 70,
+  "rationaleHash": "0xb90455bd9083a694639e084ce563e87a817e8d83b084f1ef298a108c70bfe6ae",
+  "salt": "0x15d2d3a5d21692a5430d21fb0bfb643623405d686816ccd7fbea4298db66c51d",
+  "rationale": "Net read bullish (0.57). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); allora -0.40 (Allora ML forecast leans short); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
