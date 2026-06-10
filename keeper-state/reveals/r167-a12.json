@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -174,
+  "confidence": 50,
+  "rationaleHash": "0x002c67162900c49757201867eef33b6893454bf30def826f1661fbe5158a3696",
+  "salt": "0x38d5435a6cce6e9a781d569568dec54943670454cda327093c3218d67ac1791e",
+  "rationale": "Net read bearish (-0.29). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless +0.44 (No Limitless market for ETHGAS-GWEI — mock up); elfa +0.73 (KOL mindshare heating up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 462,
+  "confidence": 84,
+  "rationaleHash": "0xe5fdd9ff75c1eca72d868b6541eebbd4a164aff0dc6842b799f25de2bd7bf32a",
+  "salt": "0x7b3360ef957005db26bfa2e3e085afe2713e49ad1ba2164a993c0e3b43470a70",
+  "rationale": "Net read bullish (0.77). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless +0.44 (No Limitless market for ETHGAS-GWEI — mock up); elfa +0.73 (KOL mindshare heating up).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
