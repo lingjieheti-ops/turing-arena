@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -204,
+  "confidence": 54,
+  "rationaleHash": "0x722dce05d65b4e4b4c09ef3ece48dfccb73f0f33213bd3032b6e34be4cd0aa16",
+  "salt": "0xdba9edd8fa9ad2a484d5f39ad55ff584c767b11ffca8c70c32a9b41a9471e828",
+  "rationale": "Net read bearish (-0.34). Strongest evidence: momentum -1.00 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless -0.51 (Limitless MNT market unavailable — mock down); mantle-onchain +0.53 (Mantle on-chain momentum up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
