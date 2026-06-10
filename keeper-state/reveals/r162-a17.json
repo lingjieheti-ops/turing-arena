@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -271,
+  "confidence": 62,
+  "rationaleHash": "0xff0c699f517405d7ae9c7963b9ed12ac4fb8fa7ab0b04fad65a4b6c3ad43d31d",
+  "salt": "0x21073b0136a04718c12f5f77edafca73ca168bb40665d7f4e263603742575d81",
+  "rationale": "Net read bearish (-0.45). Strongest evidence: momentum +0.62 (BTC Mempool up-momentum since the last tick); mantle-onchain -0.98 (Mantle on-chain momentum down); nansen -0.60 (Smart money net outflow).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

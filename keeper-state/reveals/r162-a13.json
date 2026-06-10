@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 71,
+  "confidence": 38,
+  "rationaleHash": "0xc77e440c944c0cd537edcaff65904efaf40779c16931fc5716878f7231d4c561",
+  "salt": "0x7a5feaf6d76541c1b7ded30fd80356fdd9756bd7cd5bd7d9698cf966f092b2d4",
+  "rationale": "Net read bullish (0.12). Strongest evidence: momentum +0.62 (BTC Mempool up-momentum since the last tick); mantle-onchain -0.98 (Mantle on-chain momentum down); nansen -0.60 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 273,
+  "confidence": 62,
+  "rationaleHash": "0xb2de26855f0718d79fa4cac7b29c3d12ee329a68f2001fc44fe1d191902c8c6b",
+  "salt": "0x5660899e65ba956e99107c64a04d1aa2e7613528977838ebb67652fc127d266d",
+  "rationale": "Net read bullish (0.46). Strongest evidence: momentum +0.62 (BTC Mempool up-momentum since the last tick); mantle-onchain -0.98 (Mantle on-chain momentum down); nansen -0.60 (Smart money net outflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
