@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 157,
+  "confidence": 48,
+  "rationaleHash": "0xfbf28f839c31456961c9ecbef62292bc3417880c0c77414d1cedf31c084c2ea1",
+  "salt": "0xe1837b1ff1b44bedf64c606e7270e8395304fca77dc39c63f7373aea129dc7dc",
+  "rationale": "Net read bullish (0.26). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); nansen -0.93 (Smart money net outflow); limitless +0.45 (No Limitless market for ETHGAS-GWEI — mock up).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

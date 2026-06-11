@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -358,
+  "confidence": 72,
+  "rationaleHash": "0x42f2a7928287327ea1304f70fc77ce70d3933689e76aa1ef043ed36a1d4a8a93",
+  "salt": "0xb92ff25606b776becae0cb5d7da6605687d98b3e3da9a92878b17b6efde74c25",
+  "rationale": "Net read bearish (-0.60). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); nansen -0.93 (Smart money net outflow); limitless +0.45 (No Limitless market for ETHGAS-GWEI — mock up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
