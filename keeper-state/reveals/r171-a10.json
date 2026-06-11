@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 465,
+  "confidence": 84,
+  "rationaleHash": "0x1a972f08dbf7a0686ba02518e9eb92c032a5f66ce6d5270783d883acb1158321",
+  "salt": "0x2dfe7b992775dac6fa2a2d06e9f6ea278829997df5356d3c4ded1b9b3da21ee2",
+  "rationale": "Net read bullish (0.78). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); limitless +0.97 (Limitless (Base) SOL 99% up / 1% down); allora +0.61 (Allora ML forecast leans long).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

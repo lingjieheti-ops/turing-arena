@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 600,
+  "confidence": 100,
+  "rationaleHash": "0xd2a9143c03024a9759c3657f05c1caed12229c6bb1c52e35dc49aa0614c37f8f",
+  "salt": "0x123194d78f15d7f4076a66e9540df3d0f04e78fc8d0631949c3a50cec6655ae1",
+  "rationale": "Net read bullish (1.00). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); limitless +0.97 (Limitless (Base) SOL 99% up / 1% down); allora +0.61 (Allora ML forecast leans long).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
