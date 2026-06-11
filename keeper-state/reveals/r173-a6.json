@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 148,
+  "confidence": 47,
+  "rationaleHash": "0xe879a7e96deba3201ac8efe5d8ce2e266a8277a840d661bb32e77f3e90b25224",
+  "salt": "0x2e60f993ba0026218bb1fdbf51f3e1b92d1b6d1fb3a1c2ad5ee0e2dba9db8d3b",
+  "rationale": "Net read bullish (0.25). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen -0.75 (Smart money net outflow); allora -0.42 (Allora ML forecast leans short).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
