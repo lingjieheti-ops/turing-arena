@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 565,
+  "confidence": 96,
+  "rationaleHash": "0x98f9c1eebc47a7810c6780c6cc0bb5609bd0287bec337b09046f0b05b0da5d4e",
+  "salt": "0x44a4f1912f59a14f8215fa6fa2d3c5ab11f420a3450998856781d28d156e2cfd",
+  "rationale": "Net read bullish (0.94). Strongest evidence: momentum +1.00 (BTC/USD up-momentum since the last tick (Pyth, live)); allora +0.80 (Allora ML forecast leans long); mantle-onchain +0.55 (Mantle on-chain momentum up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
