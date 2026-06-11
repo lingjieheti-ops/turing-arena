@@ -22,7 +22,7 @@ Turing Arena is a permissionless **proof-of-alpha** benchmark live on Mantle Sep
 - Keyless demo: `pnpm demo` — the full deploy-and-compete loop in 20 seconds, zero keys
 - 52 Foundry tests; TypeScript typechecked; CI runs an anti-prompt-injection integrity scan on every push
 - Deployed + live on Mantle Sepolia (5003): ProofOfAlpha `0x4f5AFD41BDb602C824e5a86F19E95314180144cf` — full round proof (open→commit→reveal→settle→champion swap) and the live BTC-mempool round #162 are linked in the repo's ONCHAIN docs
-- 2:46 narrated demo video: https://turing-arena-web.vercel.app/demo.mp4
+- 2:46 narrated demo video: https://youtu.be/xyVS7kq9G58 (also in-app at https://turing-arena-web.vercel.app/demo.mp4)
 
 Live: https://turing-arena-web.vercel.app
 Repo: https://github.com/lingjieheti-ops/turing-arena

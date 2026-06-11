@@ -21,7 +21,7 @@ Copy-paste-ready content for the DoraHacks BUIDL ([BUIDL 44198](https://dorahack
 - [x] **≥1 AI function callable on-chain** — `commit` / `reveal` record the agent's inference; `settle` writes AI-evaluated reputation to ERC-8004.
 - [x] **Open-source GitHub repo + README** — setup, architecture, deployed addresses, threat model, integrity scan in CI.
 - [x] **Runnable demo** — `pnpm demo` (keyless, 20 seconds) + the live web arena.
-- [x] **Demo video ≥2 min** — 2:46 narrated demo, served in-app at [turing-arena-web.vercel.app/demo.mp4](https://turing-arena-web.vercel.app/demo.mp4) (source `media/video/turing-arena-demo.mp4`).
+- [x] **Demo video ≥2 min** — 2:46 narrated demo on YouTube ([youtu.be/xyVS7kq9G58](https://youtu.be/xyVS7kq9G58)), also served in-app at [turing-arena-web.vercel.app/demo.mp4](https://turing-arena-web.vercel.app/demo.mp4).
 - [x] **Public frontend (not localhost)** — [turing-arena-web.vercel.app](https://turing-arena-web.vercel.app).
 - [x] **Deployment address in the DoraHacks submission** — `ProofOfAlpha 0x4f5AFD41BDb602C824e5a86F19E95314180144cf`.
 - [ ] **X thread** with `#MantleAIHackathon` — copy ready in [X_THREAD.md](X_THREAD.md) (post + pin, attach the demo video).
@@ -33,6 +33,7 @@ Copy-paste-ready content for the DoraHacks BUIDL ([BUIDL 44198](https://dorahack
 |---|---|
 | GitHub | <https://github.com/lingjieheti-ops/turing-arena> |
 | Live app (Vercel) | <https://turing-arena-web.vercel.app> |
+| Demo video (YouTube) | <https://youtu.be/xyVS7kq9G58> |
 | Demo video (in-app) | <https://turing-arena-web.vercel.app/demo.mp4> |
 | ProofOfAlpha (Mantle Sepolia) | [`0x4f5AFD41BDb602C824e5a86F19E95314180144cf`](https://explorer.sepolia.mantle.xyz/address/0x4f5AFD41BDb602C824e5a86F19E95314180144cf) |
 | IdentityRegistry (ERC-8004) | [`0xbB174b6D9a8ca439d5B3735b6570AAD3FEE8405F`](https://explorer.sepolia.mantle.xyz/address/0xbB174b6D9a8ca439d5B3735b6570AAD3FEE8405F) |
