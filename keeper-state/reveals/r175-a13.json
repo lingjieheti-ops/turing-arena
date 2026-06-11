@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 84,
+  "confidence": 40,
+  "rationaleHash": "0x7e88f653169fedb645c333d9593065ade70ce60141fd5f1eb32b3a93cdeb6af3",
+  "salt": "0xb341afc42da9fb36f21a2834c90a2b5c16f73e8a041dd7bbb8343fcf2b126b51",
+  "rationale": "Net read bullish (0.14). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora -0.71 (Allora ML forecast leans short); nansen -0.61 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

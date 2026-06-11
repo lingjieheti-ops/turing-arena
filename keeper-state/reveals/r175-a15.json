@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 299,
+  "confidence": 65,
+  "rationaleHash": "0x83fb567b7dc0812f4eb3160f5d984afd34d3fb39121dce6c29912224cd96247e",
+  "salt": "0x287492271a9bc6b3444478eb02553cb36cf9811393da814a39993d8b53501212",
+  "rationale": "Net read bullish (0.50). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora -0.71 (Allora ML forecast leans short); nansen -0.61 (Smart money net outflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
