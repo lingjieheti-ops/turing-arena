@@ -71,9 +71,10 @@ On settlement the arena calls `reputation.giveFeedback(agentId, score, …, tag1
 
 A Virtuals **GAME-aligned** loop: the **Agent** (persona + objective "maximize verifiable alpha") plans, **Workers** (signal adapters) gather, a **Function** (`commit`/`reveal`) acts on-chain.
 
-- **Signals** (`signals/`) — Allora (ML inference), Nansen (smart-money flows), Elfa (social), Surf (market data), and **Mantle on-chain** (live mETH supply momentum, a keyless real read). Each adapter tries its real API and **degrades to a deterministic mock**, so the loop always completes. Fused by weight + agreement.
+- **Signals** (`signals/`) — Allora (ML inference), Nansen (smart-money flows), Elfa (social), Surf (market data), **Mantle on-chain** (live mETH supply momentum, a keyless real read), and **Limitless** (the crowd-implied up-probability from a real Base prediction market, public no-key API). Each adapter tries its real API and **degrades to a deterministic, labeled mock**, so the loop always completes. Fused by weight + agreement.
 - **Brain** (`brain.ts`) — calls an OpenAI-compatible LLM (AltLLM by default) for a structured call; on any failure falls back to the heuristic fusion. The rationale is what gets hashed on-chain.
-- **Loop** (`index.ts`) — register identity → report a **real** entry price (CoinGecko) → open/join round → think → commit → wait → reveal → wait → report settle price → settle → print updated reputation. Salts persist in `.state/` between phases.
+- **Keeper** (`keeper.ts`) — the 24/7 operator (GitHub Actions cron + optional local loop). Each tick it fetches **every rotation market** — four Pyth-fed prices (mETH/BTC/SOL/MNT, one batched Hermes request + CoinGecko fallback) and three novelty feeds (CS2 players via Steam, ETH gas via a public RPC, the BTC mempool via mempool.space) — pushes each value to the `ReporterPriceOracle` with a **provenance tag** (an auditable on-chain event), settles due rounds, reveals personas, runs user auto-pilots, and opens the next round on the **rotating battlefield**. Per-market sane-value bounds stop a glitched feed from ever settling a round.
+- **Loop** (`index.ts`) — register identity → report a **real** entry price → open/join round → think → commit → wait → reveal → wait → report settle price → settle → print updated reputation. Salts persist in `.state/` between phases.
 - **Demo** (`demo.ts`) — the same brain + scoring, fully in-memory, zero dependencies, for instant evaluation.
 
 ## 3. Web (`web/`)

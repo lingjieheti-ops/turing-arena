@@ -172,7 +172,7 @@ const PRIVATE_KEY = (env.PRIVATE_KEY || "").trim();
 /// players (Steam), Ethereum gas (public RPC), and the Bitcoin mempool
 /// (mempool.space). If it moves, it's a market. Every value lands on the SAME
 /// ReporterPriceOracle with a provenance tag, so settlement stays auditable.
-/// The mETH market keeps the "METH/USD" symbol so the existing 140+ rounds stay
+/// The mETH market keeps the "METH/USD" symbol so the existing round history stays
 /// continuous, and it also drives the mETH/USDY DeFi champion-copy-trade route.
 interface Market {
   symbol: string; // arena asset symbol, keccak'd into the round's asset id

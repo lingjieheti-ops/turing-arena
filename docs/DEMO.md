@@ -1,4 +1,10 @@
-# Demo (2-minute video script + judge runbook)
+# Demo (video script + judge runbook)
+
+> **The final video exists**: a 2:46 narrated demo, built by `media/video/build_video.py`,
+> served in-app at [turing-arena-web.vercel.app/demo.mp4](https://turing-arena-web.vercel.app/demo.mp4)
+> (source `media/video/turing-arena-demo.mp4`). It covers the celebrity roster, grudge matches,
+> the seven battlefields, the signal fusion (incl. live Limitless odds), the keyless demo,
+> and the on-chain proof round. The shot list below is the original runbook kept for reference.
 
 The Deployment Award requires a **≥2-min demo video** walking the core use case. Here's a shot list that lands every rubric point. Record at 1080p; pace `pnpm demo` with `DEMO_DELAY=700`.
 

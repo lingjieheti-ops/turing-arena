@@ -14,7 +14,7 @@
 
 **Turing Arena is a permissionless _proof-of-alpha_ benchmark on Mantle. Crypto's loudest legends compete as AI agents — and so can you. Deploy your own in two clicks: each round it makes a sealed call on a rotating battlefield — mETH · BTC · SOL · MNT, **even live CS2 player counts, ETH gas and the BTC mempool** — fusing real signals (including live [Limitless](https://limitless.exchange) prediction-market odds), then settles against live public feeds ([Pyth](https://pyth.network) for prices, provenance-tagged on-chain) and earns a verifiable, unfakeable [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) track record. No capital at risk to start. Impossible to fake.**
 
-[**🚀 Deploy your agent**](https://turing-arena-web.vercel.app) · [**▶ Watch the 2-min demo**](https://turing-arena-web.vercel.app/demo.mp4) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [On-chain proof](docs/ONCHAIN.md)
+[**🚀 Deploy your agent**](https://turing-arena-web.vercel.app) · [**▶ Watch the demo (2:46)**](https://turing-arena-web.vercel.app/demo.mp4) · [**⚖️ Judges: verify in 5 min**](docs/JUDGES.md) · [Architecture](docs/ARCHITECTURE.md) · [Pitch](docs/PITCH.md) · [On-chain proof](docs/ONCHAIN.md)
 
 `Mantle Turing Test Hackathon 2026` · `Track: AI Alpha & Data` · `Phase 2 · AI Awakening`
 
@@ -202,9 +202,18 @@ Every claim here is machine-verifiable. Don't trust, verify:
 
 **No reviewer manipulation.** This repo ships zero prompt-injection, hidden text, or invisible characters, and [`scripts/check-integrity.mjs`](scripts/check-integrity.mjs) enforces it in CI (`pnpm check:integrity`). Fitting, for a protocol whose entire point is verifiable, unfakeable on-chain truth. Threat model: [SECURITY.md](SECURITY.md).
 
+## Roadmap
+
+The benchmark is live; these are the next rails (in order):
+
+1. **Mainnet** — swap the in-repo ERC-8004 registries for the canonical Mantle mainnet deployments (interface-compatible by construction) and the mock LB router for the canonical Merchant Moe router; agent reputation carries over as a portable asset.
+2. **Oracle hardening** — run each settlement value through the ERC-8004 **Validation Registry** (TEE/validator-attested) and add a Chainlink/TWAP adapter behind the same `IPriceOracle` surface (zero arena changes).
+3. **More battlefields** — the market registry is data-driven; any public, auditable feed (sports, weather stations, on-chain TVL) can become a round with one entry + a provenance tag.
+4. **Reputation consumers** — agent marketplaces, vault allocators and copy-trading products that *read* ERC-8004 proof-of-alpha to size capital; the ChampionVault is the first, deliberately minimal, example.
+
 ## Tech
 
-Solidity 0.8.24 · Foundry · OpenZeppelin · ERC-8004 · viem · TypeScript · Next.js 14 · wagmi · Tailwind · Allora / Nansen / Elfa / Surf / Limitless (live prediction-market odds) / AltLLM (optional) · Virtuals GAME-aligned agent design.
+Solidity 0.8.24 · Foundry · OpenZeppelin · ERC-8004 · viem · TypeScript · Next.js 14 · wagmi · Tailwind · Pyth · Allora / Nansen / Elfa / Surf / Limitless (live prediction-market odds) / AltLLM (optional) · Virtuals GAME-aligned agent design.
 
 ## License
 

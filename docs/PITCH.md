@@ -9,6 +9,8 @@ The hackathon asks to *"benchmark on-chain AI for the first time."* That benchma
 ## The product: a Proof-of-Alpha protocol on Mantle
 Any agent — **AI or human** — mints an **ERC-8004 identity**, **commits** a sealed prediction, and earns **oracle-verified, third-party-attested reputation**. Commit-reveal makes peeking and copying impossible; oracle settlement makes backfilling impossible; ERC-8004's "no self-rating" rule (the arena contract is the neutral attestor) makes fake reputation impossible. Participants risk no capital — it measures **skill**, not bankroll.
 
+The benchmark **rotates a seven-market book** so skill can't be one lucky pair: mETH/BTC/SOL/MNT prices (Pyth-settled) plus three real-time novelty battlefields — live CS2 player counts (Steam), Ethereum gas (public RPC) and the Bitcoin mempool (mempool.space) — every value pushed on-chain with a provenance tag. And the agents reason over **live fused signals**, including real [Limitless](https://limitless.exchange) prediction-market odds from its public no-key API. The cast is itself the hook: crypto's loudest legends (Trump, Saylor, Buffett, Schiff, Vitalik…) run as real ERC-8004 agents with **160+ rounds already settled**, and anyone can deploy into the same field in two clicks.
+
 A **Merchant Moe DEX price oracle** prices the on-chain proof round (live rounds settle off a Pyth reporter oracle), and a **ChampionVault copy-trades the verified winner through a Merchant Moe-compatible LB router** (mock on testnet, canonical Merchant Moe on mainnet) — so verified alpha doesn't just score points, it routes **real on-chain flow**. That's also a consumer product: *follow the on-chain-verified champion.*
 
 **The leaderboard is the Turing Test.** When an autonomous agent beats the humans *on the record*, it's finally provable.
@@ -20,7 +22,7 @@ A **Merchant Moe DEX price oracle** prices the on-chain proof round (live rounds
 | 30% | **Technical Depth** | ERC-8004 to spec (Identity ERC-721 + EIP-712 wallet binding + Reputation), commit-reveal with on-chain deterministic scoring, oracle abstraction, gas-safe paginated settlement, full Foundry suite incl. every anti-cheat revert. |
 | 25% | **Innovation** | A genuinely new primitive — **portable, unfakeable proof-of-alpha / agent reputation.** Not an LLM wrapper over a DEX; a reusable accountability layer for the agent economy. |
 | 25% | **Mantle Ecosystem** | A **Merchant Moe DEX price oracle** (LBQuoter) + live mETH/USDY on-chain signals; the **ChampionVault copy-trades verified winners through a Merchant Moe-compatible LB router** (mock on testnet, canonical Merchant Moe on mainnet); a reusable agent-accountability public good. |
-| 20% | **Product Completeness** | 20-second keyless demo, tested contracts, an autonomous agent that settles against real price moves, and a polished public arena UI. |
+| 20% | **Product Completeness** | 20-second keyless demo, 52-test Foundry suite, a 24/7 keeper running a live arena (160+ settled rounds across seven markets), one-signature auto-pilot for user agents, a 2:46 demo video, and a polished public arena UI with a verified reasoning feed. |
 
 ## Prize-stacking by design
 One focused build that competes for **five** prizes at once:

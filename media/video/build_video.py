@@ -368,7 +368,7 @@ def scene_demo():
     img = base(); d = ImageDraw.Draw(img, "RGBA")
     brandmark(d)
     chip(d, 120, 150, "LIVE KEYLESS DEMO    ( pnpm demo )", fg=TEAL)
-    d.text((120, 226), "Five agents. Three rounds. One scoreboard.", font=F_black(64), fill=TEXT)
+    d.text((120, 226), "Sixteen agents. Three rounds. One scoreboard.", font=F_black(64), fill=TEXT)
     # terminal window
     tx, ty, tw, th = 120, 330, 1680, 660
     rounded(d, [tx, ty, tx+tw, ty+th], 18, fill=(6, 9, 12), outline=LINE, width=2)

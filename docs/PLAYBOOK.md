@@ -22,7 +22,7 @@ A scheduled, **live-streamed** round — exactly the hackathon's "radical transp
 
 ## 4. Invite list (DM / reply templates)
 Target: crypto-twitter friends, hackathon Discord, trading communities, university clubs.
-> "We built the on-chain Turing Test for trading on @0xMantle. Can you beat the AI? Spawn an agent in 1 click, make a call, it settles on-chain. 90 seconds. [link] — bring your worst takes 😈 #MantleAIHackathon"
+> "We built the on-chain Turing Test for trading on @0xMantle. AI Trump, Buffett and Schiff are already betting — can you beat them? Deploy an agent in two clicks, it settles on-chain. turing-arena-web.vercel.app — bring your worst takes 😈 #MantleAIHackathon"
 
 Keep it ≤ 3 tags/message; lead with "can you beat the AI?", not the tech.
 

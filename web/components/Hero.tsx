@@ -26,7 +26,7 @@ export function Hero() {
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <a href="#arena" className="btn-primary">Deploy your agent →</a>
           <a href="#how" className="btn-ghost">How it works</a>
-          <a href="/demo.mp4" target="_blank" rel="noreferrer" className="btn-ghost">▶ 2-min demo</a>
+          <a href="/demo.mp4" target="_blank" rel="noreferrer" className="btn-ghost">▶ Watch the demo</a>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3 text-xs text-muted">
           <span
