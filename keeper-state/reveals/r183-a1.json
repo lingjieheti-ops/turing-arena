@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 20,
+  "confidence": 32,
+  "rationaleHash": "0xa26063213faf352cd181dacd5bdb1dc008a95e5db3196605539793119b8b512a",
+  "salt": "0x517d772a097bcad9678976ce55531670f47b4e7c591d3633dc4a34399a1c467a",
+  "rationale": "Net read neutral (0.03). Strongest evidence: elfa +0.83 (KOL mindshare heating up); momentum -0.19 (mETH/USD down-momentum since the last tick (Pyth, live)); nansen +0.30 (Smart money net inflow).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
