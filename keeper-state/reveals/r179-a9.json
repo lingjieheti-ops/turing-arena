@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 263,
+  "confidence": 61,
+  "rationaleHash": "0x511be54c35307adf1f0cb9ceff2070cbe89e6f370a5e471bc22c2b6a80f259e4",
+  "salt": "0x3c502581a9fec408de370c5f199ea95adfbc86a41f09b627019b60dcd3adfff7",
+  "rationale": "Net read bullish (0.44). Strongest evidence: limitless +0.56 (Limitless MNT market unavailable — mock up); momentum -0.28 (MNT/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.53 (Mantle on-chain momentum down).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
