@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 110,
+  "confidence": 43,
+  "rationaleHash": "0x907aade6d317c15e42e8b0c105bea789f42bbee1c88764494a8dc58e603ddc5a",
+  "salt": "0xb4875885dae318651385f4aa2dd04c528360550de9bf3ab6c424dfe588196356",
+  "rationale": "Net read bullish (0.18). Strongest evidence: limitless -0.98 (Limitless (Base) BTC 1% up / 99% down); allora +0.79 (Allora ML forecast leans long); momentum -0.35 (BTC/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 284,
+  "confidence": 63,
+  "rationaleHash": "0x0516e7742a449e1ee562fcbbf9c01c077a9f46b08c373e7cd441169ea7b06151",
+  "salt": "0xef0cb9c4c03a8d26e50f23bfdc485800ba2a4bcfeda7849e5c499e1873cf7b9c",
+  "rationale": "Net read bullish (0.47). Strongest evidence: limitless -0.98 (Limitless (Base) BTC 1% up / 99% down); allora +0.79 (Allora ML forecast leans long); momentum -0.35 (BTC/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
