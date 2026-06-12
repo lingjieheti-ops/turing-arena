@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 229,
+  "confidence": 57,
+  "rationaleHash": "0x5636b9978676aea53418f46daf610c3b3fb12436ae594d25210be22ffb60691a",
+  "salt": "0x1964836fb20e01e66604661621043f97fa036084161d4aaef6fe8bb89968ca0b",
+  "rationale": "Net read bullish (0.38). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); nansen -0.60 (Smart money net outflow); elfa -0.57 (KOL mindshare cooling).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

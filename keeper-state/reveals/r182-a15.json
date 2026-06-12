@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -79,
+  "confidence": 39,
+  "rationaleHash": "0xee3af42a87f02b179a395c390ee6b4d2ae25de9190eb76e9294a3ffb97a7e5b5",
+  "salt": "0xdc2dd0b3d1a41d637f10534a4f44fdaa657a05fefa8c1556d61eecbcc1453e16",
+  "rationale": "Net read bearish (-0.13). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); nansen -0.60 (Smart money net outflow); elfa -0.57 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
