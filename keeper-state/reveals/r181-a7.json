@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 14,
+  "confidence": 32,
+  "rationaleHash": "0x149c6bca5c527a403cf5234c0f28f54142f56d8d550778637959ffa89820e710",
+  "salt": "0x1586bc025df20bc831a5c9e044cf657f6aae0203d543020c65a2ec0063dff6f1",
+  "rationale": "Net read neutral (0.02). Strongest evidence: momentum -1.00 (ETH Gas down-momentum (Pyth, live)); nansen -0.78 (Smart money net outflow); limitless -0.45 (No Limitless market for ETHGAS-GWEI — mock down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
