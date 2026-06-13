@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -351,
+  "confidence": 71,
+  "rationaleHash": "0x2ce17ee840e7ae189e559ed3dbe975369ae7e9eed9c776bcd34ad889ad175b56",
+  "salt": "0xefd6ac3cbe46d22a6b481e0bf10cdce8b02450a9a9456c066becbe28cd887565",
+  "rationale": "Net read bearish (-0.59). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); nansen -0.64 (Smart money net outflow); elfa -0.65 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
