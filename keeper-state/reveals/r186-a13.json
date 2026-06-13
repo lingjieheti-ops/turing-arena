@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 6,
+  "confidence": 31,
+  "rationaleHash": "0x00460624a710b1cf27e04b835fa910f66f0577c9c6609ba725f69d9eb0f09f61",
+  "salt": "0xbd9c13e8cbb13724d64a1b6b939a255fc3d23629fc3f6a8b758aa55af1d45a38",
+  "rationale": "Net read neutral (0.01). Strongest evidence: allora -0.70 (Allora ML forecast leans short); limitless +0.60 (Limitless MNT market unavailable — mock up); nansen -0.69 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

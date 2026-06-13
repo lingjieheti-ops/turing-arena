@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 67,
+  "confidence": 38,
+  "rationaleHash": "0x12635d45b37807f3c9c76f70b07460acd4e0983803f74247e011e9a84689cfbd",
+  "salt": "0xc595dd6d6a3867f2bdd3d185b20d18a04859b43862b3467a95e965f0dee3b6da",
+  "rationale": "Net read bullish (0.11). Strongest evidence: allora -0.70 (Allora ML forecast leans short); limitless +0.60 (Limitless MNT market unavailable — mock up); nansen -0.69 (Smart money net outflow).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

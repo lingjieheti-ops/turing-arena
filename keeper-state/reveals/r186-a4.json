@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -103,
+  "confidence": 42,
+  "rationaleHash": "0x3751889c27cdb52de0f41b09af13bb0448ec037a490039dbb8cba3f3b476ab40",
+  "salt": "0x082337c8f1c833c2974a1ca5bed54ed4fd8916db209051ce3b628f7287c34382",
+  "rationale": "Net read bearish (-0.17). Strongest evidence: allora -0.70 (Allora ML forecast leans short); limitless +0.60 (Limitless MNT market unavailable — mock up); nansen -0.69 (Smart money net outflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

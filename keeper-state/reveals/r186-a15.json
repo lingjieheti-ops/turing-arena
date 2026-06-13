@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 83,
+  "confidence": 40,
+  "rationaleHash": "0x77a7f3f3d27b8ecb148f24698e4b9fc665736fa149684519dc59fe2fa155102d",
+  "salt": "0x2314e298697eb8a876f84b5c3247723aceb5cb2f6549ce01a4036438cc765453",
+  "rationale": "Net read bullish (0.14). Strongest evidence: allora -0.70 (Allora ML forecast leans short); limitless +0.60 (Limitless MNT market unavailable — mock up); nansen -0.69 (Smart money net outflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

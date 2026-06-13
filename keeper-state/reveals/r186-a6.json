@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 195,
+  "confidence": 53,
+  "rationaleHash": "0xde3de228c123f9f06bac03e7c2d237a22435242a36e659cdfaf77b05bc50dd81",
+  "salt": "0xd320ad838fcb0256730b35499899eb87aeeaba3d7f692e52edf35571945637a0",
+  "rationale": "Net read bullish (0.32). Strongest evidence: allora -0.70 (Allora ML forecast leans short); limitless +0.60 (Limitless MNT market unavailable — mock up); nansen -0.69 (Smart money net outflow).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
