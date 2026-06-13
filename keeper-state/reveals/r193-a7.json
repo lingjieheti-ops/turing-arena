@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 168,
+  "confidence": 50,
+  "rationaleHash": "0x5e2e2192121d269019dc26573360dc3fea1c2013e02634baf31297c5df7333b3",
+  "salt": "0x9cbc5efc93360e321f249fb427c2fa559a659163fbf943f0879bab31c8634e22",
+  "rationale": "Net read bullish (0.28). Strongest evidence: momentum +1.00 (MNT/USD up-momentum (Pyth, live)); allora -0.74 (Allora ML forecast leans short); limitless +0.57 (Limitless MNT market unavailable — mock up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

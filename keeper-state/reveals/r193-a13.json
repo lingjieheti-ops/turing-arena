@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 45,
+  "confidence": 35,
+  "rationaleHash": "0x642024f675a13c651752b76830c02eb39e563cfb1c0824c2de4e8804aa4ae200",
+  "salt": "0x5df8ecacc5df8fe3aab922daa2f009c28360bc73784b32648d95ea99b9ac2c01",
+  "rationale": "Net read bullish (0.07). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.74 (Allora ML forecast leans short); limitless +0.57 (Limitless MNT market unavailable — mock up).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
