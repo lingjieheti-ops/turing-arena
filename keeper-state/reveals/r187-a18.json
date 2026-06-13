@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 65,
+  "confidence": 38,
+  "rationaleHash": "0x1eb35ddf7b22f801cc01ccd5db1f6659dd400b397fecc15b9073a940f99cd43c",
+  "salt": "0x9670bb12587701ab2b8c47335b1eeb258be110665c811e163060460eac834aba",
+  "rationale": "Net read bullish (0.11). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); limitless +0.96 (No Limitless market for CS2-PLAYERS — mock up); mantle-onchain -0.70 (Mantle on-chain momentum down).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
