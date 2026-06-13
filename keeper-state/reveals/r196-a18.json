@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -45,
+  "confidence": 35,
+  "rationaleHash": "0x37b19631514bc506f7a2cf26b99854616e44a0fed33099b528a72592e1c0ea1b",
+  "salt": "0x30721162baf7408e3c2bcc797ba7358d9967fc79220bf0666d69db200efa45c6",
+  "rationale": "Net read bearish (-0.08). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); mantle-onchain +0.97 (Mantle on-chain momentum up); nansen -0.74 (Smart money net outflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -256,
+  "confidence": 60,
+  "rationaleHash": "0xa56d0d1d56fbd72ade9db94f7944d571a4928fb0d975c257a473fc51ccafac62",
+  "salt": "0x16780ee771aa5c7d60bb150e3b9385c367aa494d8649b363e8b5e50b656d619a",
+  "rationale": "Net read bearish (-0.43). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); mantle-onchain +0.97 (Mantle on-chain momentum up); nansen -0.74 (Smart money net outflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
