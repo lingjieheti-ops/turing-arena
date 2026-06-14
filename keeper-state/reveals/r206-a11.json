@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 361,
+  "confidence": 72,
+  "rationaleHash": "0x89231f180be0f3fce571fe1df504970ff83cd129d8244a3aec81f001a9d52521",
+  "salt": "0x97aabd8ce19b9389845e0344bb29f984728a40dd84ea0b1da9bd5a8aae010b92",
+  "rationale": "Net read bullish (0.60). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); allora +0.91 (Allora ML forecast leans long); nansen +0.51 (Smart money net inflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

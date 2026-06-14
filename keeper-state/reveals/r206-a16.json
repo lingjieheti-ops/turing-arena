@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 579,
+  "confidence": 98,
+  "rationaleHash": "0x8898c4ceaa7594144f99a45756645b4a3fd27ff4c0752285e84baa8fa37e305a",
+  "salt": "0x65c08ce53f983827837aa7a2c82577929acc842a3cf2e792e6ef7b7375e0a0d5",
+  "rationale": "Net read bullish (0.97). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); allora +0.91 (Allora ML forecast leans long); nansen +0.51 (Smart money net inflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
