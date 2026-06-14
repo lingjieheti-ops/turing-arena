@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 299,
+  "confidence": 65,
+  "rationaleHash": "0xa4b1cb908d176b629fd806d8c34a23f8a88306175a738906fa5420a13dfc1423",
+  "salt": "0xf5bd113a5a4b68ee1b759bf8b45e9d834bd446406830fdcb259a183fb2837423",
+  "rationale": "Net read bullish (0.50). Strongest evidence: limitless +0.90 (Limitless (Base) BTC 95% up / 5% down); momentum +0.38 (BTC/USD up-momentum since the last tick (Pyth, live)); nansen -0.75 (Smart money net outflow).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
