@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -198,
+  "confidence": 53,
+  "rationaleHash": "0xa7f8ed1c76c3404e2477af70314b52a02b6b9b804f0e0c15d1c08bc233e0fbef",
+  "salt": "0x000533761040a006b3b9645ef15bbf045e50f0b0a03b403710c9cdfc2157f35c",
+  "rationale": "Net read bearish (-0.33). Strongest evidence: momentum -1.00 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless -0.84 (Limitless MNT market unavailable — mock down); mantle-onchain +0.94 (Mantle on-chain momentum up).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
