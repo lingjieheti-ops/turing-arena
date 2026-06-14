@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 118,
+  "confidence": 44,
+  "rationaleHash": "0x8a980b870f2a28fb81a30c51b1092236204968d53c028225c689397d52c1324d",
+  "salt": "0x456fa0d6671ce9b4357bce50b67f29e9be140d6091303ca0be603bb330a2b3a1",
+  "rationale": "Net read bullish (0.20). Strongest evidence: limitless -0.85 (Limitless MNT market unavailable — mock down); mantle-onchain +0.94 (Mantle on-chain momentum up); momentum -0.31 (MNT/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
