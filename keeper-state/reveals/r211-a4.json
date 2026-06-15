@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 97,
+  "confidence": 41,
+  "rationaleHash": "0x849114d02c35f87a7076a553b1f2b33eef8e34dabf228eeefe74f09d45537d8e",
+  "salt": "0xcb5746a5f08f4c1d7687c637abab1a58ea4a1d7fe979232ffdc2c28bb3967f19",
+  "rationale": "Net read bullish (0.16). Strongest evidence: momentum +0.59 (mETH/USD up-momentum since the last tick (Pyth, live)); allora -0.81 (Allora ML forecast leans short); limitless +0.40 (Limitless (Base) ETH 70% up / 30% down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

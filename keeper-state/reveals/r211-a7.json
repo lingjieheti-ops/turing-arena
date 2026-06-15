@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 129,
+  "confidence": 45,
+  "rationaleHash": "0xe7512b7c64a7098ecf3978b60e295376fed5abbbc23c89e2cdbd80afdbb2eec6",
+  "salt": "0x341556bc327e64ee8cdfbb9cd4406fbe30cbd5f947a2e41b718b099cc7458036",
+  "rationale": "Net read bullish (0.22). Strongest evidence: momentum +0.59 (mETH/USD up-momentum (Pyth, live)); allora -0.81 (Allora ML forecast leans short); limitless -0.52 (Limitless (Base) ETH 24% up / 76% down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
