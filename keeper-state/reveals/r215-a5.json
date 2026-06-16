@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -262,
+  "confidence": 61,
+  "rationaleHash": "0x75679f9534214c699e07bb2e74e1c7d9b1867c2d8290df93c44f9568c6c6d8b7",
+  "salt": "0xfce75b355ebdf6cd9337f53d011a3c936227c1979fd2f519b1ec1676b6b50461",
+  "rationale": "Net read bearish (-0.44). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); limitless +0.44 (No Limitless market for CS2-PLAYERS — mock up); allora +0.21 (Allora ML forecast leans long).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
