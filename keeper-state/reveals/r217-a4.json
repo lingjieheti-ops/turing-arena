@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -442,
+  "confidence": 82,
+  "rationaleHash": "0x55eb70ea569ef079d8c7e49a0cfacfc4bee8ffbcb9f88bb7561481d1dd1364f7",
+  "salt": "0x1eb178c39ee5f03455eb853dfa6fce31ba27f8182a7be79c50e9e7731288d3f3",
+  "rationale": "Net read bearish (-0.74). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); limitless -0.91 (No Limitless market for BTC-MEMPOOL — mock down); mantle-onchain +0.96 (Mantle on-chain momentum up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
