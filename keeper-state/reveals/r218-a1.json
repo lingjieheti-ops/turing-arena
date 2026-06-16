@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 6,
+  "confidence": 31,
+  "rationaleHash": "0xf74bce69199cf2b50915109fc1f97f3c2228b54d2738f8a9485b72390d779711",
+  "salt": "0x7c9afd423092aafb29dd520265844b54eb7c5e5655dfb99e44fcfeaaaf06b67a",
+  "rationale": "Net read neutral (0.01). Strongest evidence: momentum +0.41 (mETH/USD up-momentum since the last tick (Pyth, live)); allora -0.75 (Allora ML forecast leans short); elfa -0.77 (KOL mindshare cooling).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

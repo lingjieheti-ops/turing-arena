@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 12,
+  "confidence": 31,
+  "rationaleHash": "0x4584d4c114865fe3fe6b7193d9e3fa57532b83d7908c3114d02a8d8096ca5d1f",
+  "salt": "0xa2b249e2f39a5353054cdb9887aaa6fe2afc74dbfcf2fb02a8d0271d0bd249a2",
+  "rationale": "Net read neutral (0.02). Strongest evidence: momentum +0.41 (mETH/USD up-momentum since the last tick (Pyth, live)); allora -0.75 (Allora ML forecast leans short); elfa -0.77 (KOL mindshare cooling).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
