@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -252,
+  "confidence": 59,
+  "rationaleHash": "0x18e94d1779d6bd949dc18bf4118beae8527918762e0abc2a3992f1480af8e440",
+  "salt": "0x806016618d1498ec321a0f9680111c808bfd6e4ed52b968bf2f135a4f96f8128",
+  "rationale": "Net read bearish (-0.42). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); nansen +0.74 (Smart money net inflow); elfa -0.95 (KOL mindshare cooling).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
