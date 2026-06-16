@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -42,
+  "confidence": 35,
+  "rationaleHash": "0x46f951b18bcd00ec095950d7e4e59f176682080d58f4c42c95c396ef8cbd9e1c",
+  "salt": "0x3e1ae6a717c6736103abf8e06b2d10744ce08312c2b35a97c069dfca7cb5cf4a",
+  "rationale": "Net read bearish (-0.07). Strongest evidence: momentum -0.59 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless -0.86 (Limitless MNT market unavailable — mock down); elfa +0.90 (KOL mindshare heating up).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

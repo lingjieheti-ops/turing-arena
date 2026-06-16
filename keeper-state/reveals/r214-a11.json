@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 264,
+  "confidence": 61,
+  "rationaleHash": "0x3ff5da857c650d3ce60d060f516dbfd885feddb8989e3d75348e61ecfc40d21f",
+  "salt": "0x2376100cef3120fb83a397da7edf01d32c5771a24892a9cba5ccf5d9afa2fc9c",
+  "rationale": "Net read bullish (0.44). Strongest evidence: momentum -0.59 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless -0.86 (Limitless MNT market unavailable — mock down); elfa +0.90 (KOL mindshare heating up).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

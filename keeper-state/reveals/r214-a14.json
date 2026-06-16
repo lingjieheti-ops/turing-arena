@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 19,
+  "confidence": 32,
+  "rationaleHash": "0x713eaa76681d0f6be0c1aa8280690c99c21bfcc8b1b1bb17e7e5e27d1dce587d",
+  "salt": "0x26896fb0adf653f5241d52e24a5f00608d621a7f06a192baac17ab98cf96e751",
+  "rationale": "Net read neutral (0.03). Strongest evidence: momentum -0.59 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless -0.86 (Limitless MNT market unavailable — mock down); elfa +0.90 (KOL mindshare heating up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
