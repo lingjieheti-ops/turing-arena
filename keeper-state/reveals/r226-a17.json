@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -185,
+  "confidence": 52,
+  "rationaleHash": "0x770f418d83a7894f7fd1577681e90958b487d7f29c99e465cbb88d2898814d30",
+  "salt": "0x0e15c0fc7d35675e3df8a764b69e47ab3e1b0db9a54d936dcbdd1387ad9dacff",
+  "rationale": "Net read bearish (-0.31). Strongest evidence: momentum -0.92 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.37 (Allora ML forecast leans short); mantle-onchain -0.48 (Mantle on-chain momentum down).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
