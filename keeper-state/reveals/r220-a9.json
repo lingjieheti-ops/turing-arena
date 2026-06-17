@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 241,
+  "confidence": 58,
+  "rationaleHash": "0xddc9da424afc3d75e51c9132a6230573166c55d8c6f5dc8b0a04422341a6adbb",
+  "salt": "0x501925243943f3402b9f90f2e901c3419860b04a47b11d0d3e3ba4eb3baa25da",
+  "rationale": "Net read bullish (0.40). Strongest evidence: momentum -0.37 (SOL/USD down-momentum since the last tick (Pyth, live)); nansen -0.56 (Smart money net outflow); mantle-onchain -0.54 (Mantle on-chain momentum down).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
