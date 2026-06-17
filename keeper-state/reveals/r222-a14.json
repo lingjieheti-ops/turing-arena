@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 285,
+  "confidence": 63,
+  "rationaleHash": "0xc7ce2023f3ef28a19abc8c1046f6d02a791fd671f56366d672f173b71467f9c0",
+  "salt": "0x03f5e8c0f1deb28a7fab9d8a77f14ff0a712f50ea2683f34ba75f678ce0192dd",
+  "rationale": "Net read bullish (0.48). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora -0.92 (Allora ML forecast leans short); limitless -0.74 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
