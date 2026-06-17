@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 19,
+  "confidence": 32,
+  "rationaleHash": "0x3c51684faebcc3995ade8655cfa889e5a0e6249120c183475d9a68ffb2c7eff5",
+  "salt": "0x740a6007c7f0c606a0a88a638492417969d6000a3925950e880cb0b1dbfbb5da",
+  "rationale": "Net read neutral (0.03). Strongest evidence: limitless +0.68 (Limitless (Base) SOL 84% up / 16% down); nansen -0.62 (Smart money net outflow); mantle-onchain -0.55 (Mantle on-chain momentum down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

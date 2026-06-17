@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -232,
+  "confidence": 57,
+  "rationaleHash": "0x33c3c891a093adc9d3dd54f7b2b2f11675f0c5722d389e4228275f0fb3a80647",
+  "salt": "0x6188a1e1ce1c720023df9a4d3d5ec36095620a5116eb2fd5d3d0de05da22b5a3",
+  "rationale": "Net read bearish (-0.39). Strongest evidence: limitless +0.68 (Limitless (Base) SOL 84% up / 16% down); nansen -0.62 (Smart money net outflow); mantle-onchain -0.55 (Mantle on-chain momentum down).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 227,
+  "confidence": 56,
+  "rationaleHash": "0x23ed3b3d7e9b88b6ab5b5c396fd5df82eb64ce4ba0b509c6923ebdbfcb7adb88",
+  "salt": "0x845de613c41a602bb4daec2f45d8fd9c069431c1e5f0800b6e7c91bc14fe7ef4",
+  "rationale": "Net read bullish (0.38). Strongest evidence: limitless +0.68 (Limitless (Base) SOL 84% up / 16% down); nansen -0.62 (Smart money net outflow); mantle-onchain -0.55 (Mantle on-chain momentum down).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

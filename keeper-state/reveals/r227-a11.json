@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 295,
+  "confidence": 64,
+  "rationaleHash": "0x358a1a62339bc85a2cac6d06da734c012479073456f7aaafb2663f17a1350d5a",
+  "salt": "0xf4fca1e5fb826bc1485ab4fc88309a82d6b70227ae9fdb1fea423d411015f967",
+  "rationale": "Net read bullish (0.49). Strongest evidence: limitless +0.68 (Limitless (Base) SOL 84% up / 16% down); nansen -0.62 (Smart money net outflow); mantle-onchain -0.55 (Mantle on-chain momentum down).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

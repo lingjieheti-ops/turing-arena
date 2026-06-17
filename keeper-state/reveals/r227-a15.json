@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 121,
+  "confidence": 44,
+  "rationaleHash": "0x283468ccee74188e8f18b69a7005b06a04f624c5e330163f04d9a3eae9ced17c",
+  "salt": "0x1312a9b1e1261884a80844aa6e7a5af29ed9636d1a4c4d8a2868fdabe79f5fda",
+  "rationale": "Net read bullish (0.20). Strongest evidence: limitless +0.68 (Limitless (Base) SOL 84% up / 16% down); nansen -0.62 (Smart money net outflow); mantle-onchain -0.55 (Mantle on-chain momentum down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
