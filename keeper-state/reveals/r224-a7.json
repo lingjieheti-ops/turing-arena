@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 305,
+  "confidence": 66,
+  "rationaleHash": "0xbec514392e5947d41114345d07efbb72802d12a5cf28703c4b39caf7abff5b92",
+  "salt": "0x191f043c9688ff636167c403bd8104924b8742d212e4a338222837e21280c1fb",
+  "rationale": "Net read bullish (0.51). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum (Pyth, live)); mantle-onchain +0.81 (Mantle on-chain momentum up); allora +0.45 (Allora ML forecast leans long).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
