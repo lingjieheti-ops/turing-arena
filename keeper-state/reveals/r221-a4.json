@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 196,
+  "confidence": 53,
+  "rationaleHash": "0xf614c3fc15c8bdfd36dfcd683f44bacdf78801df63ff907b2dbe355053eade6e",
+  "salt": "0x4d1449e95dbcbbdd545ac45d81898e7e58fb86e00da6c4959f0289dcdd78d994",
+  "rationale": "Net read bullish (0.33). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.86 (Smart money net inflow); mantle-onchain -0.98 (Mantle on-chain momentum down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
