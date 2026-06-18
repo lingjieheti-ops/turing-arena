@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 308,
+  "confidence": 66,
+  "rationaleHash": "0xd1be5713e9a5e2b3b31c1198126d74a53e5732b3e502bb61cd32c45c7802aa4e",
+  "salt": "0x143aeb2141b1fee5db320646b5dd681aa0ff972064624bfc3ff0129c6bcdfd18",
+  "rationale": "Net read bullish (0.51). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora -0.88 (Allora ML forecast leans short); limitless -0.66 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
