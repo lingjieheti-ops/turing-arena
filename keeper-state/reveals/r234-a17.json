@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -218,
+  "confidence": 55,
+  "rationaleHash": "0x37d8a89d4bfe4f3c78f08ed113a8b1db1f1735e22655da744d7d9bd735a16441",
+  "salt": "0x0ebb5d21431093e04c6b24c29ae79b48eabcaa32c3284ed9374a66446523e3dc",
+  "rationale": "Net read bearish (-0.36). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

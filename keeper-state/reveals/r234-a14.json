@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 114,
+  "confidence": 43,
+  "rationaleHash": "0x7835cde29729e59a0e784a23555d349ee8324e8b1499e45e94c3be146dd8fc7d",
+  "salt": "0x535efa300c5c1ed99e2e6591296878dbc6c966f6cc9c71347a8ab8063a5e1410",
+  "rationale": "Net read bullish (0.19). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

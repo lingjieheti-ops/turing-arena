@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 192,
+  "confidence": 52,
+  "rationaleHash": "0xb4e7ed8ac3780bf43928be35a2393673560f09b7daf91ec5d256ef428c9b6759",
+  "salt": "0x4536c1d49f20c0e79ab301d5af402f9032e4dfd65293983ad6970ce203ffb0d1",
+  "rationale": "Net read bullish (0.32). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

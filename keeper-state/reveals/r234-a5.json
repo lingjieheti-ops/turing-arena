@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 81,
+  "confidence": 39,
+  "rationaleHash": "0x211d0c2e865611c838e5560bb852932a3f8d4bbd21c07f731714a88287d15657",
+  "salt": "0x43e79c329887d27d410d02bf519b292ac21f6f0e55380c253944c6b0ab2861af",
+  "rationale": "Net read bullish (0.13). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 248,
+  "confidence": 59,
+  "rationaleHash": "0x5a58ca56884cb62ec031e68c33ba557aba72c4c3a43cde475289dcd48bd6fa2d",
+  "salt": "0xecd3ce8c30acf6b055fe90d87c03877c031d1e0ad33d4c3b25f04afcc68ac3ea",
+  "rationale": "Net read bullish (0.41). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 285,
+  "confidence": 63,
+  "rationaleHash": "0xe35b0e6845d18c9b10a5edd0b090663181b5b24dc5de45910f5a361de1862f1a",
+  "salt": "0x81414f7453d1f77fbdcafcf33b2c032f27512d839409122169672ab29b7e408e",
+  "rationale": "Net read bullish (0.48). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -73,
+  "confidence": 39,
+  "rationaleHash": "0xf82303f1f26c5462f0f45b4eacc6664ec5e1b172ccb3229aeaa4f6f9636703e6",
+  "salt": "0xc04fb72bb15e676eeeafce05d84ad79a313b147e047cfe172128b65b513653f7",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

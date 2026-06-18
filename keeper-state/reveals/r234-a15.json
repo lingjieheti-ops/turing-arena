@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 69,
+  "confidence": 38,
+  "rationaleHash": "0x20e2b3ce3006a20954082008760baf744de694aeed2ad4e2db664014f292569f",
+  "salt": "0x72b6e013ec8dc0ae7b4751589fde23aa7bef8733ae3090d0d0b5a5b00e9eeff4",
+  "rationale": "Net read bullish (0.12). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

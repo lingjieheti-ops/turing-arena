@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -22,
+  "confidence": 33,
+  "rationaleHash": "0xc05487f5c643739e2506011fd092aece963f85b3f7dfa49caf0ce0d7fce2fb82",
+  "salt": "0xd7470ad4fce94c549c6e4c08f729c2f1c416db4462dad9169ee52546cd800957",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

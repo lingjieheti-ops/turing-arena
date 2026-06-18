@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -124,
+  "confidence": 45,
+  "rationaleHash": "0x270a63697b95a5e6dbdf6647e0b71c986269accc5123673f7a1b889f6a6ab3ed",
+  "salt": "0x3710c87e4a81be1d3857003adbd0524b34844c74d80847948885f71644990e82",
+  "rationale": "Net read bearish (-0.21). Strongest evidence: nansen -0.64 (Smart money net outflow); mantle-onchain -0.53 (Mantle on-chain momentum down); surf -0.96 (Market momentum negative).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
