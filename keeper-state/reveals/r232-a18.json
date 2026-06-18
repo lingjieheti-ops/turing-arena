@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -37,
+  "confidence": 34,
+  "rationaleHash": "0x6be3208949fc43830159e3b80b4eea7c890620df34c83e3edf0b9f85cb0f943d",
+  "salt": "0x4c52712b0c435f51dcc2ca050c4f6efaa9f6b1cf26a22fcf937bb1e4571a5917",
+  "rationale": "Net read bearish (-0.06). Strongest evidence: momentum -1.00 (mETH/USD down-momentum since the last tick (Pyth, live)); elfa -0.84 (KOL mindshare cooling); limitless +0.32 (Limitless (Base) ETH 66% up / 34% down).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 14,
+  "confidence": 32,
+  "rationaleHash": "0x9ffaf54cf96c047b9e81ecd528bd310ba67c295be2af805da057f80e9779a3eb",
+  "salt": "0x56bfacee9341d175630b53cd0c50ec727a95ed84cb7543efba639628f3588639",
+  "rationale": "Net read neutral (0.02). Strongest evidence: momentum -1.00 (mETH/USD down-momentum since the last tick (Pyth, live)); elfa -0.84 (KOL mindshare cooling); limitless +0.32 (Limitless (Base) ETH 66% up / 34% down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
