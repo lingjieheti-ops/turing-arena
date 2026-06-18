@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 63,
+  "confidence": 37,
+  "rationaleHash": "0x23c7ffafc730fb3ea797fe46c2daf5b46b6ed2e1cc90aa370eac935aa6ab365f",
+  "salt": "0xe3f9ae1447001432dfa238e4b529d887f9da927e600839ec09aace13c7620bb7",
+  "rationale": "Net read bullish (0.11). Strongest evidence: momentum +0.49 (BTC/USD up-momentum since the last tick (Pyth, live)); limitless +0.84 (Limitless (Base) BTC 92% up / 8% down); nansen -0.80 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
