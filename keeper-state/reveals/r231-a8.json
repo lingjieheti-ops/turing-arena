@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -11,
+  "confidence": 31,
+  "rationaleHash": "0xff902cda4c2e09f4bfc8382ee23c6a042a0c2599cc564a39703a471518f4ca02",
+  "salt": "0x4c63d395bd52e37c587b0723945980efd84947e022308ba565a4994211ff93a9",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); mantle-onchain +0.88 (Mantle on-chain momentum up); elfa -0.76 (KOL mindshare cooling).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

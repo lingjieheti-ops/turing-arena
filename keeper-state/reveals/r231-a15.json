@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 76,
+  "confidence": 39,
+  "rationaleHash": "0x9b846f94ef7583d35a91a9a5e40f16cd8f218278279a908d7615916dea5e15d0",
+  "salt": "0x78f1de7c81cd25d7c8c582234fcc18073a11b564530cf73451ebe1519d0822d7",
+  "rationale": "Net read bullish (0.13). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); mantle-onchain +0.88 (Mantle on-chain momentum up); elfa -0.76 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

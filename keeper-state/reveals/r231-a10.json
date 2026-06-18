@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 206,
+  "confidence": 54,
+  "rationaleHash": "0xfcf3ce551611b89d9f0fd4e4d00f634eade114c6326e2d7356ed30d5c5349886",
+  "salt": "0x2db9f528cdc4881fb22c8780b94d58a0276cd9444a5b09c2d2746cb9b9660a5a",
+  "rationale": "Net read bullish (0.34). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); mantle-onchain +0.88 (Mantle on-chain momentum up); elfa -0.76 (KOL mindshare cooling).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -20,
+  "confidence": 32,
+  "rationaleHash": "0xd964552a3b8f3c48cd4497f1c6164b231b80a69dcf08653e6a7f0ee3acbf0101",
+  "salt": "0x28263c5fe149835210958001eefb816fc495d6012bc158857aad3be981a55d5c",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); mantle-onchain +0.88 (Mantle on-chain momentum up); elfa -0.76 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
