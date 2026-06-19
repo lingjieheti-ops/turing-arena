@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 262,
+  "confidence": 61,
+  "rationaleHash": "0x252588d0c2958dc101489afa8d942cf4cbcd89967f26eb0c3c2ad8f544496d98",
+  "salt": "0xa3b497c7797e8f80ae78100dcc2bdb9e4655c747604bcd6a309f613ebe9d2072",
+  "rationale": "Net read bullish (0.44). Strongest evidence: momentum +1.00 (mETH/USD up-momentum since the last tick (Pyth, live)); limitless -0.54 (Limitless (Base) ETH 23% up / 77% down); elfa -0.80 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

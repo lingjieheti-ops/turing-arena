@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 319,
+  "confidence": 67,
+  "rationaleHash": "0xa5715e7152b3688c83a56e95fc8e6eb3f04d3bfc16b8162c48d1c1f48130bb0a",
+  "salt": "0x2dea2181d492f96073c515f5420a93604292457e31f9c61d17f24aa0478ada4c",
+  "rationale": "Net read bullish (0.53). Strongest evidence: momentum +1.00 (mETH/USD up-momentum since the last tick (Pyth, live)); limitless -0.54 (Limitless (Base) ETH 23% up / 77% down); elfa -0.80 (KOL mindshare cooling).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

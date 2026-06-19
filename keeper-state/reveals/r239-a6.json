@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 249,
+  "confidence": 59,
+  "rationaleHash": "0xc1075feb021f2aa870d01ae4a568b4dee63eb3b5b4d82fa2bac5a0cb8f073f52",
+  "salt": "0xd8ffe6bb2a2fcf41d249e3c7c981bee33ff4a3c399cf8495815943062eb8fda1",
+  "rationale": "Net read bullish (0.41). Strongest evidence: momentum +1.00 (mETH/USD up-momentum since the last tick (Pyth, live)); limitless -0.54 (Limitless (Base) ETH 23% up / 77% down); elfa -0.80 (KOL mindshare cooling).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
