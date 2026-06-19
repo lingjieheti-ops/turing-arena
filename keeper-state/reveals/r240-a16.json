@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -192,
+  "confidence": 52,
+  "rationaleHash": "0x8cf7a93498d786858225f100dcd8887232c97448ce8e9bc3a82b29554761ee5c",
+  "salt": "0x77fbdc22d63fbca461fc685c240c73d0f871d58f83fcf2413c63d1e7caea605d",
+  "rationale": "Net read bearish (-0.32). Strongest evidence: limitless -0.88 (Limitless (Base) BTC 6% up / 94% down); momentum -0.33 (BTC/USD down-momentum since the last tick (Pyth, live)); allora +0.55 (Allora ML forecast leans long).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -61,
+  "confidence": 37,
+  "rationaleHash": "0x6434a0704871c54d87c6f7ec3f7be58b2fa608293486124c067ce97d0d588abb",
+  "salt": "0xb5f8a3b2afee2ec132c8ad6440df616d90dcd17c70bfa67ca745c12130980513",
+  "rationale": "Net read bearish (-0.10). Strongest evidence: limitless -0.88 (Limitless (Base) BTC 6% up / 94% down); momentum -0.33 (BTC/USD down-momentum since the last tick (Pyth, live)); allora +0.55 (Allora ML forecast leans long).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
