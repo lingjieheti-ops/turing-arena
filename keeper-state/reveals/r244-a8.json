@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -57,
+  "confidence": 37,
+  "rationaleHash": "0x43c4cf2886c3376ab230eb39aee931aa2f09871b228ae5e67a9fa2d9a742c45e",
+  "salt": "0x125f86798c750cab5516cfa0927b06498a294ac362bcc919fe67b113aa11a664",
+  "rationale": "Net read bearish (-0.10). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); limitless +0.86 (No Limitless market for ETHGAS-GWEI — mock up); elfa -0.85 (KOL mindshare cooling).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
