@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 397,
+  "confidence": 76,
+  "rationaleHash": "0x58652ef7ee895647b59ab3613abbc4409e8784dabb0c552f438ff8c840d49bbf",
+  "salt": "0x4f16ff58b7c71c004822c663e00940a56af39f3bbd608cb745aa9f70d2cf71f5",
+  "rationale": "Net read bullish (0.66). Strongest evidence: momentum +0.53 (MNT/USD up-momentum since the last tick (Pyth, live)); limitless -0.83 (Limitless MNT market unavailable — mock down); nansen +0.86 (Smart money net inflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
