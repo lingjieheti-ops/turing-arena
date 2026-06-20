@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -14,
+  "confidence": 32,
+  "rationaleHash": "0x2e1e4fe3acb5ebfb2eda197ec68c49ffc5403085b0012b3ed5281e580a0fa6f3",
+  "salt": "0xb6e41f93935c1c358bf300be6aff5b97dd76a8ecc846f60943caee6a702217b6",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: nansen -0.68 (Smart money net outflow); allora +0.24 (Allora ML forecast leans long); elfa +0.21 (KOL mindshare heating up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
