@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 233,
+  "confidence": 57,
+  "rationaleHash": "0x4bab0723ba3f7d6438a997bac305567dad41c22dc94fb05e6142abb99225d640",
+  "salt": "0xade24e96eb2d2c1d0961359e4a3c8a6b8be49872a6a074c6d0031b109e1e618e",
+  "rationale": "Net read bullish (0.39). Strongest evidence: momentum +1.00 (SOL/USD up-momentum (Pyth, live)); limitless -0.58 (Limitless (Base) SOL 21% up / 79% down); nansen +0.52 (Smart money net inflow).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

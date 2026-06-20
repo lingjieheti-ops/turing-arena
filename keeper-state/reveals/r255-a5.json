@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -156,
+  "confidence": 48,
+  "rationaleHash": "0xc03c71fad16633d4623df13e90c477b734f7448fb43318c7745fb4fd13a99995",
+  "salt": "0x3b8c224c1a3694ce39d8de5caa59fa2ef59b0cf0387e758a691fb8a9264cbd2d",
+  "rationale": "Net read bearish (-0.26). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); limitless -0.81 (Limitless (Base) SOL 10% up / 90% down); nansen +0.52 (Smart money net inflow).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

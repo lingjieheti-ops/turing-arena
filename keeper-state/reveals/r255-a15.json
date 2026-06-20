@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 306,
+  "confidence": 66,
+  "rationaleHash": "0x521f9d829ad0a6c65c9b27a9080240a6e1fffe7f63171adb3e491488e6837eed",
+  "salt": "0x54a2ebf452bde23eb1fff392b5db2eeff0b4f1169b696befa0f8c84b5f0ceb8e",
+  "rationale": "Net read bullish (0.51). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); limitless -0.81 (Limitless (Base) SOL 10% up / 90% down); nansen +0.52 (Smart money net inflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
