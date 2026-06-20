@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 365,
+  "confidence": 73,
+  "rationaleHash": "0x3df92909fbde562f752609056d1e2264d7df13873599fc500f1bc80ae4fb78c8",
+  "salt": "0x1cd482d8a96a21f995eb73b7761610d31bb5d17287149cf555741a05be8b02b0",
+  "rationale": "Net read bullish (0.61). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.41 (Allora ML forecast leans long); nansen +0.38 (Smart money net inflow).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

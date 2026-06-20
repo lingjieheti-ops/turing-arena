@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 345,
+  "confidence": 70,
+  "rationaleHash": "0x00292193ed5d3f794fa2bb66768638e0225d67163af0eb8b719f53d9950cd32d",
+  "salt": "0xe9ca9b35e691e518fb904c95f0bd676ce0c0fdc617254c372557120658ee33ca",
+  "rationale": "Net read bullish (0.58). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.41 (Allora ML forecast leans long); nansen +0.38 (Smart money net inflow).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
