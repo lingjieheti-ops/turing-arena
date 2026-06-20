@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 23,
+  "confidence": 33,
+  "rationaleHash": "0x426a48b30ded4fb13edb7add1b46734217649a6fe8afc6507bbfe5396555a0df",
+  "salt": "0x6d2b30ba2c744515e2cd0e507276fafe00d4cfb84852ab0f626fb7c20282caf5",
+  "rationale": "Net read neutral (0.04). Strongest evidence: nansen +0.89 (Smart money net inflow); mantle-onchain -0.94 (Mantle on-chain momentum down); allora +0.62 (Allora ML forecast leans long).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

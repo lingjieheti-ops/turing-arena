@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 13,
+  "confidence": 32,
+  "rationaleHash": "0x548b15ac76ce2da2083a99c9847f032ff37ffc17866dfb5518a833816598e300",
+  "salt": "0x1ca21b9b0995d53b7f7f5b9c8c6c74d54c06e4e06b69b030f80c632bda84e56e",
+  "rationale": "Net read neutral (0.02). Strongest evidence: nansen +0.89 (Smart money net inflow); mantle-onchain -0.94 (Mantle on-chain momentum down); allora +0.62 (Allora ML forecast leans long).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
