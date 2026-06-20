@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 293,
+  "confidence": 64,
+  "rationaleHash": "0xce35ebfd4b307a05bd64d092a91445aa637abaa0e0160265ea33e7dc46fbcd79",
+  "salt": "0xe6c987330c214b69c5e822d18f5cb5ed9cdaa5491716cc52a8d4455b222ea2ec",
+  "rationale": "Net read bullish (0.49). Strongest evidence: allora +0.63 (Allora ML forecast leans long); mantle-onchain +0.64 (Mantle on-chain momentum up); limitless +0.27 (Limitless (Base) BTC 64% up / 36% down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

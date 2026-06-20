@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 39,
+  "confidence": 35,
+  "rationaleHash": "0x0b83effbb84955ef11cb84b23d511ad8e1cbe5a0866aaefdcdffbb72f989456e",
+  "salt": "0xf74c6663afd6181e87a76d23b41cce1b5b69ed3b5af07f823056165a34b2de53",
+  "rationale": "Net read bullish (0.07). Strongest evidence: allora +0.63 (Allora ML forecast leans long); mantle-onchain +0.64 (Mantle on-chain momentum up); limitless +0.27 (Limitless (Base) BTC 64% up / 36% down).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

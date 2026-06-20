@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 130,
+  "confidence": 45,
+  "rationaleHash": "0x3cadd17c8e12d1e631772f38bfefbf8796bccb74c3253f470f5fe18f5b783e07",
+  "salt": "0x02ab29153370168174bbdc4c13f23b1a7f652d99464bc065e4abf69da7342d49",
+  "rationale": "Net read bullish (0.22). Strongest evidence: allora +0.63 (Allora ML forecast leans long); mantle-onchain +0.64 (Mantle on-chain momentum up); limitless +0.27 (Limitless (Base) BTC 64% up / 36% down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
