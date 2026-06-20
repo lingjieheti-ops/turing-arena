@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 319,
+  "confidence": 67,
+  "rationaleHash": "0xccae285065aa74c8a91f5ef2c5ddf6d5891c7242abae60386ecbb63ce8d1a2a5",
+  "salt": "0xa3992824e0e48d0a1e3c74155e4b12f841b3e3a43ac92275b03d9ac8f150f39d",
+  "rationale": "Net read bullish (0.53). Strongest evidence: momentum +0.92 (BTC/USD up-momentum since the last tick (Pyth, live)); limitless -0.63 (Limitless (Base) BTC 19% up / 81% down); allora +0.51 (Allora ML forecast leans long).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

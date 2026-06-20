@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 48,
+  "confidence": 36,
+  "rationaleHash": "0x1983c5eff1c288b70ad173f7dc5e90b3670a418d9f6dff355eec1395d0b75ab6",
+  "salt": "0xd1d19d012078d3893ec7030da873bb1ffc0aa2c7a2649464647973d53dc391ef",
+  "rationale": "Net read bullish (0.08). Strongest evidence: momentum +0.92 (BTC/USD up-momentum since the last tick (Pyth, live)); limitless -0.63 (Limitless (Base) BTC 19% up / 81% down); allora +0.51 (Allora ML forecast leans long).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
