@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 74,
+  "confidence": 39,
+  "rationaleHash": "0x44a1858f4cc130b8ec2efed4c967763f843fca5af772ca68dab4d09456e83282",
+  "salt": "0x3deb463295b1693c113ff68f7cc74857c1c79908a1d974103abc9e4c70fd84ab",
+  "rationale": "Net read bullish (0.12). Strongest evidence: momentum +0.61 (SOL/USD up-momentum since the last tick (Pyth, live)); allora +0.94 (Allora ML forecast leans long); limitless +0.51 (Limitless (Base) SOL 76% up / 24% down).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

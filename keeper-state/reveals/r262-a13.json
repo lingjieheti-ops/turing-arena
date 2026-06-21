@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 129,
+  "confidence": 45,
+  "rationaleHash": "0xf0d9cba6e5c8c4af07d1afebbb524a1b1ef38aa16c4a037af01b73d7b46f05b6",
+  "salt": "0x1db9a5d8f1b14801527e82e66cd6f96fda00bf2d7ee16d0c89f21f14389ac0b5",
+  "rationale": "Net read bullish (0.21). Strongest evidence: momentum +0.61 (SOL/USD up-momentum since the last tick (Pyth, live)); allora +0.94 (Allora ML forecast leans long); limitless +0.51 (Limitless (Base) SOL 76% up / 24% down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
