@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 304,
+  "confidence": 65,
+  "rationaleHash": "0x72fa3f18a1be125ab40982371cc92d869e231be638970e970d268518fe02c6f3",
+  "salt": "0x63544626938b2d722700b11e7230b682ed1256e35631344a43b7caa825c44596",
+  "rationale": "Net read bullish (0.51). Strongest evidence: momentum +0.95 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless -1.00 (No Limitless market for ETHGAS-GWEI — mock down); allora -0.65 (Allora ML forecast leans short).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
