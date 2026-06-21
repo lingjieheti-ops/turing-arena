@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 166,
+  "confidence": 49,
+  "rationaleHash": "0x8c2c74b2aa02776247d78627e72e6350de1734adab0a931d7c7e64a585129c76",
+  "salt": "0x5d307da5d4f65b4586acf03909a0e8618a3d74569003ebcf9ee2e79de4d4c4e8",
+  "rationale": "Net read bullish (0.28). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); nansen -0.49 (Smart money net outflow); allora +0.34 (Allora ML forecast leans long).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

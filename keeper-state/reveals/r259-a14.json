@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 329,
+  "confidence": 68,
+  "rationaleHash": "0xdb651539390c0f8df21fe2955e7a5ceb4f6106430418130589af3df7a33e8d24",
+  "salt": "0xe6550952a155ae3303de988cbfd621b44dc07609a926a0a7fd9fbf4944e85e6c",
+  "rationale": "Net read bullish (0.55). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); nansen -0.49 (Smart money net outflow); allora +0.34 (Allora ML forecast leans long).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

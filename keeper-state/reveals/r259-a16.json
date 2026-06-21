@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 316,
+  "confidence": 67,
+  "rationaleHash": "0xaec3037fb03b0cc6cd04e241db4258c3ef19a6c69abc876288917798d399144c",
+  "salt": "0x6af9043f9fcc39d1a81ad2a0fdcefc99a56c8b4b71a62b32d5be168b519cbac1",
+  "rationale": "Net read bullish (0.53). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); nansen -0.49 (Smart money net outflow); allora +0.34 (Allora ML forecast leans long).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
