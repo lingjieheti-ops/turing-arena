@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 203,
+  "confidence": 54,
+  "rationaleHash": "0xfc6365577b6540ab486ceea9a933077ead20ee5a627102ab6e4ebc8db178e967",
+  "salt": "0xab3c9867b52aecbef83c16ac8a47f65c62d10ed2e9bda48f33a210e114410e82",
+  "rationale": "Net read bullish (0.34). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless -0.70 (No Limitless market for CS2-PLAYERS — mock down); mantle-onchain +0.88 (Mantle on-chain momentum up).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
