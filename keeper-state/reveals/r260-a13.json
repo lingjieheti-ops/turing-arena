@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 27,
+  "confidence": 33,
+  "rationaleHash": "0x283fafb18196ad79a239d55aa984645bd25e183a83145f17ddde3d3359947530",
+  "salt": "0x689718e9f93df212c2ab77c1cbf40ab40d213ac0f139eef95712abd0dacd14b0",
+  "rationale": "Net read neutral (0.05). Strongest evidence: nansen -0.47 (Smart money net outflow); allora +0.20 (Allora ML forecast leans long); limitless -0.17 (Limitless (Base) ETH 41% up / 59% down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -238,
+  "confidence": 58,
+  "rationaleHash": "0x21096e1ef114c58a135048e1f1d9fc577cf19c7455be2b685874592fc67f437c",
+  "salt": "0x2af0594b6e8a79abb03627f398b6673255794c21b3f51b9a2fb43c4efe0e32a8",
+  "rationale": "Net read bearish (-0.40). Strongest evidence: nansen -0.47 (Smart money net outflow); allora +0.20 (Allora ML forecast leans long); limitless -0.17 (Limitless (Base) ETH 41% up / 59% down).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
