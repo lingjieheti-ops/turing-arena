@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 213,
+  "confidence": 55,
+  "rationaleHash": "0x259658b10fe30e9a81d9ce34e4c107d9c4df236ed11d4817e7fda8bb95b447f9",
+  "salt": "0xe5058fa222ba169da3cc1da6b70b6ceaeea6ebee777d184675303d596f702694",
+  "rationale": "Net read bullish (0.36). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless -0.92 (No Limitless market for BTC-MEMPOOL — mock down); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
