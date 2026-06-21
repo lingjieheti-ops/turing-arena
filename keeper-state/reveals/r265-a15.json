@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -185,
+  "confidence": 52,
+  "rationaleHash": "0x5d9e1877e645ded808077f1ea37675a70916abe87dc403551f8c66d540efc118",
+  "salt": "0x8363d3f90c22afbb51d94a13e75b1c7f915c6d75f0bcf1851ab611b8bda6ca17",
+  "rationale": "Net read bearish (-0.31). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); limitless -0.97 (No Limitless market for ETHGAS-GWEI — mock down); allora +0.39 (Allora ML forecast leans long).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

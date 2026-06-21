@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -92,
+  "confidence": 41,
+  "rationaleHash": "0x8c4030b3446ad5f72ef5353b363b91ea0f2d5d14f033afca65b86ef9acfc2c38",
+  "salt": "0x62a6c886f52f9f111c3650766e060f5ce8f139d35b79e6dcf5a4ba8730a20307",
+  "rationale": "Net read bearish (-0.15). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); limitless -0.97 (No Limitless market for ETHGAS-GWEI — mock down); allora +0.39 (Allora ML forecast leans long).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
