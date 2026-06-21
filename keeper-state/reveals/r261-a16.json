@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 410,
+  "confidence": 78,
+  "rationaleHash": "0x8fc3f98569ecadda733a650f622a2af63d5941aac237ecb5d38edb1b6c661046",
+  "salt": "0x1e8c209da58b0f830b2558f0821708aa39d5b7e4cfcc89a25a10e69a5f902d78",
+  "rationale": "Net read bullish (0.68). Strongest evidence: limitless +0.88 (Limitless (Base) BTC 94% up / 6% down); allora +0.47 (Allora ML forecast leans long); mantle-onchain +0.62 (Mantle on-chain momentum up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
