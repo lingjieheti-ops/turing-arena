@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 201,
+  "confidence": 53,
+  "rationaleHash": "0xcd6da833bf687b56fd935002362b7ed0a752292c185516377e33cf009a3d1957",
+  "salt": "0x767e91adfcd17b3152015ecc7a9de0f32dc3638a674bd071f5fe5d35673d7036",
+  "rationale": "Net read bullish (0.34). Strongest evidence: allora +0.89 (Allora ML forecast leans long); limitless -0.61 (Limitless (Base) SOL 20% up / 80% down); momentum -0.18 (SOL/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

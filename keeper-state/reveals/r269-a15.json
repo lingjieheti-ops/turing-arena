@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 111,
+  "confidence": 43,
+  "rationaleHash": "0x76e7ad624d822b4624fcdf22565801881e86cc9677f7c9db1a9b92d9418b287d",
+  "salt": "0x11c2c354e686d9e87da209ad83487fedb80399a8720680f3f11f7f4f05ae70cd",
+  "rationale": "Net read bullish (0.19). Strongest evidence: allora +0.89 (Allora ML forecast leans long); limitless -0.61 (Limitless (Base) SOL 20% up / 80% down); momentum -0.18 (SOL/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

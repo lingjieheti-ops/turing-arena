@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 25,
+  "confidence": 33,
+  "rationaleHash": "0x0cb70b0cef1b68cd05ee762ded1efa2fdd04bda9f0de66699571b05db8eb2f00",
+  "salt": "0x350d211470608a7dd9261b59b3dbefa4fcc0baf07fa4735acb1064fa9df0d534",
+  "rationale": "Net read neutral (0.04). Strongest evidence: allora +0.89 (Allora ML forecast leans long); limitless -0.61 (Limitless (Base) SOL 20% up / 80% down); momentum -0.18 (SOL/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
