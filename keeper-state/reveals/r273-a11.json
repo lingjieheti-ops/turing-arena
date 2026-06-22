@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 285,
+  "confidence": 63,
+  "rationaleHash": "0x1bf03d36989735b11af45b836889ae8bd09c3ceca6ceba20d2da4fd5d54fa741",
+  "salt": "0x2f61b434a349641d1fbb9edd6fd8a771d2639e67fe369acaba733692f5226286",
+  "rationale": "Net read bullish (0.47). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless -0.94 (No Limitless market for BTC-MEMPOOL — mock down); allora -0.67 (Allora ML forecast leans short).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
