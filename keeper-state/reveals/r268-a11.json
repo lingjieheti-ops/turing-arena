@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 358,
+  "confidence": 72,
+  "rationaleHash": "0x9540d12e8b0ff7d03e967b70e70a2a5689bb1b8b8902e5062842f3e30c89bd4c",
+  "salt": "0x60c29e87f6b0af5345990515f30c1a65ac7ca8c3083aa67ced645ebca027128f",
+  "rationale": "Net read bullish (0.60). Strongest evidence: momentum +1.00 (BTC/USD up-momentum since the last tick (Pyth, live)); allora +0.52 (Allora ML forecast leans long); mantle-onchain +0.56 (Mantle on-chain momentum up).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
