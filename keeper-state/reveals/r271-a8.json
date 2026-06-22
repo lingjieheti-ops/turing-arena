@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -134,
+  "confidence": 46,
+  "rationaleHash": "0x5185d4faee07b69675b311339dd40db338a0a78dbdd27b118ef1c7dd29776383",
+  "salt": "0xf935ccbd3bed868785d34ff45f890d1d848b0c2d68ef2e7651ab044b59da3b6c",
+  "rationale": "Net read bearish (-0.22). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless +0.37 (No Limitless market for CS2-PLAYERS — mock up); allora +0.21 (Allora ML forecast leans long).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

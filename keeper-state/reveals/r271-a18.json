@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -45,
+  "confidence": 35,
+  "rationaleHash": "0x454ddb055d39d4a253bbbf1cb7c7824b7a543e60622e8f11ef0d7fc744eef95b",
+  "salt": "0xdc2460f17f57919f9b39008faf4a81f15b8c28ccf14e851cc6f0ddaa5b1c8ec4",
+  "rationale": "Net read bearish (-0.07). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless +0.37 (No Limitless market for CS2-PLAYERS — mock up); allora +0.21 (Allora ML forecast leans long).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
