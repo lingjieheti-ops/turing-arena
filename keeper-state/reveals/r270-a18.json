@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -26,
+  "confidence": 33,
+  "rationaleHash": "0xb50ff008b1da726f0a5d6f6b0e56cc95e1fa51b31566f7fbefa854e189445c87",
+  "salt": "0x8d01546d8fbe59a9267c178f4df6e241c5b40411d2052b5969b8b70ef766efad",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: momentum -0.38 (MNT/USD down-momentum since the last tick (Pyth, live)); surf +0.74 (Market momentum positive); nansen -0.29 (Smart money net outflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

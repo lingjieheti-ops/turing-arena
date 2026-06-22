@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 56,
+  "confidence": 37,
+  "rationaleHash": "0xac0a3fc2077ce8c92f7ed80f045e3b9c60cfb4d999d25f2366879e7954a5368e",
+  "salt": "0x534b89fe210a460940b2f457293b980233423d1f8e6d161c056065d00b9a8e10",
+  "rationale": "Net read bullish (0.09). Strongest evidence: momentum -0.38 (MNT/USD down-momentum since the last tick (Pyth, live)); surf +0.74 (Market momentum positive); nansen -0.29 (Smart money net outflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
