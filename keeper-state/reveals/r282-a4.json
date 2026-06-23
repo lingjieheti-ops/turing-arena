@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -187,
+  "confidence": 52,
+  "rationaleHash": "0xeda92914b3400eeaa9330b86bb28eb6c9be0eb6ab552e5d05420613b057012cb",
+  "salt": "0xce1c8f658fea1e6e5516048788ea6f0a303da9d9986185225871051053c0a893",
+  "rationale": "Net read bearish (-0.31). Strongest evidence: limitless -0.80 (Limitless (Base) BTC 10% up / 90% down); nansen -0.87 (Smart money net outflow); allora +0.60 (Allora ML forecast leans long).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
