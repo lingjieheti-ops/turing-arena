@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 451,
+  "confidence": 83,
+  "rationaleHash": "0x6176285085d59bc9464617e45ea9ef3abdc9b31be1afdcffe24aaf6539d1a019",
+  "salt": "0x4a86cf11b3a7bc654884de87fcdca653f63f230dc00e44bd870b3305891f939f",
+  "rationale": "Net read bullish (0.75). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless +0.97 (No Limitless market for ETHGAS-GWEI — mock up); allora +0.33 (Allora ML forecast leans long).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
