@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -73,
+  "confidence": 39,
+  "rationaleHash": "0x0ef5ebc15f37ee4c200e0aacfd6edf2e6e28bf49a9c71c444c8f57892efef1b5",
+  "salt": "0x9f01826de9e2bfc65bec06386bd4bdcc63bc4ac3897b776ac292c37517b62216",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); allora +0.90 (Allora ML forecast leans long); nansen +0.50 (Smart money net inflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

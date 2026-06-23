@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 25,
+  "confidence": 33,
+  "rationaleHash": "0x01aa5b848cca277cd441cd66b23cbdd76b87eecae4340e5dbf6b15c9a59d16e9",
+  "salt": "0x4a0b46f5efc76d6ad64ba775b9e6ea2e6a9e32ae8fb53835db907f0a27ed575d",
+  "rationale": "Net read neutral (0.04). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); allora +0.90 (Allora ML forecast leans long); nansen +0.50 (Smart money net inflow).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

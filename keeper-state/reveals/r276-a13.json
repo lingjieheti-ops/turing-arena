@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 13,
+  "confidence": 31,
+  "rationaleHash": "0x8ddbd7474aaadf9a2162ccb552be8c010c612aac9c047f835a37df02ace7865e",
+  "salt": "0x11f8a8a64de1eec10d6ef93f9b4281cf41ec08eb4fb276d509d809db9c463833",
+  "rationale": "Net read neutral (0.02). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); allora +0.90 (Allora ML forecast leans long); nansen +0.50 (Smart money net inflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
