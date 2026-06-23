@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 38,
+  "confidence": 34,
+  "rationaleHash": "0x708df1b898b98e4f4f38c7a92e5c4d909659fbba02a0d23b9b68bff54a6243e5",
+  "salt": "0x80ca3460ff0a7bbef93c066059dd21aaba3341bb7d6e4187de8f64826ce77c14",
+  "rationale": "Net read bullish (0.06). Strongest evidence: limitless -0.79 (Limitless (Base) SOL 10% up / 90% down); allora +0.75 (Allora ML forecast leans long); mantle-onchain -0.58 (Mantle on-chain momentum down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
