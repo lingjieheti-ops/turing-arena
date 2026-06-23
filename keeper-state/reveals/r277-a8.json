@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 351,
+  "confidence": 71,
+  "rationaleHash": "0xc6b3555c49ed0df0062d7dae3235afe3cdd8b0a3b75fc3ffc6f48f9eddb64392",
+  "salt": "0x0e5c6811311455ec0ccbb7b5b180a1aca9ff3c68f9ade03b0931ed0afb7ea140",
+  "rationale": "Net read bullish (0.58). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.26 (Allora ML forecast leans short); surf +0.70 (Market momentum positive).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

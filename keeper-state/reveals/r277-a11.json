@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 335,
+  "confidence": 69,
+  "rationaleHash": "0x2af81e7bcd01d535f89140ad5e35c9ad2034d7c06cca08e5f3b794e68cb3154b",
+  "salt": "0x19ffd710f8ddca40da50f3bc5bc7a30bd784d09b2faac0c6d145a4d6d0f094d3",
+  "rationale": "Net read bullish (0.56). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.26 (Allora ML forecast leans short); surf +0.70 (Market momentum positive).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
