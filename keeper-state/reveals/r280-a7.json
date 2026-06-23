@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 197,
+  "confidence": 53,
+  "rationaleHash": "0x0bc4de863b9e09c12996154aaa023505b29d15d097315eee7e137b8c45d1a95a",
+  "salt": "0xe2d1b117477f2ece464ec40c1a6fada507ad0d1adafe46568507fc6f12aa7a50",
+  "rationale": "Net read bullish (0.33). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum (Pyth, live)); limitless -0.81 (No Limitless market for BTC-MEMPOOL — mock down); allora -0.62 (Allora ML forecast leans short).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
