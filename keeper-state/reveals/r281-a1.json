@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 103,
+  "confidence": 42,
+  "rationaleHash": "0x04aa2211b9482475c6e5f82341fad43837f4b8643886254edea5149018a73696",
+  "salt": "0x8e8db8f9c306069d82d4c894295ff274aee9b6c864acfadcd4c34dc680b435ce",
+  "rationale": "Net read bullish (0.17). Strongest evidence: momentum +0.44 (mETH/USD up-momentum since the last tick (Pyth, live)); limitless +0.56 (Limitless (Base) ETH 78% up / 22% down); nansen -0.70 (Smart money net outflow).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
