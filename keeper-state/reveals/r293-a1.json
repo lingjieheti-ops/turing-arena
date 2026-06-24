@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 5,
+  "confidence": 31,
+  "rationaleHash": "0x72f7505ab86e2919d23961b05f14475a8150285eb6f826dcb76926a7bccfec2f",
+  "salt": "0xe10d079b2f9f426d5eacffc30d956a0104e95c5a9623efd7a62d994074fffa80",
+  "rationale": "Net read neutral (0.01). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); limitless +0.85 (No Limitless market for ETHGAS-GWEI — mock up); nansen +0.66 (Smart money net inflow).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
