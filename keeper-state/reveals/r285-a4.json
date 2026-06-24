@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 411,
+  "confidence": 78,
+  "rationaleHash": "0xc75f9e78a4556dde5fc13171b67e6c950fb95cfb29f2d57ad957d63572c618aa",
+  "salt": "0x7a0d576290df000dda760d798b6fe69f43c72c0bfa28854e5d37ed91091df972",
+  "rationale": "Net read bullish (0.68). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); nansen +0.85 (Smart money net inflow); elfa -0.96 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

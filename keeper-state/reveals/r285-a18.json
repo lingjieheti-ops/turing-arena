@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 73,
+  "confidence": 38,
+  "rationaleHash": "0x3e64ffe5d7382c2627a9898f3af3a8b17f4b814867267d1fb7653bac8657435d",
+  "salt": "0x001f297f5f11345e8144616be812648e852b0331c5fa23933e79856338c69947",
+  "rationale": "Net read bullish (0.12). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); nansen +0.85 (Smart money net inflow); elfa -0.96 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

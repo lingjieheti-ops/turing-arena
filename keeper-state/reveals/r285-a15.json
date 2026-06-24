@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 416,
+  "confidence": 79,
+  "rationaleHash": "0x71e051e995c3aa24d2cee761ecb346d325e660b93bd9985dddcd7bd43875c032",
+  "salt": "0xf54b43251dc488fcfe937ba0411169e457522fd7e5ed03cb3b6bb274909de571",
+  "rationale": "Net read bullish (0.69). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); nansen +0.85 (Smart money net inflow); elfa -0.96 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

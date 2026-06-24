@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 242,
+  "confidence": 58,
+  "rationaleHash": "0xf9a671dcdeba50b79a8a8273ce8d65cacca300b408b8bea24453d712b9a85443",
+  "salt": "0x1fde278b3f19a59b20632b01e05460219d7ecc5b6388ec1fc47f4247c6ae6ecd",
+  "rationale": "Net read bullish (0.40). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); nansen +0.85 (Smart money net inflow); elfa -0.96 (KOL mindshare cooling).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 348,
+  "confidence": 71,
+  "rationaleHash": "0x08d65d8e7955a07bce93849d79af79b7f84fd33467c1979608fd1ec00edd2570",
+  "salt": "0x80eb44f636e9461df7d1b7eb5ab51b348c247dfdbab52f778878ca31f41b3bca",
+  "rationale": "Net read bullish (0.58). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); nansen +0.85 (Smart money net inflow); elfa -0.96 (KOL mindshare cooling).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
