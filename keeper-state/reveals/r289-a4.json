@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -177,
+  "confidence": 51,
+  "rationaleHash": "0x354b34c18b2353b1544be473b07dc58531a55f5e2219f9e354e41e91764da326",
+  "salt": "0xd8a3444224e637823118d066300b2982d8b22a60910d1b47d650594cc1758a0f",
+  "rationale": "Net read bearish (-0.29). Strongest evidence: momentum -1.00 (BTC/USD down-momentum since the last tick (Pyth, live)); limitless +0.97 (Limitless (Base) BTC 99% up / 1% down); nansen -0.78 (Smart money net outflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

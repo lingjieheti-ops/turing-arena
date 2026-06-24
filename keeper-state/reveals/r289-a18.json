@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -31,
+  "confidence": 34,
+  "rationaleHash": "0xd7af828968dc4cdd566e9bcc4ebc097623b6614f6139475e3dbf48da30fea3ca",
+  "salt": "0x6154fe6c0108de5527d8fa9f81b5b82316301802ba41b971251dc92375dc3225",
+  "rationale": "Net read bearish (-0.05). Strongest evidence: momentum -1.00 (BTC/USD down-momentum since the last tick (Pyth, live)); limitless +0.97 (Limitless (Base) BTC 99% up / 1% down); nansen -0.78 (Smart money net outflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

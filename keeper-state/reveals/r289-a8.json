@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -66,
+  "confidence": 38,
+  "rationaleHash": "0x2f2e6e81129ac18d52c078127e61fe93c76e9deede0d900e2e0e6d5c089fd376",
+  "salt": "0x2c330e974f8f005e113504d884d22e2869e221ac9dcdbea1a5c6c50fc3f88f48",
+  "rationale": "Net read bearish (-0.11). Strongest evidence: momentum -1.00 (BTC/USD down-momentum since the last tick (Pyth, live)); limitless +0.97 (Limitless (Base) BTC 99% up / 1% down); nansen -0.78 (Smart money net outflow).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 279,
+  "confidence": 63,
+  "rationaleHash": "0x2c4e73e1085358f2a13a55ab2b3b21394d684a3279d16e3e3afc63c01de75a9b",
+  "salt": "0xc1e968607b2fb914ace9a57ebfac6ad17772acdd9044d23f2440e71b03516b7d",
+  "rationale": "Net read bullish (0.47). Strongest evidence: momentum -1.00 (BTC/USD down-momentum since the last tick (Pyth, live)); limitless +0.97 (Limitless (Base) BTC 99% up / 1% down); nansen -0.78 (Smart money net outflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
