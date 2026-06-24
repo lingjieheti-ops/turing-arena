@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -43,
+  "confidence": 35,
+  "rationaleHash": "0x12bc37606bda1f437957722b2b46460cf7e6aafe6e967905db54ebd5044d5a45",
+  "salt": "0x8fdc404efa0c0b4649c68e7edfa52238d2dd4ed9361b4268fb5eff20b7fd4f3d",
+  "rationale": "Net read bearish (-0.07). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless -0.67 (No Limitless market for CS2-PLAYERS — mock down); nansen +0.86 (Smart money net inflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
