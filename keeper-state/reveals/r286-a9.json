@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 366,
+  "confidence": 73,
+  "rationaleHash": "0x65b97376507d3a6ce5d18512798cbe4360fc63a598bb366778aec2384df050a3",
+  "salt": "0x0bb7cbafb554c450111aa10a93c5f700278b2eab711d50af40f3c9742f5063bb",
+  "rationale": "Net read bullish (0.61). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless +0.88 (No Limitless market for ETHGAS-GWEI — mock up); nansen +0.64 (Smart money net inflow).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
