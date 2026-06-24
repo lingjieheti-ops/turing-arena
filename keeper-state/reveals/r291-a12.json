@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -18,
+  "confidence": 32,
+  "rationaleHash": "0xc6b749e092bcae62dceb6a74a491d853d4fe47b3b02c40d99c8a4ac139c984ef",
+  "salt": "0x54412dddfea7953275677ccb22faf43c1ee0e183f150a2c90071ed97bf313258",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); mantle-onchain -0.98 (Mantle on-chain momentum down); elfa -1.00 (KOL mindshare cooling).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

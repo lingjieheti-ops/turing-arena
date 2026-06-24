@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 49,
+  "confidence": 36,
+  "rationaleHash": "0x3d91f786dff0075fce94ad935df4d1599982af991c52baebd4f901c5bef73c54",
+  "salt": "0x3d5cf81ce78ac49391c5b61e60c9dd248b5adc6529690190189b6457fd21eaf5",
+  "rationale": "Net read bullish (0.08). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); mantle-onchain -0.98 (Mantle on-chain momentum down); elfa -1.00 (KOL mindshare cooling).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

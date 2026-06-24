@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 178,
+  "confidence": 51,
+  "rationaleHash": "0xdf4c9afdee35e48367253059d2146a0a456c8ec7cac37d9be75ab745922c013b",
+  "salt": "0x86308db0d3c610f2740a322bc39763d9603b105ae1d24daa910a114bff0cc21a",
+  "rationale": "Net read bullish (0.30). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); mantle-onchain -0.98 (Mantle on-chain momentum down); elfa -1.00 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
