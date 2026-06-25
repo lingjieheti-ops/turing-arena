@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 165,
+  "confidence": 49,
+  "rationaleHash": "0x92ad29081214accbf8710b2a6f3f796639aa418021a6bcd654b3c0717e5e7486",
+  "salt": "0x3488beabb0aca7287306a17824308be69840b452d73dd2b6c505e0be1b558923",
+  "rationale": "Net read bullish (0.28). Strongest evidence: mantle-onchain +0.95 (Mantle on-chain momentum up); elfa +0.93 (KOL mindshare heating up); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

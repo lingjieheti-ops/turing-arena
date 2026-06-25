@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 184,
+  "confidence": 51,
+  "rationaleHash": "0x267ad736ebbe19e34d5bd35e5df1da5ee270c975c011efb5e26cf13c8b30872b",
+  "salt": "0x74fde14c85f5e3241f3017e9101300f547e6a12cb3a81e17e65b90edd4a0ae69",
+  "rationale": "Net read bullish (0.31). Strongest evidence: mantle-onchain +0.95 (Mantle on-chain momentum up); elfa +0.93 (KOL mindshare heating up); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

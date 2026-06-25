@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 208,
+  "confidence": 54,
+  "rationaleHash": "0x180c20b4667dd1f10911ddb4d9e19c48149e53044ead5965ad08c347345cc1bc",
+  "salt": "0x885d7e6e24fe95bc0daff5ba3d1b2d97fe4fb05c100e59fac8ebc1113cd2c26c",
+  "rationale": "Net read bullish (0.35). Strongest evidence: mantle-onchain +0.95 (Mantle on-chain momentum up); elfa +0.93 (KOL mindshare heating up); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

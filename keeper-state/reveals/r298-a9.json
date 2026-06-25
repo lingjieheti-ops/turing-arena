@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 279,
+  "confidence": 63,
+  "rationaleHash": "0x1fb33b7ae42968b4cca45fd3d8d530ebada7f05f64a397c9dcb41bb25cf52d95",
+  "salt": "0x33891828caf02450b4757e42802df9a489bb28846fd534562e376e27a6579326",
+  "rationale": "Net read bullish (0.47). Strongest evidence: mantle-onchain +0.95 (Mantle on-chain momentum up); elfa +0.93 (KOL mindshare heating up); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -249,
+  "confidence": 59,
+  "rationaleHash": "0x36d0c8a2c81db01f9457d9ff925e90d4d10b66998904de5932269fcdc78796d0",
+  "salt": "0x65bcd703ec6a4d47bcf7598432708ce5955554705a6e5558afd23fde3d120d34",
+  "rationale": "Net read bearish (-0.42). Strongest evidence: mantle-onchain +0.95 (Mantle on-chain momentum up); elfa +0.93 (KOL mindshare heating up); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

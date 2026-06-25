@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 218,
+  "confidence": 55,
+  "rationaleHash": "0xe12458276e67350d04bd5031b4cd33bb13534876052bdf8a36fb1dbd2b67e901",
+  "salt": "0x95efb1670253e1d6acc84eb9342d84539aa23b4516fe0fc1a3d7000b48ea9181",
+  "rationale": "Net read bullish (0.36). Strongest evidence: mantle-onchain +0.95 (Mantle on-chain momentum up); elfa +0.93 (KOL mindshare heating up); allora -0.33 (Allora ML forecast leans short).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
