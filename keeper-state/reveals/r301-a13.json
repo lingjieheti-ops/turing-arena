@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -17,
+  "confidence": 32,
+  "rationaleHash": "0x4dd8b893e356de0b33899461ee3a48599c2edb4b1e98a862b8f654f943e9d9fd",
+  "salt": "0xeeae274f2c243d0b3f1f18aab54b3e279437ab856cf27306012bce184830eac6",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); allora +0.52 (Allora ML forecast leans long); elfa -0.98 (KOL mindshare cooling).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -87,
+  "confidence": 40,
+  "rationaleHash": "0xfeb5277baf92ef20fb589982a7a352d3de6cf6a107a13eb2c6db80de7e7e4c70",
+  "salt": "0x8f5c7548063571155da69576e457f3c2807db6a994415225b0c16bce8397fd16",
+  "rationale": "Net read bearish (-0.15). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); allora +0.52 (Allora ML forecast leans long); elfa -0.98 (KOL mindshare cooling).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
