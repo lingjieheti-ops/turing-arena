@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 332,
+  "confidence": 69,
+  "rationaleHash": "0xcc97c26ce36a66547ef43bfa9675c68a10226fce03e18158efcb2565f79071be",
+  "salt": "0x8fecd57302808045ef6eb6ce95f8ce61ae8c99c9ccc06e513768642a04da1ca6",
+  "rationale": "Net read bullish (0.55). Strongest evidence: momentum +1.00 (BTC/USD up-momentum since the last tick (Pyth, live)); allora +0.65 (Allora ML forecast leans long); nansen -0.76 (Smart money net outflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
