@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 247,
+  "confidence": 59,
+  "rationaleHash": "0xdc2eb29f0534ac9348cbb66ddcf33532986d036e32bd66f389434902d5c0b1d5",
+  "salt": "0x601ba19fd33fa63ba2447f2bda908c4a8284549a4c8f484056dacb317940ab48",
+  "rationale": "Net read bullish (0.41). Strongest evidence: limitless +0.98 (Limitless (Base) BTC 99% up / 1% down); allora +0.47 (Allora ML forecast leans long); elfa +0.80 (KOL mindshare heating up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

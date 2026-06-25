@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 364,
+  "confidence": 72,
+  "rationaleHash": "0xffafaf537f1b9d40fbec01f9d4c357acbfb82a5ff26f266d25166aaf9edb917d",
+  "salt": "0x66dcef782c9f89357ca6d6c7f6e184a87aa71b8fb9f31f520146d4597f118cfb",
+  "rationale": "Net read bullish (0.61). Strongest evidence: limitless +0.96 (Limitless (Base) BTC 98% up / 2% down); allora +0.47 (Allora ML forecast leans long); elfa +0.80 (KOL mindshare heating up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

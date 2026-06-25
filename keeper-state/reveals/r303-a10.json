@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 336,
+  "confidence": 69,
+  "rationaleHash": "0x3ec2331a5115b9672de2424f344214e9a4ce3648c529c4fb5f057461475a758c",
+  "salt": "0xad82e1bfdf7913e99050e11fd31f01907ad9916c5dfbec571c323e65474f45bb",
+  "rationale": "Net read bullish (0.56). Strongest evidence: limitless +0.96 (Limitless (Base) BTC 98% up / 2% down); allora +0.47 (Allora ML forecast leans long); elfa +0.80 (KOL mindshare heating up).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

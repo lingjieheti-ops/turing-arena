@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 361,
+  "confidence": 72,
+  "rationaleHash": "0x250a3a06e60b3fd1e4763d423688cf8d8ac5cf8e3cac14e453d0cb77df54b1f8",
+  "salt": "0xb2b09304bdc23642f55f629a604b2d8ebb840a618ed7814b768d2dcd6244981e",
+  "rationale": "Net read bullish (0.60). Strongest evidence: limitless +0.96 (Limitless (Base) BTC 98% up / 2% down); allora +0.47 (Allora ML forecast leans long); elfa +0.80 (KOL mindshare heating up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

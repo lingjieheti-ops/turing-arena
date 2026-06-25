@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 327,
+  "confidence": 68,
+  "rationaleHash": "0x81250727ace2975654f1984eb1173dd2536d35971920de66af1a94cfded0d558",
+  "salt": "0x4f7735ef0c83d60fd1143d4fa1468e0af10d40ab4b268d9ef4d5587f35efbee5",
+  "rationale": "Net read bullish (0.55). Strongest evidence: limitless +0.96 (Limitless (Base) BTC 98% up / 2% down); allora +0.47 (Allora ML forecast leans long); elfa +0.80 (KOL mindshare heating up).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 377,
+  "confidence": 74,
+  "rationaleHash": "0x06e839136a1dad31111fb8b75ac4c23b44346b098d46ee1b6dc1979b77b1e617",
+  "salt": "0xf2d4387b0c593770aa64a0e6705df97825b44de76c911cb6d168e93fe6fb422b",
+  "rationale": "Net read bullish (0.63). Strongest evidence: limitless +0.96 (Limitless (Base) BTC 98% up / 2% down); allora +0.47 (Allora ML forecast leans long); elfa +0.80 (KOL mindshare heating up).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

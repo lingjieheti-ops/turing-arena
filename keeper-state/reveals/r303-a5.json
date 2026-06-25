@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -211,
+  "confidence": 55,
+  "rationaleHash": "0xac5d1bb9b63ac5dac9f63cf8b96f16de532fe7bf177b3ac167c614b0228c4f76",
+  "salt": "0x0ca499bbac51cdb29756e592648e59d041302409298d60b39d48f0a7ff064082",
+  "rationale": "Net read bearish (-0.35). Strongest evidence: limitless +0.96 (Limitless (Base) BTC 98% up / 2% down); allora +0.47 (Allora ML forecast leans long); elfa +0.80 (KOL mindshare heating up).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

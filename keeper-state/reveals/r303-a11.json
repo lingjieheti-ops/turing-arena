@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 338,
+  "confidence": 69,
+  "rationaleHash": "0x3ec2331a5115b9672de2424f344214e9a4ce3648c529c4fb5f057461475a758c",
+  "salt": "0x318da879a8bffa26db729e38fecc9976cd75a4f2c335e054462eb79d42e6dd28",
+  "rationale": "Net read bullish (0.56). Strongest evidence: limitless +0.96 (Limitless (Base) BTC 98% up / 2% down); allora +0.47 (Allora ML forecast leans long); elfa +0.80 (KOL mindshare heating up).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
