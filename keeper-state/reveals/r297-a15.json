@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -12,
+  "confidence": 31,
+  "rationaleHash": "0x6370af65ba91800e14926489999fd18a6684323e99c4f04624b827a28e247210",
+  "salt": "0x01d4083d50b22e5675a175869cef46a84895fc5cf29a2b7327b678d03bae0bc6",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); allora +0.90 (Allora ML forecast leans long); nansen -0.62 (Smart money net outflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

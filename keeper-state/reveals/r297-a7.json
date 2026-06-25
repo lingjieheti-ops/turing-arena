@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 84,
+  "confidence": 40,
+  "rationaleHash": "0x3f9f1545a1da7ecfd5cb614cb6888d73174f2e13f118faae72181e6b25f8e13f",
+  "salt": "0x1d4b2c948acd37266abeb1b294b3d43ec7301cfd9e4e231de09710ed19b3d1b4",
+  "rationale": "Net read bullish (0.14). Strongest evidence: momentum -1.00 (SOL/USD down-momentum (Pyth, live)); allora +0.90 (Allora ML forecast leans long); limitless +0.50 (Limitless (Base) SOL 75% up / 25% down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
