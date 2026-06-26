@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 183,
+  "confidence": 51,
+  "rationaleHash": "0xefea97ecd45d5b850cf1b461015df73a8191c6584f8414f252a0a91103271c78",
+  "salt": "0x02dc30015823adf52bc3fc9abf1a236341ca12314d6e7ebc1e737081a4268235",
+  "rationale": "Net read bullish (0.30). Strongest evidence: momentum +1.00 (mETH/USD up-momentum since the last tick (Pyth, live)); allora +0.44 (Allora ML forecast leans long); nansen -0.49 (Smart money net outflow).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
