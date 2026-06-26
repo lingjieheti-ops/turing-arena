@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 172,
+  "confidence": 50,
+  "rationaleHash": "0x5ad2bb74d10c62ea51f3430f8f78dc4b825fb3708435c07fac515cfaf6f781fc",
+  "salt": "0x3f6edc113c3dbc9fa10811ccdc7b3d4516f4fab79d77dc7110d102e1868fa00c",
+  "rationale": "Net read bullish (0.29). Strongest evidence: limitless -0.40 (Limitless (Base) BTC 30% up / 70% down); allora +0.44 (Allora ML forecast leans long); elfa +0.82 (KOL mindshare heating up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
