@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 17,
+  "confidence": 32,
+  "rationaleHash": "0x17c5bdfcab4c48ebf0ddda4ce412f909b75c5fba4c08f32ae7a6116b50aaf473",
+  "salt": "0x1d1f0a2958aa7277ddb2f2e42053329a76ded50ffe7f8e9eab2b824669aa5301",
+  "rationale": "Net read neutral (0.03). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); nansen +0.62 (Smart money net inflow); mantle-onchain +0.73 (Mantle on-chain momentum up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

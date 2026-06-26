@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 84,
+  "confidence": 40,
+  "rationaleHash": "0xdbb2b80569145784f85bcf8b348e870b2da5af8c970e31fed538fde4f63acb67",
+  "salt": "0xa6448ceb9d40f76215a300697201eac2a845cc834afca6c18f4b2e01045a6e81",
+  "rationale": "Net read bullish (0.14). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); nansen +0.62 (Smart money net inflow); mantle-onchain +0.73 (Mantle on-chain momentum up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
