@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -52,
+  "confidence": 36,
+  "rationaleHash": "0x5f558ed2b4dfd49477674f950149431c82c7fdd406449827bdbb390f9b52ce66",
+  "salt": "0xf5e51aa4024b4d8b7d77748bc709091db6213a1fc9dd16c0d361b7756cb1dd4e",
+  "rationale": "Net read bearish (-0.09). Strongest evidence: momentum -0.52 (SOL/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.68 (Mantle on-chain momentum down); nansen -0.49 (Smart money net outflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

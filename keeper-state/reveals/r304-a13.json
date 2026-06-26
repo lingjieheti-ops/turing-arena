@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -39,
+  "confidence": 35,
+  "rationaleHash": "0xb5730d91e34ad9448353f942b2375f3f699f9c10c9246db21e0e96b9a12b55a4",
+  "salt": "0x99b9e2956c18a69c01ba756953b22f1be1cd3bacec0efbb0f13078ec05a6f88b",
+  "rationale": "Net read bearish (-0.07). Strongest evidence: momentum -0.52 (SOL/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.68 (Mantle on-chain momentum down); nansen -0.49 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
