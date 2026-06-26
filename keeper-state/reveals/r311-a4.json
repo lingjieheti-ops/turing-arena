@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 4,
+  "confidence": 30,
+  "rationaleHash": "0x6e12dd3a2117fb2d30482878e82c9ffdb998c2fb12021858c7f7a61b4749e8a7",
+  "salt": "0x34fdb07a127edb17d10afb25ca9867a8ef84429441dc56b54f1c34af88c4d32c",
+  "rationale": "Net read neutral (0.01). Strongest evidence: mantle-onchain -0.75 (Mantle on-chain momentum down); limitless +0.37 (Limitless (Base) SOL 69% up / 31% down); momentum +0.20 (SOL/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
