@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 220,
+  "confidence": 56,
+  "rationaleHash": "0x369719dea0014c5a210e89c92b05a533c4edc579a009d6dbab14d5a4b1d38c2c",
+  "salt": "0xa1ea5615202cc55372bc6eead1b9a0fcd0a663a91dd0ac1a7489a552f1d83665",
+  "rationale": "Net read bullish (0.37). Strongest evidence: momentum +1.00 (CS2 Players up-momentum (Pyth, live)); limitless -0.85 (No Limitless market for CS2-PLAYERS — mock down); allora -0.76 (Allora ML forecast leans short).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
