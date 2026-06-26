@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 224,
+  "confidence": 56,
+  "rationaleHash": "0x6a862592d994160abc3fc56acb3e3f6998c23beaec50e42cb9f9b71e9fa6cae7",
+  "salt": "0xaa9e412c3f24c0b4b7b72d1b902a8035f8325a6cf1227c935ecf0a19c0777082",
+  "rationale": "Net read bullish (0.37). Strongest evidence: nansen +0.70 (Smart money net inflow); mantle-onchain -0.74 (Mantle on-chain momentum down); allora -0.39 (Allora ML forecast leans short).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

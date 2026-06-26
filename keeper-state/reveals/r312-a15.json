@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 116,
+  "confidence": 44,
+  "rationaleHash": "0x60be0ba2ac362318be2f33bb878cd7a02812a540f2b7f966529f178592910d5f",
+  "salt": "0xe79abaeb645ff6613d90175e9adc1183a1e7868c95ae88d8c03672643b0e4f70",
+  "rationale": "Net read bullish (0.19). Strongest evidence: nansen +0.70 (Smart money net inflow); mantle-onchain -0.74 (Mantle on-chain momentum down); allora -0.39 (Allora ML forecast leans short).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 34,
+  "confidence": 34,
+  "rationaleHash": "0x50d2980907497316109a10b07a6ce967723fac8d9667e97112a2812ef54fddf1",
+  "salt": "0x3947e0f6f6615e9bd446f8b856248060ac67fdf39cb09130946b24904f108c1a",
+  "rationale": "Net read bullish (0.06). Strongest evidence: nansen +0.70 (Smart money net inflow); mantle-onchain -0.74 (Mantle on-chain momentum down); allora -0.39 (Allora ML forecast leans short).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

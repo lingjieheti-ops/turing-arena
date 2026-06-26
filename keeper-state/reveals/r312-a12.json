@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 22,
+  "confidence": 33,
+  "rationaleHash": "0x3518519507f80d0aab91f1c583ba81072797678e166d85f4a4ba2f0eb221aee4",
+  "salt": "0xc2a7a9c714bdf1c3382071b7441e0df00731da36a319bc6ed928a7f106318771",
+  "rationale": "Net read neutral (0.04). Strongest evidence: nansen +0.70 (Smart money net inflow); mantle-onchain -0.74 (Mantle on-chain momentum down); allora -0.39 (Allora ML forecast leans short).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
