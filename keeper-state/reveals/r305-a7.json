@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 175,
+  "confidence": 50,
+  "rationaleHash": "0x601d601ed1d2fa39b7c8c0ce17428a7494a078f1b9f10b3991314fbf6fc21225",
+  "salt": "0xfbb252946d71e26e4cea64978747cf3b33dd8e5410d74457c23f8eb2bc8c66d1",
+  "rationale": "Net read bullish (0.29). Strongest evidence: nansen +0.72 (Smart money net inflow); mantle-onchain -0.76 (Mantle on-chain momentum down); allora +0.45 (Allora ML forecast leans long).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
