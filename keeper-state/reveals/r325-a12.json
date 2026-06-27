@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 1,
+  "confidence": 30,
+  "rationaleHash": "0x3a6fd95d2482a0eebf21914ffaf834b5283c91ac6166e5b8d2513268df90de32",
+  "salt": "0x41fd26d4b18c222dfcfb3c3d22e6fe526a07f3945e5f874c3224b45e195763c4",
+  "rationale": "Net read neutral (0.00). Strongest evidence: momentum +0.59 (SOL/USD up-momentum since the last tick (Pyth, live)); limitless -0.45 (Limitless (Base) SOL 28% up / 72% down); mantle-onchain -0.60 (Mantle on-chain momentum down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
