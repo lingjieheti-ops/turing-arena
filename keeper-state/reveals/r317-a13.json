@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 84,
+  "confidence": 40,
+  "rationaleHash": "0x72daabbc88fe4da05cfcab17b8c79b9558af5fac145facc9beb5f3355d0dd500",
+  "salt": "0x4d2e5047cc6b79a82a4f2c60b8d6195c78cb77ef883e2b203bb1bd959d1644a4",
+  "rationale": "Net read bullish (0.14). Strongest evidence: limitless +0.83 (Limitless (Base) BTC 92% up / 8% down); allora +0.50 (Allora ML forecast leans long); elfa +0.77 (KOL mindshare heating up).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

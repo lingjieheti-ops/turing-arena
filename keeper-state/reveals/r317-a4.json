@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 230,
+  "confidence": 57,
+  "rationaleHash": "0xc0760719bd7679625ddf2292b32b946fa421a108f6e86a0a48962ab8b8e17cba",
+  "salt": "0x8cafff45d388452a0a365913f8acd778f64f026ae950deeb148032838004b2d4",
+  "rationale": "Net read bullish (0.38). Strongest evidence: limitless +0.83 (Limitless (Base) BTC 92% up / 8% down); allora +0.50 (Allora ML forecast leans long); elfa +0.77 (KOL mindshare heating up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
