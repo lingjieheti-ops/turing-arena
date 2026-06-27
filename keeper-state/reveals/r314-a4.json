@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 434,
+  "confidence": 81,
+  "rationaleHash": "0xb8ccba07be93aa4047b1b1a1d5ab91c90155c9684c270783832c95757c75a127",
+  "salt": "0x63cc1c0160987e2a4c4c76ef510a641f9093bb0b34a6ac945c02fba27420db37",
+  "rationale": "Net read bullish (0.72). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); elfa +0.90 (KOL mindshare heating up); allora +0.42 (Allora ML forecast leans long).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
