@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -368,
+  "confidence": 73,
+  "rationaleHash": "0xa9e5b882f7f2e4f49e9e3f0b08737730a48c766d7de7224304c228e51f783256",
+  "salt": "0xb876686cf2cf48a4e2e0700fae5a7ebbaceb714f63007661bc4e93894bd47783",
+  "rationale": "Net read bearish (-0.61). Strongest evidence: momentum -0.66 (BTC/USD down-momentum since the last tick (Pyth, live)); nansen -0.93 (Smart money net outflow); allora -0.64 (Allora ML forecast leans short).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
