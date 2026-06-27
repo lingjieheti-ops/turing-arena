@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 231,
+  "confidence": 57,
+  "rationaleHash": "0x60ce5477eef09989ca7c32c473ae3d0cc71d1a29a9f3d37648555ada03ebbb95",
+  "salt": "0xb78d3d8137613caa87920e0ff0dcee59f243cbff8cbda1aab69458cb94b966c6",
+  "rationale": "Net read bullish (0.38). Strongest evidence: momentum +1.00 (MNT/USD up-momentum (Pyth, live)); nansen +0.66 (Smart money net inflow); mantle-onchain -0.82 (Mantle on-chain momentum down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -113,
+  "confidence": 43,
+  "rationaleHash": "0xcc0963c65c3e6984572cac0d1b28edba0184b73418fab48b0ca65485f97287c5",
+  "salt": "0x229ea03c942508876b87b58408e9cea3013b356aa2ec81c575788457336310bd",
+  "rationale": "Net read bearish (-0.19). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.66 (Smart money net inflow); mantle-onchain -0.82 (Mantle on-chain momentum down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
