@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 8,
+  "confidence": 31,
+  "rationaleHash": "0xceb5db8c9699266ad5ae2e070585ec2d58495b79e9158e99cd81a6c761470688",
+  "salt": "0x55322f4188f14c78282195ea2acfd1512bfee3ecf973e2040a8daa01b20aee60",
+  "rationale": "Net read neutral (0.01). Strongest evidence: allora -0.67 (Allora ML forecast leans short); nansen +0.53 (Smart money net inflow); elfa -0.88 (KOL mindshare cooling).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

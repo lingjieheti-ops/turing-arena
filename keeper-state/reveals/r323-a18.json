@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -17,
+  "confidence": 32,
+  "rationaleHash": "0xbeaea3c8ea740c65c9ce7bef6fc97a473f695b9620a98f2d1a1a736f9f97865b",
+  "salt": "0xa9c0c07008e8fae55978f7e29805f6527d67b604e07a698f0fd97ffaf6984b4f",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: allora -0.67 (Allora ML forecast leans short); nansen +0.53 (Smart money net inflow); elfa -0.88 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

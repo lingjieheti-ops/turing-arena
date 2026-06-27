@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 89,
+  "confidence": 40,
+  "rationaleHash": "0x74fe95e66d67005787605b99571b238bcb7b726069f2082267e775dac29714f2",
+  "salt": "0x79f354a3353d6ac504237c1e3064f7ac975832394b5f5a361e27316e38e6301a",
+  "rationale": "Net read bullish (0.15). Strongest evidence: allora -0.67 (Allora ML forecast leans short); nansen +0.53 (Smart money net inflow); elfa -0.88 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
