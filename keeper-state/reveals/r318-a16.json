@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -1,
+  "confidence": 30,
+  "rationaleHash": "0xdce6c15dfad81995491a8df4631545b145f91e8d591c77cf00551c69d730b647",
+  "salt": "0x0845f09b0104dc8284d6aeab84647d6a18905402a42f411ed251862955d20f7b",
+  "rationale": "Net read neutral (-0.00). Strongest evidence: mantle-onchain -0.70 (Mantle on-chain momentum down); limitless +0.26 (Limitless (Base) SOL 63% up / 37% down); nansen -0.35 (Smart money net outflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

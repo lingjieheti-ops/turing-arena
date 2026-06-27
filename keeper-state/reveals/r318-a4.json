@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -1,
+  "confidence": 30,
+  "rationaleHash": "0xdce6c15dfad81995491a8df4631545b145f91e8d591c77cf00551c69d730b647",
+  "salt": "0x1acb42ab7a3653125e8bc9f1ae8f26bd299814501d50786f4017368f8dbb1d6e",
+  "rationale": "Net read neutral (-0.00). Strongest evidence: mantle-onchain -0.70 (Mantle on-chain momentum down); limitless +0.26 (Limitless (Base) SOL 63% up / 37% down); nansen -0.35 (Smart money net outflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

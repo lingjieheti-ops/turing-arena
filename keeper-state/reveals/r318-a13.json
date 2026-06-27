@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 30,
+  "confidence": 33,
+  "rationaleHash": "0x61edd19cf1ac5ece9657d6b55362a1e08dbc2bdc43ad5a094d429d7b9cd92a95",
+  "salt": "0x47857153d9c86ba5f66949aef1845d4b02ff2b7d8d5c0045be00e94bbb387312",
+  "rationale": "Net read neutral (0.05). Strongest evidence: mantle-onchain -0.70 (Mantle on-chain momentum down); limitless +0.26 (Limitless (Base) SOL 63% up / 37% down); nansen -0.35 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

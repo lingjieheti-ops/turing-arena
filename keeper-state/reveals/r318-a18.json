@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 0,
+  "confidence": 30,
+  "rationaleHash": "0xdce6c15dfad81995491a8df4631545b145f91e8d591c77cf00551c69d730b647",
+  "salt": "0xe3019b4708b91f9ab79137493dc1f9dd7289c0112b0b16c75b79ece9f9492ce9",
+  "rationale": "Net read neutral (-0.00). Strongest evidence: mantle-onchain -0.70 (Mantle on-chain momentum down); limitless +0.26 (Limitless (Base) SOL 63% up / 37% down); nansen -0.35 (Smart money net outflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

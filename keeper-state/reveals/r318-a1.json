@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -1,
+  "confidence": 30,
+  "rationaleHash": "0xdce6c15dfad81995491a8df4631545b145f91e8d591c77cf00551c69d730b647",
+  "salt": "0x9a8029debf3451e04c718b1ace7f29d8444aff5fe92cfbe6e31554ed79d9fe3b",
+  "rationale": "Net read neutral (-0.00). Strongest evidence: mantle-onchain -0.70 (Mantle on-chain momentum down); limitless +0.26 (Limitless (Base) SOL 63% up / 37% down); nansen -0.35 (Smart money net outflow).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

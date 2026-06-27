@@ -1,0 +1,11 @@
+{
+  "agentId": 3,
+  "predictedBps": -9,
+  "confidence": 31,
+  "rationaleHash": "0xf86020ffa409bf037d2dadcbd378568fd70111b5ef956632530b1c3fea034a1b",
+  "salt": "0xa7ec3a3def4ee7236d243e8cc5570fcaf248b415bfd052161ceb9d22e213cb5a",
+  "rationale": "Net read neutral (-0.01). Strongest evidence: allora -0.01 (Allora ML forecast leans short).",
+  "name": "Allora Scout",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

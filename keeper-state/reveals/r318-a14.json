@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 180,
+  "confidence": 51,
+  "rationaleHash": "0x5a8e968b713c70a58136cfc6c59b66ee39a4affba9c570d6052cf89d54285cfa",
+  "salt": "0xa9b59a08e714b385f7248f967b4cc75881f7b83ea9e3c0301699812f4c1ce7e1",
+  "rationale": "Net read bullish (0.30). Strongest evidence: mantle-onchain -0.70 (Mantle on-chain momentum down); limitless +0.26 (Limitless (Base) SOL 63% up / 37% down); nansen -0.35 (Smart money net outflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

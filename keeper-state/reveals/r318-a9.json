@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 270,
+  "confidence": 61,
+  "rationaleHash": "0xfb1e0c12f3cb2bd738c9c03e196b1c13d3d538cf783e52f45f7d6517fbbe1ba1",
+  "salt": "0x512200a00f0366526beeadf686df7e5fcb98035631f2f41fcf1586ef26628ae6",
+  "rationale": "Net read bullish (0.45). Strongest evidence: mantle-onchain -0.70 (Mantle on-chain momentum down); limitless +0.26 (Limitless (Base) SOL 63% up / 37% down); nansen -0.35 (Smart money net outflow).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

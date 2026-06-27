@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 210,
+  "confidence": 54,
+  "rationaleHash": "0xf5435b5c4d357b8951cc2acc5c9ff9d80dd9cf3addc0b7186247bbe501547589",
+  "salt": "0xae577b207e1cd0f10c1a6e0d01985c90ce77603180bb23a1e0675b40d1ef3776",
+  "rationale": "Net read bullish (0.35). Strongest evidence: mantle-onchain -0.70 (Mantle on-chain momentum down); limitless +0.26 (Limitless (Base) SOL 63% up / 37% down); nansen -0.35 (Smart money net outflow).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
