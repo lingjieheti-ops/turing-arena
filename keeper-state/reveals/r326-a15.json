@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 9,
+  "confidence": 31,
+  "rationaleHash": "0xd9dfe51c3bb4fb5d4f39a7f7c512917c4580401cfd60ac1f4ae24c0bf2b03e3f",
+  "salt": "0x33d90dd16bc836717d0fce26cf3a0c4ea7cd579470db107d8ba3fd50f7b9512b",
+  "rationale": "Net read neutral (0.01). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -219,
+  "confidence": 55,
+  "rationaleHash": "0xe97a3e41754dea90ce0a3dfe8661aa998d258111ec902e81324a30affb49c35a",
+  "salt": "0x61c7efb373650417639d7feeb0a2642ed9bf59f1d9d31a01c466f0de92734c7a",
+  "rationale": "Net read bearish (-0.36). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

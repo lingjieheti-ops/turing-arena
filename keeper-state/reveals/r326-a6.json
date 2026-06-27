@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 178,
+  "confidence": 51,
+  "rationaleHash": "0xfc0e7f14649e3fa4ee8871a018e591525b826e4240d36866087f2ac1079181cd",
+  "salt": "0x5648810c474ef57b4939270e516db26f9d2c2f5c1c336e260df9e4e1cd2f8059",
+  "rationale": "Net read bullish (0.30). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

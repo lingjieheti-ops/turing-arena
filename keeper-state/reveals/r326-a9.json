@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 231,
+  "confidence": 57,
+  "rationaleHash": "0xc9db9db5925c37b9643325f938b9d7199372a7774bfd4bc2efd0d164238e0351",
+  "salt": "0xc7852b805739ee6c2193d21a060350d499c016c18b9523317ecb8a47a444f04b",
+  "rationale": "Net read bullish (0.39). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

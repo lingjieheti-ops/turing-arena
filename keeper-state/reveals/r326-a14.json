@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 64,
+  "confidence": 38,
+  "rationaleHash": "0x5c0f9108f1d54423a5b85f8f3e8664098c63b37d7c819f057ba0941dfa5aaf64",
+  "salt": "0x0b12d2f0f6dae350d32655e4930a4804d6553199e66b10668276ef9ac9bc2edb",
+  "rationale": "Net read bullish (0.11). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

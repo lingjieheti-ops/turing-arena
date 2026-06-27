@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -244,
+  "confidence": 58,
+  "rationaleHash": "0x4c2b13140451fadda2d2ef278a9de8bd01d059efde9bda12d9e91cd29548fdb5",
+  "salt": "0xdd43f1625a434e3300b4851a04512614cd72ca3a72ba3ac69f96982bc749fc78",
+  "rationale": "Net read bearish (-0.41). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

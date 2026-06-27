@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -129,
+  "confidence": 45,
+  "rationaleHash": "0x2da30d36ae89f62d5eab05529c823d856a62294c0d09491d7e9e22ecc0cfaf28",
+  "salt": "0x111d5d6f633c266be04d3aca15de0b9a139f185dec2631bd153761be77aa78f8",
+  "rationale": "Net read bearish (-0.21). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

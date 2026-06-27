@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -21,
+  "confidence": 32,
+  "rationaleHash": "0x9461023d739a638e45160e2c94e670d13db0185127c0934a74439e6dd2dbde7e",
+  "salt": "0xaeacb2aab0bd7dbd894e26112679b912015570a22508b80d2b9de7f911583edd",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 141,
+  "confidence": 46,
+  "rationaleHash": "0x6d3fb650e5ca56ace364b7bbda19ad1ff333561a21ca0699fdd1f8ddda6ea4a1",
+  "salt": "0xa1324860e0cb64a31f40317619b0f4d8f95861d3adfe7c0678b268af856c18bc",
+  "rationale": "Net read bullish (0.24). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

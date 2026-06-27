@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -39,
+  "confidence": 34,
+  "rationaleHash": "0xed136f4d9d17ddf7e54b9bf1ca09ccc5f4b6653bc7d1c923eed323b32d80a11f",
+  "salt": "0xc5e9ee5f133e5cc82d9196ad7f065069a1f64c0b5a9310a188393f77042ed629",
+  "rationale": "Net read bearish (-0.06). Strongest evidence: limitless -0.70 (Limitless MNT market unavailable — mock down); nansen +0.62 (Smart money net inflow); elfa -0.93 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
