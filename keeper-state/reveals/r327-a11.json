@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 272,
+  "confidence": 62,
+  "rationaleHash": "0x299f8bef6747775e1984c87c0a5257ddbb72c35d28225984ee71f2086b0fa619",
+  "salt": "0x0715682c6e7ec5958864c0a8e4c26a1e0b3e141cdc57a6674e9126c6a55762aa",
+  "rationale": "Net read bullish (0.45). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.98 (Smart money net inflow); allora -0.63 (Allora ML forecast leans short).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
