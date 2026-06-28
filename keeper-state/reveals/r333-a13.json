@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -83,
+  "confidence": 40,
+  "rationaleHash": "0x7cd07634741e956508429a61ca45019aabc2378f07c7ad6459445ca58e543dbf",
+  "salt": "0x37bd189937f7cc0346b9c071b41ab1f8d51181ef5154fb7054df42a9b6ca09f5",
+  "rationale": "Net read bearish (-0.14). Strongest evidence: limitless -0.66 (Limitless MNT market unavailable — mock down); mantle-onchain -0.87 (Mantle on-chain momentum down); momentum -0.24 (MNT/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
