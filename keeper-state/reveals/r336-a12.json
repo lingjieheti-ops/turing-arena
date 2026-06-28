@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -153,
+  "confidence": 48,
+  "rationaleHash": "0x2a69f3a1238456524cf41eef5ee14f6671e6a3dbfca2abc1834706f9deb72a04",
+  "salt": "0xa8fa864d3d13bc35d8dfaaa84cc5dc64d082c79acf3a1d69c458e064e171a6aa",
+  "rationale": "Net read bearish (-0.26). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); nansen +0.68 (Smart money net inflow); allora -0.55 (Allora ML forecast leans short).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
