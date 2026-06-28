@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 150,
+  "confidence": 47,
+  "rationaleHash": "0x9f862c25cbb2cf6d4cb8f2c1035350198ffe9035b6bc4dfc59cc55b03f2a33ff",
+  "salt": "0x8b0d50476f2da1417ee7c93b44ebdb10a2fe41aa4f21fa3bc59146debc2b586d",
+  "rationale": "Net read bullish (0.25). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); elfa +0.88 (KOL mindshare heating up); mantle-onchain -0.65 (Mantle on-chain momentum down).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

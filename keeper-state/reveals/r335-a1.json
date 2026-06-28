@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -241,
+  "confidence": 58,
+  "rationaleHash": "0x007444e61e659115747f38ede63c7fe17d02919a08c8cf52db365fa9d3645937",
+  "salt": "0xe84b5cdeacc40d7272c519ccf1fcef2bd87582061c9fdab025053d5ae75fcfe8",
+  "rationale": "Net read bearish (-0.40). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); elfa +0.88 (KOL mindshare heating up); mantle-onchain -0.65 (Mantle on-chain momentum down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

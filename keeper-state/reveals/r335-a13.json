@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -66,
+  "confidence": 38,
+  "rationaleHash": "0x645ab3ac8c1db2c7a57df493b57448ece444d72c5ef146d3165da1da8b3c455f",
+  "salt": "0x9b3f7024ccfb4f3cb59fe5df57bb4edf63407dae464ae32dacb3310f9bef6ddf",
+  "rationale": "Net read bearish (-0.11). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); elfa +0.88 (KOL mindshare heating up); mantle-onchain -0.65 (Mantle on-chain momentum down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

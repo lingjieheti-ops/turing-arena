@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -115,
+  "confidence": 43,
+  "rationaleHash": "0xbfe449c2a8fb8e0e4f035b2e1ab90c7c63da8c967d0e737ec63daf6c0a58d436",
+  "salt": "0x4b89352df53f9f6e2509ccb8f8db137f89dc6e03159b4b265725130902afb988",
+  "rationale": "Net read bearish (-0.19). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); elfa +0.88 (KOL mindshare heating up); mantle-onchain -0.65 (Mantle on-chain momentum down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

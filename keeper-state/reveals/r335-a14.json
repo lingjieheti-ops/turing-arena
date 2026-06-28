@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": -37,
+  "confidence": 34,
+  "rationaleHash": "0xc9d59da58f7c99a1ad812aca59d7372ef43a38a63889ce13868ae429e3269a5a",
+  "salt": "0x45dc79a0ae8acebdcc06ccd8e7824111ef14393783f0b5686eab1c02036dd6cf",
+  "rationale": "Net read bearish (-0.06). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); elfa +0.88 (KOL mindshare heating up); mantle-onchain -0.65 (Mantle on-chain momentum down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 30,
+  "confidence": 33,
+  "rationaleHash": "0x5d108acd5372fd46db8819152290132a9025211d82381e123255ddf4b33d3a25",
+  "salt": "0x921f2e53206ee504e7dc3d63ba1968ca135e160918131afea26a3dbb5c9b3154",
+  "rationale": "Net read neutral (0.05). Strongest evidence: momentum -1.00 (ETH Gas down-momentum (Pyth, live)); elfa +0.88 (KOL mindshare heating up); mantle-onchain -0.65 (Mantle on-chain momentum down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
