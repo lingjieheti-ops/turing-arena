@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -57,
+  "confidence": 37,
+  "rationaleHash": "0x5b45b2cedd38d8042d0fa1e3117477ebe0b3cc6ac27e6c104838c421148bd861",
+  "salt": "0xacc1fb48d232a6032012d6728294bc4affdb2074e130bcd2adf8f77262e2e04e",
+  "rationale": "Net read bearish (-0.09). Strongest evidence: allora -0.97 (Allora ML forecast leans short); limitless +0.80 (Limitless (Base) SOL 90% up / 10% down); nansen +0.70 (Smart money net inflow).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

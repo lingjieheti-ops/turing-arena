@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 155,
+  "confidence": 48,
+  "rationaleHash": "0x7676975018ff4b103922047bc45f0207196671b9ab00b1314872effd9047cf4f",
+  "salt": "0x2025aded4b7b402e295e1d6d9bfe5f28fbb66265419277c3b3b8c8d4c2d7650a",
+  "rationale": "Net read bullish (0.26). Strongest evidence: allora -0.97 (Allora ML forecast leans short); limitless +0.80 (Limitless (Base) SOL 90% up / 10% down); nansen +0.70 (Smart money net inflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
