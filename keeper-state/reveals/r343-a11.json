@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 284,
+  "confidence": 63,
+  "rationaleHash": "0x75a70664ab1e0d04a825950e4912e439483711b6c98b563806a1cb0439ba2809",
+  "salt": "0x4c1271c6d17afeec50b145ef1827206c34cfc33cfceff76c780e251450421cf5",
+  "rationale": "Net read bullish (0.47). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); limitless +0.97 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.64 (Smart money net inflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
