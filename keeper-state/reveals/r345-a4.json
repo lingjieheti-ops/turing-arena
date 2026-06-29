@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 91,
+  "confidence": 41,
+  "rationaleHash": "0x704936e93ca3146763339600033d54f16212363e3d8ad053be32aacd93cdcbc9",
+  "salt": "0x30ff262b1a082f3c00a89fc8d368c96ecd8fd7ad0efad0c3ed4b9cc8cd9b606d",
+  "rationale": "Net read bullish (0.15). Strongest evidence: momentum +1.00 (BTC/USD up-momentum since the last tick (Pyth, live)); nansen -0.90 (Smart money net outflow); limitless -0.44 (Limitless (Base) BTC 28% up / 72% down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
