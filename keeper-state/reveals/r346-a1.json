@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 13,
+  "confidence": 31,
+  "rationaleHash": "0x1f97b046dc710325aa610a7ca9b1e2d02831fcebbd5d8cf4676e57395adc6674",
+  "salt": "0x05c5d6a93a2d833097a31b23beb626e89a6839a8af08a1f3dffc2015f4de279c",
+  "rationale": "Net read neutral (0.02). Strongest evidence: allora -0.95 (Allora ML forecast leans short); nansen +0.65 (Smart money net inflow); momentum +0.25 (SOL/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
