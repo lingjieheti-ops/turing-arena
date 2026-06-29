@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 118,
+  "confidence": 44,
+  "rationaleHash": "0x41f71cbc0a1f56a7f5e8bb9c985f44de001e74d83b9ac89bbf43fabefca36daa",
+  "salt": "0xf9a6f1a81cf0875316cff0742e12dc97c73bf0d7430b4608716c7895bdabcb71",
+  "rationale": "Net read bullish (0.20). Strongest evidence: momentum -1.00 (ETH Gas down-momentum (Pyth, live)); nansen +0.83 (Smart money net inflow); allora +0.54 (Allora ML forecast leans long).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

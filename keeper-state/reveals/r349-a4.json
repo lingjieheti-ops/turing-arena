@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -109,
+  "confidence": 43,
+  "rationaleHash": "0xe0536c94763732d6a8375edc388a39b2c7ecbb7afe9e69cd76b4edb033b54045",
+  "salt": "0x73c13be182303cc77f48a23739c802cecc4cae631e8c13725cb2214a261f8e5c",
+  "rationale": "Net read bearish (-0.18). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); nansen +0.83 (Smart money net inflow); allora +0.54 (Allora ML forecast leans long).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
