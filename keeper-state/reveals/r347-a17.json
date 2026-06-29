@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -222,
+  "confidence": 56,
+  "rationaleHash": "0x20ff1bca051a59dc5300d9b390390d6f0fe61f9b4fa92f1327c5e2fab41e8737",
+  "salt": "0xafb680bdb7516c21c5f0ce821ddf43ecea5233cf120496cb25434d005105e4b1",
+  "rationale": "Net read bearish (-0.37). Strongest evidence: limitless -0.82 (Limitless MNT market unavailable — mock down); momentum +0.42 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.41 (Allora ML forecast leans short).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

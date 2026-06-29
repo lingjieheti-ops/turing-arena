@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 210,
+  "confidence": 55,
+  "rationaleHash": "0x48f37610e9c9ee8e8a73f0a3f96f960a8aa8e76f3a718bdba9088b6686ed48bc",
+  "salt": "0x6cd003dbf50f03f20cfad16e769031b7416b14689be377f4528d6843c999fbf8",
+  "rationale": "Net read bullish (0.35). Strongest evidence: limitless -0.82 (Limitless MNT market unavailable — mock down); momentum +0.42 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.41 (Allora ML forecast leans short).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
