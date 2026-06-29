@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -180,
+  "confidence": 51,
+  "rationaleHash": "0x7b7114422742860f96c2dfaa93d478910d2b6fdebda8d43fb2d7765918dbdbda",
+  "salt": "0x8c3e9b31e5102a49ca0a0be91364fe2edf6b08969094e7401b2352c3970236ca",
+  "rationale": "Net read bearish (-0.30). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.97 (Smart money net inflow); allora +0.29 (Allora ML forecast leans long).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
