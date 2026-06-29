@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": -35,
+  "confidence": 34,
+  "rationaleHash": "0x6c791ed1dab377f7fe8a70fdb4e07c03c444cb545a25ea1ce226c7673a1d7614",
+  "salt": "0xb7f0e5f2539ff063ff63a36114d1994a77b3409fe89f53928614b8a88d5eebfb",
+  "rationale": "Net read bearish (-0.06). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen -0.98 (Smart money net outflow); allora +0.35 (Allora ML forecast leans long).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

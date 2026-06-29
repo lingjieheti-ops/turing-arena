@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -72,
+  "confidence": 38,
+  "rationaleHash": "0x046d6e9d3b4aa51cf18de9f42d4ad83242465785b9806986d6f2441c6dfd98d7",
+  "salt": "0xd8df4dc186d4c974d31d4266903e5311f37347f109672ad592c234ee08f1fb72",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen -0.98 (Smart money net outflow); allora +0.35 (Allora ML forecast leans long).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
