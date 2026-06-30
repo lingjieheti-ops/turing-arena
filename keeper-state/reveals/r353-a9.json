@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 192,
+  "confidence": 52,
+  "rationaleHash": "0xd49ab2cc1b0ae0548c75f4aa4521d6412fe9553d9d71543180474f0b1a437b54",
+  "salt": "0xb2aeed4b7200dc7908e07eaa523bf984807c4eec0d586edae5cda7fd55406f87",
+  "rationale": "Net read bullish (0.32). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); allora -0.91 (Allora ML forecast leans short); limitless -0.69 (Limitless (Base) SOL 16% up / 84% down).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
