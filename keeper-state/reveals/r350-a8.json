@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -220,
+  "confidence": 56,
+  "rationaleHash": "0x2216ce1afab9a65775c263a3de11c32bbedc973fc58c90e6153cc923974e4e8f",
+  "salt": "0xc2c504c32ea1fd4638eaf4ffbad4d64f7789641da93051b715e08869763e72c1",
+  "rationale": "Net read bearish (-0.37). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); limitless +0.95 (No Limitless market for BTC-MEMPOOL — mock up); allora -0.51 (Allora ML forecast leans short).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
