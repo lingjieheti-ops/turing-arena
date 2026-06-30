@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -54,
+  "confidence": 36,
+  "rationaleHash": "0x996237c064e6404071374e1b4d908fed9893f552069ac710a89bde1090ef5f2d",
+  "salt": "0x27b7ecb1a0a155d506f217915b9a356e8a6caffe2b6b682260129b8706555f8b",
+  "rationale": "Net read bearish (-0.09). Strongest evidence: nansen -0.96 (Smart money net outflow); momentum -0.34 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.60 (Allora ML forecast leans short).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

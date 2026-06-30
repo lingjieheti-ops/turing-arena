@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 150,
+  "confidence": 47,
+  "rationaleHash": "0x1e4b1be7ede7c48c321313fb011efe12b1913b01d328f6362f5ef839033b662e",
+  "salt": "0x6abe750abcfbf1da91f742413a17981783848f50dbbd50c293bac61117a32e21",
+  "rationale": "Net read bullish (0.25). Strongest evidence: nansen -0.96 (Smart money net outflow); momentum -0.34 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.60 (Allora ML forecast leans short).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

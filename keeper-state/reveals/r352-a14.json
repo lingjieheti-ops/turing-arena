@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 18,
+  "confidence": 32,
+  "rationaleHash": "0xa28c496749a9b26ad0248d511fb66d595a8125a5c62292e81a59cbf792c4a9f8",
+  "salt": "0x20df0fde81823a5c0515bd0af65ec175f1ea8ebf1d0a70b6b6826d0a9dcad6ae",
+  "rationale": "Net read neutral (0.03). Strongest evidence: nansen -0.96 (Smart money net outflow); momentum -0.34 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.60 (Allora ML forecast leans short).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
