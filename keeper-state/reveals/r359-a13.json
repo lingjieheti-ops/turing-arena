@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 69,
+  "confidence": 38,
+  "rationaleHash": "0x7b7178e7f69990731f22f160a0cfca93377c60c6a42c687ac59d047d5ec1837a",
+  "salt": "0x6ad895090a73cbad53484bc1705868d8e801e012a87b948bcc854c6ae5928e4d",
+  "rationale": "Net read bullish (0.11). Strongest evidence: nansen +0.97 (Smart money net inflow); allora -0.55 (Allora ML forecast leans short); mantle-onchain +0.71 (Mantle on-chain momentum up).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

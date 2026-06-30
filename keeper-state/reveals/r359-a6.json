@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 234,
+  "confidence": 57,
+  "rationaleHash": "0x89c2f860ff9cd3265d4689bc99053ffec08bccae237b2d3c9584778723124da1",
+  "salt": "0x9d6e1ec98cf40afd00c97461c686433a6ea7b65d6628615fc5c2d1ea7afc6ef6",
+  "rationale": "Net read bullish (0.39). Strongest evidence: nansen +0.97 (Smart money net inflow); allora -0.55 (Allora ML forecast leans short); mantle-onchain +0.71 (Mantle on-chain momentum up).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

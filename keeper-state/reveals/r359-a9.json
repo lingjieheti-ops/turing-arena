@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 299,
+  "confidence": 65,
+  "rationaleHash": "0x8198092be3885dd68c6a650656da26dd431c504670d8b1629ce31a99e36b10d6",
+  "salt": "0xb387d9085e9fae9e830fb12aa0f5e138329b99a3a01c2593bd3bba6aef86c948",
+  "rationale": "Net read bullish (0.50). Strongest evidence: nansen +0.97 (Smart money net inflow); allora -0.55 (Allora ML forecast leans short); mantle-onchain +0.71 (Mantle on-chain momentum up).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 319,
+  "confidence": 67,
+  "rationaleHash": "0x58f6612310af8171ebcf3b884d6fd5eeba2406deb659ca977ae9d7fbc8591693",
+  "salt": "0x04566c0f38fe83ccfd7352c839bf6135bdf7c02970f30a7e203f9a7ba9496409",
+  "rationale": "Net read bullish (0.53). Strongest evidence: nansen +0.97 (Smart money net inflow); allora -0.55 (Allora ML forecast leans short); mantle-onchain +0.71 (Mantle on-chain momentum up).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
