@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 154,
+  "confidence": 48,
+  "rationaleHash": "0xe3454d7e8eb81cdb8887992640f884efa78d58249ad86a967380639b9e398348",
+  "salt": "0x806194c497c01907cee2d1e9650776fe7370565b5bb35cff1ddc4a23bba6407a",
+  "rationale": "Net read bullish (0.26). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.97 (Smart money net inflow); elfa +0.92 (KOL mindshare heating up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

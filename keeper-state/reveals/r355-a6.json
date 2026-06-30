@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 203,
+  "confidence": 54,
+  "rationaleHash": "0x17bf93f6fb17aa9ee84d63c80f11dd29c338f3d9e8335a728e8c44852576de15",
+  "salt": "0xfd97e219fb7504899491ad84ea2c38a030b962a4a768fdae4143471d1f879d6c",
+  "rationale": "Net read bullish (0.34). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.97 (Smart money net inflow); elfa +0.92 (KOL mindshare heating up).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

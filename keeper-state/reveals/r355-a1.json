@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -29,
+  "confidence": 33,
+  "rationaleHash": "0x7029b2ca1fe9aa76796070ba0b4bb98fe37408876d7520fbbc9d4e17152fd715",
+  "salt": "0x05293e0711d27d647cd77e13941a3eb35b509f054912529da5a64cbfdc729a85",
+  "rationale": "Net read neutral (-0.05). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.97 (Smart money net inflow); elfa +0.92 (KOL mindshare heating up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

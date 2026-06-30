@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 18,
+  "confidence": 32,
+  "rationaleHash": "0x3beada47aa58dfe600a74e2de1771091c323c340883ed38762e65eccbd810ddb",
+  "salt": "0x0570f86245ba97046ec132cc1caa4a76c8ca08d49e689f6b149d24254f626f36",
+  "rationale": "Net read neutral (0.03). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.97 (Smart money net inflow); elfa +0.92 (KOL mindshare heating up).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

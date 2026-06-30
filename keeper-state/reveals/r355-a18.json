@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -9,
+  "confidence": 31,
+  "rationaleHash": "0x47877a6a7411ea996833ab754cd10ad57ae36a7f004e90144c606d0c79d0353e",
+  "salt": "0x53a1e160a871d5db7de279b899fac5aac77eace01a8f5e48f7267210d32d8e2b",
+  "rationale": "Net read neutral (-0.01). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.97 (Smart money net inflow); elfa +0.92 (KOL mindshare heating up).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
