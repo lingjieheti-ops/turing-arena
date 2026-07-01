@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 265,
+  "confidence": 61,
+  "rationaleHash": "0x1d1de9e395d1b7aad2fd691474734f5ffca2c8b9ae368fac122c3f07bb709944",
+  "salt": "0xac5f3520c8b9f06ebc7bd71ee7b3fd836ed03a457e42e57c48657cb444726b68",
+  "rationale": "Net read bullish (0.44). Strongest evidence: momentum -0.41 (MNT/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.89 (Mantle on-chain momentum down); allora +0.58 (Allora ML forecast leans long).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

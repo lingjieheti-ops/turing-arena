@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 13,
+  "confidence": 31,
+  "rationaleHash": "0x722a3458eb955156534996d42169f3195b18622816cda3ac6c1eefd2f2245299",
+  "salt": "0x16f4adc6d87f70c8e5e60386dee060ca614566070817197d0f9add54ce8bbd50",
+  "rationale": "Net read neutral (0.02). Strongest evidence: momentum -0.41 (MNT/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.89 (Mantle on-chain momentum down); allora +0.58 (Allora ML forecast leans long).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

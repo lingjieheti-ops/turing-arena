@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -31,
+  "confidence": 34,
+  "rationaleHash": "0x2e72f914a545ac111d25c5833288d29b840cb1c03cabb0fcc74ab7cab3bafaa2",
+  "salt": "0x328f0d167ec4c02681b959bd33967ce93861b2fc7f0114725de0c7b635096e6d",
+  "rationale": "Net read bearish (-0.05). Strongest evidence: momentum -0.41 (MNT/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.89 (Mantle on-chain momentum down); allora +0.58 (Allora ML forecast leans long).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
