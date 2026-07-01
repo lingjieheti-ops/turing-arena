@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 272,
+  "confidence": 62,
+  "rationaleHash": "0xf8668a203054e371a798303db34026c7199a20cdf4195186e180e8b2b4196330",
+  "salt": "0xa90160dbd9f60d0b07fd38961b27de1ec4ab8775cc2b4574c441adb90c4aa860",
+  "rationale": "Net read bullish (0.45). Strongest evidence: momentum +1.00 (SOL/USD up-momentum since the last tick (Pyth, live)); nansen +0.66 (Smart money net inflow); limitless +0.47 (Limitless (Base) SOL 73% up / 27% down).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
