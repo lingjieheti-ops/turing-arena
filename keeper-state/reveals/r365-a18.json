@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -19,
+  "confidence": 32,
+  "rationaleHash": "0x22dae05a30afd759fe6ca56ef828b9d0b6dacccc25e835dc8b44f6a2bb33f304",
+  "salt": "0x4a97fd6b369589b417c55e76dc7237f851280f2323866b425bdb7fe9dddd4f8c",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: limitless -0.77 (Limitless (Base) ETH 12% up / 88% down); nansen -0.48 (Smart money net outflow); allora +0.38 (Allora ML forecast leans long).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
