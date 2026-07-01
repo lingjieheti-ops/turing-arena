@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -18,
+  "confidence": 32,
+  "rationaleHash": "0x2e3c8c879ba49bc244ff564eaf57e4f5b74e8e9d4e8f974d2242ea2909b843aa",
+  "salt": "0xbc75fe2aa46de90afe59ee8c47f7e8a7828f349ba385246eca40d65973c4491d",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: momentum -0.96 (MNT/USD down-momentum since the last tick (Pyth, live)); nansen +0.72 (Smart money net inflow); mantle-onchain -0.82 (Mantle on-chain momentum down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

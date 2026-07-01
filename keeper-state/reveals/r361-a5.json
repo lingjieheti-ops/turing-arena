@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 131,
+  "confidence": 45,
+  "rationaleHash": "0xf23ebce037ae56252c75e8a8175d8ef0b085bf6dc55e2c115afd182e4ea10763",
+  "salt": "0xf9b41d5c4d64e69604d5bf59c9ef43189923b83785299cd847cef403cee38729",
+  "rationale": "Net read bullish (0.22). Strongest evidence: momentum -0.96 (MNT/USD down-momentum since the last tick (Pyth, live)); nansen +0.72 (Smart money net inflow); mantle-onchain -0.82 (Mantle on-chain momentum down).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
