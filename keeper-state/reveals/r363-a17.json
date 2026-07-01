@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -318,
+  "confidence": 67,
+  "rationaleHash": "0x585f91bd04ee33b947db38285117ec45db6d302b17a02d6550041cbfd359d6d0",
+  "salt": "0xc06efa6cd09c107ae251bf17967ea8b04b813d0dba697273499ff77bb53f11ee",
+  "rationale": "Net read bearish (-0.53). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless +0.77 (No Limitless market for ETHGAS-GWEI — mock up); allora +0.39 (Allora ML forecast leans long).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
