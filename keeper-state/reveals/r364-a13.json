@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 78,
+  "confidence": 39,
+  "rationaleHash": "0xcc079abc2a611cc97b86344b0372d1b228762b26846ddf63787ec36a80fd66b9",
+  "salt": "0x519ed31397d3ab0518cf45fdabe74811ef77d44f2a23155975833a8bb81f9dd1",
+  "rationale": "Net read bullish (0.13). Strongest evidence: allora +0.57 (Allora ML forecast leans long); mantle-onchain +0.67 (Mantle on-chain momentum up); momentum +0.21 (BTC Mempool up-momentum since the last tick (Pyth, live)).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 300,
+  "confidence": 65,
+  "rationaleHash": "0x5c14e1426d0011056bbd616234e404ef05395a032b4f306d1ad35e7788111447",
+  "salt": "0xdcc460643326fe4c96a2d7d4b85875c845b82569a538949a6c087a435029a988",
+  "rationale": "Net read bullish (0.50). Strongest evidence: allora +0.57 (Allora ML forecast leans long); mantle-onchain +0.67 (Mantle on-chain momentum up); momentum +0.21 (BTC Mempool up-momentum since the last tick (Pyth, live)).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

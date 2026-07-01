@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 288,
+  "confidence": 64,
+  "rationaleHash": "0xd15acad66c3345f0fe72b6aac8c60e4f711609681c1dacf01cd6ee78834ffcd3",
+  "salt": "0x8cc0cae29151795cfce0885df2db8ea7ba70b7a59e87979a7b9ab4aa4b89b06d",
+  "rationale": "Net read bullish (0.48). Strongest evidence: allora +0.57 (Allora ML forecast leans long); mantle-onchain +0.67 (Mantle on-chain momentum up); momentum +0.21 (BTC Mempool up-momentum since the last tick (Pyth, live)).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
