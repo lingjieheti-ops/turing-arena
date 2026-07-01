@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 200,
+  "confidence": 53,
+  "rationaleHash": "0x00b16dc00c7a57029fa8107a8ec52c9a808d522cdee3a93c2f620d0d536e71a7",
+  "salt": "0x79aba949d6c44248f2a9d2af215000faf0714625dc812747b022e968673153fd",
+  "rationale": "Net read bullish (0.33). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

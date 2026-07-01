@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 59,
+  "confidence": 37,
+  "rationaleHash": "0xf7388c45a43c92e4d040fd97651a9077bf9bf9b91fa17e4717011aab87de8a76",
+  "salt": "0xbbe2d19704af0a9331cad47a8560cba27e63caedf62f2732cebe9513037ddc1d",
+  "rationale": "Net read bullish (0.10). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 22,
+  "confidence": 33,
+  "rationaleHash": "0x79518d991ba8402e6b446752544d46c0c9a2bedf921c8671a0d0d13fed0b3a50",
+  "salt": "0x55734334fcc6c7304cf471b5df4f530b99e8412cda2d2ac0aa529d33fcb917ca",
+  "rationale": "Net read neutral (0.04). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

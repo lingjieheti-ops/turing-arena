@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -51,
+  "confidence": 36,
+  "rationaleHash": "0xcfb4c1c3563495018a8796741d24cba907032067fd034262dd66c1b2d7385f1e",
+  "salt": "0x839c4cc6b68efa9261d50e01dc3ea45f15404b57d8eadd982d3ca752780d1087",
+  "rationale": "Net read bearish (-0.09). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -81,
+  "confidence": 39,
+  "rationaleHash": "0x4d40ef18eab6a998eaf5103bf7bce37154572fb395a9134e63da75ba37f9fa79",
+  "salt": "0x15b0bd883c18745c4d61d285cf2d1591ef8b1f8093f08d956b6e69aec3d7c7a5",
+  "rationale": "Net read bearish (-0.13). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

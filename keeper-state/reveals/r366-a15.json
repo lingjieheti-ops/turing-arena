@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 231,
+  "confidence": 57,
+  "rationaleHash": "0x275cb141b0f0c47339cca732d19e1cb66c0f2013f80d1bf98e6ebbc0eb593066",
+  "salt": "0xfc9480db602414c37e679cd2f4675678ef8e796837bbfd2293e9aa650b880424",
+  "rationale": "Net read bullish (0.38). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

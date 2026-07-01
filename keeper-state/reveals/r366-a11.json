@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 315,
+  "confidence": 67,
+  "rationaleHash": "0x2d36a085a81cc17fa6567051c34115a262b71296e982ec3f6790efc03d27f254",
+  "salt": "0xc4e7ba37480966e5d1eb0600401a84c843ca7d08a245e6e30aad76a5dab6d8c3",
+  "rationale": "Net read bullish (0.52). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

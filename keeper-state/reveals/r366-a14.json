@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 246,
+  "confidence": 59,
+  "rationaleHash": "0xf3d6149e081333c0ef532957e386cfdc54272e85d46c5a6f8847c07bc809f2d8",
+  "salt": "0x3337405c90feb72fa04f9f0ab013413fd0c12a1a331013f16be7dd9a73bef097",
+  "rationale": "Net read bullish (0.41). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

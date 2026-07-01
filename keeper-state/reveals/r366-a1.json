@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 73,
+  "confidence": 39,
+  "rationaleHash": "0x44a5e8722cc7440db10fcea53bf9523ed537dd60c83e8fdd34c871f862728b13",
+  "salt": "0x82eaa8716fd312176449bfad3f373bc637de8cbf1ce8633e0d00e081dc583979",
+  "rationale": "Net read bullish (0.12). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 139,
+  "confidence": 46,
+  "rationaleHash": "0xe57eeb03be3101b79044cb5444b5df744e65f1f7e4089395d04865bcb746368d",
+  "salt": "0x22fbb773b855c420561bdd3e3ecbef0aa9dfdaf2f3500737d1043ba9d8dbe801",
+  "rationale": "Net read bullish (0.23). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

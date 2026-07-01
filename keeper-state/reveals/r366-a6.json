@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 228,
+  "confidence": 57,
+  "rationaleHash": "0x275cb141b0f0c47339cca732d19e1cb66c0f2013f80d1bf98e6ebbc0eb593066",
+  "salt": "0x5102141b01debc5b3934d98e477b386e3dd046ae144b3fe4640b0926ace39111",
+  "rationale": "Net read bullish (0.38). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

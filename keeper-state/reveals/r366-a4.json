@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 125,
+  "confidence": 45,
+  "rationaleHash": "0x9d8c09cb45185c7cbe32db422c5c2b5c67edee131118a018385fd2f2f37a5398",
+  "salt": "0xe8e3941340afa154c236dcb9a0e091bbdae3e3e716d2537b92870b7b022b7cdd",
+  "rationale": "Net read bullish (0.21). Strongest evidence: mantle-onchain +0.78 (Mantle on-chain momentum up); allora +0.51 (Allora ML forecast leans long); surf +0.91 (Market momentum positive).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
