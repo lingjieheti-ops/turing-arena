@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 324,
+  "confidence": 68,
+  "rationaleHash": "0xf6d69e7fd290067624f3a24a5beaf131997f039f31028e4357e74647c8582e26",
+  "salt": "0x6cf97197179c9fd87f195245d3cbeec138ba13c46f7028fa1526e559f35596db",
+  "rationale": "Net read bullish (0.54). Strongest evidence: mantle-onchain +0.79 (Mantle on-chain momentum up); limitless +0.41 (Limitless (Base) BTC 71% up / 29% down); momentum +0.21 (BTC/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
