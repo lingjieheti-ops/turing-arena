@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 120,
+  "confidence": 44,
+  "rationaleHash": "0x1854e53980d8a66062ba1b65405da8c6b29a78ee2f1747a86f522480ae79bd13",
+  "salt": "0x1da400b589bbb5b1b55c0b4b8dc287c1b1eaf82f7bee37f5f7fd10f65c86f92b",
+  "rationale": "Net read bullish (0.20). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

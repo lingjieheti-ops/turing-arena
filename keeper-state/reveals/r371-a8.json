@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -74,
+  "confidence": 39,
+  "rationaleHash": "0x5944eefc3cd9917cd7dfe90ba31803c1866a80dac3e8bec2041ecb66df9fa15c",
+  "salt": "0x33a390bebccbbea23c6e058ed370c9f9fbd0d4782b936c7971557494b4aee1bd",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

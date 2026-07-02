@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 185,
+  "confidence": 52,
+  "rationaleHash": "0x79b1e80f7745666bbb0c4067b0f60282c7d09d8d9b6c4091b7f1047c6d835260",
+  "salt": "0x3e19a477220517dc62c93a6462ffc3cc7c1e895f9a721ed89a787fc61819c2f5",
+  "rationale": "Net read bullish (0.31). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

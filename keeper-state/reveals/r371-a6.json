@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 183,
+  "confidence": 51,
+  "rationaleHash": "0xc891715e2c9d24b0e9ed1a5746c9299e6eddb332c2b53618d787526e221048f7",
+  "salt": "0x48003453b8abeca0d5aea751f5f900fda8a69e1c4908a2249510dab4bed23bad",
+  "rationale": "Net read bullish (0.30). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

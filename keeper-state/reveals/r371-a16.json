@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -208,
+  "confidence": 54,
+  "rationaleHash": "0xe5b3fa4f56651990edb27062afa58409fcfbf088d0f5c14f699001d4701bd2ad",
+  "salt": "0xe9b7719ad459879c7b3b124c7daa81f42eda4d98ec99d8feecf84ddc10227854",
+  "rationale": "Net read bearish (-0.35). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -207,
+  "confidence": 54,
+  "rationaleHash": "0xe5b3fa4f56651990edb27062afa58409fcfbf088d0f5c14f699001d4701bd2ad",
+  "salt": "0xbddac3e7a944afdff9b73c6f1116a26fc74e212d383d0e63568c7aee9e659d21",
+  "rationale": "Net read bearish (-0.35). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

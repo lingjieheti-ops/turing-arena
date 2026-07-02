@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 237,
+  "confidence": 58,
+  "rationaleHash": "0xe0890a741810ce2e9cdefcb06b42af4c48061406ae1a75f9f834b491b8cc4f56",
+  "salt": "0x72fc67d948f3be77f9b51813a0307683fa6841cbe4c5387c56b53b27515953e0",
+  "rationale": "Net read bullish (0.40). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

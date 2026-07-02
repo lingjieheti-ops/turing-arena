@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 30,
+  "confidence": 33,
+  "rationaleHash": "0xb1f741ccdec71bdff8b1100cae755a2a8037e276ac387344e3a70118ae2dc7d9",
+  "salt": "0xac804120d6a588ee94a262283b57fb213b41097602742d707601a65e9b3fc837",
+  "rationale": "Net read neutral (0.05). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

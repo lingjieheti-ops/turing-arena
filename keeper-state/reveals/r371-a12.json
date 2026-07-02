@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 77,
+  "confidence": 39,
+  "rationaleHash": "0xcd40a29039b3849979c06713afdb5f7bde6d5ce66f50a5d478c65ded2dda3bad",
+  "salt": "0x5852523a427b5c426dcb9302812e8a0422ab572d7ac7eddafb9f3fb22e514fd8",
+  "rationale": "Net read bullish (0.13). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 81,
+  "confidence": 39,
+  "rationaleHash": "0x459044c18d16941f1d672d69da39ae54af1b226cb7f9a30b0d75373c4dc03219",
+  "salt": "0xbf60ed3a7e5721f91c1e637f7b30d291c889fa954c3a2221c30d7a10bb1c3377",
+  "rationale": "Net read bullish (0.14). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

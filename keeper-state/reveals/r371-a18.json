@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -33,
+  "confidence": 34,
+  "rationaleHash": "0xfa92de2b8f73e065d9a4f3a9606d494bcb4a147b079ed96ab67ffb7ad71228f9",
+  "salt": "0xda8d758031d124019ffd96024441db3066644aba8943639bc887c9606f9a05d9",
+  "rationale": "Net read bearish (-0.05). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

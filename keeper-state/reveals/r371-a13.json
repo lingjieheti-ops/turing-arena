@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -14,
+  "confidence": 32,
+  "rationaleHash": "0x15d336603c913a17a989df1ae05c908246821cf4c6ad4422f76b7a3861339e56",
+  "salt": "0xc7f55e96e65db0fbce7d3a42884150b0d013d465837df20ba3a30bd6fe365fc1",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

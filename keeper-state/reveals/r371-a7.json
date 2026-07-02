@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 95,
+  "confidence": 41,
+  "rationaleHash": "0x896f5fb072d1915a66101c6c3232dea005a9ccf95ac9028c6fa4e89ef7c3dd21",
+  "salt": "0xdd40406c8a7d86ca3ae956e5b8f3ffe43f1715c2b489c98f2ef23dc9e406b948",
+  "rationale": "Net read bullish (0.16). Strongest evidence: limitless -0.95 (No Limitless market for BTC-MEMPOOL — mock down); allora +0.58 (Allora ML forecast leans long); nansen -0.50 (Smart money net outflow).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
