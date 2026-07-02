@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 112,
+  "confidence": 43,
+  "rationaleHash": "0x8a295b4dfd35d41f811ca64c7dd5819fa3a5e38400550bf589a999d97dc6e3f6",
+  "salt": "0xeef6fa454ca39ba22389069154194255a722d95f65709803315a5192c4b6ed4e",
+  "rationale": "Net read bullish (0.19). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless -0.87 (No Limitless market for CS2-PLAYERS — mock down); mantle-onchain +0.73 (Mantle on-chain momentum up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
