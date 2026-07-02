@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 437,
+  "confidence": 81,
+  "rationaleHash": "0x5b4b5c20e82f1016b1c072ae388d6c010cf3c228fb90d1f2ed458069ffe99632",
+  "salt": "0x4ccdaaa063d4d70a88672420ef6102bfb44fa98f925c6b43e91cae317402a041",
+  "rationale": "Net read bullish (0.73). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless +0.73 (No Limitless market for ETHGAS-GWEI — mock up); nansen +0.90 (Smart money net inflow).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
