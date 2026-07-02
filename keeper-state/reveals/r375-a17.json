@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -308,
+  "confidence": 66,
+  "rationaleHash": "0x34a7c11bc08a0022223cb1c2c9e52a5501581423fa1e2a705f10be9500c26d12",
+  "salt": "0x6fc75b019ec765c42a793273f1996b34693ee5589205d57ec210679245bfa468",
+  "rationale": "Net read bearish (-0.51). Strongest evidence: momentum +0.62 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.72 (Smart money net inflow); mantle-onchain -0.76 (Mantle on-chain momentum down).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 226,
+  "confidence": 56,
+  "rationaleHash": "0xf38e404fa27fa0170adeb2530e8b4832f2ae655535e59cecf7e8da580b1ad7ac",
+  "salt": "0x37206ee45a512e244b03aa9698fb85156e4bef97aa3597cb92f6936fa879bac9",
+  "rationale": "Net read bullish (0.38). Strongest evidence: momentum +0.62 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.72 (Smart money net inflow); mantle-onchain -0.76 (Mantle on-chain momentum down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

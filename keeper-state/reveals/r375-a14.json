@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 384,
+  "confidence": 75,
+  "rationaleHash": "0x66c55d4653c4f6ffd4be7acb5307bbe71cd318dd6228129dfd79b995ae471c31",
+  "salt": "0x90225ecafc1f79953f45eb40fc993d92c99cf25935c4c93435c6c6c387639275",
+  "rationale": "Net read bullish (0.64). Strongest evidence: momentum +0.62 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.72 (Smart money net inflow); mantle-onchain -0.76 (Mantle on-chain momentum down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
