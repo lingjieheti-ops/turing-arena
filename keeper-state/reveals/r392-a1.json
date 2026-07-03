@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -95,
+  "confidence": 41,
+  "rationaleHash": "0xad2ad47bd1baa99108f56f0934b9f2829af991b2c8fd0a206784f5b037c9d7e6",
+  "salt": "0x76e3aef41cb5d59bf444733acd2762646eb7d8c85012da3438301f950e12706d",
+  "rationale": "Net read bearish (-0.16). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); limitless +0.90 (No Limitless market for BTC-MEMPOOL — mock up); mantle-onchain +0.76 (Mantle on-chain momentum up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
