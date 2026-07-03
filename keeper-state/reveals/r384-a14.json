@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 319,
+  "confidence": 67,
+  "rationaleHash": "0x38e2c218dbd491d3d3c43284ce4d06ea078ce8ed0ac9c842238818f22024af76",
+  "salt": "0x8614520e436741b8eb1af21cf9e1183fff4ea5bc27ddcc3319d3744c08114aa4",
+  "rationale": "Net read bullish (0.53). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); allora +0.56 (Allora ML forecast leans long); mantle-onchain -0.65 (Mantle on-chain momentum down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
