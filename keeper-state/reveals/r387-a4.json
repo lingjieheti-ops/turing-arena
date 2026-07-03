@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 382,
+  "confidence": 75,
+  "rationaleHash": "0xccd37761380caa5583226c153d94c45e749cc80e4cb4a8287bf6eded38e290c4",
+  "salt": "0x44da0a15312b1ef510a5203c56f6d2cb9377a255f2c93511c310b20b9975d071",
+  "rationale": "Net read bullish (0.64). Strongest evidence: limitless +0.90 (Limitless (Base) BTC 95% up / 5% down); mantle-onchain +0.79 (Mantle on-chain momentum up); momentum +0.23 (BTC/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
