@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 261,
+  "confidence": 60,
+  "rationaleHash": "0xa14db695d7edc30f6eb9d532c5bbcd66e9892501b1c704e7223d6c5e823077fe",
+  "salt": "0x4feb2d7c61e5cc1cef53fec944985ac15565d967ed2512ea03a19486cca373bf",
+  "rationale": "Net read bullish (0.44). Strongest evidence: limitless -0.96 (Limitless (Base) ETH 2% up / 98% down); allora -0.65 (Allora ML forecast leans short); nansen +0.62 (Smart money net inflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

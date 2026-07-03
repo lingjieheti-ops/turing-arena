@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 143,
+  "confidence": 47,
+  "rationaleHash": "0x6ba0b1d76a9b7152558b6e1ab921588348256fb513750e5b067089345d6e0984",
+  "salt": "0xa1e2c1460a4d499d0b8b701b7301b00f3ed45e82fbcb782886e0c0ed3221b786",
+  "rationale": "Net read bullish (0.24). Strongest evidence: limitless -0.96 (Limitless (Base) ETH 2% up / 98% down); allora -0.65 (Allora ML forecast leans short); nansen +0.62 (Smart money net inflow).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

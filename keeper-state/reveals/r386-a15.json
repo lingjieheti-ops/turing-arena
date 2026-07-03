@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -63,
+  "confidence": 37,
+  "rationaleHash": "0x657476412d69d809aa167959a07ef70eaaeceb99e8ec1d614d7172dd8d11dde9",
+  "salt": "0x7d20a9da1d1132d8e6df3f9ff3b64aa49d9a8bc656fd4b62d2fb358f18183d21",
+  "rationale": "Net read bearish (-0.11). Strongest evidence: limitless -0.96 (Limitless (Base) ETH 2% up / 98% down); allora -0.65 (Allora ML forecast leans short); nansen +0.62 (Smart money net inflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
