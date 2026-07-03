@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 146,
+  "confidence": 47,
+  "rationaleHash": "0x6c0a16baab76d35aa2c46f5d327751c8018a1dbe1cbaf4ce10c582d4d65d7ec4",
+  "salt": "0xa8f9224d18074b2f39b19a009fb7ca584935a6459c5b856ada4cb11855f6ed57",
+  "rationale": "Net read bullish (0.24). Strongest evidence: momentum -0.51 (MNT/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.94 (Mantle on-chain momentum down); nansen +0.65 (Smart money net inflow).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

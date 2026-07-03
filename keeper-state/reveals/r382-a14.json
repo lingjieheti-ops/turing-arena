@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 12,
+  "confidence": 31,
+  "rationaleHash": "0xfbc5e9659caa34e180d13f1104e48d027f67cd3338661f17c7bf21acc9375eb1",
+  "salt": "0xd5326a9003291c562afb59874d94bb8b9e245d0fb9ad5a46ae5fd215f1133ecc",
+  "rationale": "Net read neutral (0.02). Strongest evidence: momentum -0.51 (MNT/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.94 (Mantle on-chain momentum down); nansen +0.65 (Smart money net inflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
