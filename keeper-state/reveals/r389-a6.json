@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 248,
+  "confidence": 59,
+  "rationaleHash": "0xcefc8a181e0ae6c590c95c66cb60188da24d8664d5b301b6d1eed9a6eb2bfa43",
+  "salt": "0x00522234fbba2e50498c709cacd14e2a785b0ee38edb357c143981636e452656",
+  "rationale": "Net read bullish (0.41). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.69 (Smart money net inflow); mantle-onchain -0.85 (Mantle on-chain momentum down).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
