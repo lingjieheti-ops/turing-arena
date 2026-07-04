@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": -73,
+  "confidence": 38,
+  "rationaleHash": "0x8e2f0769cd96d213cacc5bcf9f198dc71a1ae127a9063ae77521395f576bbf83",
+  "salt": "0xecdc57150a4d8ccfe287b9ae0038cd9f810b20836bff7bdfc96fc95701d6bd96",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: momentum -0.70 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless -0.96 (Limitless (Base) ETH 2% up / 98% down); allora -0.61 (Allora ML forecast leans short).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
