@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 308,
+  "confidence": 66,
+  "rationaleHash": "0xd69c0fd14fbd60006ee4a893cb23cf20434be30004b5873085529e7d755ac55f",
+  "salt": "0xb4edd1ccb22f48c555e5074501bd42e3f0c770be45abf4f72fe2574b89cbc6f1",
+  "rationale": "Net read bullish (0.51). Strongest evidence: nansen -0.94 (Smart money net outflow); momentum +0.33 (BTC/USD up-momentum since the last tick (Pyth, live)); mantle-onchain +0.81 (Mantle on-chain momentum up).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

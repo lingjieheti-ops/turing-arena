@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 88,
+  "confidence": 40,
+  "rationaleHash": "0x80235bbdbd649019bff8dc0a460ad5e19596b3021179fd1f355e79c7d343a88b",
+  "salt": "0xfb78012321834ad8bf41802f5a7a6dab2cc0bca8c9329a7b30dd7315e2b0d3c4",
+  "rationale": "Net read bullish (0.15). Strongest evidence: nansen -0.94 (Smart money net outflow); momentum +0.33 (BTC/USD up-momentum since the last tick (Pyth, live)); mantle-onchain +0.81 (Mantle on-chain momentum up).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
