@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -15,
+  "confidence": 32,
+  "rationaleHash": "0x41354898199edd8ba4d05a27eb2717c9a5531389649a8e30c89577f01a5e5836",
+  "salt": "0xfe7bde12f601da11b9f2167db6b6febcc0b4059a054b20634dd3613096e00d04",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); limitless +0.78 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.83 (Smart money net inflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

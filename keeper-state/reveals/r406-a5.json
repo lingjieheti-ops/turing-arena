@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 123,
+  "confidence": 44,
+  "rationaleHash": "0x77cef8214de8620781a74616b3658a6c535937a68909f9bb8b686154bfbca05a",
+  "salt": "0x6151c8151e610bf0329528ac324208e48411ff1ca9909dddf038475ef215b3fc",
+  "rationale": "Net read bullish (0.21). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); limitless +0.78 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.83 (Smart money net inflow).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
