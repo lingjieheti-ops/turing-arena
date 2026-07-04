@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 429,
+  "confidence": 80,
+  "rationaleHash": "0x029e7545f37773642105efb65bca7ff8093a423d4e3ba61eff49d6577b8ce409",
+  "salt": "0x8c775f82adb29a148eca2318ed05a9969d486d568fd4d1350fe47ee905ba111b",
+  "rationale": "Net read bullish (0.72). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora +0.92 (Allora ML forecast leans long); limitless -0.28 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

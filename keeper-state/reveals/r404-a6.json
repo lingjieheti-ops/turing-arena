@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 273,
+  "confidence": 62,
+  "rationaleHash": "0x3f920ef53b932422b2a27b4d1ede725a4acf0077b00fef5989268d49b2c8ca05",
+  "salt": "0x00e4f2615c22d41d4b52f57941e6f3dfd528f6478e9bb32b79ebb6853360a1df",
+  "rationale": "Net read bullish (0.46). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora +0.92 (Allora ML forecast leans long); limitless -0.28 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
