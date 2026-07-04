@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 113,
+  "confidence": 43,
+  "rationaleHash": "0xdac299abcdc959626b8731d716bbe7c5efd19f9730452749c3b8344f31304e87",
+  "salt": "0xee7f9f4f1092044a0a89f8b661e0b0dd13181ddfeabc59246a6d66931cfc7de1",
+  "rationale": "Net read bullish (0.19). Strongest evidence: mantle-onchain -0.89 (Mantle on-chain momentum down); allora -0.54 (Allora ML forecast leans short); nansen +0.60 (Smart money net inflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -218,
+  "confidence": 55,
+  "rationaleHash": "0xac16d0c011066fc7efbd6df5b34efcf6e5660a517bb792a9e7e6cba69669513e",
+  "salt": "0x165696390892f5617d02f25d35fc03107bc7f4da7398207137d9eb5225bc0ad7",
+  "rationale": "Net read bearish (-0.36). Strongest evidence: mantle-onchain -0.89 (Mantle on-chain momentum down); allora -0.54 (Allora ML forecast leans short); nansen +0.60 (Smart money net inflow).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -141,
+  "confidence": 46,
+  "rationaleHash": "0x9875db813da6776ef5dc7817deb48c7aa1a71ce143878b7f121a8c70929a39f4",
+  "salt": "0xf9d1334b8b7938d2722188d90ff6e98c22e6608b9f71d05d757f0570e1d19476",
+  "rationale": "Net read bearish (-0.23). Strongest evidence: mantle-onchain -0.89 (Mantle on-chain momentum down); allora -0.54 (Allora ML forecast leans short); nansen +0.60 (Smart money net inflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

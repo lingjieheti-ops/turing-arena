@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -22,
+  "confidence": 33,
+  "rationaleHash": "0x494c80eb63da0312df85739008874e312808af87d463ab2d22ad639d8661fa8f",
+  "salt": "0xfb09090d0b8c46ec88933688ff4e7d15b8075dc09f0e880687336841b83f80bd",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: mantle-onchain -0.89 (Mantle on-chain momentum down); allora -0.54 (Allora ML forecast leans short); nansen +0.60 (Smart money net inflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
