@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 278,
+  "confidence": 62,
+  "rationaleHash": "0xf18ad5fcabc2798e62afd9090e2f4e089e22290c6e2f21e66ee20125bfb71cf6",
+  "salt": "0xcfdcc836f100b5b93be7992373eef10df7d1cca7add3cdac8183b56d626283a3",
+  "rationale": "Net read bullish (0.46). Strongest evidence: limitless +0.91 (Limitless (Base) BTC 96% up / 4% down); nansen -0.92 (Smart money net outflow); surf -0.96 (Market momentum negative).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

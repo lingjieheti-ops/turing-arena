@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 44,
+  "confidence": 35,
+  "rationaleHash": "0xa04ddc2be1e61388077224637fd40a82b185b6914ffa0100ce97ee737d1a82f1",
+  "salt": "0x88721619851a460d1c1d257491f5aaaf3209b7f439c6e7c030ca7b094c1a8861",
+  "rationale": "Net read bullish (0.07). Strongest evidence: limitless +0.91 (Limitless (Base) BTC 96% up / 4% down); nansen -0.92 (Smart money net outflow); surf -0.96 (Market momentum negative).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

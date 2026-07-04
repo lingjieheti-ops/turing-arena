@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 178,
+  "confidence": 51,
+  "rationaleHash": "0x8c7c1f40c67f3a16a2ce2fb10294ecb0a18f46c8f12fa433961bd70e2e6f7e03",
+  "salt": "0xd88cccab2f4cd2120ded7ff84f1c01f3d33a3c050586a6e62c50dafccd371c3a",
+  "rationale": "Net read bullish (0.30). Strongest evidence: limitless +0.91 (Limitless (Base) BTC 96% up / 4% down); nansen -0.92 (Smart money net outflow); surf -0.96 (Market momentum negative).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

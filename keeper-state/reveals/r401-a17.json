@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -248,
+  "confidence": 59,
+  "rationaleHash": "0xb943d333689d071187ac8df6c4568bd1f31024f47a5ea38c41a185b1b415f7c2",
+  "salt": "0xb2b04ae0fd795654082e06d49d06703c0a60a44b706f340e08853ddc36694b4b",
+  "rationale": "Net read bearish (-0.41). Strongest evidence: limitless +0.91 (Limitless (Base) BTC 96% up / 4% down); nansen -0.92 (Smart money net outflow); surf -0.96 (Market momentum negative).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

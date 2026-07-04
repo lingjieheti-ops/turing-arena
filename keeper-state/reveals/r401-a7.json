@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 121,
+  "confidence": 44,
+  "rationaleHash": "0xcadb1feedb3ea5d6c37fe615b195ed4ba547734601564b768f3c6fc47030ef8a",
+  "salt": "0xf9f048d10783084bb0e7beab07263ebab76eb104e22716a1f688d6433cfbef28",
+  "rationale": "Net read bullish (0.20). Strongest evidence: nansen -0.92 (Smart money net outflow); surf -0.96 (Market momentum negative); allora +0.24 (Allora ML forecast leans long).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 26,
+  "confidence": 33,
+  "rationaleHash": "0xde4d7a772b47176154891d618565fae753639a33498aafafe518d19fe0e6a1c0",
+  "salt": "0x6557096ed2f628ebbd07f26099555f2137cfc40194f9649502a02b87585face9",
+  "rationale": "Net read neutral (0.04). Strongest evidence: limitless +0.91 (Limitless (Base) BTC 96% up / 4% down); nansen -0.92 (Smart money net outflow); surf -0.96 (Market momentum negative).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
