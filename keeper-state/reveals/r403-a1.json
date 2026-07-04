@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 14,
+  "confidence": 32,
+  "rationaleHash": "0xe1a4e61bcff71b342dae85ebceaab984b633933a02b7549d93edcb25785bab87",
+  "salt": "0x77800d4917b21e4a15a9dafcd5afe488209bc504f44b376114c1a3481c35d17f",
+  "rationale": "Net read neutral (0.02). Strongest evidence: momentum -0.39 (MNT/USD down-momentum since the last tick (Pyth, live)); mantle-onchain +0.68 (Mantle on-chain momentum up); elfa +0.66 (KOL mindshare heating up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
