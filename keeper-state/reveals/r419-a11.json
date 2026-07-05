@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 253,
+  "confidence": 59,
+  "rationaleHash": "0xcd6b0b844cbb30f398fe801fc5eda0bf49bbfa90c4a19a3c593cc84456c9263f",
+  "salt": "0x1258f15ab4c7aeecce4af293e7a4045b1cd15424c9f6c8f329cf8eb6bfaad147",
+  "rationale": "Net read bullish (0.42). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); mantle-onchain +0.64 (Mantle on-chain momentum up); elfa -0.83 (KOL mindshare cooling).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

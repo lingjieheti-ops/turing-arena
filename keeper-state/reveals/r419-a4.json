@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -402,
+  "confidence": 77,
+  "rationaleHash": "0xc1a4bc269d4b6fd13e5a1ef72023c54d5d366e8d5c457c29ffe59b6c48371560",
+  "salt": "0xec3f3184b0b16b13c1c2cc77b6a3a2e314ab329172beb5c3274eaed1e164167c",
+  "rationale": "Net read bearish (-0.67). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); mantle-onchain +0.64 (Mantle on-chain momentum up); elfa -0.83 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

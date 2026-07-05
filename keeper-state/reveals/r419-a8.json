@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -265,
+  "confidence": 61,
+  "rationaleHash": "0xbf80f6b27b42a290779ceeabb11a41e71a6f7abd431d02a10b8be7119fb53879",
+  "salt": "0x6b4c89fb4d9172c9236fec3595a40259d04cf3c08c1888e00294e989a2ad1965",
+  "rationale": "Net read bearish (-0.44). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); mantle-onchain +0.64 (Mantle on-chain momentum up); elfa -0.83 (KOL mindshare cooling).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

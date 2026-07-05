@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 199,
+  "confidence": 53,
+  "rationaleHash": "0xe874b0df10c3d9fbad0ec4f1931af62c9f5a410da7f6c62b1ed792144a715848",
+  "salt": "0x1dd22b9f3ba38ab9d0df591be41d56c86886eb8017a2b30795d05da0658ff198",
+  "rationale": "Net read bullish (0.33). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); mantle-onchain +0.64 (Mantle on-chain momentum up); elfa -0.83 (KOL mindshare cooling).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
