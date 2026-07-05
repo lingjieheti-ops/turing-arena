@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 303,
+  "confidence": 65,
+  "rationaleHash": "0x15c74c8734708db1b2da52516311b488d0d23604f1075583f70b2e843f829ea1",
+  "salt": "0xa7e50664ca6283b6a00aa7294d5a54a05552b5c11b085098b32ad3683e8619b2",
+  "rationale": "Net read bullish (0.51). Strongest evidence: momentum +0.70 (mETH/USD up-momentum since the last tick (Pyth, live)); allora +0.59 (Allora ML forecast leans long); limitless -0.47 (Limitless (Base) ETH 26% up / 74% down).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
