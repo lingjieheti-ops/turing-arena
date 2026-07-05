@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -9,
+  "confidence": 31,
+  "rationaleHash": "0x67ee4fc92266249c9e6e6db0928eed0321ab8ceca151829000ebdc6cc5a4e5a8",
+  "salt": "0x0c7487f8b967dfa7dd67b35170a3ae444ac2b9d415bb7df333ff94e835eb4825",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); allora +0.54 (Allora ML forecast leans long); mantle-onchain +0.51 (Mantle on-chain momentum up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
