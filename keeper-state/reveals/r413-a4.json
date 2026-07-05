@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 449,
+  "confidence": 82,
+  "rationaleHash": "0x9fdbee2efdd8b0d05429a809a8606bc6a34645ffb4a68c35d8048c4b82f8b4a8",
+  "salt": "0x95a558733462c56c4508ccdcf83932675b79a0ab6abbaeaf4e97b9dbdeb386a5",
+  "rationale": "Net read bullish (0.75). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless +0.82 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.80 (Smart money net inflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

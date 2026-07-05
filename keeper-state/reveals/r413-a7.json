@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 282,
+  "confidence": 63,
+  "rationaleHash": "0x5b5b48818e371771ed808ee8d6b00b6801a511a89a5a6b64c6df2ecc71d9924c",
+  "salt": "0x513207b3353e0043e91a65e7a6da1d71820de95dbf55298bccb764be1d815481",
+  "rationale": "Net read bullish (0.47). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum (Pyth, live)); limitless +0.82 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.80 (Smart money net inflow).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

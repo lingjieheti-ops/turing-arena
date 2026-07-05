@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 136,
+  "confidence": 46,
+  "rationaleHash": "0x28b6ecae215ba0a90233a94ad5bd607d85600d6ddada3db0fcd68a892abd48e5",
+  "salt": "0x6d1d834e91f19e6f7f2634cd16fdfd0ab429c0b9120e8804a3dc5671a5b0f011",
+  "rationale": "Net read bullish (0.23). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless +0.82 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.80 (Smart money net inflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
