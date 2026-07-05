@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -29,
+  "confidence": 33,
+  "rationaleHash": "0x09774631c6a998494207fd39140bcec0ed75daa2c158b8ae279ea245a8b73eb8",
+  "salt": "0x24d9fba3e064a7300f3ec5ebab51996173f2db6c401e650657f711d5a437956c",
+  "rationale": "Net read neutral (-0.05). Strongest evidence: allora -1.00 (Allora ML forecast leans short); momentum -0.44 (SOL/USD down-momentum since the last tick (Pyth, live)); surf +0.92 (Market momentum positive).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

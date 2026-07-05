@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -196,
+  "confidence": 53,
+  "rationaleHash": "0x95fcd4a492abe55ac6d82521173c3a1245dd5b6215c43b2906326a2052d70f70",
+  "salt": "0x57495367eadd0e4ef69f0c61df251799d1ec1cdd987dbf827b09c0ab0cc7aaca",
+  "rationale": "Net read bearish (-0.33). Strongest evidence: allora -1.00 (Allora ML forecast leans short); momentum -0.44 (SOL/USD down-momentum since the last tick (Pyth, live)); surf +0.92 (Market momentum positive).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -279,
+  "confidence": 63,
+  "rationaleHash": "0xd9509735aff80c2e77cba3617342581c716ae1f515c1a9f526947ec3618561f9",
+  "salt": "0x4075ae676fb45a5256730105ec59e546cb3ba967568a5ead83688ba209f49221",
+  "rationale": "Net read bearish (-0.46). Strongest evidence: allora -1.00 (Allora ML forecast leans short); momentum -0.44 (SOL/USD down-momentum since the last tick (Pyth, live)); surf +0.92 (Market momentum positive).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
