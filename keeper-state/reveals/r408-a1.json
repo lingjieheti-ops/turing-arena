@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -14,
+  "confidence": 32,
+  "rationaleHash": "0x46ab35352700a82c107fc164de121516fc483b39800b2f54fcffec7c587321a2",
+  "salt": "0x281a1755afa3db446099351652173e6a88bf8d8493118cf865f49e2af0ca5172",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: nansen -0.99 (Smart money net outflow); surf +0.99 (Market momentum positive); allora +0.29 (Allora ML forecast leans long).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

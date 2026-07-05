@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 69,
+  "confidence": 38,
+  "rationaleHash": "0x9fa8807de4b2b840b48ac8f909470ba68143e8139821dd541df884f542817518",
+  "salt": "0xb66db46bfc89c2b45b8695908896e7430197d04151a427081118de2d478ca54a",
+  "rationale": "Net read bullish (0.12). Strongest evidence: nansen -0.99 (Smart money net outflow); surf +0.99 (Market momentum positive); allora +0.29 (Allora ML forecast leans long).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

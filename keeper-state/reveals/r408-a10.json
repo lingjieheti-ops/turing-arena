@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 233,
+  "confidence": 57,
+  "rationaleHash": "0x911c080c039df82dc9bd950ea14c5c0cc46652327a316a8bae2e536265befc0a",
+  "salt": "0xc9f3d700cb4c38f2e45ff4d5e8d3f9cadf09778e2c926378062c4fe427d9b03d",
+  "rationale": "Net read bullish (0.39). Strongest evidence: nansen -0.99 (Smart money net outflow); surf +0.99 (Market momentum positive); allora +0.29 (Allora ML forecast leans long).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
