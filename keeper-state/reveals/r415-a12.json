@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 109,
+  "confidence": 43,
+  "rationaleHash": "0x6d6f8d4187fea01405a49a420ddfa37e42876f49912c13919eb78daea377e55a",
+  "salt": "0x47c88199929b92e88b9d3a81a3cce189f8a899062427afe3a003d60af5871879",
+  "rationale": "Net read bullish (0.18). Strongest evidence: limitless -0.94 (Limitless (Base) BTC 3% up / 97% down); nansen -0.86 (Smart money net outflow); elfa -0.97 (KOL mindshare cooling).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

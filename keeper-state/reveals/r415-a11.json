@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 269,
+  "confidence": 61,
+  "rationaleHash": "0x043d33f191acb41fca486031e776cccbc506540b35a4c892f83886643ae25675",
+  "salt": "0xc77ef63e35b19276927274da0d2bbd5f75edcd65ccadad314e5e6a658e009219",
+  "rationale": "Net read bullish (0.45). Strongest evidence: limitless -0.94 (Limitless (Base) BTC 3% up / 97% down); nansen -0.86 (Smart money net outflow); elfa -0.97 (KOL mindshare cooling).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
