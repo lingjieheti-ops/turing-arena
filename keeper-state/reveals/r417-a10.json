@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 345,
+  "confidence": 70,
+  "rationaleHash": "0x539e4a72d76778048fa520a99582db74d5e6072ef69aa9b9b39ec886b6900aff",
+  "salt": "0x9e8921aa63d4b45021585d5e7c2a9ca1205e862cf899527507e8fc2c38e78a85",
+  "rationale": "Net read bullish (0.58). Strongest evidence: limitless +0.86 (Limitless MNT market unavailable — mock up); momentum +0.27 (MNT/USD up-momentum since the last tick (Pyth, live)); mantle-onchain +0.65 (Mantle on-chain momentum up).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
