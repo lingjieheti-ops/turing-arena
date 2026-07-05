@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -247,
+  "confidence": 59,
+  "rationaleHash": "0xf236fdc80a03df734dc4433dd22961377aeb56fd5c1c3ff296a11551d7433ed8",
+  "salt": "0x2709788caf448bd893ee1f7f1bbb57d27e39b3835ac383cdc120956dacdd6499",
+  "rationale": "Net read bearish (-0.41). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless -0.32 (No Limitless market for CS2-PLAYERS — mock down); surf -0.74 (Market momentum negative).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
