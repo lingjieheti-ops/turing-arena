@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -71,
+  "confidence": 38,
+  "rationaleHash": "0x64ef756a0f9f2d2d37a458ed7b0827c94f8f575a5b42132fdfd6b8b05c64f893",
+  "salt": "0x45b9f21e7fdc2db382cc25a647057e60ed5b20581a2169f237a29c02526ff31e",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); mantle-onchain +0.72 (Mantle on-chain momentum up); elfa -0.75 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 122,
+  "confidence": 44,
+  "rationaleHash": "0x919308096ef4d32d7b584c568bfd1bc401561e20d444872e4f920011fa18113f",
+  "salt": "0x9e13849400125eb93b30788eb570b7eaebcdd86da1e26a112e830604b03c7877",
+  "rationale": "Net read bullish (0.20). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); mantle-onchain +0.72 (Mantle on-chain momentum up); elfa -0.75 (KOL mindshare cooling).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
