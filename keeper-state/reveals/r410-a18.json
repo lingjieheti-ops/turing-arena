@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -68,
+  "confidence": 38,
+  "rationaleHash": "0x2c630605a1a9d1cf0ca6e2c8c8b43ca8910c8c2750cc2dfca469680385f820fe",
+  "salt": "0x2f7f217f514bf37c946136665d952776b95f2b658418112d92905c6db7a1c94b",
+  "rationale": "Net read bearish (-0.11). Strongest evidence: momentum -1.00 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless -0.98 (Limitless (Base) MNT 1% up / 99% down); mantle-onchain +0.63 (Mantle on-chain momentum up).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
