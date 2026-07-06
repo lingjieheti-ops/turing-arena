@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 56,
+  "confidence": 37,
+  "rationaleHash": "0x31906b349949ed730b119c1310bdbe7be41081116205a8932ccf86a862883ecd",
+  "salt": "0x83e49495e53f44d0c4c6994fb43397441dd27eb92ac390c5a978d810cd141edd",
+  "rationale": "Net read bullish (0.09). Strongest evidence: momentum -1.00 (SOL/USD down-momentum (Pyth, live)); nansen +0.85 (Smart money net inflow); mantle-onchain -0.82 (Mantle on-chain momentum down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
