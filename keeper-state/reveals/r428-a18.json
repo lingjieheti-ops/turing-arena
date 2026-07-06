@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 40,
+  "confidence": 35,
+  "rationaleHash": "0xecd86611ad1c40665d5444fb7a617c1f40b7c0da28d2e5985ac668b719ba7dea",
+  "salt": "0x6eb634efd36a87d7b08456e7ee6e4c2628b208afa9a8ab2202f58e7251fd2169",
+  "rationale": "Net read bullish (0.07). Strongest evidence: limitless +0.47 (Limitless (Base) ETH 74% up / 26% down); allora +0.54 (Allora ML forecast leans long); momentum +0.20 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
