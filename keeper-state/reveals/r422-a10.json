@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 216,
+  "confidence": 55,
+  "rationaleHash": "0xcbe9ffc8234726670b245d007c117b6226d2e5b1196be9a46efcc8267362df79",
+  "salt": "0x477357d590429772596720430e87029c7440fa4181c73b724c8f3093640b4e5a",
+  "rationale": "Net read bullish (0.36). Strongest evidence: nansen -0.85 (Smart money net outflow); mantle-onchain +0.79 (Mantle on-chain momentum up); momentum -0.24 (BTC/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

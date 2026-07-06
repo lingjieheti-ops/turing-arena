@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 138,
+  "confidence": 46,
+  "rationaleHash": "0xb15ddca2fe94aeb9ed8907e279b87d0990a1feb88361142ab9c859d8d8759866",
+  "salt": "0xf099868b07bb0d8f911f2c5fa7d846b065622650fddf9a89f787656dbc284726",
+  "rationale": "Net read bullish (0.23). Strongest evidence: nansen -0.85 (Smart money net outflow); mantle-onchain +0.79 (Mantle on-chain momentum up); momentum -0.24 (BTC/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 98,
+  "confidence": 41,
+  "rationaleHash": "0x41c5906a1b565415eb96fbc45fde25cbf8ae39b2dedad39cc4af3d123c1c8372",
+  "salt": "0x8bd21f0335a33be355301dc98c3b61827b63a34eb304dc7875939de17b65320b",
+  "rationale": "Net read bullish (0.16). Strongest evidence: nansen -0.85 (Smart money net outflow); mantle-onchain +0.79 (Mantle on-chain momentum up); momentum -0.24 (BTC/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
