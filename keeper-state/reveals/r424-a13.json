@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -49,
+  "confidence": 36,
+  "rationaleHash": "0xdadeb8bdc4686a8a01633587431c95bacd409f5fc3888323cbc337f2519b6916",
+  "salt": "0xb7556a70cdd5d4a6b792f87c3a81fb3d3bb84be1a3fa61784f9e06febba0f662",
+  "rationale": "Net read bearish (-0.08). Strongest evidence: momentum -0.85 (MNT/USD down-momentum since the last tick (Pyth, live)); allora +0.82 (Allora ML forecast leans long); nansen -0.84 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 51,
+  "confidence": 36,
+  "rationaleHash": "0x33fdfe416bfa20f1b4fe82511459abb8d5e17270826376c9449c194a5955c62a",
+  "salt": "0xb7e35439191acb98704aa5c5df437075cea76a6053a07d65e21a7c2867ccc618",
+  "rationale": "Net read bullish (0.09). Strongest evidence: momentum -0.85 (MNT/USD down-momentum (Pyth, live)); allora +0.82 (Allora ML forecast leans long); nansen -0.84 (Smart money net outflow).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
