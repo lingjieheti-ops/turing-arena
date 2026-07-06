@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 389,
+  "confidence": 75,
+  "rationaleHash": "0x4e6af3ad0fc405c3cbb679ff466a801261276376b74772e615d71d70f02e48b0",
+  "salt": "0xaccfa2a6b83f1c505c9a293ffd84350f44e41516e06038149fb146a7c70b5e3f",
+  "rationale": "Net read bullish (0.65). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.52 (Allora ML forecast leans long); mantle-onchain +0.54 (Mantle on-chain momentum up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
