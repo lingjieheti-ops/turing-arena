@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 43,
+  "confidence": 35,
+  "rationaleHash": "0x5b60090e26d22ec83c1b5d169c141c06e4489dc13b06d84d8affd1d23c4239f0",
+  "salt": "0x8dde9ed06ada90b919eb78eb37f293f4030b99a0b7f16fed88873d6160ab1943",
+  "rationale": "Net read bullish (0.07). Strongest evidence: momentum +1.00 (BTC/USD up-momentum since the last tick (Pyth, live)); nansen -0.89 (Smart money net outflow); mantle-onchain +0.83 (Mantle on-chain momentum up).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

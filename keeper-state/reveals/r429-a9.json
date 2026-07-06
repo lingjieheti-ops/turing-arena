@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 313,
+  "confidence": 67,
+  "rationaleHash": "0xa4349a1d8c0a273cd21bf2293232e0f293151a9f77f77b8905f1e66d0e0b3cdf",
+  "salt": "0x163738e5ee9da711ffd04966415706085740d140b28fd1f0afbf083f89be8664",
+  "rationale": "Net read bullish (0.52). Strongest evidence: momentum +1.00 (BTC/USD up-momentum since the last tick (Pyth, live)); nansen -0.89 (Smart money net outflow); mantle-onchain +0.83 (Mantle on-chain momentum up).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

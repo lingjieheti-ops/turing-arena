@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 310,
+  "confidence": 66,
+  "rationaleHash": "0xa4349a1d8c0a273cd21bf2293232e0f293151a9f77f77b8905f1e66d0e0b3cdf",
+  "salt": "0xb01897492bbfd999f2ea544ed21a98fe47cbd6640420bf18749979684d8c1c8a",
+  "rationale": "Net read bullish (0.52). Strongest evidence: momentum +1.00 (BTC/USD up-momentum since the last tick (Pyth, live)); nansen -0.89 (Smart money net outflow); mantle-onchain +0.83 (Mantle on-chain momentum up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
