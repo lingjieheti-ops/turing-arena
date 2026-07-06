@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 255,
+  "confidence": 60,
+  "rationaleHash": "0x93b792f8e859949f2bff54c1a54fafc14f10e4847969b0cba8f07cea9a3ba927",
+  "salt": "0xe852b37f6a678e61a43b7763e2495ed2735842ba7f3745d8f7bb935ca8523ca9",
+  "rationale": "Net read bullish (0.43). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); mantle-onchain -0.84 (Mantle on-chain momentum down); limitless -0.43 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
