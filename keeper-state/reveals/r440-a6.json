@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 170,
+  "confidence": 50,
+  "rationaleHash": "0x8bdc547aa93c17d99b596240626131e01020a001006286ac6e75c367ae259ddf",
+  "salt": "0x84eb6a6eff89e7e1921ed6bf04d5d8ee263cca548aa3e5f474ce6cbb4953fa8f",
+  "rationale": "Net read bullish (0.28). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

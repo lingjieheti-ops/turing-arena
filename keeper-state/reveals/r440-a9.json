@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 221,
+  "confidence": 56,
+  "rationaleHash": "0x4f04b7bad6aabae7a4251eb2749850814b430342bb3c4f6cb25f7640fdddb6c5",
+  "salt": "0x25f1768c8444cf96a9fb484cfa0d19823056b420757398e5d922e7d9bde3b7dc",
+  "rationale": "Net read bullish (0.37). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

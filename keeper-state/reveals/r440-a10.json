@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 159,
+  "confidence": 49,
+  "rationaleHash": "0xaeb29febf93160a88520f288faa6e961ca9b8d2dbe3d8870a7ce5216ebdd6d32",
+  "salt": "0x482a0539c58c760bd3cae75efcff3afca6bc83d6707e7c99674bb6c8d9d358e6",
+  "rationale": "Net read bullish (0.27). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

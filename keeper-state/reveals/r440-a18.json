@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -49,
+  "confidence": 36,
+  "rationaleHash": "0xfbb944e18ec1df70a375954460e4be817c62544ab1798ca1184222a88798ff1a",
+  "salt": "0x925912137698a13e7485f532a131375513bdab67f87845344251f2e24b1b6bcc",
+  "rationale": "Net read bearish (-0.08). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

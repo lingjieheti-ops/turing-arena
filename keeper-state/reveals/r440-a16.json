@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -308,
+  "confidence": 66,
+  "rationaleHash": "0x6cb5793d2c044b5721e5aef7aaae20c949f1c811bf625f9e61815b57b2c488d6",
+  "salt": "0x8ed1f8ead0974e8014e1bf3d968629f62e639227bff4d3bc9ba96f8620931976",
+  "rationale": "Net read bearish (-0.51). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

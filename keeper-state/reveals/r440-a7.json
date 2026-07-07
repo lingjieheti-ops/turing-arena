@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 69,
+  "confidence": 38,
+  "rationaleHash": "0xcacf840ae06c4ada5c5b6bc6fce29285cd4c2c31b7a6955726f60812ad7714f7",
+  "salt": "0x43ec3ec026ad9804e262a3e0c83f779c58f7b22c4f4f0bdea2d5ab44bed42864",
+  "rationale": "Net read bullish (0.12). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

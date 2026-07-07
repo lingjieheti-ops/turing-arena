@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -191,
+  "confidence": 52,
+  "rationaleHash": "0xe3947eea8c7dc98afd38d0b67db1bc26a4412f5dac45a2ecaeafa5052e1877f2",
+  "salt": "0x78a7dca44f6cf0775bee27c8315b3f709ebf0091bdaf03eb1ece3d801bf36269",
+  "rationale": "Net read bearish (-0.32). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

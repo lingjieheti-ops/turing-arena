@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 113,
+  "confidence": 43,
+  "rationaleHash": "0x0012106f113c731be241a062c3f1e5c878bd211fbfc67c802b2d97997334e786",
+  "salt": "0x489fff0f54ea15b60a89912c6f07e536ea9d96d62c2bedc8c104fb0596a9b62f",
+  "rationale": "Net read bullish (0.19). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

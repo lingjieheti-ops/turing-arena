@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 34,
+  "confidence": 34,
+  "rationaleHash": "0x550464f5251b77bf79f41b1c47b27b6342680fb988648ed850bc38b1a658f19e",
+  "salt": "0x0db2e6c783aa745de984619469a56fcc7a1674985b307541001a7465e888024d",
+  "rationale": "Net read bullish (0.06). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

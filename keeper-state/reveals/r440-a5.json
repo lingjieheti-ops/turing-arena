@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 178,
+  "confidence": 51,
+  "rationaleHash": "0xf1a88de61d77d3a647222b845fb1698ee0825299882f2981ca56217b1efd6a46",
+  "salt": "0xd0649e08e5c1228761cce2c2a6318fb44e12d7f736e07df186d9f7d6a07fe0db",
+  "rationale": "Net read bullish (0.30). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

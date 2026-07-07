@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -153,
+  "confidence": 48,
+  "rationaleHash": "0x9b412b4eb301e964f96d573a4bacf5481916f27f13c6cbbe6fddc2a8982b61b6",
+  "salt": "0xea0292b69e9704b0f7abd465ca35ae00933a2c5a9344536204097e02ee2125f4",
+  "rationale": "Net read bearish (-0.25). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

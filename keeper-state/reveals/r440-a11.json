@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 268,
+  "confidence": 61,
+  "rationaleHash": "0xd2dfbfa7efbc6254c1436fe271fc5eca53a345a3dd6a1f17be6cdb1cd70ac20f",
+  "salt": "0xd58aa76d81f67b1be64ddd758ad132dcf9abc1a3f686e8c03da1fa9e16292769",
+  "rationale": "Net read bullish (0.45). Strongest evidence: limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); nansen -0.45 (Smart money net outflow); mantle-onchain -0.40 (Mantle on-chain momentum down).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
