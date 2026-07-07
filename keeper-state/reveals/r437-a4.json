@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 133,
+  "confidence": 46,
+  "rationaleHash": "0x165446f005a9ba9634cb897abf8df63f2309f23832cb70750981d65c1a616c0d",
+  "salt": "0x4441c814e84fd10f224f72cd1017a317bd67d76ae4b72685ac2019992a71ff1e",
+  "rationale": "Net read bullish (0.22). Strongest evidence: momentum +0.64 (SOL/USD up-momentum since the last tick (Pyth, live)); nansen +0.81 (Smart money net inflow); mantle-onchain -0.85 (Mantle on-chain momentum down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

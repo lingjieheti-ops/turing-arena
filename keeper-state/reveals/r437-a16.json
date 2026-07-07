@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 149,
+  "confidence": 47,
+  "rationaleHash": "0x069013c22140cb71c92ebfa4a8c06197f2b9bcff0fe104b5e874e16631d41e97",
+  "salt": "0x668a8eb0e594cd2e264cf7875cde2fc1ccee2fd0f6532bfb58f97d7b9e9cb446",
+  "rationale": "Net read bullish (0.25). Strongest evidence: momentum +0.64 (SOL/USD up-momentum since the last tick (Pyth, live)); nansen +0.81 (Smart money net inflow); mantle-onchain -0.85 (Mantle on-chain momentum down).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

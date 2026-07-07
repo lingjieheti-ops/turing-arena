@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -55,
+  "confidence": 36,
+  "rationaleHash": "0x994e5a622dea2a35a6364abb914f99b7d2ff574bfaca4727e29d7a7b0e8c00a2",
+  "salt": "0xffa08c6d9cb9c4bae5e323f12a45fb3ec4c76b987c5b321e8dfdf3e2cbef413e",
+  "rationale": "Net read bearish (-0.09). Strongest evidence: momentum +0.64 (SOL/USD up-momentum since the last tick (Pyth, live)); nansen +0.81 (Smart money net inflow); mantle-onchain -0.85 (Mantle on-chain momentum down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
