@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 439,
+  "confidence": 81,
+  "rationaleHash": "0xa80d9d17cd50298cb59f217abc737bc36987062e6d870d27cc47edb26cc42057",
+  "salt": "0x272f9415191bead244a5148d1280d10b11697e830f32aebd6bfbaccea98085c8",
+  "rationale": "Net read bullish (0.73). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.53 (Allora ML forecast leans long); elfa +0.88 (KOL mindshare heating up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

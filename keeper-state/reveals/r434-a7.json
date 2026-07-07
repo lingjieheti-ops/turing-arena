@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 294,
+  "confidence": 64,
+  "rationaleHash": "0x4457a200a76bb40e8657735e00f2d1213bae29dcae46328f77916194c339c33e",
+  "salt": "0xc5e3ce8b8de98106cd3e1765d0eac5699d3460754c2d60b6ac27ea3f2b1bbf0a",
+  "rationale": "Net read bullish (0.49). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum (Pyth, live)); allora +0.53 (Allora ML forecast leans long); elfa +0.88 (KOL mindshare heating up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

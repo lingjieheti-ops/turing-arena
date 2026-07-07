@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -317,
+  "confidence": 67,
+  "rationaleHash": "0xdbc60df653dc6d7e4e975d4b8cf71519c5c369e95aaa0d8119007cae6d8d3ecf",
+  "salt": "0x8a79e7491dfb89e7a58d3bca39666fcce561c8f3b9020114d17c8e06d0b01cef",
+  "rationale": "Net read bearish (-0.53). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.53 (Allora ML forecast leans long); elfa +0.88 (KOL mindshare heating up).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
