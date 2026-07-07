@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 22,
+  "confidence": 33,
+  "rationaleHash": "0x29ee83ee20ec015ef08c48872ad5f1712004d68aaccd78131ea1eeb1323ebb8d",
+  "salt": "0x6d1965d2c213514e034b21cf14a1026cfb581d5a8831590f7df3ec01887d18b8",
+  "rationale": "Net read neutral (0.04). Strongest evidence: nansen -0.77 (Smart money net outflow); limitless -0.24 (Limitless MNT market unavailable — mock down); momentum +0.12 (MNT/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

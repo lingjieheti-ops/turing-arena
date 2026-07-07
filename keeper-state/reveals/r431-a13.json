@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -17,
+  "confidence": 32,
+  "rationaleHash": "0x3499f82e05bdd18eef99f0046ac2a79cddb8d4f8c7d87fb75e4171926c127be6",
+  "salt": "0x450d38a89c732d1a8f17bf3ff16756703d9b11892d4e93cb413daf6f94e9340a",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: nansen -0.77 (Smart money net outflow); limitless -0.24 (Limitless MNT market unavailable — mock down); momentum +0.12 (MNT/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
