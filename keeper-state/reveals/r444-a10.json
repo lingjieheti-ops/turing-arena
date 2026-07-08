@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 108,
+  "confidence": 43,
+  "rationaleHash": "0x44fe0cfe5d11fc6c69f5103c7db00834b920e038b7a2b03b035e7b35ef23f09d",
+  "salt": "0xb756bcf5006d731c9a30b677cb539092c763add8475a188f6e780fae0ddd57cd",
+  "rationale": "Net read bullish (0.18). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.87 (Mantle on-chain momentum down); nansen -0.29 (Smart money net outflow).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

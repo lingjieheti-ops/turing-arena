@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": -57,
+  "confidence": 37,
+  "rationaleHash": "0xbc2606b094bcb4bd309a74b79f06545fddb1ab17532b647f3b4e21014b7c084b",
+  "salt": "0xe3a0d82f7814e3ab65a8c1a95d0a1c9ed2888f2139aed1dc90d6a734a9418e4e",
+  "rationale": "Net read bearish (-0.09). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.87 (Mantle on-chain momentum down); nansen -0.29 (Smart money net outflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
