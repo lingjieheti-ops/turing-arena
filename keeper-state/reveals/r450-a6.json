@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 227,
+  "confidence": 57,
+  "rationaleHash": "0x4452b9c2b987630ef02e425e4e564d55998e716b049695fc5b3034fbd2785723",
+  "salt": "0xcf51b62ed850b6a910743a3f8cb8dacc06ddf6f0f0ee6297f98fc35ada41bd0a",
+  "rationale": "Net read bullish (0.38). Strongest evidence: allora -0.66 (Allora ML forecast leans short); mantle-onchain +0.82 (Mantle on-chain momentum up); limitless +0.43 (Limitless (Base) BTC 72% up / 28% down).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

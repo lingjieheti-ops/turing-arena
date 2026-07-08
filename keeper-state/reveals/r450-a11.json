@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 314,
+  "confidence": 67,
+  "rationaleHash": "0x78be05378f8824c485cc6a97fc2b6a4c383d1736897b6a910a5b4645a9a048d0",
+  "salt": "0x283bf6b48b9de3d34f9e071752975fc2582b5be78ab9b039712926da277a39c5",
+  "rationale": "Net read bullish (0.52). Strongest evidence: allora -0.66 (Allora ML forecast leans short); mantle-onchain +0.82 (Mantle on-chain momentum up); limitless +0.43 (Limitless (Base) BTC 72% up / 28% down).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
