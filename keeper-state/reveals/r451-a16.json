@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -512,
+  "confidence": 90,
+  "rationaleHash": "0x5ebbd3a42232358a455afa33b6d436dca684c1aedf44bfbcacc2428add015224",
+  "salt": "0xecd9e4884ac49addf2038235aa0fe294f65ff7a21364c97fa8a47e9c4d81948a",
+  "rationale": "Net read bearish (-0.85). Strongest evidence: momentum -0.71 (SOL/USD down-momentum since the last tick (Pyth, live)); limitless -0.52 (Limitless (Base) SOL 24% up / 76% down); mantle-onchain -0.86 (Mantle on-chain momentum down).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
