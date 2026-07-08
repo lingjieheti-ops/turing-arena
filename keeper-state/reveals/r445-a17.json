@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -231,
+  "confidence": 57,
+  "rationaleHash": "0x0c983a2c97867a956368f4f0d3f2d208ede42f3ef0773a324331058e49614cbd",
+  "salt": "0xb5db6816591a3a86828524ed5114fbf19f06a4607df072762af4c5b4191cc652",
+  "rationale": "Net read bearish (-0.39). Strongest evidence: allora +0.86 (Allora ML forecast leans long); nansen -0.93 (Smart money net outflow); momentum +0.18 (MNT/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
