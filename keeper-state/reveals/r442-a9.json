@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 215,
+  "confidence": 55,
+  "rationaleHash": "0xb382275bd99900496b1e73e4f3deed95938f2bf78952048e08f21168157a99ad",
+  "salt": "0x744909ad82edf768b586121596cc85ebbf373783a1c7ac2534ed2510ce2aba9a",
+  "rationale": "Net read bullish (0.36). Strongest evidence: momentum -1.00 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless -0.97 (Limitless (Base) ETH 2% up / 98% down); allora +0.68 (Allora ML forecast leans long).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

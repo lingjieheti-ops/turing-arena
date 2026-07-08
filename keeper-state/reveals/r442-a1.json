@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -185,
+  "confidence": 52,
+  "rationaleHash": "0xe1324451bc9dea422ab4182fd2445488b96de64aba0ee057de48b458993cb90e",
+  "salt": "0xf41ab6558aea85cf1238c7f0c2668a73f7848aeba77ca03ead198daef6025ad3",
+  "rationale": "Net read bearish (-0.31). Strongest evidence: momentum -1.00 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless -0.97 (Limitless (Base) ETH 2% up / 98% down); allora +0.68 (Allora ML forecast leans long).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
