@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 104,
+  "confidence": 42,
+  "rationaleHash": "0x58bd38da4399d4a9f955430108f52ffb820db4cb66539010df61ae229dfb2954",
+  "salt": "0xedb456679a44d0eb0aaa421f287f40ef341d2d1c9a64723aadd0839b99e8238c",
+  "rationale": "Net read bullish (0.17). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); limitless +0.71 (No Limitless market for CS2-PLAYERS — mock up); mantle-onchain -0.95 (Mantle on-chain momentum down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
