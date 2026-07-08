@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 202,
+  "confidence": 54,
+  "rationaleHash": "0x29dba420896d6a040b4c10c3a3d1632450d002625f2a54da81238e0db621aef7",
+  "salt": "0x46259ad210a89e3e49f620b5c51b5a578bf17bbdb7cd296c69fa00c066695d98",
+  "rationale": "Net read bullish (0.34). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora +0.89 (Allora ML forecast leans long); nansen -0.84 (Smart money net outflow).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
