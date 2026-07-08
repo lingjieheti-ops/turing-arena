@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 19,
+  "confidence": 32,
+  "rationaleHash": "0xa9c6508dd14c3a94eff984570d05993b5d6c320acb7a96b3ac2bfa3f27f63c5b",
+  "salt": "0xb3f59b192c4d8ae13e09349ff4f95de8c118e564535837f7d81ef9cb10e31ef1",
+  "rationale": "Net read neutral (0.03). Strongest evidence: momentum -0.67 (BTC/USD down-momentum since the last tick (Pyth, live)); limitless -0.52 (Limitless (Base) BTC 24% up / 76% down); elfa +0.95 (KOL mindshare heating up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
