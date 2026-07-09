@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -80,
+  "confidence": 39,
+  "rationaleHash": "0x0feb22fe198074db52b68940f7d0389ac7705f4299c6fbddd7a3d9f23b85bc75",
+  "salt": "0x154a6d7fbb2076bb799b4ae191482dac5ba799b66e6a01c2de742cbd203d1a60",
+  "rationale": "Net read bearish (-0.13). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless -0.89 (No Limitless market for ETHGAS-GWEI — mock down); allora -0.89 (Allora ML forecast leans short).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
