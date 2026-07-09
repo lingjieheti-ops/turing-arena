@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -189,
+  "confidence": 52,
+  "rationaleHash": "0xe3099e3ea48f55b2ff5386aa5f77e0760900393d2f46067792701a241f7d5a0e",
+  "salt": "0xd3acff614db83a08a8db03c4c89aa84a27cf1a296886914e058e200f78d25a06",
+  "rationale": "Net read bearish (-0.31). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); allora -0.91 (Allora ML forecast leans short); nansen +0.70 (Smart money net inflow).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
