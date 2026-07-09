@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 311,
+  "confidence": 66,
+  "rationaleHash": "0xeef103eb6425e599ca22f6de8860d6aa9200b3c33433b7bc55aea0379d5597bf",
+  "salt": "0x37f4d0dffa08b5df4438329fe934a66899dc97601148b0e0b46525b6d2580806",
+  "rationale": "Net read bullish (0.52). Strongest evidence: momentum +0.63 (SOL/USD up-momentum since the last tick (Pyth, live)); mantle-onchain -0.79 (Mantle on-chain momentum down); nansen -0.24 (Smart money net outflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
