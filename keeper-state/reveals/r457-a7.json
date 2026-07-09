@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 123,
+  "confidence": 44,
+  "rationaleHash": "0x52cbeb58a20d171c1aed0e5fb742a599ce311a2639d38b4a9f306a5001dd8cba",
+  "salt": "0x52950587b9162c63abf4bc76363d73f1682c3bd571f7920f3217386578946511",
+  "rationale": "Net read bullish (0.20). Strongest evidence: momentum -0.43 (BTC/USD down-momentum (Pyth, live)); allora -0.65 (Allora ML forecast leans short); mantle-onchain +0.81 (Mantle on-chain momentum up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 58,
+  "confidence": 37,
+  "rationaleHash": "0x5913e69477411101f2a0cecf4bb02a65705e569efa67662e0d29cccc88a60136",
+  "salt": "0xfa267e88e5baf433c9a47e4de616a22571e4d1b1624d5ad828166f6ceecb0789",
+  "rationale": "Net read bullish (0.10). Strongest evidence: momentum -0.43 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.65 (Allora ML forecast leans short); mantle-onchain +0.81 (Mantle on-chain momentum up).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

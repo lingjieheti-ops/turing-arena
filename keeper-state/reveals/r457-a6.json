@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 205,
+  "confidence": 54,
+  "rationaleHash": "0xb1f38ba307b076616a2e7b82ccee95007d1bb51da046e67b4a7ef8511be52866",
+  "salt": "0x349aedd1cb7869b28cf59aca796aacedacf1e7181d51bdfa262ad22f4fbfb716",
+  "rationale": "Net read bullish (0.34). Strongest evidence: momentum -0.43 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.65 (Allora ML forecast leans short); mantle-onchain +0.81 (Mantle on-chain momentum up).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
