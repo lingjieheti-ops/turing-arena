@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 49,
+  "confidence": 36,
+  "rationaleHash": "0x3111cdab46810c37d0754a0161054d536a2446d85a51b3e58c2d890846c4b316",
+  "salt": "0x1f657fb3aa559f0df8de3abcbc120d4d536c70df5bfaf8a33b8ea3c9a22937aa",
+  "rationale": "Net read bullish (0.08). Strongest evidence: allora +0.80 (Allora ML forecast leans long); nansen -0.93 (Smart money net outflow); mantle-onchain +0.76 (Mantle on-chain momentum up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

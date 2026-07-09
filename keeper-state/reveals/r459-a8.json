@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 163,
+  "confidence": 49,
+  "rationaleHash": "0xef8fe5497dd9ce189247c2f64eff5c7e4ff961847661fa88c81693ecc7bf4fc2",
+  "salt": "0x53d1d5dead8ca94c3ab6ce3511bd1ce5e9dc33f39bddf32b4637f4e92b257f74",
+  "rationale": "Net read bullish (0.27). Strongest evidence: allora +0.80 (Allora ML forecast leans long); nansen -0.93 (Smart money net outflow); mantle-onchain +0.76 (Mantle on-chain momentum up).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
