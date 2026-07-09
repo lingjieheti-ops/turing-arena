@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 365,
+  "confidence": 73,
+  "rationaleHash": "0x7e8c21a32c28e00c08748f5c69adb221a3a896801af1a8dc04e37295e80cc617",
+  "salt": "0xdec74312a196af1eb2556e07bceefd2c307ea9219e138f2ae92e342c61e570a8",
+  "rationale": "Net read bullish (0.61). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.50 (Allora ML forecast leans long); elfa +0.90 (KOL mindshare heating up).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
