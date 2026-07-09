@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 311,
+  "confidence": 66,
+  "rationaleHash": "0xc9d72e0c851b5979e1fd0c7f2833f95dd459fc15d56890fef20d4dc771049578",
+  "salt": "0xafe9b8bdd69eadaae037c0af6843c3afa3cfe0c5694a719ee76f3082444f7a1a",
+  "rationale": "Net read bullish (0.52). Strongest evidence: allora +0.92 (Allora ML forecast leans long); nansen +0.90 (Smart money net inflow); limitless -0.34 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

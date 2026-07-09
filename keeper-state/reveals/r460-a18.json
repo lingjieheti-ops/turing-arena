@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 41,
+  "confidence": 35,
+  "rationaleHash": "0x35859d4cf749412b01053bbd9551f18cfb0bda50591e608b6495ed538abc749f",
+  "salt": "0x239f36f6fee2aeb7e063fbb4ecc294b2febcb206e6c7357a7598051cfdf0b2ff",
+  "rationale": "Net read bullish (0.07). Strongest evidence: allora +0.92 (Allora ML forecast leans long); nansen +0.90 (Smart money net inflow); limitless -0.34 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

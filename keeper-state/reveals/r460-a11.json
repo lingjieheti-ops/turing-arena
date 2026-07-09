@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 327,
+  "confidence": 68,
+  "rationaleHash": "0x5dcb743bd580dab1f5ef5f17d5b472cfcaf41c65392665ae64576777b4f7ee81",
+  "salt": "0x67807485df2f8036f5e2e64eec1ec0064c745750db3c233c78cd33f3f820ee39",
+  "rationale": "Net read bullish (0.55). Strongest evidence: allora +0.92 (Allora ML forecast leans long); nansen +0.90 (Smart money net inflow); limitless -0.34 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

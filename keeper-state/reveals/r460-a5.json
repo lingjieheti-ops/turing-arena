@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -151,
+  "confidence": 48,
+  "rationaleHash": "0x8d8411d98b8e8be8274b26aa56163886cecf61138280c1b585b5c94bac904de5",
+  "salt": "0xd57ccd78890f4e5327471afd6986e81d81d9c019a9d8493bd1f878ed1caaa9ce",
+  "rationale": "Net read bearish (-0.25). Strongest evidence: allora +0.92 (Allora ML forecast leans long); nansen +0.90 (Smart money net inflow); limitless -0.34 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

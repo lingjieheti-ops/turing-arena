@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 296,
+  "confidence": 64,
+  "rationaleHash": "0x4f7e97a1ec01ee943817d7e65108a38b63caa2d2b9e62c9c6100419cc04d87a9",
+  "salt": "0x3bc438b674999c41c45443d04b3857b1042d349603a8b2ab8a95f3bb94b6be84",
+  "rationale": "Net read bullish (0.49). Strongest evidence: allora +0.92 (Allora ML forecast leans long); nansen +0.90 (Smart money net inflow); limitless -0.34 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

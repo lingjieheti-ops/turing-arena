@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 219,
+  "confidence": 55,
+  "rationaleHash": "0x3f68f65e7373cab5903c81820ea66e2a29bfd6e82cb68599bafffcbb98d35abc",
+  "salt": "0xf2cd4e320f9a2752163116b618a67bd523ef1b41c8b0689bc198b39f48d692b7",
+  "rationale": "Net read bullish (0.36). Strongest evidence: allora +0.92 (Allora ML forecast leans long); nansen +0.90 (Smart money net inflow); limitless -0.34 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
