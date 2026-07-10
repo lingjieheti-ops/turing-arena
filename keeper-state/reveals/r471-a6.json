@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 196,
+  "confidence": 53,
+  "rationaleHash": "0x8151ffb0c926d343b0ac59ea7f74bba7fc2b078136ff63b7a153341bbe411ac5",
+  "salt": "0x830e29e4d2ba3b987b78fa02a9a32008db84ad8289444c23e5dc34efdfbacbec",
+  "rationale": "Net read bullish (0.33). Strongest evidence: limitless +0.97 (Limitless (Base) BTC 99% up / 1% down); allora -0.83 (Allora ML forecast leans short); nansen -0.86 (Smart money net outflow).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
