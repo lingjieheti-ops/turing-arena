@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -333,
+  "confidence": 69,
+  "rationaleHash": "0x7e8674314d41ff19098c93980b32c9319a81b1aa3d5e284da317fa12becd6b5d",
+  "salt": "0x68e6b5095391393b73e21eecce02a6fddd41d75dfd900418cb1cbaa1a8bd3064",
+  "rationale": "Net read bearish (-0.56). Strongest evidence: allora -0.65 (Allora ML forecast leans short); elfa -0.97 (KOL mindshare cooling); momentum -0.23 (BTC/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

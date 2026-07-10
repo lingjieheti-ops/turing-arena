@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 79,
+  "confidence": 39,
+  "rationaleHash": "0xec29588863472445b73fde7911512c3e638f6788c54a1a08ed3cb0b61af431a3",
+  "salt": "0xcdc1e206f818c163991d400706edfb37579f5379025a63fa6878425984153468",
+  "rationale": "Net read bullish (0.13). Strongest evidence: allora -0.65 (Allora ML forecast leans short); elfa -0.97 (KOL mindshare cooling); momentum -0.23 (BTC/USD down-momentum (Pyth, live)).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
