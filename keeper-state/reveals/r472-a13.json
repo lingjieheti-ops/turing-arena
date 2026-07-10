@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 7,
+  "confidence": 31,
+  "rationaleHash": "0x99c5f6599c9eaf7c2e1ad7d030fcbc94ffc876c14c41eb17c97cc249bb34c649",
+  "salt": "0x68e7327399a40737352e896103b029dd5b035dff85e9857e6c10e694e722420c",
+  "rationale": "Net read neutral (0.01). Strongest evidence: momentum -0.19 (SOL/USD down-momentum since the last tick (Pyth, live)); surf +0.95 (Market momentum positive); elfa -0.59 (KOL mindshare cooling).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -17,
+  "confidence": 32,
+  "rationaleHash": "0x264613fc117384890697ff7ce3a2f87ac506e79f932dc7c906ec246611d756e2",
+  "salt": "0xe7a26e58ddd6bb16035c6f1394dd86fd4d01fe10e4a78cf53c5b48f37824b29a",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: momentum -0.19 (SOL/USD down-momentum since the last tick (Pyth, live)); surf +0.95 (Market momentum positive); elfa -0.59 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

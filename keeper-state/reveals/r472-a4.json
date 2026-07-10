@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -98,
+  "confidence": 41,
+  "rationaleHash": "0x315c735f040d97202527584dad098446678389f563e53967b82219ea74cba493",
+  "salt": "0xfeccffc3d1e5f1b845483f5185fd1597eccf22d035d58b24595b16f4947d1f26",
+  "rationale": "Net read bearish (-0.16). Strongest evidence: momentum -0.19 (SOL/USD down-momentum since the last tick (Pyth, live)); surf +0.95 (Market momentum positive); elfa -0.59 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

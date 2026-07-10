@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 40,
+  "confidence": 35,
+  "rationaleHash": "0x0eefc93ea37195dfa1d35e6549ffa103529d3b4ac9683a319023678d503944de",
+  "salt": "0xf29a688a3d1678846c0cda5e5dbd8f4f2d3cf682def72570fa9a3c66c0b4a483",
+  "rationale": "Net read bullish (0.07). Strongest evidence: momentum -0.19 (SOL/USD down-momentum since the last tick (Pyth, live)); surf +0.95 (Market momentum positive); elfa -0.59 (KOL mindshare cooling).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

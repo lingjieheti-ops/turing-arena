@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 288,
+  "confidence": 64,
+  "rationaleHash": "0x2c372be93af1420b8acd8aa4d7210e805f23f37db3d5830a588f5ee86c0af1a3",
+  "salt": "0x38a728725ae254e98717542e862196b53dbfec6a501bfc3e19d04eea78359d77",
+  "rationale": "Net read bullish (0.48). Strongest evidence: momentum -0.19 (SOL/USD down-momentum since the last tick (Pyth, live)); surf +0.95 (Market momentum positive); elfa -0.59 (KOL mindshare cooling).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
