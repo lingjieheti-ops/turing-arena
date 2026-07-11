@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 32,
+  "confidence": 34,
+  "rationaleHash": "0x9dac316f283edd4e6c02ba5a714ffbfb9a57b2385cd15f2a636786ea2edc25d1",
+  "salt": "0x1456cb35a889441ebcf36a516db01e356f45c46e697daa27a09579f440846250",
+  "rationale": "Net read bullish (0.05). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless -0.98 (No Limitless market for ETHGAS-GWEI — mock down); mantle-onchain +0.77 (Mantle on-chain momentum up).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

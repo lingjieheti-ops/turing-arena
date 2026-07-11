@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 181,
+  "confidence": 51,
+  "rationaleHash": "0xcf5af5be87dffba3c04ba9a803e0b843ae10d9aaee1deeda1d8c969da8f28262",
+  "salt": "0xb8003f45cd0428ca7419d9db1ebab30bacee58fe855c097efabe13706c6a53bb",
+  "rationale": "Net read bullish (0.30). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless -0.98 (No Limitless market for ETHGAS-GWEI — mock down); mantle-onchain +0.77 (Mantle on-chain momentum up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

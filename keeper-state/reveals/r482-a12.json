@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -74,
+  "confidence": 39,
+  "rationaleHash": "0xef91f031419c33ae4341dcab722606fbebe1df05168b9577c8714b89726b5e06",
+  "salt": "0x9b437db08b380bdc05a1865ea5a37114d1b691f1f8d2f0f8668cf580fce20925",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless -0.98 (No Limitless market for ETHGAS-GWEI — mock down); mantle-onchain +0.77 (Mantle on-chain momentum up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
