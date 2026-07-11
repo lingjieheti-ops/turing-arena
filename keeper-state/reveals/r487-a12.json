@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -72,
+  "confidence": 38,
+  "rationaleHash": "0xbcdd939c5583317e0b2dbe544770f525a96c8965a7db4ac19edfc6962d18485b",
+  "salt": "0xd2844df93429034982a6d0e360bfe637bfb10f7a26c938435e7aeb21fb209e5a",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: momentum +0.29 (MNT/USD up-momentum since the last tick (Pyth, live)); mantle-onchain +0.78 (Mantle on-chain momentum up); elfa +0.76 (KOL mindshare heating up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

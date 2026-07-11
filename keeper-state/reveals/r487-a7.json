@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 203,
+  "confidence": 54,
+  "rationaleHash": "0x3fa00260b53bb5120b59cd382a9f6db451aec1d62c154e7b2204e8616af89620",
+  "salt": "0x0eb3c67223607abe18e94d77155d307e13653806d61509fcb0cb3f821e724858",
+  "rationale": "Net read bullish (0.34). Strongest evidence: momentum +0.29 (MNT/USD up-momentum (Pyth, live)); mantle-onchain +0.78 (Mantle on-chain momentum up); elfa +0.76 (KOL mindshare heating up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

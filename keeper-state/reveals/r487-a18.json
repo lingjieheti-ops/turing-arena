@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 31,
+  "confidence": 34,
+  "rationaleHash": "0x2bb98055cc9ffa89f649edec809fb30a56ed0be30c6cc0d8aa83944dff9d64bd",
+  "salt": "0x2b827732f9fe12298f085a7035cfd18c70c15208e9e15448dea2619f670a0fdb",
+  "rationale": "Net read bullish (0.05). Strongest evidence: momentum +0.29 (MNT/USD up-momentum since the last tick (Pyth, live)); mantle-onchain +0.78 (Mantle on-chain momentum up); elfa +0.76 (KOL mindshare heating up).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
