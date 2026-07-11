@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -303,
+  "confidence": 65,
+  "rationaleHash": "0x0d574fe6e645e7955b5bc7864cac9fb9e105ae3dd5c968a9089a7d4986e620b9",
+  "salt": "0xaf2273ade9fccb78540472f1e6fa9d8270a64a600b1e5ef7f70899d80440a619",
+  "rationale": "Net read bearish (-0.50). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); nansen +0.68 (Smart money net inflow); limitless -0.43 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

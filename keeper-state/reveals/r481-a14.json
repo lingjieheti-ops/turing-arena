@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 368,
+  "confidence": 73,
+  "rationaleHash": "0xc60b80a2b8ed771a53de6469921dfb2807ac55b28898a25686046f8d8ec96021",
+  "salt": "0xf01385f8f249326d149200dbbc654be6200b0e1aa691acf9626a3f4dc0144d6e",
+  "rationale": "Net read bullish (0.61). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); nansen +0.68 (Smart money net inflow); limitless -0.43 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

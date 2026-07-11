@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 355,
+  "confidence": 71,
+  "rationaleHash": "0x935f0b2376e697279bbf50b08849f9dc9f32529df12458fa456bcfcce16e60d5",
+  "salt": "0x61d31920d11ace03757d0e397e548d2e42bc58b312dc638fb96c2301da61e32a",
+  "rationale": "Net read bullish (0.59). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); nansen +0.68 (Smart money net inflow); limitless -0.43 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
