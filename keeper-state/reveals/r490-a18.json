@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -11,
+  "confidence": 31,
+  "rationaleHash": "0xb4e299d16f6c65808e890bc6dc6017347a14736fa511e6a6ba13db3989f7ccf9",
+  "salt": "0x21379fc4606300ca96f37c0be4afd9f7bf698cc1b10e834ff05145a2610d1b8e",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); limitless +0.97 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.65 (Smart money net inflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
