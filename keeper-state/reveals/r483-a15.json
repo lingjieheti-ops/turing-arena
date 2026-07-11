@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 447,
+  "confidence": 82,
+  "rationaleHash": "0xbbefdaf1d0658537809a7998450ef56dcdf63419b930bf9e7e09d9a7296e7b84",
+  "salt": "0x49938e66af96700c7a6c1fa4561cd6975f6c2e84b7bd76cd079776c9a86bafd2",
+  "rationale": "Net read bullish (0.74). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless +0.94 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.67 (Smart money net inflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

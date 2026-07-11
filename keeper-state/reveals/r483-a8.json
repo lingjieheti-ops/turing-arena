@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 495,
+  "confidence": 88,
+  "rationaleHash": "0x28cdfc4f3809f72901ea065f7ad71dbcddaa82607f256854b4b9f0e14b19af25",
+  "salt": "0xb73304be0fcaee917b78f0af6431d602f38766cb091bd0962a9b43355b37d01b",
+  "rationale": "Net read bullish (0.82). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless +0.94 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.67 (Smart money net inflow).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

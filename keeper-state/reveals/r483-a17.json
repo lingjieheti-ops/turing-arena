@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -321,
+  "confidence": 67,
+  "rationaleHash": "0xe654065d47945b3e4d3bb988e834ae47af15297f077b1783b1a407e07ffe66d0",
+  "salt": "0x8c0ba98e21ba1bf01a26e110053f2bb4c59f7f903d315731a13665a190b14115",
+  "rationale": "Net read bearish (-0.53). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless +0.94 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.67 (Smart money net inflow).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
