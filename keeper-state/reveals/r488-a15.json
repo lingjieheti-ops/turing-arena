@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 262,
+  "confidence": 61,
+  "rationaleHash": "0xf1be0406f2598f0f2dfc28302a63e9fc678939d67a5afb1234c47215beb975df",
+  "salt": "0x06e8a119af691f2eefba95db875e3ba96743e659b540378d095d7abbbdb8dbb8",
+  "rationale": "Net read bullish (0.44). Strongest evidence: momentum +0.36 (CS2 Players up-momentum since the last tick (Pyth, live)); nansen +0.75 (Smart money net inflow); limitless -0.37 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
