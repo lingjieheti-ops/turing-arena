@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 0,
+  "confidence": 30,
+  "rationaleHash": "0xd4f8e39ba0539cdf719a3c62538574a86e14b0aadae01befbdaa56c606232a38",
+  "salt": "0xad2fea47dd97cd725348772d7b7c726938d6f3f25224e903d70d7094e0182b25",
+  "rationale": "Net read neutral (-0.00). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

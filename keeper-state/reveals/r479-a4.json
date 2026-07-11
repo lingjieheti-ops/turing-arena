@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -232,
+  "confidence": 57,
+  "rationaleHash": "0x8b27a0452c44e0fd4b932fccc74f31733362e455c4c25fa4bd083406f39ae1c5",
+  "salt": "0x18c9af670f2419969539873696e625cb6ea2560284b409c6e166f90318a68ddb",
+  "rationale": "Net read bearish (-0.39). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

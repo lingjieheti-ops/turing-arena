@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 273,
+  "confidence": 62,
+  "rationaleHash": "0xd535566b2a451621a7655a9e7a31cf13017eb7b4bb6a69e65b2625d0760919ac",
+  "salt": "0x8ea20f59c82fc970327f737a4bce6f84aebb8d82b4d559277cab95df0eeb1a87",
+  "rationale": "Net read bullish (0.45). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

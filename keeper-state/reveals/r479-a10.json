@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 172,
+  "confidence": 50,
+  "rationaleHash": "0xa6c17affabd5c5ccd8abf179664de67e9c80687866dec2903595e91e1d55ef45",
+  "salt": "0x011978f397ea3fd820368a637141bdb62ec744b5f1960fa31f45d9a3d1ec7059",
+  "rationale": "Net read bullish (0.29). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

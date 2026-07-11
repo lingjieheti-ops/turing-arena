@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 229,
+  "confidence": 57,
+  "rationaleHash": "0xd528677519c071cce002861399a35a7494acdf7a24682c76d476753226bd83ac",
+  "salt": "0x3fd77774d2fcf969b61c8f13f395a33cf88343c8e57a4e0d35d49218aff82ca5",
+  "rationale": "Net read bullish (0.38). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

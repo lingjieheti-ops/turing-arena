@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -25,
+  "confidence": 33,
+  "rationaleHash": "0x1837a8b8704352087d4b3c9041aa9948b26b5ed183fa12fea055741e1138733e",
+  "salt": "0x93583352fbea1e55522d0fe0ef058c030b0c015df37b8090e2dd1993970d8ff0",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

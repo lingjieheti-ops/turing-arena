@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -137,
+  "confidence": 46,
+  "rationaleHash": "0xce4b0dfbdf7f1f6438b4ef98b2ad3516902b646e8815aaa7297ee554c016e9d2",
+  "salt": "0xe6aaf5e083567e4f3a1a73cf4cb9173142a3a88ffb8988d390a17117c2e2a2d9",
+  "rationale": "Net read bearish (-0.23). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

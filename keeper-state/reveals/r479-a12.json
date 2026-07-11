@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 96,
+  "confidence": 41,
+  "rationaleHash": "0xb064be73108852e81243161ef843633f5b17c088106736ba823ab1719d309c72",
+  "salt": "0x1c11fb335a4e49607cbc7a8f902ef94f7d5a83e224b0efbd0bece7c99d1a466f",
+  "rationale": "Net read bullish (0.16). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

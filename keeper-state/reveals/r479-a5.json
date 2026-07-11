@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 150,
+  "confidence": 48,
+  "rationaleHash": "0xea23b23d42d36aa61ac0f843b0790bbdba0d12206260fd89a649ef98bb58282f",
+  "salt": "0x23c7f22b8b114438d1d937f3d3480cf8de38d3bf2ecc8c9625e1f5a4bbac1d52",
+  "rationale": "Net read bullish (0.25). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

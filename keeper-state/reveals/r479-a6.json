@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 176,
+  "confidence": 51,
+  "rationaleHash": "0xa6c17affabd5c5ccd8abf179664de67e9c80687866dec2903595e91e1d55ef45",
+  "salt": "0x379cf31f5f2fa6cf6729c2bc48d6c79bd8d6a463354a4811370d6b54c0195bd9",
+  "rationale": "Net read bullish (0.29). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 57,
+  "confidence": 37,
+  "rationaleHash": "0x8c4e8571f9c12d657ec17590e0c679d9fdf77984509c438d56a5827ec1051577",
+  "salt": "0x0ebec2ec511881eb0adf31f10ab55857f1ffc562726ebbb17b8f23610adb05fe",
+  "rationale": "Net read bullish (0.10). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

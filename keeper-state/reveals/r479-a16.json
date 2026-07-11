@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -259,
+  "confidence": 60,
+  "rationaleHash": "0x43ccd5aaf2f697f6e4d2ccbfbb50a4947643d3c4020a36c773da205c896f6dd6",
+  "salt": "0x629d8b9b6bc3bdd2d551616797a83583106b6717cd9c2a25a3a1549d529fe47a",
+  "rationale": "Net read bearish (-0.43). Strongest evidence: limitless -0.92 (Limitless (Base) SOL 4% up / 96% down); elfa -0.68 (KOL mindshare cooling); surf +0.86 (Market momentum positive).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
