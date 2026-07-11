@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -73,
+  "confidence": 39,
+  "rationaleHash": "0x33c246747e8211d5ffc2455a956290b4010b71783efdd18127435c77f4167a01",
+  "salt": "0x8216293be08112be16784d73eccebc055b209fc191a60ff9c41bfceed2b13deb",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: momentum -0.42 (SOL/USD down-momentum since the last tick (Pyth, live)); limitless +0.24 (Limitless (Base) SOL 62% up / 38% down); surf +0.78 (Market momentum positive).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

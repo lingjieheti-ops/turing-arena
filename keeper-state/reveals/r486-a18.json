@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -12,
+  "confidence": 31,
+  "rationaleHash": "0xfb172341fab70a50869923c5684f03a85a35c116f00f4f45955cd4d79bb319f1",
+  "salt": "0xabc54a6fffb33086b9f425d55e4a37a8eda4288b244802142f7c65990235b06d",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: momentum -0.42 (SOL/USD down-momentum since the last tick (Pyth, live)); limitless +0.24 (Limitless (Base) SOL 62% up / 38% down); surf +0.78 (Market momentum positive).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
