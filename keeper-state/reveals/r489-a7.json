@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 208,
+  "confidence": 54,
+  "rationaleHash": "0x0bdf9b9556a4225a38d257a23419a5f22b97961ffe9aa37e190ed6ba75322df3",
+  "salt": "0xb5da8cf52df93dcf1391d20617e9b604eb0d777bc58de1d5c3078feacab120fb",
+  "rationale": "Net read bullish (0.35). Strongest evidence: momentum +1.00 (ETH Gas up-momentum (Pyth, live)); limitless -0.90 (No Limitless market for ETHGAS-GWEI — mock down); mantle-onchain +0.73 (Mantle on-chain momentum up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
