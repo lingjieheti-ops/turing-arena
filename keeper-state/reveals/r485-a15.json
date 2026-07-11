@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 82,
+  "confidence": 40,
+  "rationaleHash": "0x409aa3b392502c75573dfd1afc747e889e25f62ed7f6598b3496e29ffaaa0801",
+  "salt": "0xde4b6ab4e739182c862487d53903f703a7b998b535551c1b9737a6bec6aa5847",
+  "rationale": "Net read bullish (0.14). Strongest evidence: momentum -0.59 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.67 (Allora ML forecast leans short); limitless +0.47 (Limitless (Base) BTC 73% up / 27% down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 5,
+  "confidence": 31,
+  "rationaleHash": "0xeed30c5b2abde2dd062ac5a634019dc79dcb0c60b608c89ee1c9c33bb4331423",
+  "salt": "0x8bb8d476bce449fd6c9812adfefd045aa99fe81334bda22ecc6ac1edbd17e24f",
+  "rationale": "Net read neutral (0.01). Strongest evidence: momentum -0.59 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.67 (Allora ML forecast leans short); limitless +0.47 (Limitless (Base) BTC 73% up / 27% down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
