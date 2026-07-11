@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 350,
+  "confidence": 71,
+  "rationaleHash": "0x5c1f4a2bf0b0b0d794e29a4713c14ff70aa9250e3853edaf9e3424b47f00e9b8",
+  "salt": "0x7d99baa9d818a2f29f8bc0395ce2b77f2575e4e35ed6f50a5e722806ab8e7008",
+  "rationale": "Net read bullish (0.58). Strongest evidence: momentum +1.00 (mETH/USD up-momentum since the last tick (Pyth, live)); nansen -0.52 (Smart money net outflow); allora -0.34 (Allora ML forecast leans short).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
