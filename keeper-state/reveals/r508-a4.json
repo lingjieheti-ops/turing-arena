@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -121,
+  "confidence": 44,
+  "rationaleHash": "0x4eaca01a824d251c6e504177065a29a69df01a2724cbd622d98c30db9fc13e31",
+  "salt": "0x5f8a5e1e4d0a073481afa3a7cb791d502cb5b3dd6112e7956816bad9a403c24b",
+  "rationale": "Net read bearish (-0.20). Strongest evidence: momentum -0.98 (MNT/USD down-momentum since the last tick (Pyth, live)); nansen +0.96 (Smart money net inflow); allora +0.69 (Allora ML forecast leans long).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
