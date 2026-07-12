@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -28,
+  "confidence": 33,
+  "rationaleHash": "0xe72a9d0999a6d42641a8cc3c93146b50810b2aca013bc54665ef7e9cf254680d",
+  "salt": "0xd65d0838eda15230006897149a30a4492fde1a02c753d3b7e2df8601fab81672",
+  "rationale": "Net read neutral (-0.05). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.89 (Smart money net inflow); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -9,
+  "confidence": 31,
+  "rationaleHash": "0xf41ae2585c4d78613383c46229acc482b42eee499a3ff4b01c354517e151f7e9",
+  "salt": "0x6dcbeee28622ece03c43b9c21e642cd375e3455c965ba92bebbf953a97bcad7b",
+  "rationale": "Net read neutral (-0.01). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.89 (Smart money net inflow); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -144,
+  "confidence": 47,
+  "rationaleHash": "0x186c8811a208d4f895009dba8b6151e5d7174bef0f4518781b13cb50ec5a15dc",
+  "salt": "0x16a29f7f140137d747c50adabe1a45c3efa297f6df64c4a150c2df460fb2968e",
+  "rationale": "Net read bearish (-0.24). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.89 (Smart money net inflow); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

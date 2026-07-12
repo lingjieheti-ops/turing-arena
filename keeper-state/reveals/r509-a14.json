@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 50,
+  "confidence": 36,
+  "rationaleHash": "0x4dc09d17afa380dffcec57bb72dd71393fd1806e89e1f58342dd23fb9cc8b3bd",
+  "salt": "0xc9d650c5fbd0c218cc962b58f9b5cc83fa1b2501c85a606736fdf8dde6f3d9d7",
+  "rationale": "Net read bullish (0.08). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.89 (Smart money net inflow); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 78,
+  "confidence": 39,
+  "rationaleHash": "0x3d0edb80aef78270577ac9d54d6f150bc13ac9d04770b99ec6932f00332d3819",
+  "salt": "0xc3e20f22cf88feb6e23d63ec27786cb9486878f9027a3791d79469a2397646f1",
+  "rationale": "Net read bullish (0.13). Strongest evidence: momentum -1.00 (CS2 Players down-momentum (Pyth, live)); nansen +0.89 (Smart money net inflow); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 168,
+  "confidence": 50,
+  "rationaleHash": "0x349916348c5128ca7905d65c60acbc597fc3257f5343db30cb6d7c4266c42282",
+  "salt": "0xaa9ceebb29944e133767ecb3649f5942057f21061d7b56d2cc934fdbe1891451",
+  "rationale": "Net read bullish (0.28). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); nansen +0.89 (Smart money net inflow); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
