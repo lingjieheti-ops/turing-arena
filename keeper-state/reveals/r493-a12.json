@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 117,
+  "confidence": 44,
+  "rationaleHash": "0xf39c597d845ab36b3864a8dbd4c241727eb1f380f6a8f8a0a8f3fec075b7c144",
+  "salt": "0xc728f01587e3fb5b2577a00942766d85bdcdfe7e2addb939378d3a92fed29840",
+  "rationale": "Net read bullish (0.19). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); allora +0.92 (Allora ML forecast leans long); mantle-onchain -0.81 (Mantle on-chain momentum down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

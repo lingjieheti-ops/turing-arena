@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -34,
+  "confidence": 34,
+  "rationaleHash": "0x8e9802efebc373edbd7ebe251ea5b8361414bc1df1310f604a26028fbb56e608",
+  "salt": "0x0dd30077699c44bcb00d8d6d48d0f73426efcb3f5a605c3bc2b87615e467ffc5",
+  "rationale": "Net read bearish (-0.06). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); allora +0.92 (Allora ML forecast leans long); mantle-onchain -0.81 (Mantle on-chain momentum down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

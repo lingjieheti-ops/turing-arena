@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 30,
+  "confidence": 33,
+  "rationaleHash": "0x09925b0ae0dc04017d38ec1bdfaa6e971dfb22adc512d1b6c2834f06e0544f6d",
+  "salt": "0x7eaa595b34370524552d087c9876b9796553c9a7dd3170055f9ec220adfe36eb",
+  "rationale": "Net read neutral (0.05). Strongest evidence: momentum -1.00 (SOL/USD down-momentum since the last tick (Pyth, live)); allora +0.92 (Allora ML forecast leans long); mantle-onchain -0.81 (Mantle on-chain momentum down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
