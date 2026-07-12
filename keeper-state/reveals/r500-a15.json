@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -23,
+  "confidence": 33,
+  "rationaleHash": "0x82783980f4243d70865aedfc695632724c681c92478645bfaf766494743d1aa2",
+  "salt": "0x47f19c0966c8aca582970f406010f2127e826c0b52f149cd05521500ec67037c",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: mantle-onchain -0.98 (Mantle on-chain momentum down); limitless -0.44 (Limitless (Base) SOL 28% up / 72% down); momentum -0.21 (SOL/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
