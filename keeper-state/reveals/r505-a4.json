@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 194,
+  "confidence": 53,
+  "rationaleHash": "0x927bdaae01e670dc0023016b354f665b3f076e41a5942ce6374b52f270a8855a",
+  "salt": "0x1451e40fee51ad253070ce79ebbedc8ebb8752e7ab9fbf4b899550bfd00686e6",
+  "rationale": "Net read bullish (0.32). Strongest evidence: limitless +0.48 (Limitless (Base) ETH 74% up / 26% down); nansen +0.62 (Smart money net inflow); allora -0.20 (Allora ML forecast leans short).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

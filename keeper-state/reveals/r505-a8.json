@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 261,
+  "confidence": 60,
+  "rationaleHash": "0x1857dd2f22cbf029ece428387023f8c3b994f34778bc6c270ac25e8c30ad98d9",
+  "salt": "0x1c382aacacb471bffc925cdd35f7aa2bc60d798a5f1a3f697557c3dc2f316663",
+  "rationale": "Net read bullish (0.44). Strongest evidence: limitless +0.48 (Limitless (Base) ETH 74% up / 26% down); nansen +0.62 (Smart money net inflow); allora -0.20 (Allora ML forecast leans short).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

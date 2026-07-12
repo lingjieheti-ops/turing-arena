@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 283,
+  "confidence": 63,
+  "rationaleHash": "0x506dc6d02907eb31b12606e40a31880d7d58938de6385267da6affb8b66aabaa",
+  "salt": "0x5358ab2bdf99d42372212ca238295642fe210d979ac8b6a01a33bfd84220a439",
+  "rationale": "Net read bullish (0.47). Strongest evidence: limitless +0.48 (Limitless (Base) ETH 74% up / 26% down); nansen +0.62 (Smart money net inflow); allora -0.20 (Allora ML forecast leans short).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
