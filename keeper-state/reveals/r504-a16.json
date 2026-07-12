@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 182,
+  "confidence": 51,
+  "rationaleHash": "0xdeba8108c54b4b0eb8106c1ca0463cf20ac27e03c39a0737a3359b03e6662ab0",
+  "salt": "0x9bf6afb1218348acb36fb4614751ab579b3b0e986712862233eb522dfa9a5ebd",
+  "rationale": "Net read bullish (0.30). Strongest evidence: allora +0.68 (Allora ML forecast leans long); momentum +0.24 (BTC Mempool up-momentum since the last tick (Pyth, live)); elfa +0.74 (KOL mindshare heating up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -269,
+  "confidence": 61,
+  "rationaleHash": "0xfeec840cc3698ac71ef02190b44377a26a4aef6f2ab209d8f4f6f045c8a97d82",
+  "salt": "0x61303e6d033c41d25003734d32f7ae359ceb9d118ba0198e4113ce120d1f5f35",
+  "rationale": "Net read bearish (-0.45). Strongest evidence: allora +0.68 (Allora ML forecast leans long); momentum +0.24 (BTC Mempool up-momentum since the last tick (Pyth, live)); elfa +0.74 (KOL mindshare heating up).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
