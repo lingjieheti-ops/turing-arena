@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 219,
+  "confidence": 55,
+  "rationaleHash": "0xda2ac6a0bf5710a3d8b1b7f2e48c565115e8121deef958f8dbe74d4b802ad286",
+  "salt": "0x81eb17fba420e3bec6d4b2df03f8f108a2e95bdb52d6095bd5ed9234b7ab2a65",
+  "rationale": "Net read bullish (0.36). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); nansen +0.65 (Smart money net inflow); mantle-onchain +0.63 (Mantle on-chain momentum up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

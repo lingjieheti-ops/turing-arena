@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 371,
+  "confidence": 73,
+  "rationaleHash": "0x3b9e45d6a4452f756d61a1629b8cf26f823f293898dcf81748cefc54f273687c",
+  "salt": "0xb4ac2aaa9f3e5e992fb7fe26fa7d4055dad23391a4b1f04a974d9421de6b3ab2",
+  "rationale": "Net read bullish (0.62). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); nansen +0.65 (Smart money net inflow); mantle-onchain +0.63 (Mantle on-chain momentum up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

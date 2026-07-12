@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 259,
+  "confidence": 60,
+  "rationaleHash": "0x177c254c64706dbaa190510455930fcdc7c0fe60ecfb1d5e817f5b29506bf64e",
+  "salt": "0x5c81fbbf3ccb04cbcc8618666fb8f3eab8ac08398018edd1e0e3b64a2c1f6222",
+  "rationale": "Net read bullish (0.43). Strongest evidence: momentum +1.00 (ETH Gas up-momentum (Pyth, live)); nansen +0.65 (Smart money net inflow); mantle-onchain +0.63 (Mantle on-chain momentum up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

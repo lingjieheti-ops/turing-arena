@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 344,
+  "confidence": 70,
+  "rationaleHash": "0x8c23f8bcf789f6f55360a2982cf1f91f8e68bd5ebb161c1868ca2a7d0146f261",
+  "salt": "0xe263090b90ddabb03d146f889374a17a5e9db551ad39c93aa44383100edc1c70",
+  "rationale": "Net read bullish (0.57). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); nansen +0.65 (Smart money net inflow); mantle-onchain +0.63 (Mantle on-chain momentum up).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

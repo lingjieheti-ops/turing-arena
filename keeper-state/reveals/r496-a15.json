@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 390,
+  "confidence": 76,
+  "rationaleHash": "0x27226a0904c9aab47805784fc4a534b100950226bce18691030ff2d8c8c3ff81",
+  "salt": "0xd09fec29635fc64253eb770721da803a30127a331e44ee4530e653062f937837",
+  "rationale": "Net read bullish (0.65). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); nansen +0.65 (Smart money net inflow); mantle-onchain +0.63 (Mantle on-chain momentum up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
