@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 114,
+  "confidence": 43,
+  "rationaleHash": "0x2fe4ee2f950d1e6a8dd543c1301420f134381a7382ed65db2c7ae795d1f40072",
+  "salt": "0xe77ae2d94cf4079289a5627300ce32ffe14a8c8b45aca26c0d8ba5eaf43d1a5a",
+  "rationale": "Net read bullish (0.19). Strongest evidence: limitless -0.90 (Limitless (Base) BTC 5% up / 95% down); nansen -0.95 (Smart money net outflow); allora -0.67 (Allora ML forecast leans short).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -309,
+  "confidence": 66,
+  "rationaleHash": "0x3c6f5dfadcdaef9414b64e420732460cc22d926b3a3fdda50a0187bff895ff5b",
+  "salt": "0xe42fea10bc72fb853bd7ef5dcafcaadc3e8a2c63ed9c12438d74cea07bc09d1e",
+  "rationale": "Net read bearish (-0.51). Strongest evidence: limitless -0.90 (Limitless (Base) BTC 5% up / 95% down); nansen -0.95 (Smart money net outflow); allora -0.67 (Allora ML forecast leans short).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
