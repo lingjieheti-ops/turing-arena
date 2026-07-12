@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -26,
+  "confidence": 33,
+  "rationaleHash": "0x4ad8a560440bf35552ee11799f57f24f55e84dde6453e6749253e52075d36f65",
+  "salt": "0xa659dec0615f6a748d6ed4e55a85816d578b8cac75050009dc63350f5b9c2be7",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: allora -0.80 (Allora ML forecast leans short); mantle-onchain +0.95 (Mantle on-chain momentum up); elfa -0.94 (KOL mindshare cooling).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

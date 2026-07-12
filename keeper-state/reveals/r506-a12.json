@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 19,
+  "confidence": 32,
+  "rationaleHash": "0x3daba6e7d3ecde2d721b15dd681600dd514032b46d47b5d4e6a6a0816713e83f",
+  "salt": "0x0df0eb067773c91c08ccf3edb583b55d011b84213323d5ec83c29c25ec893a94",
+  "rationale": "Net read neutral (0.03). Strongest evidence: allora -0.80 (Allora ML forecast leans short); mantle-onchain +0.95 (Mantle on-chain momentum up); elfa -0.94 (KOL mindshare cooling).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 50,
+  "confidence": 36,
+  "rationaleHash": "0x599b05a5e61ba2031a526a03bd4a3522a19682cef587c55c26ac07a018676886",
+  "salt": "0x15ad178a4b935ebb41465c6306e8d16d8ddd432f8430472927dde260f41de580",
+  "rationale": "Net read bullish (0.08). Strongest evidence: allora -0.80 (Allora ML forecast leans short); mantle-onchain +0.95 (Mantle on-chain momentum up); elfa -0.94 (KOL mindshare cooling).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

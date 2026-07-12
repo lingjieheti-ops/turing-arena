@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 29,
+  "confidence": 33,
+  "rationaleHash": "0xd9ab6eafc6b85bcc06da22d6deab093b0460c0f9b59bcf49ac516da5e401f86f",
+  "salt": "0x4f77d9ce0c4c1296b69bafe89636709d66d0a1a8e27f7fed76fa89d4a84f81e8",
+  "rationale": "Net read neutral (0.05). Strongest evidence: allora -0.80 (Allora ML forecast leans short); mantle-onchain +0.95 (Mantle on-chain momentum up); elfa -0.94 (KOL mindshare cooling).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
