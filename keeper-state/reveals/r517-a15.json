@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 27,
+  "confidence": 33,
+  "rationaleHash": "0x7b7b8c747bbb7a5a1c5082dad821ca87fa579762f1fbfcb40a6c9bf7ac67503f",
+  "salt": "0x17d20b2f4138972fb8999224719d277b4445a4912f6577321fc5688ffa641c7f",
+  "rationale": "Net read neutral (0.04). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); limitless +0.84 (No Limitless market for ETHGAS-GWEI — mock up); elfa -0.87 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
