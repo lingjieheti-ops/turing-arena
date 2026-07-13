@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -50,
+  "confidence": 36,
+  "rationaleHash": "0xe636f8c1437e90f2aa55eae48c4126980df1a6cf4d855040cbc3103880f92a55",
+  "salt": "0xe52b6fd27ba39cf38e5fffc5fcccbf28f65ffa96d73e61e6d601ca21472ed5b9",
+  "rationale": "Net read bearish (-0.08). Strongest evidence: limitless -0.71 (Limitless (Base) BTC 14% up / 86% down); nansen +0.96 (Smart money net inflow); mantle-onchain -0.91 (Mantle on-chain momentum down).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
