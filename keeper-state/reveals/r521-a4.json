@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 434,
+  "confidence": 81,
+  "rationaleHash": "0xd6df042db22a7b8522155a4ca0813f490d78d0e95691203e0916701f8cd9e9aa",
+  "salt": "0x75e9c61d3db0322831ef6b2a8ebb840d365ef16b1ef9baa3cdd8e6cf4f737535",
+  "rationale": "Net read bullish (0.72). Strongest evidence: limitless +0.85 (Limitless (Base) SOL 93% up / 7% down); nansen +0.98 (Smart money net inflow); momentum +0.22 (SOL/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

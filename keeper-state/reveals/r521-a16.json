@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 485,
+  "confidence": 87,
+  "rationaleHash": "0x9de6b80b9364d04643d7823a23177320f804a5d3bb76901a688794d006af30dd",
+  "salt": "0x38fe4daebcb46f117a89c50ffe63dde5105f8793999f6dc273d4c9354cf9dd36",
+  "rationale": "Net read bullish (0.81). Strongest evidence: limitless +0.85 (Limitless (Base) SOL 93% up / 7% down); nansen +0.98 (Smart money net inflow); momentum +0.22 (SOL/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
