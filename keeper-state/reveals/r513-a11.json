@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 271,
+  "confidence": 62,
+  "rationaleHash": "0x809576fd992ebdd0768d9e0ae2d23c71748647cab29ac66363225ec3f6d0eddc",
+  "salt": "0x216a254cf95237a69a7fe92cb86a67ab413a056b480531a5148ec7c2dc93c910",
+  "rationale": "Net read bullish (0.45). Strongest evidence: nansen -1.00 (Smart money net outflow); elfa -0.90 (KOL mindshare cooling); momentum -0.19 (BTC/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

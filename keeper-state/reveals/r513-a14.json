@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 49,
+  "confidence": 36,
+  "rationaleHash": "0x42781e43f54fd413eccd468c09c6001199e01dfb46721c73154d753ec9ca157e",
+  "salt": "0x967dd49524007fdb5b7fc4e93a0866b6e3ce5c7d38060f13a5561649aa8d709d",
+  "rationale": "Net read bullish (0.08). Strongest evidence: nansen -1.00 (Smart money net outflow); elfa -0.90 (KOL mindshare cooling); momentum -0.19 (BTC/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

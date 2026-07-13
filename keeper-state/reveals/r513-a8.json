@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -128,
+  "confidence": 45,
+  "rationaleHash": "0xcb6e4ef00b26d6e590dc1eb21602c463e59cef4f4e1038952d6d1bdc412fd4b2",
+  "salt": "0x248a15a0cf04f1f20ce0d8435d91ddf0aa4cf096ec038365a5518b3cbbb664f6",
+  "rationale": "Net read bearish (-0.21). Strongest evidence: nansen -1.00 (Smart money net outflow); elfa -0.90 (KOL mindshare cooling); momentum -0.19 (BTC/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
