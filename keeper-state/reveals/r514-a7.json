@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 7,
+  "confidence": 31,
+  "rationaleHash": "0xd9314b250e926ce19255adfc28681f2e7a7160e1b2ce9f9d95922885b5918386",
+  "salt": "0xe099bfe0d06d213b6a785869c3dac400af82ab74c956107ce138d44bdc288797",
+  "rationale": "Net read neutral (0.01). Strongest evidence: momentum -0.98 (SOL/USD down-momentum (Pyth, live)); mantle-onchain -0.99 (Mantle on-chain momentum down); limitless -0.43 (Limitless (Base) SOL 28% up / 72% down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
