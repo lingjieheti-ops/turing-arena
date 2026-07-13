@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 217,
+  "confidence": 55,
+  "rationaleHash": "0xf93addc67383998f7f59a8d798efe90700d04954324ad993d5863b3c55625439",
+  "salt": "0x1d79633f4da044c8e401ab56a819bf536e8662a7ef919363a599d19085c1b416",
+  "rationale": "Net read bullish (0.36). Strongest evidence: momentum +0.43 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen -0.99 (Smart money net outflow); allora +0.56 (Allora ML forecast leans long).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

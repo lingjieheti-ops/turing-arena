@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 255,
+  "confidence": 60,
+  "rationaleHash": "0x7018f6c0030dc4624bd4d137731caca20feb626e4f95739874d70d9056244740",
+  "salt": "0xa7674b7e11901e95d47d6e1ae285da33a8a78e972942c556eb1db18ab74e0432",
+  "rationale": "Net read bullish (0.42). Strongest evidence: momentum +0.43 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen -0.99 (Smart money net outflow); allora +0.56 (Allora ML forecast leans long).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

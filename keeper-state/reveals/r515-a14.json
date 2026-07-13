@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 206,
+  "confidence": 54,
+  "rationaleHash": "0x2a1b89c1562dfec29a745ff4ebfb180d5d5c55369c07fe38be1684ade3dec48b",
+  "salt": "0x6d7f49ee5a2df2471a2dbbcf703c39fc48081650d45bc83bcfaaa8ce98647a6a",
+  "rationale": "Net read bullish (0.34). Strongest evidence: momentum +0.43 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen -0.99 (Smart money net outflow); allora +0.56 (Allora ML forecast leans long).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

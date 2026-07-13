@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 9,
+  "confidence": 31,
+  "rationaleHash": "0x5eb12536c130150174f1a158b424cf1296965234acc3a712f96aa9fe1c39fd65",
+  "salt": "0xad323d5701c147f3bb79bd74365fb53f004f40e4157ba7fa9ae282958188841f",
+  "rationale": "Net read neutral (0.01). Strongest evidence: momentum +0.43 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen -0.99 (Smart money net outflow); allora +0.56 (Allora ML forecast leans long).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

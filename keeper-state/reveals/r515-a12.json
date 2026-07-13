@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -20,
+  "confidence": 32,
+  "rationaleHash": "0x385eb589aaf36148bbe015a128c6d91fc475ffae71b29fea4806c96fe89c952b",
+  "salt": "0x7ba2b02e297137935afed90f8ad575ae408e78cb733f393dd0cff07a51033a8e",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: momentum +0.43 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen -0.99 (Smart money net outflow); allora +0.56 (Allora ML forecast leans long).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
