@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 131,
+  "confidence": 45,
+  "rationaleHash": "0x98ddc97684dfbe9c77980b3619f84e53412c789ac015dd6a84f71785247f0c06",
+  "salt": "0xdb17478aa610206db32143ad81cb4f33bbd197281931bf5a3f61b1cfd0c8fb5f",
+  "rationale": "Net read bullish (0.22). Strongest evidence: momentum -0.84 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless -0.95 (Limitless (Base) ETH 3% up / 97% down); allora +0.73 (Allora ML forecast leans long).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
