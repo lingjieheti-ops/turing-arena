@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": -19,
+  "confidence": 32,
+  "rationaleHash": "0xb356a21ae6daf6ea4e4173d1048b9e5cb76449c25c0feed4543a89f4df5d4078",
+  "salt": "0xf8cca20f644856d487b15711689fe69c160d83c3ff4c63399bad1be3e31a5545",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: momentum -1.00 (CS2 Players down-momentum (Pyth, live)); limitless -0.57 (No Limitless market for CS2-PLAYERS — mock down); mantle-onchain -0.98 (Mantle on-chain momentum down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

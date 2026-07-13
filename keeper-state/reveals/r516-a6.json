@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 126,
+  "confidence": 45,
+  "rationaleHash": "0xfd9547bc17fdbcc2a53b0d4a42b7e4a0fc14469bb016e0030ce76e6d9dfa399c",
+  "salt": "0x24440ce841300bc0d50aff5b858ef8f6d94b979f461a1aa25b6c0a801ba9769e",
+  "rationale": "Net read bullish (0.21). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless -0.57 (No Limitless market for CS2-PLAYERS — mock down); mantle-onchain -0.98 (Mantle on-chain momentum down).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

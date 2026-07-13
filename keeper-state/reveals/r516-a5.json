@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 372,
+  "confidence": 73,
+  "rationaleHash": "0x5a13e2bb74b509f8111aa37bf72073e1df9d13933cbdb8266b864eb09786c77a",
+  "salt": "0xe2a9f5cbf517d4673508c0c76b22c4fcb5dd6dea842f0732f89f6d1975f4bbfd",
+  "rationale": "Net read bullish (0.62). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless -0.57 (No Limitless market for CS2-PLAYERS — mock down); mantle-onchain -0.98 (Mantle on-chain momentum down).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
