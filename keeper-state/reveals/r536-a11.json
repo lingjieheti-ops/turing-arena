@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 334,
+  "confidence": 69,
+  "rationaleHash": "0x21e533cfeb702e211b77960ad1fd1937d13e5a919d48e5acbffee5c884e0e7c2",
+  "salt": "0xfb72f998c3efd1f1da40ad3ea3b3156e67847e6fa67ac0527b8e84aba1246057",
+  "rationale": "Net read bullish (0.56). Strongest evidence: momentum +0.48 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen -0.98 (Smart money net outflow); allora +0.69 (Allora ML forecast leans long).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
