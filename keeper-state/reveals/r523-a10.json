@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 99,
+  "confidence": 42,
+  "rationaleHash": "0x56f4c22a3460b82b4e802ffa2e17a8b9478383fd47b1fc2c00061cc35bd664c4",
+  "salt": "0xcafe94072c1178474bf9ee5c67b1483359e08a3953687d739fbba3c842654342",
+  "rationale": "Net read bullish (0.16). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless -0.47 (No Limitless market for CS2-PLAYERS — mock down); elfa -0.95 (KOL mindshare cooling).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

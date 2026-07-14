@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 9,
+  "confidence": 31,
+  "rationaleHash": "0xe44e4564014f1e6b669b66916e59af48b803af9e89c84b0158ceb15db7a5f7bb",
+  "salt": "0x322f3713b396b0847837e970672ac9a5d826278dd2e0c153ae5fe6b2360a743d",
+  "rationale": "Net read neutral (0.01). Strongest evidence: momentum -1.00 (CS2 Players down-momentum (Pyth, live)); limitless -0.47 (No Limitless market for CS2-PLAYERS — mock down); elfa -0.95 (KOL mindshare cooling).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

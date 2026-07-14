@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -479,
+  "confidence": 86,
+  "rationaleHash": "0x73d8a2112a278d32b503f87a1665d771157142674ae4d0321cd343fc6b8fa565",
+  "salt": "0x0712eff5839c8fb85b64597ba8e6f7ee62eece840796ea199ff15eceb7cdb3aa",
+  "rationale": "Net read bearish (-0.80). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless -0.47 (No Limitless market for CS2-PLAYERS — mock down); elfa -0.95 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
