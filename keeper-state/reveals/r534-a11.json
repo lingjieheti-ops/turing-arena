@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 316,
+  "confidence": 67,
+  "rationaleHash": "0x8d3cd2e3835ef9683dba7f56443d46512a049f4c8ad9b54850af6764cc85a410",
+  "salt": "0xf9a563fc11a36f747302a17fd34d6cab9d77d61aa30fdaaf2d5013a957d5c276",
+  "rationale": "Net read bullish (0.53). Strongest evidence: nansen +0.95 (Smart money net inflow); mantle-onchain -0.90 (Mantle on-chain momentum down); momentum +0.24 (BTC/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
