@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 75,
+  "confidence": 39,
+  "rationaleHash": "0x1c1be261052b0592bee06c9e35ecb1a4bc56e3889185116ad53af7a6e06ca3f6",
+  "salt": "0x02691191e8c1e5d9ffbf7b6a8e3f03c03f1be99c2012be30a2f3a00a94b49f08",
+  "rationale": "Net read bullish (0.12). Strongest evidence: nansen +0.97 (Smart money net inflow); momentum +0.38 (BTC/USD up-momentum since the last tick (Pyth, live)); mantle-onchain -0.92 (Mantle on-chain momentum down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
