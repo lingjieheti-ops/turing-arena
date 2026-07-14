@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 272,
+  "confidence": 62,
+  "rationaleHash": "0x9498835b14581386749fce5050e405049229d9be76a8952d331e19b65bace6f0",
+  "salt": "0x522b2bffa6cb885995c3dc567811eec2e8bf00488c7daaa3563b966aad906441",
+  "rationale": "Net read bullish (0.45). Strongest evidence: allora -0.35 (Allora ML forecast leans short); nansen -0.40 (Smart money net outflow); momentum +0.14 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
