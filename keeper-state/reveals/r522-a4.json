@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 320,
+  "confidence": 67,
+  "rationaleHash": "0xc58527883c71bca90310bb2fef7abf40f661900a15e8be4ec8b77c766772da8b",
+  "salt": "0x62a1bf8d0759a38082abbba864df60d2e44ef6af89564913af3d90a392ece65e",
+  "rationale": "Net read bullish (0.53). Strongest evidence: limitless +0.97 (Limitless MNT market unavailable — mock up); momentum +0.40 (MNT/USD up-momentum since the last tick (Pyth, live)); elfa +0.75 (KOL mindshare heating up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
