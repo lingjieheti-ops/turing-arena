@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 13,
+  "confidence": 32,
+  "rationaleHash": "0x7edb120fa7104c58c59c5be1b678839c8ede6d39389ad39af79aed96013c19c0",
+  "salt": "0x19dbaee3334ed189ca0ecd88a1a07bcf2ca3943d9416b2b3bfc7e1b2f2d94fb3",
+  "rationale": "Net read neutral (0.02). Strongest evidence: nansen -0.42 (Smart money net outflow); allora -0.31 (Allora ML forecast leans short); surf +0.43 (Market momentum positive).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

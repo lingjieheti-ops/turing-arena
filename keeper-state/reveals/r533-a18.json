@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -6,
+  "confidence": 31,
+  "rationaleHash": "0xd28d8ca2ee59bb9a68d7b6536a013d665ef629b46f8e3dd82b751e8260f0507f",
+  "salt": "0x99daa1fc8e6ade2f28c856d162b1d3078ec648a243c4f60e6d47735e5fc0963d",
+  "rationale": "Net read neutral (-0.01). Strongest evidence: nansen -0.42 (Smart money net outflow); allora -0.31 (Allora ML forecast leans short); surf +0.43 (Market momentum positive).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
