@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 11,
+  "confidence": 31,
+  "rationaleHash": "0x50e34a02aa331b88d97e17d5b26d0e8e26a03e4b13db7b74eb10d6891b78ab54",
+  "salt": "0x9df45f3774af66a4f37400675b80ec80b3ac685850ecc53f1b67ccf7d0cb15af",
+  "rationale": "Net read neutral (0.02). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

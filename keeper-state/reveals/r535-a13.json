@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 35,
+  "confidence": 34,
+  "rationaleHash": "0xf34ceb94ab09218beeda5a8505469ef01b9c423a207310ca71dd121e60b2697c",
+  "salt": "0x0f756a47a7640a3a2f153fbb903d833d7efd42f494802f870dccef11a04e6c5a",
+  "rationale": "Net read bullish (0.06). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

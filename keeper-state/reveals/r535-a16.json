@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 22,
+  "confidence": 33,
+  "rationaleHash": "0xc6b030ae115c9ffa1c79970218fc8a29cb3af87139c73a29a0fd511a3fa6ea50",
+  "salt": "0xe48bfd92604478b031eb46aa3c2bd99eabe07ad7e0f123aa3e6198fe7c21e765",
+  "rationale": "Net read neutral (0.04). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

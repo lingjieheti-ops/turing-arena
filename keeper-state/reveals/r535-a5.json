@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -13,
+  "confidence": 31,
+  "rationaleHash": "0x6334fd449f8b149760573f3e2f4682e7b849f0b71227a1ec61a358dcde1dc430",
+  "salt": "0x5bcc0855e6d972f1076346da9e1e5bbf89827cb8aea43d3c53a0e3531ea35b9e",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

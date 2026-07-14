@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 19,
+  "confidence": 32,
+  "rationaleHash": "0xda713ffbc0c3f085e72feed812daae9feecd8c8d4f63e1c6343e357232d15481",
+  "salt": "0x8ba2ffaf1295241d33a20202301484dc6e14b11a7164481e8de0f4b47fcfc810",
+  "rationale": "Net read neutral (0.03). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

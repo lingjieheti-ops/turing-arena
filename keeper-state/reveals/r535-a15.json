@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 163,
+  "confidence": 49,
+  "rationaleHash": "0xc85a28eda0837f502a5af672bc515b2df88f3e16a68afe14485b2a64d39d3467",
+  "salt": "0x2c44eb118bf43333b55a48212a147d889a29481cdfae189a7546be0c179a0bb6",
+  "rationale": "Net read bullish (0.27). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 246,
+  "confidence": 59,
+  "rationaleHash": "0xc7c2368f03e237b870bc51c451783c289268468ef9a9da57d704c9aad2087580",
+  "salt": "0xe7b08aa3107e13668df6b9927fa16d21e55fc2304428794c13753a03fc7d0f0d",
+  "rationale": "Net read bullish (0.41). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

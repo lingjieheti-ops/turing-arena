@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 302,
+  "confidence": 65,
+  "rationaleHash": "0x2e2c35c3eba983caa9607ee28204ce45e7314605c524505a3086159263c94a56",
+  "salt": "0x77d2ccc10c23f37cf23987a4a5009bb2e54fe3f4715fb1355c53fd5aec547b47",
+  "rationale": "Net read bullish (0.50). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

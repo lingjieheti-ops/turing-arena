@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 107,
+  "confidence": 43,
+  "rationaleHash": "0xa00f253df07e89da8819df728b24cc9e4294ca81e55637adebf763a1b58afe0e",
+  "salt": "0x6a92bd4b41237dec59f5e01887a9245948c40354eba54e811951fbe7721d0e10",
+  "rationale": "Net read bullish (0.18). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

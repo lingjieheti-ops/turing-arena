@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -8,
+  "confidence": 31,
+  "rationaleHash": "0xacd1b62b2965a325d430e8bc17a975e8372dec9dd157d67b610f22b83bcac973",
+  "salt": "0xa65179735c374cffbb7448aaa3203b647d8b9e18dee928d21a47eaac95743a7f",
+  "rationale": "Net read neutral (-0.01). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

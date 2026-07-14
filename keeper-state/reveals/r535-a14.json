@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 190,
+  "confidence": 52,
+  "rationaleHash": "0x0978425aa74edb49f0484536ce4677f0c9493d623b556329b7ffa039dd0f4036",
+  "salt": "0x5d978b0112c4d8470bda31004742da180c204680ffc1bc15a4b463c48859e645",
+  "rationale": "Net read bullish (0.32). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

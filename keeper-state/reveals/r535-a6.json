@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 213,
+  "confidence": 55,
+  "rationaleHash": "0x8fb306839ca408c6a595b87ba8cf4078867380c8d113e8493a254dddac9477f7",
+  "salt": "0x3c5eb20ad3cfae5831036498c8c39fec925b070d192ca45e648a652eb790634c",
+  "rationale": "Net read bullish (0.35). Strongest evidence: nansen +0.98 (Smart money net inflow); momentum -0.23 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.74 (KOL mindshare cooling).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
