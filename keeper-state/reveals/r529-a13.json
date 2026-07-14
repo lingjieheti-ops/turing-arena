@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 121,
+  "confidence": 44,
+  "rationaleHash": "0x34e9dfb7d08810f72d72c34561a268c7ce53ec13a5039307acd82ce063d92664",
+  "salt": "0xcc1b5476202b30d4847b82d95de761a7f1f383342762471b9c87956f1200d269",
+  "rationale": "Net read bullish (0.20). Strongest evidence: momentum +0.80 (MNT/USD up-momentum since the last tick (Pyth, live)); limitless +0.60 (Limitless (Base) MNT 80% up / 20% down); elfa +0.83 (KOL mindshare heating up).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

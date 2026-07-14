@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 228,
+  "confidence": 57,
+  "rationaleHash": "0x16ed3f778a4a0b00bc2ecec6672f8f280f5bae2b3d4eedaf1e60fb6b136d18b1",
+  "salt": "0x3d3e997821299fc99ca67d9e6760a63b6f2ed4e1a39a03d894bcd6591949cd3f",
+  "rationale": "Net read bullish (0.38). Strongest evidence: momentum +0.80 (MNT/USD up-momentum since the last tick (Pyth, live)); limitless +0.60 (Limitless (Base) MNT 80% up / 20% down); elfa +0.83 (KOL mindshare heating up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
