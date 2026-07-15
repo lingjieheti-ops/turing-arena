@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -292,
+  "confidence": 64,
+  "rationaleHash": "0x3d9f6344733b9fed7127d51c78990ed93ef3c71c43d1cdf4d1669de2aa398362",
+  "salt": "0xb0ed268deed069b175066edeff249265cba648925470824cb8b7b611cd7c1994",
+  "rationale": "Net read bearish (-0.49). Strongest evidence: allora -0.92 (Allora ML forecast leans short); momentum -0.22 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.83 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
