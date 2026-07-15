@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -210,
+  "confidence": 55,
+  "rationaleHash": "0x440ac7bfb600adcc140f211ccf5c393f71a0b6bd43333766978dccee9b0cc2e8",
+  "salt": "0x3753864a626a3f7fbd65eeaf00fd383d984c84009c3abe434f01e0d077a65cbc",
+  "rationale": "Net read bearish (-0.35). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless +0.59 (No Limitless market for CS2-PLAYERS — mock up); surf +0.24 (Market momentum positive).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
