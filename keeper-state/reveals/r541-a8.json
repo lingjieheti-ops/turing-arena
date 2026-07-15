@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -38,
+  "confidence": 34,
+  "rationaleHash": "0xbd975745fc2ea3413ea6e553d1b1ad87e93bade981aa6c667788c71381266756",
+  "salt": "0x7013ca76e2cd0e1885f9697f81695fce57f856768bff0ac00c915bb4b2b45cba",
+  "rationale": "Net read bearish (-0.06). Strongest evidence: limitless -0.95 (Limitless (Base) BTC 2% up / 98% down); nansen +0.99 (Smart money net inflow); elfa -0.88 (KOL mindshare cooling).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

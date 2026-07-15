@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 94,
+  "confidence": 41,
+  "rationaleHash": "0xdbba4a3700657e0ce174cdeef0f811dd2d1fdf7b4794b53cfd40954c158ccf5e",
+  "salt": "0x11f82a7f16994af612f3d8070d5668c4a526312541f0eda3728b8d950b9577a2",
+  "rationale": "Net read bullish (0.16). Strongest evidence: limitless -0.95 (Limitless (Base) BTC 2% up / 98% down); nansen +0.99 (Smart money net inflow); elfa -0.88 (KOL mindshare cooling).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
