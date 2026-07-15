@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -123,
+  "confidence": 44,
+  "rationaleHash": "0xd4bd69bf3c9058b1238d38d7023fde2633558f42d47faed4c51c9b21ab26df12",
+  "salt": "0xa29dda6b72d56c6ee9d6619187242a83f7944f67f56a7de1928c3aa92e335f48",
+  "rationale": "Net read bearish (-0.21). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); limitless +0.88 (No Limitless market for ETHGAS-GWEI — mock up); mantle-onchain -0.49 (Mantle on-chain momentum down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
