@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 73,
+  "confidence": 38,
+  "rationaleHash": "0xf372a3d43e0f374be0704472365c85a5dafdc8d36dd82305bdee93df2b89b016",
+  "salt": "0x03704c1722724b91d03fd42864e32dc5726134f70ab4f52efc124b32944ab733",
+  "rationale": "Net read bullish (0.12). Strongest evidence: momentum -1.00 (ETH Gas down-momentum (Pyth, live)); nansen +0.78 (Smart money net inflow); elfa -0.98 (KOL mindshare cooling).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -263,
+  "confidence": 61,
+  "rationaleHash": "0xcc5f3df1df215550260f590f8fcc347676933eb430fecd25cc2af6e2c94c00d2",
+  "salt": "0xe80f542342513b8c01d127ea14251c889a158f2ea1a3d3d831559a9a83c1db3c",
+  "rationale": "Net read bearish (-0.44). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); nansen +0.78 (Smart money net inflow); elfa -0.98 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
