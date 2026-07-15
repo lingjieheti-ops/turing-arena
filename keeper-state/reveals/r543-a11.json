@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 373,
+  "confidence": 73,
+  "rationaleHash": "0x50d0d417e3d0d4346cc1f4d2b719f8086e8df05aa908f1d62ebc1aab9193a974",
+  "salt": "0x5c8c81a5eaa4bcc845f11b23eb267e2c99a616fb7456323c11b99de311318d5a",
+  "rationale": "Net read bullish (0.62). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); limitless +0.98 (Limitless MNT market unavailable — mock up); mantle-onchain +0.76 (Mantle on-chain momentum up).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
