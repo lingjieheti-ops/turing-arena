@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 286,
+  "confidence": 63,
+  "rationaleHash": "0x3ec850fd9a19e388a2ab0bdb65ea6a2c3bcd09454ab52d45afc13086a86233c6",
+  "salt": "0xed569a240f21a7d364521ca078a9debfd6f9171a770a6a6e8aaa759ea833fbde",
+  "rationale": "Net read bullish (0.48). Strongest evidence: momentum +0.32 (MNT/USD up-momentum since the last tick (Pyth, live)); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -129,
+  "confidence": 45,
+  "rationaleHash": "0x210a06b05834640f7b0ab6cfa01bc046bd97ed7315b6250428694248f796fcee",
+  "salt": "0x2a8dc8cb7a6cc5d6adcbbc667de38154cdca2d2c4fae175454fa3b08e9713d81",
+  "rationale": "Net read bearish (-0.22). Strongest evidence: momentum +0.32 (MNT/USD up-momentum since the last tick (Pyth, live)); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

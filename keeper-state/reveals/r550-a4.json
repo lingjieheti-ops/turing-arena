@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 199,
+  "confidence": 53,
+  "rationaleHash": "0x550cfeec59ea3c60915f0a5834fde1f31a94f7498df89e519d2fbf874e3f0622",
+  "salt": "0xd90235fb16ee536184e36d7801f0626aac0a4307b433e7abfc91794115e659ee",
+  "rationale": "Net read bullish (0.33). Strongest evidence: momentum +0.32 (MNT/USD up-momentum since the last tick (Pyth, live)); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
