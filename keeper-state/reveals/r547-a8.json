@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -4,
+  "confidence": 31,
+  "rationaleHash": "0xc8a5d78ed616aacd058ba1634181d15b557912c0c65e868d511f8e7390662cd7",
+  "salt": "0x6284b0298d40779c67a0aad23b547dca719caf58e5e886c0173f8a04144d35a4",
+  "rationale": "Net read neutral (-0.01). Strongest evidence: momentum -0.67 (mETH/USD down-momentum since the last tick (Pyth, live)); allora +0.78 (Allora ML forecast leans long); limitless +0.63 (Limitless (Base) ETH 82% up / 18% down).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

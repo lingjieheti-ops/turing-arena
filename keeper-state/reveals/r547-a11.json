@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 287,
+  "confidence": 64,
+  "rationaleHash": "0xfac3110cf68cca0e1eed32bd41bee37b5600d2ce00b3a2d8958d7d3d871267b6",
+  "salt": "0x2afdf1f9926ad41c2f9a972393c63e0ce526380119e0d26875aac17933237f9f",
+  "rationale": "Net read bullish (0.48). Strongest evidence: momentum -0.67 (mETH/USD down-momentum since the last tick (Pyth, live)); allora +0.78 (Allora ML forecast leans long); limitless +0.63 (Limitless (Base) ETH 82% up / 18% down).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
