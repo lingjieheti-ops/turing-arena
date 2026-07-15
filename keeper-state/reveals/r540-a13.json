@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 48,
+  "confidence": 36,
+  "rationaleHash": "0x6e40cfe966ea96b6750bc5d21b39bd55df468cecdf06c8419b6931453e661ec7",
+  "salt": "0xb80175827213f22629df389e686e3d7d4781656761fae2306a96d77599fc366b",
+  "rationale": "Net read bullish (0.08). Strongest evidence: limitless +0.93 (Limitless (Base) ETH 96% up / 4% down); allora +0.82 (Allora ML forecast leans long); momentum -0.27 (mETH/USD down-momentum since the last tick (Pyth, live)).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 98,
+  "confidence": 41,
+  "rationaleHash": "0xfaad2e6b31209cc612e41535b235d0ad4c27f065a9bd7ddc999b2cc70198141c",
+  "salt": "0x590099eeed1ff7b28defba26caaf43dc17cb81c083ceb06d7eadd5a497aa29c9",
+  "rationale": "Net read bullish (0.16). Strongest evidence: allora +0.82 (Allora ML forecast leans long); limitless -0.47 (Limitless (Base) ETH 27% up / 73% down); momentum -0.27 (mETH/USD down-momentum (Pyth, live)).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
