@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 194,
+  "confidence": 53,
+  "rationaleHash": "0xe15832b67261ca470fdb6917d9b91c4eeb6b822d3bdfcefcfe4ab7be5297935e",
+  "salt": "0x0da6a7b98f2d449c51111541c5ce3fe5b26cc1256e5300d024d1e86391fc9bd2",
+  "rationale": "Net read bullish (0.32). Strongest evidence: nansen +0.93 (Smart money net inflow); limitless +0.56 (Limitless (Base) BTC 78% up / 22% down); elfa -0.83 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

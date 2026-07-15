@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 114,
+  "confidence": 43,
+  "rationaleHash": "0x5940ddccae523ba00b73a009df1a4fa2935ad424973e65884032c06eae238c62",
+  "salt": "0x0899a6c8155218954e9e9b9fd5fa9fb14be146ecc62eedf06398a309c71c92ec",
+  "rationale": "Net read bullish (0.19). Strongest evidence: nansen +0.93 (Smart money net inflow); limitless +0.56 (Limitless (Base) BTC 78% up / 22% down); elfa -0.83 (KOL mindshare cooling).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

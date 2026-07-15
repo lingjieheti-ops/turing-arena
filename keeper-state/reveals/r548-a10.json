@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 297,
+  "confidence": 65,
+  "rationaleHash": "0xf57847e30b515efa44683a477632fcf80fac8d138294fb6b91ddd4ffc8db241f",
+  "salt": "0xebbcf7f52f3451627240204811203194327c3597e556351d08ba2c15a1655fe0",
+  "rationale": "Net read bullish (0.50). Strongest evidence: nansen +0.93 (Smart money net inflow); limitless +0.56 (Limitless (Base) BTC 78% up / 22% down); elfa -0.83 (KOL mindshare cooling).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
