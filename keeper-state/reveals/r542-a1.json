@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 191,
+  "confidence": 52,
+  "rationaleHash": "0xfdada9c58141dbab2d1702fc7ab89aa551a5d709197a03641d1afc1c8279f764",
+  "salt": "0xc3702810207c69782778adceae5fe166587eb6d6128ff784a8588014a45d4b9d",
+  "rationale": "Net read bullish (0.32). Strongest evidence: limitless +0.97 (Limitless (Base) SOL 98% up / 2% down); allora +0.99 (Allora ML forecast leans long); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

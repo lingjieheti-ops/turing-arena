@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 258,
+  "confidence": 60,
+  "rationaleHash": "0xb91e4c9920230370ffc042bb6886a3f4a6c800a9fe4008d80b65515ea17afec7",
+  "salt": "0xe048ec2c742c83e8015697a3c08de09399461907d4ee4023ee6855885a3c4fe7",
+  "rationale": "Net read bullish (0.43). Strongest evidence: limitless +0.97 (Limitless (Base) SOL 98% up / 2% down); allora +0.99 (Allora ML forecast leans long); elfa -0.74 (KOL mindshare cooling).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

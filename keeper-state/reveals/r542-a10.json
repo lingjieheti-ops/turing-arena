@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 335,
+  "confidence": 69,
+  "rationaleHash": "0xad84d7bce6caca048a088862d976491db5cdcc4204555a30ee9bbb567155ee03",
+  "salt": "0xd62a1d69abfc8c2da7da363472c14d4d7abe4e68cbfe30ef0b0c98eae99d10ab",
+  "rationale": "Net read bullish (0.56). Strongest evidence: limitless +0.97 (Limitless (Base) SOL 98% up / 2% down); allora +0.99 (Allora ML forecast leans long); elfa -0.74 (KOL mindshare cooling).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
