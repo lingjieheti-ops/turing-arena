@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 163,
+  "confidence": 49,
+  "rationaleHash": "0x98798a09699defc822e9c6e14e47a5afff0e48b7d64f6ebab73408948eeca473",
+  "salt": "0xffa4526a0d5aed7ae0dbcccdb5e60303cf926e5f5a7d26231bf4c3e2e7500f19",
+  "rationale": "Net read bullish (0.27). Strongest evidence: limitless +0.89 (Limitless (Base) SOL 95% up / 5% down); allora -0.82 (Allora ML forecast leans short); mantle-onchain +0.97 (Mantle on-chain momentum up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
