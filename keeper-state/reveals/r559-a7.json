@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 279,
+  "confidence": 63,
+  "rationaleHash": "0xfe4554a456fbdcad7ae27d600fb6dc1d91736fede64210341eb2f756e5f6a58b",
+  "salt": "0xae20cda5fab7c47cef03d14f91fe46aa5799449e24ea5d2fa6afa9928d35a123",
+  "rationale": "Net read bullish (0.47). Strongest evidence: momentum +1.00 (ETH Gas up-momentum (Pyth, live)); limitless +0.86 (No Limitless market for ETHGAS-GWEI — mock up); allora -0.82 (Allora ML forecast leans short).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
