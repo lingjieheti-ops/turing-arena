@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -225,
+  "confidence": 56,
+  "rationaleHash": "0x90dc7b4e7e13b9379331cabb36ec03644e16774e9ca13a9b4d3938315de7f8f0",
+  "salt": "0x81689ffd83e568d11b52e89fbf756f2426cc9db8f3b15bb7cce78c79487c1864",
+  "rationale": "Net read bearish (-0.38). Strongest evidence: allora -0.83 (Allora ML forecast leans short); limitless +0.69 (Limitless (Base) BTC 85% up / 15% down); elfa -0.97 (KOL mindshare cooling).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
