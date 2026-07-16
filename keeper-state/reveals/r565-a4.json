@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -582,
+  "confidence": 98,
+  "rationaleHash": "0x707b868da4a94003dfd36ff5c4ca7d87d5030bb10f84b28b91f5c2c9ee0ac33f",
+  "salt": "0xdb8e05c0c3c9700fdd952de821abd5f409e0f22a1d1480f87fb724dbce432acb",
+  "rationale": "Net read bearish (-0.97). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); allora -0.91 (Allora ML forecast leans short); nansen +0.89 (Smart money net inflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
