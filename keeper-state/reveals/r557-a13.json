@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 84,
+  "confidence": 40,
+  "rationaleHash": "0x96659834954077b70b87177f7235255d1217ab4bf295414c7e42672a038b0766",
+  "salt": "0xfb4ac3710c7c570571752edd2e24bc2a450720aa484fcf4e73d4a945576d69f6",
+  "rationale": "Net read bullish (0.14). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

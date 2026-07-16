@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 308,
+  "confidence": 66,
+  "rationaleHash": "0x94cfcc0c07c04b10dd2c8800db839f5be60a3d3a7ac95cc0e49dcdf9fa4aa809",
+  "salt": "0xae7b21d96310feac8dc27d183c90274e208f91254fdc28174dc5c33d7656590a",
+  "rationale": "Net read bullish (0.51). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

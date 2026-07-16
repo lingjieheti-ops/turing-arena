@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 218,
+  "confidence": 55,
+  "rationaleHash": "0x49ba457b98904c35d087795188994bbf55d4aedc1e6fb24acdf347d026c75fba",
+  "salt": "0xfbe01792d7e07ec884853237145fce5532f2a2645aab132debd238d1d93beb02",
+  "rationale": "Net read bullish (0.36). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

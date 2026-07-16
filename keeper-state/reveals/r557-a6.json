@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 244,
+  "confidence": 58,
+  "rationaleHash": "0xb9748054f6348ed9fa892b474a83cea86c7edb7e6f0ea2e0ba314baef48d664a",
+  "salt": "0x675c8498f154df6b184e08aec57109f43e5b68912c08c22cb868cc347e6df525",
+  "rationale": "Net read bullish (0.41). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

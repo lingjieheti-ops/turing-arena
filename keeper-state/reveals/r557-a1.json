@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 136,
+  "confidence": 46,
+  "rationaleHash": "0xb7e0b95c91ed8f03fa9437b569ee8cdc90b15d30b4cb389750e3b5f2ea82a32b",
+  "salt": "0xb943ed2875bfcd993274549063a35c7bee14c9fc3840ecc00955e93516bf155e",
+  "rationale": "Net read bullish (0.23). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

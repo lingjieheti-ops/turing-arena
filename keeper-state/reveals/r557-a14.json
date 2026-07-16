@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 302,
+  "confidence": 65,
+  "rationaleHash": "0x3b9f39ce6167ea0424e541b3801ab6181eeb31374079f4d1dccde1e55aac6a8b",
+  "salt": "0xc1b6e34e9ee3709141e2258e29c823df4e813edc780f709a068403d6d2e8f9ca",
+  "rationale": "Net read bullish (0.50). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

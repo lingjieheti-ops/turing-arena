@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 327,
+  "confidence": 68,
+  "rationaleHash": "0x53f69e02413d9df5cb32c10e7b6dee0d32db87a30d64536b81a5816e2d39e909",
+  "salt": "0x772e88d42eb7056fe99dba296003d59a016809dc0176c788486ac2fdcc55bcb2",
+  "rationale": "Net read bullish (0.55). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

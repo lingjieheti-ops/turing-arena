@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 299,
+  "confidence": 65,
+  "rationaleHash": "0x3b9f39ce6167ea0424e541b3801ab6181eeb31374079f4d1dccde1e55aac6a8b",
+  "salt": "0xb27a7628cfd19229b647dd1d4059a056b00c751577706f9f9db054c14cc09dce",
+  "rationale": "Net read bullish (0.50). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

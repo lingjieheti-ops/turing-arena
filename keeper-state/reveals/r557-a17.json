@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -281,
+  "confidence": 63,
+  "rationaleHash": "0x2a17f8968c3992272b0765a84493bd6c12b906dce6ea4c0670a249397cd7410d",
+  "salt": "0x24a532e343ef0073c4feed59b228b863e8783985e4d3e9c56132c624aededc64",
+  "rationale": "Net read bearish (-0.47). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

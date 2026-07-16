@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -149,
+  "confidence": 47,
+  "rationaleHash": "0x6d9f96809ac2242d4583441161b633c2c0a6d50e2b6f4baabc86780f67d08f8b",
+  "salt": "0xcebfa67b870240c63456151672cbabcf5185fc85aa1e724555f9e726ed679302",
+  "rationale": "Net read bearish (-0.25). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 258,
+  "confidence": 60,
+  "rationaleHash": "0x8278f7da6b37edeeed07cd70fd3691fd121f516e929cb30a39d8a0cc17bf9471",
+  "salt": "0x3389a13a8345ca93f2bcc863439d9c84043c9ee57d42feb1c4b1d266fefd0c61",
+  "rationale": "Net read bullish (0.43). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

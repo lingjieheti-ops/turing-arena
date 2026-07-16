@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 41,
+  "confidence": 35,
+  "rationaleHash": "0xd364bb9fdda00980244f241fc9baf0b9ce94067ba3201a462506c8e5d84905ef",
+  "salt": "0x7c1a69134bcfafbeef1ba62b1de302e17e525d6515d146c2e837eeaf968c2a00",
+  "rationale": "Net read bullish (0.07). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

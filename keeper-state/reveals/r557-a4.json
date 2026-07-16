@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 231,
+  "confidence": 57,
+  "rationaleHash": "0xa8490e237738cbb773e288f7218b49428e5b5e5f90f506c21656193324fd166e",
+  "salt": "0x92a86bb478767f53a35eaa4674ccff47680999cff68c0bb6c338b0733b6a385d",
+  "rationale": "Net read bullish (0.38). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

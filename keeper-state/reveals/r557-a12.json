@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -95,
+  "confidence": 41,
+  "rationaleHash": "0x393a7c2b2d87828b58d29643adce20f3175afbf6aec46e77ead05990a1b4caf2",
+  "salt": "0x672765cf714852bf95e8e3c47fd20c8e4e498b181bc81e7946b5f853d6a76b9a",
+  "rationale": "Net read bearish (-0.16). Strongest evidence: limitless +0.67 (Limitless (Base) MNT 83% up / 17% down); mantle-onchain +0.79 (Mantle on-chain momentum up); elfa +0.78 (KOL mindshare heating up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
