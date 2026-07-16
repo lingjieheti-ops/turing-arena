@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 439,
+  "confidence": 81,
+  "rationaleHash": "0xccc029cdeb564c99191e6b72c447575bb592038f9cd287c3b64f1402e16aa316",
+  "salt": "0xea69995511be484f5473b3a26350ab131859b4a49f1d3c419b02fedb625a8c46",
+  "rationale": "Net read bullish (0.73). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora -0.99 (Allora ML forecast leans short); nansen +0.99 (Smart money net inflow).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

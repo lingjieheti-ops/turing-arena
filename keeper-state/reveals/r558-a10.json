@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 356,
+  "confidence": 72,
+  "rationaleHash": "0xa51c88f56f0d2fbac765405ced4e351091ab36b8e71ea260f10d8b14d138c7b2",
+  "salt": "0xba4b0cd2567e7e967625dd1b84d6e97533fc1179e5d003e19369bf2c193e71d5",
+  "rationale": "Net read bullish (0.59). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora -0.99 (Allora ML forecast leans short); nansen +0.99 (Smart money net inflow).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
