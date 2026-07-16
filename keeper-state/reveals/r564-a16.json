@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -308,
+  "confidence": 66,
+  "rationaleHash": "0x3346204241b39cb8dc969fb60adfecdbfac259ac384d1e32f9382c916511b491",
+  "salt": "0xebebaba47c595362301d8382c71a464b20f4222dcd5092d1227d2c55960d2069",
+  "rationale": "Net read bearish (-0.51). Strongest evidence: momentum -0.60 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless -0.99 (Limitless MNT market unavailable — mock down); nansen -0.98 (Smart money net outflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

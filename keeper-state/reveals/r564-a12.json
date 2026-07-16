@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 113,
+  "confidence": 43,
+  "rationaleHash": "0xaa13539e875f2b0e0f6865810fbc21087a921477843c9b7590e7d6391375f5ac",
+  "salt": "0x01f5b8d32b3a3cf86a92f7c5a4feb0e0c8e0fd12ad47203224ff033d2dbb5691",
+  "rationale": "Net read bullish (0.19). Strongest evidence: momentum -0.60 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless -0.99 (Limitless MNT market unavailable — mock down); nansen -0.98 (Smart money net outflow).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
