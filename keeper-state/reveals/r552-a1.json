@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 403,
+  "confidence": 77,
+  "rationaleHash": "0x1abfb6a8f02f5a49e2decf94261a22d2b3bfaf87d7386967972f5d836b5cdfe7",
+  "salt": "0xb30601628ef2a7d5bac1d7f59fb434c28664598f92374d92d769f2fc7eeb0220",
+  "rationale": "Net read bullish (0.67). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless +0.79 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.94 (Smart money net inflow).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
