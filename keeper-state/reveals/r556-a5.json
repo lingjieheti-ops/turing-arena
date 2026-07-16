@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -26,
+  "confidence": 33,
+  "rationaleHash": "0x54c5cd4ebcd69e5c6949bc140202e178dcc4384662d52fdac8312a2d30e2b45b",
+  "salt": "0x2ebe85a3b344bfc84e2f499201a9475004ab04ec16bd608701e7b54ef53d566a",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: nansen +0.97 (Smart money net inflow); limitless -0.43 (Limitless (Base) SOL 28% up / 72% down); elfa -0.85 (KOL mindshare cooling).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

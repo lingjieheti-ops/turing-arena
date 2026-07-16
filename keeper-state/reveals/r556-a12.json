@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -16,
+  "confidence": 32,
+  "rationaleHash": "0x38ae99d09d4b4eea3132efa53e10f7640aca2ac0f599a1367c16bb529e41b247",
+  "salt": "0x2d870350884c7725c40e36b719ddeeb1aed6a6733d4353458ca92a6519391695",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: nansen +0.97 (Smart money net inflow); limitless -0.43 (Limitless (Base) SOL 28% up / 72% down); elfa -0.85 (KOL mindshare cooling).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

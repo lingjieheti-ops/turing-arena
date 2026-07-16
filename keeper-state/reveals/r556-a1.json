@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 23,
+  "confidence": 33,
+  "rationaleHash": "0x2292891fc40b6199f6e09a02d9f16f423d097409f57143cf38968fd8c9c1422b",
+  "salt": "0x27c4fd30fdf0b9ca44f24b460a9589c5c2f97b5b94c8a0d5ac948a70065165c2",
+  "rationale": "Net read neutral (0.04). Strongest evidence: nansen +0.97 (Smart money net inflow); limitless -0.43 (Limitless (Base) SOL 28% up / 72% down); elfa -0.85 (KOL mindshare cooling).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

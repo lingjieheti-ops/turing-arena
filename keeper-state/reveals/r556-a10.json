@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 252,
+  "confidence": 59,
+  "rationaleHash": "0x564e3f5b7dfd59c05f871425dbbf6e05ff6facbef4f298dd1eb5c9eb7751daf0",
+  "salt": "0xd75be75a8ab52dd4722cc84cf1d2f198af3e9a2a96dbe9c3e0390b8eb6472b61",
+  "rationale": "Net read bullish (0.42). Strongest evidence: nansen +0.97 (Smart money net inflow); limitless -0.43 (Limitless (Base) SOL 28% up / 72% down); elfa -0.85 (KOL mindshare cooling).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

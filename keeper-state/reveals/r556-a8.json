@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 125,
+  "confidence": 45,
+  "rationaleHash": "0xf1d27bee401e132c70c2bff5b1915127173582b88844c1fe32ce243654e3592d",
+  "salt": "0xe4018cc8398e6e5d2955d782d6e75f0104d7023d4e6cf7dbcc270ae090c6b32f",
+  "rationale": "Net read bullish (0.21). Strongest evidence: nansen +0.97 (Smart money net inflow); limitless -0.43 (Limitless (Base) SOL 28% up / 72% down); elfa -0.85 (KOL mindshare cooling).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

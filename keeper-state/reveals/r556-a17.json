@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -247,
+  "confidence": 59,
+  "rationaleHash": "0xb3bab181f962a28017593a10f20adc9fe7be71503ea0306f36e7de3da5560147",
+  "salt": "0xf378e6798fc3d4d0d41118666a05c510171e7246b2a58e7836fee845d429fce2",
+  "rationale": "Net read bearish (-0.41). Strongest evidence: nansen +0.97 (Smart money net inflow); limitless -0.43 (Limitless (Base) SOL 28% up / 72% down); elfa -0.85 (KOL mindshare cooling).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
