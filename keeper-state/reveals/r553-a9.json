@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 280,
+  "confidence": 63,
+  "rationaleHash": "0x749e247d35ba87bbbe2b882d7b10f06e7fbdebc76655defacd1d9048967db7b3",
+  "salt": "0xf2f8e92d5b3f467e4e52dd78a8a3381f02ec406fa75b7b0d581b1b6f54252599",
+  "rationale": "Net read bullish (0.47). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); limitless +0.80 (No Limitless market for BTC-MEMPOOL — mock up); nansen +0.94 (Smart money net inflow).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
