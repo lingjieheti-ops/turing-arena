@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -56,
+  "confidence": 37,
+  "rationaleHash": "0x9b1ee9920cd9172fb9ae188f0f7f82696ccb377e0f9729045366e8d374b3c62b",
+  "salt": "0xdfe9e366a9ff052daf71c076123df110e29acc40ff27152aeb94f935f65ca838",
+  "rationale": "Net read bearish (-0.09). Strongest evidence: mantle-onchain +0.82 (Mantle on-chain momentum up); momentum -0.26 (MNT/USD down-momentum since the last tick (Pyth, live)); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

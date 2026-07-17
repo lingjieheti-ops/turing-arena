@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 8,
+  "confidence": 31,
+  "rationaleHash": "0xeec498b36b0b6698855d3dbac20fedeadfb5687d0e05ab89f0764bc0831adee2",
+  "salt": "0x465f1950c080a694eab3d064a581fd086e99b863594776764a7ba1c08e99504c",
+  "rationale": "Net read neutral (0.01). Strongest evidence: mantle-onchain +0.82 (Mantle on-chain momentum up); momentum -0.26 (MNT/USD down-momentum since the last tick (Pyth, live)); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

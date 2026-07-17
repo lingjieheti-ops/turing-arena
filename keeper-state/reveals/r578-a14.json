@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 129,
+  "confidence": 45,
+  "rationaleHash": "0x78af7a9145d4fb060aa2958711cadb85a4805a8d0e87d676a899a3987b919b8d",
+  "salt": "0xadf05201f2f5d12f65ef904b9e896c5db07482e485eb55514df4c30a5028fcc1",
+  "rationale": "Net read bullish (0.22). Strongest evidence: mantle-onchain +0.82 (Mantle on-chain momentum up); momentum -0.26 (MNT/USD down-momentum since the last tick (Pyth, live)); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

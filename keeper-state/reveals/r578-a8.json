@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 6,
+  "confidence": 31,
+  "rationaleHash": "0xeec498b36b0b6698855d3dbac20fedeadfb5687d0e05ab89f0764bc0831adee2",
+  "salt": "0xca2d174714223d8df3d9f3765630bc52b8fead96ae2082a5f9c47b4552778c6f",
+  "rationale": "Net read neutral (0.01). Strongest evidence: mantle-onchain +0.82 (Mantle on-chain momentum up); momentum -0.26 (MNT/USD down-momentum since the last tick (Pyth, live)); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

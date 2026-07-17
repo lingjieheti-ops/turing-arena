@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 289,
+  "confidence": 64,
+  "rationaleHash": "0x44245ba85a68c74b1d2643d2f0f7972ba0e8b7534a9ebb06525b7cbf5d4117a2",
+  "salt": "0xa40145ad2704b5fe99eb2c503e2aaca6fda86b5810a22ba81708a68ff6c38a09",
+  "rationale": "Net read bullish (0.48). Strongest evidence: mantle-onchain +0.82 (Mantle on-chain momentum up); momentum -0.26 (MNT/USD down-momentum since the last tick (Pyth, live)); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

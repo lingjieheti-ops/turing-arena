@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -107,
+  "confidence": 42,
+  "rationaleHash": "0x61808e15b3ef3c2ebc42db5749140e1ac416ba184692e0f109484e774362bf5c",
+  "salt": "0x19e4fd32176229cfbed73d98fee7bead808ce5ce051b3bb30fecf243202fbaa9",
+  "rationale": "Net read bearish (-0.18). Strongest evidence: mantle-onchain +0.82 (Mantle on-chain momentum up); momentum -0.26 (MNT/USD down-momentum since the last tick (Pyth, live)); allora -0.33 (Allora ML forecast leans short).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
