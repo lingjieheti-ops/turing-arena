@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 114,
+  "confidence": 43,
+  "rationaleHash": "0x5006045b911da405cbbd272cf9632f2a6dbb9fcdbcfd07116c01ecfc1a28c261",
+  "salt": "0x64d4e8a8fbf864a282da45aff845aadf5c8c3b7879f718e0851da438c5283bdf",
+  "rationale": "Net read bullish (0.19). Strongest evidence: momentum -1.00 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless +0.57 (Limitless (Base) ETH 79% up / 21% down); allora +0.66 (Allora ML forecast leans long).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
