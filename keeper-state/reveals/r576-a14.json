@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": -83,
+  "confidence": 40,
+  "rationaleHash": "0x35ba530a8c948cbaa524cfe762599c0a3b9d24f900ecc0b768321ae4ac54c033",
+  "salt": "0x5b410eb7f52e8b246e66844df7f5a66af4202072b56d62163102e50ae00b1f9b",
+  "rationale": "Net read bearish (-0.14). Strongest evidence: momentum -0.88 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.81 (Allora ML forecast leans short); elfa -0.92 (KOL mindshare cooling).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

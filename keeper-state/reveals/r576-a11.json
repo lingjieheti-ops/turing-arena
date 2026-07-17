@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 242,
+  "confidence": 58,
+  "rationaleHash": "0x118929b93c63d8e031fe48e160333fe98f09c47f1ed4c9a3ea24d607f38b4b54",
+  "salt": "0x28d96619669899a4bde58c74a24fe7c0c25951d1654dc71a64541fa7ea11cd43",
+  "rationale": "Net read bullish (0.40). Strongest evidence: momentum -0.88 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -0.81 (Allora ML forecast leans short); elfa -0.92 (KOL mindshare cooling).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
