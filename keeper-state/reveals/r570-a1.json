@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 102,
+  "confidence": 42,
+  "rationaleHash": "0x66bddeed4ce4ff146ffaa4eea27252fd6f14c83d250874f27943a44a639f211c",
+  "salt": "0x0b7a50eba314ccb43f735243956f841b68fbf0c86b5a71dadacad22a3d01e998",
+  "rationale": "Net read bullish (0.17). Strongest evidence: momentum +0.52 (SOL/USD up-momentum since the last tick (Pyth, live)); allora -0.79 (Allora ML forecast leans short); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 291,
+  "confidence": 64,
+  "rationaleHash": "0x9cf646c64cd6abfae2849a03fd12bada0614d966617db2675e0af2b242d7c50a",
+  "salt": "0xea10870f6c475192b2e67457020be87f03dba8c471776059253ae0ce73426586",
+  "rationale": "Net read bullish (0.49). Strongest evidence: momentum +0.52 (SOL/USD up-momentum since the last tick (Pyth, live)); allora -0.79 (Allora ML forecast leans short); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

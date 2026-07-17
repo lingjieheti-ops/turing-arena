@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 236,
+  "confidence": 57,
+  "rationaleHash": "0xbe98b3cdcb5230fe8ca924d5f54a50f9c936e27555312655d699cc6df279acc0",
+  "salt": "0x529179e6703c996534354f9f73061c52604af5a8d17b115854c19158673487fd",
+  "rationale": "Net read bullish (0.39). Strongest evidence: momentum +0.52 (SOL/USD up-momentum since the last tick (Pyth, live)); allora -0.79 (Allora ML forecast leans short); mantle-onchain +0.95 (Mantle on-chain momentum up).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
