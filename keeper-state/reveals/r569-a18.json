@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -73,
+  "confidence": 38,
+  "rationaleHash": "0x0bb4aa03e5d72bdfba6f5b5b6622eea91c45dc5a5c9e9777ae485c29a20e1538",
+  "salt": "0x198d2421f495a9e9cb1ab0b181675045bc9423344190ca0a200dec4492a890cd",
+  "rationale": "Net read bearish (-0.12). Strongest evidence: limitless -0.89 (Limitless (Base) BTC 6% up / 94% down); allora -0.88 (Allora ML forecast leans short); elfa -0.92 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
