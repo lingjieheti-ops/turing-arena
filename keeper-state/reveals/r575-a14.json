@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 408,
+  "confidence": 78,
+  "rationaleHash": "0xee2c5e0e3445094b082b26c7da5195e6d08ccbe3d14a4916e2f3c73685827dfb",
+  "salt": "0x03b7b3cdc380653392ff35062b1bcbcca91ea4118f5af7a52e7c66f65875d84e",
+  "rationale": "Net read bullish (0.68). Strongest evidence: momentum +1.00 (mETH/USD up-momentum since the last tick (Pyth, live)); allora +0.80 (Allora ML forecast leans long); nansen +0.75 (Smart money net inflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
