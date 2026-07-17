@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -404,
+  "confidence": 77,
+  "rationaleHash": "0x526059950b906c032128618c922dc9519d037234e07cda02daa30369ce068fa2",
+  "salt": "0x74a1606a8e79f991f05b8d3845740bb674e83e3d48a3b13215e3e938956f194f",
+  "rationale": "Net read bearish (-0.67). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora +0.93 (Allora ML forecast leans long); nansen +0.92 (Smart money net inflow).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
