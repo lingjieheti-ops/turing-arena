@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -400,
+  "confidence": 77,
+  "rationaleHash": "0x3f4c0d64a9548d51c277e3752e3a9a3a75c56c6a4126d8a8854630b42087502b",
+  "salt": "0x0cf2c3e6dfa92dadff3542e5acf01e82ec869bbaea88cc8f02ac8f9b0c3403b9",
+  "rationale": "Net read bearish (-0.67). Strongest evidence: allora -0.85 (Allora ML forecast leans short); limitless -0.68 (Limitless (Base) SOL 16% up / 84% down); mantle-onchain -1.00 (Mantle on-chain momentum down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

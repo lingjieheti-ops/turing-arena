@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -169,
+  "confidence": 50,
+  "rationaleHash": "0x2f940333c4f3188bb973e6c9bdec8e6bc2bfb4cfabf409f2f852f5df6c141cec",
+  "salt": "0x5bf405553ebffc006796646057f727caa8cd6c70d399e5303c5e589dc356250a",
+  "rationale": "Net read bearish (-0.28). Strongest evidence: allora -0.85 (Allora ML forecast leans short); limitless -0.68 (Limitless (Base) SOL 16% up / 84% down); mantle-onchain -1.00 (Mantle on-chain momentum down).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

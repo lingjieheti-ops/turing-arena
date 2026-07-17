@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -64,
+  "confidence": 37,
+  "rationaleHash": "0xe735e72ca57f6164db1a8a4ec5295642d9d84af17eb3e09b1f3f1a9fb21c0cd6",
+  "salt": "0x0f497634d6e90b59387dd042e546ab5fd56ea77e7344a009d9f8b40e0d24ca86",
+  "rationale": "Net read bearish (-0.11). Strongest evidence: allora -0.85 (Allora ML forecast leans short); limitless -0.68 (Limitless (Base) SOL 16% up / 84% down); mantle-onchain -1.00 (Mantle on-chain momentum down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

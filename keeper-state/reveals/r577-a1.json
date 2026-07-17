@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -235,
+  "confidence": 57,
+  "rationaleHash": "0x7605a8e8dedaa80187fe450bbf3755f71f0d24a8963eeaf53297117328a5ddc8",
+  "salt": "0x65476f90d39aa71634f017c22bea84cf6784cb2e3b2210ccaedf0f021518998c",
+  "rationale": "Net read bearish (-0.39). Strongest evidence: allora -0.85 (Allora ML forecast leans short); limitless -0.68 (Limitless (Base) SOL 16% up / 84% down); mantle-onchain -1.00 (Mantle on-chain momentum down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

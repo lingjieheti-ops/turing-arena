@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": -109,
+  "confidence": 43,
+  "rationaleHash": "0xb02d96804ed70e4cfd788b69f84bde188a3c6f8aa0659f48fd93addd8ca25aa8",
+  "salt": "0x6f0431da411b803e7c4ba8028467e1026ba416eefa6d274fd3f9cc8c1bf00094",
+  "rationale": "Net read bearish (-0.18). Strongest evidence: allora -0.85 (Allora ML forecast leans short); limitless -0.68 (Limitless (Base) SOL 16% up / 84% down); mantle-onchain -1.00 (Mantle on-chain momentum down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
