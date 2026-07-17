@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 93,
+  "confidence": 41,
+  "rationaleHash": "0xe1875445e385504e499f3de7d0797dbc0975ab61b00f6a5618b7a31e45ce8d5d",
+  "salt": "0xb984c13f219ee135206c1b87b6daaae47249722c47cf84284e3742f8a62624a2",
+  "rationale": "Net read bullish (0.16). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); allora -0.90 (Allora ML forecast leans short); elfa -0.97 (KOL mindshare cooling).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
