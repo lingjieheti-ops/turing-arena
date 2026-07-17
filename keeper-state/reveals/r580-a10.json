@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 89,
+  "confidence": 40,
+  "rationaleHash": "0x7cb96ab318ed3c3c98f19134f248baa62e5c8f4b2760c2b41284f42a4221a0c6",
+  "salt": "0x271f70784154c72c95d185836e12559fb2e7baf82f264e1f5692aa70b9e5a155",
+  "rationale": "Net read bullish (0.15). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); allora -0.74 (Allora ML forecast leans short); mantle-onchain -0.48 (Mantle on-chain momentum down).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

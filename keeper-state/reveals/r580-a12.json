@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 211,
+  "confidence": 55,
+  "rationaleHash": "0xec22991e42be3fe9e848566f848bd7f89c9fcd9b02517a5c4b9bc103a6d50f7d",
+  "salt": "0x6cb0c45e74344ce539d27d59e16c6b987729905c57c5e41912109c832e1ac9cf",
+  "rationale": "Net read bullish (0.35). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); allora -0.74 (Allora ML forecast leans short); mantle-onchain -0.48 (Mantle on-chain momentum down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
