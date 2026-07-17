@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 27,
+  "confidence": 33,
+  "rationaleHash": "0xd4318826897564ab56469d7936b8e950478e9412b916ad36b26b712b832dd743",
+  "salt": "0x11251baf71ca177154c318404a7be7a9dec9ce9386286bc7f3a3c06bdbfb1933",
+  "rationale": "Net read neutral (0.05). Strongest evidence: mantle-onchain +0.87 (Mantle on-chain momentum up); allora -0.26 (Allora ML forecast leans short); limitless -0.17 (Limitless MNT market unavailable — mock down).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 5,
+  "confidence": 31,
+  "rationaleHash": "0x9203d1184c94630cb7b4014667923e2f8e49397f9b2c7dade603babce6816977",
+  "salt": "0xfbd084b1922357c1364d66d72a893be6bd7d452ed5b46bba3ea3005bcc135fc9",
+  "rationale": "Net read neutral (0.01). Strongest evidence: mantle-onchain +0.87 (Mantle on-chain momentum up); allora -0.26 (Allora ML forecast leans short); limitless -0.17 (Limitless MNT market unavailable — mock down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

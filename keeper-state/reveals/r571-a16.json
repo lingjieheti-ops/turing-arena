@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -13,
+  "confidence": 32,
+  "rationaleHash": "0x2812a6ebfaa5047e9fa3b313acf7e8d7469fefc1bf8f3e15869d92a17cdeb2a2",
+  "salt": "0xa3154a1d7cce63487c4e25c3f256a82f5c85f9f4ba6fe0d0d4a605b74fb1bf8d",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: mantle-onchain +0.87 (Mantle on-chain momentum up); allora -0.26 (Allora ML forecast leans short); limitless -0.17 (Limitless MNT market unavailable — mock down).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

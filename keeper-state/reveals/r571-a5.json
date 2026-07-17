@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 8,
+  "confidence": 31,
+  "rationaleHash": "0x9203d1184c94630cb7b4014667923e2f8e49397f9b2c7dade603babce6816977",
+  "salt": "0x0aedb63a777e8204874f714254111e34dfebe1091b095e426a4c8d4e698a851f",
+  "rationale": "Net read neutral (0.01). Strongest evidence: mantle-onchain +0.87 (Mantle on-chain momentum up); allora -0.26 (Allora ML forecast leans short); limitless -0.17 (Limitless MNT market unavailable — mock down).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -2,
+  "confidence": 30,
+  "rationaleHash": "0x2efa9da80d3cba8fd38180e0d94169f8e50e772f65a8a5d571a60f609f46f29c",
+  "salt": "0x4d1f8c7e1c8a7051a29fe46935a3ec758e2637c64c67a9bd86228af450d0ed1c",
+  "rationale": "Net read neutral (-0.00). Strongest evidence: mantle-onchain +0.87 (Mantle on-chain momentum up); allora -0.26 (Allora ML forecast leans short); limitless -0.17 (Limitless MNT market unavailable — mock down).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

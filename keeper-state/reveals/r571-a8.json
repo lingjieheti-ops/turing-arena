@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 80,
+  "confidence": 39,
+  "rationaleHash": "0x8281afae6058c06f870ca65e8c0885824f42450058ee1f6be2d5870737874901",
+  "salt": "0xbf28b258d6d0893d3557a5b6de7e9e81c17c17f5789da236708cd17a3eb1b9f7",
+  "rationale": "Net read bullish (0.13). Strongest evidence: mantle-onchain +0.87 (Mantle on-chain momentum up); allora -0.26 (Allora ML forecast leans short); limitless -0.17 (Limitless MNT market unavailable — mock down).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

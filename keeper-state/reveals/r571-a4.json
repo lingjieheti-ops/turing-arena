@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -12,
+  "confidence": 31,
+  "rationaleHash": "0x2812a6ebfaa5047e9fa3b313acf7e8d7469fefc1bf8f3e15869d92a17cdeb2a2",
+  "salt": "0x1cef952b7d3d7d716403cc9dc3e0ec86d57c3f05a55566a92934a266e67e396d",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: mantle-onchain +0.87 (Mantle on-chain momentum up); allora -0.26 (Allora ML forecast leans short); limitless -0.17 (Limitless MNT market unavailable — mock down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -7,
+  "confidence": 31,
+  "rationaleHash": "0x351dda4d4852d8ae15ef9ec0e3b77875c1b3e628bc6edde67adb1d4890fcaf37",
+  "salt": "0x4a7bbee120b24968e32ddfaaedb2a87cc3cad95a6438e6dab661a3a992f1a72f",
+  "rationale": "Net read neutral (-0.01). Strongest evidence: mantle-onchain +0.87 (Mantle on-chain momentum up); allora -0.26 (Allora ML forecast leans short); limitless -0.17 (Limitless MNT market unavailable — mock down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
