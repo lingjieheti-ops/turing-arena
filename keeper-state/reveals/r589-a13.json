@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -1,
+  "confidence": 30,
+  "rationaleHash": "0x29676c8b939c0f27dfb96571b09754e40f04d959479b19c9d85954a83d8f2e65",
+  "salt": "0x6fa4c5d90dccde48ff8da866a94bf501e9158f9ba909dbb78ea6fd1c511cf1e2",
+  "rationale": "Net read neutral (-0.00). Strongest evidence: momentum -0.93 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless +0.80 (Limitless (Base) ETH 90% up / 10% down); nansen +0.72 (Smart money net inflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

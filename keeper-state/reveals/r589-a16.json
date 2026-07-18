@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -148,
+  "confidence": 47,
+  "rationaleHash": "0xc676ebc16a6277b6115346f9081249cc26188ca19fa74c3873d0ccd4bd55ad82",
+  "salt": "0x1fc12ffc37c8ead30e84aa0dbd255912be6053416792e73affa7eb20387956aa",
+  "rationale": "Net read bearish (-0.25). Strongest evidence: momentum -0.93 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless +0.80 (Limitless (Base) ETH 90% up / 10% down); nansen +0.72 (Smart money net inflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

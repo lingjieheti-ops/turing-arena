@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 98,
+  "confidence": 41,
+  "rationaleHash": "0x7a7de584efd54054b57d608929a60d39b24b522d8f96455436f8c7ed047a0a70",
+  "salt": "0xa8e1e67bbea020a6f313bff2d45c7d50ef5ba01aa22c316af01bbe3b0e706016",
+  "rationale": "Net read bullish (0.16). Strongest evidence: momentum -0.93 (mETH/USD down-momentum (Pyth, live)); limitless +0.56 (Limitless (Base) ETH 78% up / 22% down); nansen +0.72 (Smart money net inflow).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

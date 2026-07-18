@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 64,
+  "confidence": 38,
+  "rationaleHash": "0x58c89cccd578769cb21988f99d76e392e127e4bc14487360396df690d99402b4",
+  "salt": "0xf87e52b46015e5c23a73451bac51071d27165becc707b829c7ff54053e515677",
+  "rationale": "Net read bullish (0.11). Strongest evidence: momentum -0.93 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless +0.80 (Limitless (Base) ETH 90% up / 10% down); nansen +0.72 (Smart money net inflow).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
