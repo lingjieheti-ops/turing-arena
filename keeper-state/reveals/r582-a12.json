@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 17,
+  "confidence": 32,
+  "rationaleHash": "0x137b8f4000bcf239efcd20f77fc7a6ed5b52211439fac4e5888b1f772f663e2e",
+  "salt": "0xbb7a3d1f56d9af5a457bbab31aa24cf0b662e285802d89c67b21423ae570d328",
+  "rationale": "Net read neutral (0.03). Strongest evidence: nansen +0.76 (Smart money net inflow); limitless -0.38 (Limitless (Base) ETH 31% up / 69% down); allora -0.38 (Allora ML forecast leans short).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
