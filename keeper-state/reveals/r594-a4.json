@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -478,
+  "confidence": 86,
+  "rationaleHash": "0x505ae0b462dba4b9834bbc5b3bf530cdbe455bc0949c8f01cff43f15873db29f",
+  "salt": "0x303b62a0d56cff2e20beac9491eac943b8adee101cee8e8a4e56f1b0c2b4e514",
+  "rationale": "Net read bearish (-0.80). Strongest evidence: momentum -1.00 (ETH Gas down-momentum since the last tick (Pyth, live)); allora -0.72 (Allora ML forecast leans short); mantle-onchain -0.55 (Mantle on-chain momentum down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

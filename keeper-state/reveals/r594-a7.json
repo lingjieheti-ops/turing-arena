@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 10,
+  "confidence": 31,
+  "rationaleHash": "0x836ba2b926d0224f40ae73f9af689f9a4ad5a43e3c9aff94fe2568ceda0dd819",
+  "salt": "0x0e3fa0ca7ce9f9ec6d7cb63d6236d02b2ef1d42b3c603f5ae06a2e3098a30f2c",
+  "rationale": "Net read neutral (0.02). Strongest evidence: momentum -1.00 (ETH Gas down-momentum (Pyth, live)); allora -0.72 (Allora ML forecast leans short); mantle-onchain -0.55 (Mantle on-chain momentum down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
