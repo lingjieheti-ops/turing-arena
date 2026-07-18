@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 247,
+  "confidence": 59,
+  "rationaleHash": "0x2f5a47fbb4e0f109ef190be9c581148ec719fcef6103d658149699770e2e7b03",
+  "salt": "0xb3ba2224ef1d7ccee6038d3d8c9c4e710d1759f006aeafd5feb60b568ef927f4",
+  "rationale": "Net read bullish (0.41). Strongest evidence: nansen +0.85 (Smart money net inflow); elfa -0.81 (KOL mindshare cooling); surf -0.98 (Market momentum negative).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

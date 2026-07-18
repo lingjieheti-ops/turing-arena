@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 25,
+  "confidence": 33,
+  "rationaleHash": "0x23002864e2764214bac150664377e0d6116c5536b56663e55cb10641b0fb1701",
+  "salt": "0xdeac7056d645032ae4115ac2994b5444aba01d8bb7025506122d15827c76484e",
+  "rationale": "Net read neutral (0.04). Strongest evidence: nansen +0.85 (Smart money net inflow); elfa -0.81 (KOL mindshare cooling); surf -0.98 (Market momentum negative).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
