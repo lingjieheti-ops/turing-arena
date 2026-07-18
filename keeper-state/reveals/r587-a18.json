@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 18,
+  "confidence": 32,
+  "rationaleHash": "0x230eb98b9c29fe9ba6011c1989e11f58718c34af96ab7d77e96b28b88ef19aa6",
+  "salt": "0xddb3afc579ffd706fc07d42a0484ecacd49187a1733e3056411e844d4f2444a5",
+  "rationale": "Net read neutral (0.03). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); allora -0.74 (Allora ML forecast leans short); mantle-onchain -0.53 (Mantle on-chain momentum down).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
