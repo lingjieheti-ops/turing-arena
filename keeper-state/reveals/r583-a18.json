@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 13,
+  "confidence": 32,
+  "rationaleHash": "0x9933a4f0bb7c0a10c41fb5ead7cc5bdd1a148bfd7842048945005b8242aac3ca",
+  "salt": "0x919434fb5029205b0e123b5e6cb01bb22b122d60f5d22ccfac2c21336f21a784",
+  "rationale": "Net read neutral (0.02). Strongest evidence: nansen +0.94 (Smart money net inflow); limitless -0.39 (Limitless (Base) BTC 31% up / 69% down); elfa -0.84 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

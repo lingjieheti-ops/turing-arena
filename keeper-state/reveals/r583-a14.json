@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 219,
+  "confidence": 56,
+  "rationaleHash": "0x79d6d2bc708d21e0106d27058b395655d818ad18646b6fa4dad1bd7422eb6042",
+  "salt": "0xdc67da09da9d6200999e6e6b5a8ff0984195b8909892be83be59c5a172e95f0c",
+  "rationale": "Net read bullish (0.37). Strongest evidence: nansen +0.94 (Smart money net inflow); limitless -0.39 (Limitless (Base) BTC 31% up / 69% down); elfa -0.84 (KOL mindshare cooling).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

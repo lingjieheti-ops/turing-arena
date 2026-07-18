@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 198,
+  "confidence": 53,
+  "rationaleHash": "0x4fc95a2878dd5bc2155fbb01ccf09a63eef7aab7374f4571a08a79fb5f2e14a5",
+  "salt": "0x4684f343e09a6f07cd5006ab843efb955b153b5ef8acaa8240777a6cca46abca",
+  "rationale": "Net read bullish (0.33). Strongest evidence: nansen +0.94 (Smart money net inflow); limitless -0.39 (Limitless (Base) BTC 31% up / 69% down); elfa -0.84 (KOL mindshare cooling).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
