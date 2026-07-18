@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 168,
+  "confidence": 50,
+  "rationaleHash": "0x0d275d13779482cc57b544de1391987cb1e19d92dbe96684fbaec66dc88b8409",
+  "salt": "0xd20461e4e43fdffe6ffd85bfa90ffeaffbfca72d20660eb5fb565583f04d7e87",
+  "rationale": "Net read bullish (0.28). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora -0.93 (Allora ML forecast leans short); mantle-onchain +0.91 (Mantle on-chain momentum up).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

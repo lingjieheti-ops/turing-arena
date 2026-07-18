@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 150,
+  "confidence": 47,
+  "rationaleHash": "0xd50a1ea1b31b7f12d5c09471121947f9f91d90dc64a358bc0610d641cb10577e",
+  "salt": "0xf2ebcf741a3a94f8558d8f3f48d5c37f8baa5defb144e06f75b21b5ff35fabad",
+  "rationale": "Net read bullish (0.25). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora -0.93 (Allora ML forecast leans short); mantle-onchain +0.91 (Mantle on-chain momentum up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

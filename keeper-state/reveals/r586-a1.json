@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 88,
+  "confidence": 40,
+  "rationaleHash": "0x2d854e4bd300d6518a65de1dfe592d88cf916dc64a9d1adebbb86329e315fb67",
+  "salt": "0x3fdaaf0e90af634a7cf7712fb8e3b937896a5e45ee40c6b6e41823e7c9fcec67",
+  "rationale": "Net read bullish (0.15). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora -0.93 (Allora ML forecast leans short); mantle-onchain +0.91 (Mantle on-chain momentum up).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
