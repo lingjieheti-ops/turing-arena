@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 1,
+  "confidence": 30,
+  "rationaleHash": "0xe8e78091badf8269a4edf55120ff95f4e18578a780d9606bdc6f9a374abae0b8",
+  "salt": "0x6aaf8f19b382f28d2beb15172d31318ef8d0382f411702377ba78bb6e37ca3be",
+  "rationale": "Net read neutral (0.00). Strongest evidence: elfa +0.89 (KOL mindshare heating up); momentum -0.22 (MNT/USD down-momentum since the last tick (Pyth, live)); allora -0.35 (Allora ML forecast leans short).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

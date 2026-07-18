@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 149,
+  "confidence": 47,
+  "rationaleHash": "0xca9ab312006d8f4dec158f7a21d7d2595cc26d1869dfe83badfef0e696b2085f",
+  "salt": "0x47cce7b2a6b01875e5032c5f09d69e6a8cb7231bff406f784dce5eee74582bf6",
+  "rationale": "Net read bullish (0.25). Strongest evidence: elfa +0.89 (KOL mindshare heating up); momentum -0.22 (MNT/USD down-momentum since the last tick (Pyth, live)); allora -0.35 (Allora ML forecast leans short).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
