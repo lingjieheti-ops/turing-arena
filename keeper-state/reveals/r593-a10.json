@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 66,
+  "confidence": 38,
+  "rationaleHash": "0x8ab194cbc99ab36d618633270e1412e5edb809bf8a3135300ba3c77b0d44cc9d",
+  "salt": "0x3a68169211866b10e0653ed629462b599d13c60e13c7f276bfb7048af9cfca55",
+  "rationale": "Net read bullish (0.11). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); allora -0.89 (Allora ML forecast leans short); limitless -0.47 (No Limitless market for CS2-PLAYERS — mock down).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
