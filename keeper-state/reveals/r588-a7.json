@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 155,
+  "confidence": 48,
+  "rationaleHash": "0x8524ae987f4b93cb3d5be69f2c347ce0f0b44735599a984dcd8677cdb37dbd5e",
+  "salt": "0xb5e35b1693f16247210eccc30c367366375548d84722b45e734609bc83a58957",
+  "rationale": "Net read bullish (0.26). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum (Pyth, live)); nansen +0.88 (Smart money net inflow); allora +0.65 (Allora ML forecast leans long).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
