@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -251,
+  "confidence": 59,
+  "rationaleHash": "0x07542b3b2afc5a94db8f04a484ecff874bd82b68a543f5fb7a3a56c4b5bb1e40",
+  "salt": "0x5f833af4ecfd69b429e02191fe730d423307aad709d54b3d5b368987b61d9c43",
+  "rationale": "Net read bearish (-0.42). Strongest evidence: elfa +0.82 (KOL mindshare heating up); surf +0.85 (Market momentum positive); allora -0.28 (Allora ML forecast leans short).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

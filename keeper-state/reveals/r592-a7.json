@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 168,
+  "confidence": 50,
+  "rationaleHash": "0xd8e01b07c4c2c250b5c57ab44a12aeb500d708bcfa9914174825c281e0a20b40",
+  "salt": "0xfb6d9c6c9a98da118af262307b8c7a9f2732bd8f4c0a3d1f1ae04329b43638e9",
+  "rationale": "Net read bullish (0.28). Strongest evidence: elfa +0.82 (KOL mindshare heating up); surf +0.85 (Market momentum positive); allora -0.28 (Allora ML forecast leans short).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

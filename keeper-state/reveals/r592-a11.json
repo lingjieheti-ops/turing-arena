@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 307,
+  "confidence": 66,
+  "rationaleHash": "0xb2fff67cd8f02d2c6a0772fbcf252e0225d8517ca44a87f2c0ec23d6f1f9817f",
+  "salt": "0x7947d37d07695bf47f217b2a8ce5d33836b6778967a23d2143637e3da9d6e1f5",
+  "rationale": "Net read bullish (0.51). Strongest evidence: elfa +0.82 (KOL mindshare heating up); surf +0.85 (Market momentum positive); allora -0.28 (Allora ML forecast leans short).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
