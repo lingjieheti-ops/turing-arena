@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -13,
+  "confidence": 32,
+  "rationaleHash": "0x6118fdec8772f52a751974008710680e6919f7c35c4fd840c09520f6b90c751a",
+  "salt": "0x2c3b32386dbda1d22f2d8522b1ae7cbdad949097c5168d522fcf823b8aca69e7",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); nansen +0.95 (Smart money net inflow); allora +0.66 (Allora ML forecast leans long).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
