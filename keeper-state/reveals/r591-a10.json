@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 327,
+  "confidence": 68,
+  "rationaleHash": "0xf49526b5c8dc723eb54a665a42f1185ff01a2e0e33e75086c111667770041258",
+  "salt": "0xd3b53e9973891e7b5c8f9dbee71b7d73d6a6c3f9633ed858a6f11ebb78a7d6cb",
+  "rationale": "Net read bullish (0.55). Strongest evidence: allora +0.98 (Allora ML forecast leans long); mantle-onchain -0.89 (Mantle on-chain momentum down); limitless +0.50 (Limitless (Base) SOL 75% up / 25% down).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -192,
+  "confidence": 52,
+  "rationaleHash": "0xd1a7c1398276af33ec64f40ebeef9014fa909396a873481be96d67d813d104f8",
+  "salt": "0x9b5f6e15f8edf249567a7836c0a514eed6d70da9ee83f2b606cc80d3dcd30c7c",
+  "rationale": "Net read bearish (-0.32). Strongest evidence: allora +0.98 (Allora ML forecast leans long); mantle-onchain -0.89 (Mantle on-chain momentum down); limitless +0.50 (Limitless (Base) SOL 75% up / 25% down).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

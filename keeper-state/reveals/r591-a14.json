@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 337,
+  "confidence": 69,
+  "rationaleHash": "0x43d5ebf772a588195e94a28ffa3696612d0618266ba6152898e5eefa1730621e",
+  "salt": "0x93a9bf386d8bb7e39aaa44d1d04f1d86cfa19675828fe99e5239080cc0ae74db",
+  "rationale": "Net read bullish (0.56). Strongest evidence: allora +0.98 (Allora ML forecast leans long); mantle-onchain -0.89 (Mantle on-chain momentum down); limitless +0.50 (Limitless (Base) SOL 75% up / 25% down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
