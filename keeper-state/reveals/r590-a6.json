@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 249,
+  "confidence": 59,
+  "rationaleHash": "0xa380755fd6b8a455256cfd2f2615a5f40ed0e511c39305e774d09a80c75ead91",
+  "salt": "0x0e04d98d8b0cda4385baaffec262c73a2132b7a7079b48115b19ccabf21bb8a3",
+  "rationale": "Net read bullish (0.41). Strongest evidence: limitless +0.92 (Limitless (Base) BTC 96% up / 4% down); nansen +0.89 (Smart money net inflow); elfa -0.78 (KOL mindshare cooling).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

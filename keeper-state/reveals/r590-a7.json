@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 229,
+  "confidence": 57,
+  "rationaleHash": "0xcca3505e3da437cd0eee7be837cb842c111a1f85c8210aa9b13508c8b53a7942",
+  "salt": "0x8d4e0373f994a87c8aff90c36d36019c0775f4f721d6facb5091d2045596fb57",
+  "rationale": "Net read bullish (0.38). Strongest evidence: limitless +0.95 (Limitless (Base) BTC 98% up / 2% down); nansen +0.89 (Smart money net inflow); elfa -0.78 (KOL mindshare cooling).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
