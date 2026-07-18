@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -11,
+  "confidence": 31,
+  "rationaleHash": "0x86e4b497b95bd8b731b94829281eb1e934d2122ed3a750ac1cc5753b7d13643f",
+  "salt": "0x26e6ed764dcac60c0c4053ffc72f5b99dbfdc82fdf06f927f87e4e366309aa14",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: allora -0.95 (Allora ML forecast leans short); mantle-onchain -0.96 (Mantle on-chain momentum down); surf +0.74 (Market momentum positive).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
