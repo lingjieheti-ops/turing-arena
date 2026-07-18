@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -141,
+  "confidence": 46,
+  "rationaleHash": "0x80109896bebe1f6bebc61e0888a0333ad6fb11635c1b9e958264a386bf4819bf",
+  "salt": "0xbdb8599229af20a762cc52a04a1669a8ff6240e28ce6c1f7211388addc4c4970",
+  "rationale": "Net read bearish (-0.24). Strongest evidence: momentum -0.50 (SOL/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.88 (Mantle on-chain momentum down); limitless +0.32 (Limitless (Base) SOL 66% up / 34% down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
