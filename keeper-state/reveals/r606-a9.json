@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 323,
+  "confidence": 68,
+  "rationaleHash": "0xdba2a7a0a7a672be39dead0d1ccc28b3391421558e472aa22eb87affe409c100",
+  "salt": "0xc1723c607e49288b5b5d6dc9fc0bb9a807719b097e8118652401c4e6fc520c7b",
+  "rationale": "Net read bullish (0.54). Strongest evidence: limitless +0.50 (Limitless (Base) MNT 75% up / 25% down); momentum +0.18 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.34 (Smart money net inflow).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

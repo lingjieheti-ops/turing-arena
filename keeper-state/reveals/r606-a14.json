@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 338,
+  "confidence": 69,
+  "rationaleHash": "0xcf3cc99f6b46801b9935bdb26a14d4922e48658457dfeeee7184fe8fec501d76",
+  "salt": "0xa8045752d63a4198ef05c7f7161de0734aa9da02e0eb6217049245914e99d959",
+  "rationale": "Net read bullish (0.56). Strongest evidence: limitless +0.50 (Limitless (Base) MNT 75% up / 25% down); momentum +0.18 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.34 (Smart money net inflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

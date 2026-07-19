@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 298,
+  "confidence": 65,
+  "rationaleHash": "0xdb20c1d2703e08c9a9a7110b97546bcd7f965c1e0fedd2ccae942fb2752349a5",
+  "salt": "0xf14fe0d95216e7d1dcd1341cba9033451900f8042e8c84b23ce26d55f6082a6f",
+  "rationale": "Net read bullish (0.50). Strongest evidence: limitless +0.50 (Limitless (Base) MNT 75% up / 25% down); momentum +0.18 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.34 (Smart money net inflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 53,
+  "confidence": 36,
+  "rationaleHash": "0xc09ea35794ff0b2633bb51825cb40094b5232860a72814f9296c91622f43315e",
+  "salt": "0x4db976513971155b1b96ab24416bdc5fadcfbbb03378aec76e0b1d4f8a8dd068",
+  "rationale": "Net read bullish (0.09). Strongest evidence: limitless +0.50 (Limitless (Base) MNT 75% up / 25% down); momentum +0.18 (MNT/USD up-momentum since the last tick (Pyth, live)); nansen +0.34 (Smart money net inflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
