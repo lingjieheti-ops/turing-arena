@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 337,
+  "confidence": 69,
+  "rationaleHash": "0xd9da3dbbb3cb8d89c8c2f4d8371ce2e12ccd58e4b6defbe1e5c8763e0610d658",
+  "salt": "0x70e167b2713ccda2254f11314655f506efd2e19f6fecb1842d0d0ec79c2d0811",
+  "rationale": "Net read bullish (0.56). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); allora +0.86 (Allora ML forecast leans long); limitless -0.57 (No Limitless market for ETHGAS-GWEI — mock down).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

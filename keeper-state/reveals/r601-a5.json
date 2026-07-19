@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -244,
+  "confidence": 58,
+  "rationaleHash": "0x6ed17f82e581007d649b0af5ea7bad75ccd71d585e1e405136038af43aa43b4b",
+  "salt": "0xfd39ed1d69be80b9b7a22ab0902d77bb1a04b81d026b5b37931fe5a6a6e57dfb",
+  "rationale": "Net read bearish (-0.41). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); allora +0.86 (Allora ML forecast leans long); limitless -0.57 (No Limitless market for ETHGAS-GWEI — mock down).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
