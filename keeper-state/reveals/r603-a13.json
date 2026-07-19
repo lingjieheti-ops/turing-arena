@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 124,
+  "confidence": 44,
+  "rationaleHash": "0x534146ab773ae685e9fd4395fae77ee22b8f9b8c30b71576a0af23ce8c03bf9e",
+  "salt": "0x630feb4b4bb98ceb4acd7ab371523c173d1924064722a158927f91a3827af0c0",
+  "rationale": "Net read bullish (0.21). Strongest evidence: allora +0.78 (Allora ML forecast leans long); nansen +0.91 (Smart money net inflow); momentum +0.19 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

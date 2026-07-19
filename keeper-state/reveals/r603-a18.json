@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 71,
+  "confidence": 38,
+  "rationaleHash": "0x7dc2ee671ea1f2c5c4f6328cf077718b8352f61b5306dbf813e60d580570594c",
+  "salt": "0x283d307c0deb77a52addd8200f711838d9bd676abe98ca6e7641430e6ad20772",
+  "rationale": "Net read bullish (0.12). Strongest evidence: allora +0.78 (Allora ML forecast leans long); nansen +0.91 (Smart money net inflow); momentum +0.19 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

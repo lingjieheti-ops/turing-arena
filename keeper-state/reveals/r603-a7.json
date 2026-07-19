@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 229,
+  "confidence": 57,
+  "rationaleHash": "0x88a9a18e69c2a8f0df15e616b9a013add07dfd431d5fcab3a174d5a50e3b536a",
+  "salt": "0x2b1196babcad657ec2a12c6a856e137f8a7cb32a70bbcf7dbc50a0f7665417b5",
+  "rationale": "Net read bullish (0.38). Strongest evidence: limitless -0.75 (Limitless (Base) ETH 13% up / 87% down); allora +0.78 (Allora ML forecast leans long); nansen +0.91 (Smart money net inflow).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
