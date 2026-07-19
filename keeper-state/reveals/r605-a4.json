@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -122,
+  "confidence": 44,
+  "rationaleHash": "0x8ceb1ff9498adb63133374dd01f11fcfce6d3b42e992a6f85ca26b3e64416812",
+  "salt": "0x16295cc819b29524ffbe872a8cbc6112a25414a4f0c8ea2d75e9a16a7afe616f",
+  "rationale": "Net read bearish (-0.20). Strongest evidence: momentum -0.27 (SOL/USD down-momentum since the last tick (Pyth, live)); elfa -0.86 (KOL mindshare cooling); limitless -0.33 (Limitless (Base) SOL 34% up / 66% down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
