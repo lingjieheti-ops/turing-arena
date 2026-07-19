@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 114,
+  "confidence": 43,
+  "rationaleHash": "0x57ff3736a0ef00b7aed61fa24ffc50a8bf3fd6e378217f6d18354d250e980e29",
+  "salt": "0x7caeb380fcb6d6a1afd841f065876cfd25923545c2811a692a1bdffb7d9eba2b",
+  "rationale": "Net read bullish (0.19). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); nansen -0.99 (Smart money net outflow); limitless -0.40 (No Limitless market for BTC-MEMPOOL — mock down).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
