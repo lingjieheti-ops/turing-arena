@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 361,
+  "confidence": 72,
+  "rationaleHash": "0xe90c535de97728fff68542f4223c565da77bdf3d3c8fa1c3b8be4f6acbbe6198",
+  "salt": "0xb9872a721d7cfbf6850fd7ec9e32191ae08cddfd1c4be056c2f6e8d1505eab23",
+  "rationale": "Net read bullish (0.60). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); allora +0.80 (Allora ML forecast leans long); limitless -0.64 (No Limitless market for ETHGAS-GWEI — mock down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
