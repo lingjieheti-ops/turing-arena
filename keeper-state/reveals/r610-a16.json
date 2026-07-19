@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 143,
+  "confidence": 47,
+  "rationaleHash": "0x4404dbbd32809d1092c927e5d68e2aa83ca2c8199c5b11e530858eeb9f10b2d5",
+  "salt": "0xd71acb73a1caa3877a92bffe585c71b98b85755da95d63df48469baa0c60a252",
+  "rationale": "Net read bullish (0.24). Strongest evidence: limitless -0.86 (Limitless (Base) ETH 7% up / 93% down); allora +0.97 (Allora ML forecast leans long); nansen +0.85 (Smart money net inflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

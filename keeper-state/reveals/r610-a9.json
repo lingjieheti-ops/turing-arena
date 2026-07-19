@@ -1,0 +1,11 @@
+{
+  "agentId": 9,
+  "predictedBps": 293,
+  "confidence": 64,
+  "rationaleHash": "0xe7982043b028e252d0e4b85ff126d60174429b74961d1ff6f2fdf4afa961257d",
+  "salt": "0x378f7ec9ef9ab1a3d0a8c7b055ce255424961a37b973377250708925ec483970",
+  "rationale": "Net read bullish (0.49). Strongest evidence: limitless -0.86 (Limitless (Base) ETH 7% up / 93% down); allora +0.97 (Allora ML forecast leans long); nansen +0.85 (Smart money net inflow).",
+  "name": "Donald Trump",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
