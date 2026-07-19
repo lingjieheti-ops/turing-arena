@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -293,
+  "confidence": 64,
+  "rationaleHash": "0x82541274655d56d3b5dd74d112c9f121edba89fb09cc116400972efc3d99f3a2",
+  "salt": "0x38abd0cecddad15ea3ddf8b7f58611851b71c7ca494c25106dc14f339b50109c",
+  "rationale": "Net read bearish (-0.49). Strongest evidence: momentum +0.32 (SOL/USD up-momentum since the last tick (Pyth, live)); mantle-onchain +0.83 (Mantle on-chain momentum up); allora +0.27 (Allora ML forecast leans long).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
