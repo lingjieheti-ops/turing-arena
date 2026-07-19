@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 456,
+  "confidence": 83,
+  "rationaleHash": "0x117afe1e0f3cce6d719c3adafbeb3ae58cf45224732f454bdc66b0723554bb6b",
+  "salt": "0xabea8ea993cb5b0f8c9f2482d8b9a502b93f1fd3e4a639bf2493419489d2f122",
+  "rationale": "Net read bullish (0.76). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora +0.63 (Allora ML forecast leans long); nansen +0.56 (Smart money net inflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": 582,
+  "confidence": 98,
+  "rationaleHash": "0x93fb45bae586e183a36cc5d69dc159d623f641f9c15939f5b95ac8c287892c1d",
+  "salt": "0x26c3ca304d637a95b49aac8d3ba914c9b12bb1cfff66804bc69a9cf3f231575c",
+  "rationale": "Net read bullish (0.97). Strongest evidence: momentum +1.00 (CS2 Players up-momentum since the last tick (Pyth, live)); allora +0.63 (Allora ML forecast leans long); nansen +0.56 (Smart money net inflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
