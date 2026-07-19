@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -248,
+  "confidence": 59,
+  "rationaleHash": "0x15f6db161a0c565f073829529e740e3901384a6ca53ae17b1525b63393b449c6",
+  "salt": "0xe7b5fccc63ff155cb08376757a3a7d0c9811fa14b6b9153d2c74bc94f269a9e9",
+  "rationale": "Net read bearish (-0.41). Strongest evidence: momentum -0.54 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -1.00 (Allora ML forecast leans short); nansen +0.85 (Smart money net inflow).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

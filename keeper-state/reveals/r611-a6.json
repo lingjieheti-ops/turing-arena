@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 174,
+  "confidence": 50,
+  "rationaleHash": "0x8ba182dd04c0e99b386516612d74f4f4bf5993e10744aed6653aba7a8c9c3f50",
+  "salt": "0x97569c32b13c63da394216671c36f92bf62ee516fe54c98feff68894a0fa1bc9",
+  "rationale": "Net read bullish (0.29). Strongest evidence: momentum -0.54 (BTC/USD down-momentum since the last tick (Pyth, live)); allora -1.00 (Allora ML forecast leans short); nansen +0.85 (Smart money net inflow).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
