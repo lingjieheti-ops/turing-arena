@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 64,
+  "confidence": 37,
+  "rationaleHash": "0xada1fad23a60781c068d4dd0902de8e883ee7780ded8f5c07f238a2daf6b66fe",
+  "salt": "0xceb32a7c3b0c408aa2c91594aab89fbad887b519cec788eb8e9d970b4281db15",
+  "rationale": "Net read bullish (0.11). Strongest evidence: nansen +0.84 (Smart money net inflow); elfa -0.67 (KOL mindshare cooling); momentum +0.08 (BTC/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
