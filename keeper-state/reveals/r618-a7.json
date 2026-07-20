@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 115,
+  "confidence": 43,
+  "rationaleHash": "0xbd29308c002f1da526af7de2ee026d551c39866aca0b706bfebfe28ac27153ea",
+  "salt": "0x0c2621ae5d74547a24272d4b647d671a631ea642ed06a5072b506cdf0b6a34f8",
+  "rationale": "Net read bullish (0.19). Strongest evidence: momentum -0.56 (BTC/USD down-momentum (Pyth, live)); limitless -0.96 (Limitless (Base) BTC 2% up / 98% down); allora +0.95 (Allora ML forecast leans long).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
