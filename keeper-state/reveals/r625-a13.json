@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 19,
+  "confidence": 32,
+  "rationaleHash": "0xe05a4bb64bd40af67dd11c5a64d47108c147bfce641520489f95a8a88ac036d2",
+  "salt": "0xcdcb2ebafa8b4f2269623010fd2f8f33b4b668dc5c9c9a053ea59fcaf351989e",
+  "rationale": "Net read neutral (0.03). Strongest evidence: limitless +0.39 (Limitless (Base) BTC 70% up / 30% down); elfa -0.77 (KOL mindshare cooling); nansen -0.31 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

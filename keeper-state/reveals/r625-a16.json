@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -53,
+  "confidence": 36,
+  "rationaleHash": "0xdfc3f17222ce3638e0f9daa196be9eaefd67ce99e6c05e0ef4c8bd63a3b75316",
+  "salt": "0x9adc198e6ccdd11712c5a4b6e16a6a0029afad840e7784397222745ce298ed6b",
+  "rationale": "Net read bearish (-0.09). Strongest evidence: limitless +0.39 (Limitless (Base) BTC 70% up / 30% down); elfa -0.77 (KOL mindshare cooling); nansen -0.31 (Smart money net outflow).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
