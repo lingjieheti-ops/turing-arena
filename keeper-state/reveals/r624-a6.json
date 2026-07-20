@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 236,
+  "confidence": 58,
+  "rationaleHash": "0x2f7e28957dbf66277c9a6c4cbc1e333ce912227ee3d08025eed40170cadb548d",
+  "salt": "0xf46b025c5c8c28a5bab6060f7927fc4688f2369bb88f4f4597f18948b314f252",
+  "rationale": "Net read bullish (0.39). Strongest evidence: allora +0.96 (Allora ML forecast leans long); surf +0.98 (Market momentum positive); momentum +0.12 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

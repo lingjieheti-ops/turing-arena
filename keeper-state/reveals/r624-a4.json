@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 178,
+  "confidence": 51,
+  "rationaleHash": "0x975352f2607d9df8739406277a32f210a95b145d624315e491055e9e46c14c6f",
+  "salt": "0xd44cba9fc7d1ae7ddbc4154a9af1697a348d3addc2a27c442eb37139271caa93",
+  "rationale": "Net read bullish (0.30). Strongest evidence: allora +0.96 (Allora ML forecast leans long); surf +0.98 (Market momentum positive); momentum +0.12 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

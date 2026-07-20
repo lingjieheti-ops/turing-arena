@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 321,
+  "confidence": 67,
+  "rationaleHash": "0x90a68cec712a3b80a64727e2d47b054491b0937548fe4c500deb44e951d19f5d",
+  "salt": "0xd6e17b730b838b922936869e71be06c68c26edbaa9dbf29d5fbb78037777a41b",
+  "rationale": "Net read bullish (0.53). Strongest evidence: allora +0.96 (Allora ML forecast leans long); surf +0.98 (Market momentum positive); momentum +0.12 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

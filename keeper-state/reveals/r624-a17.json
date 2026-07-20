@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -271,
+  "confidence": 62,
+  "rationaleHash": "0xdf760af3ac63f144bafe55646a59ff9e57cc227c4c9d3dada282b3774c91ee13",
+  "salt": "0xa21c2854f58891d13048f259017d4cb89ca460166c67d41796b00af57ca51eda",
+  "rationale": "Net read bearish (-0.45). Strongest evidence: allora +0.96 (Allora ML forecast leans long); surf +0.98 (Market momentum positive); momentum +0.12 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
