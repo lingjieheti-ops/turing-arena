@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 77,
+  "confidence": 39,
+  "rationaleHash": "0x0d8d386c437d14c12a00622871ea64c156ef9d8185c18086ddb590e246cf3910",
+  "salt": "0x0cf4a3046397f3d43dacce1e36be833aa811bd4330d12fa183699ab372a2724a",
+  "rationale": "Net read bullish (0.13). Strongest evidence: momentum -1.00 (CS2 Players down-momentum (Pyth, live)); allora -0.41 (Allora ML forecast leans short); nansen +0.45 (Smart money net inflow).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

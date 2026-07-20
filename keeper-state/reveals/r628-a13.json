@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -28,
+  "confidence": 33,
+  "rationaleHash": "0x44abbd5f82c4d5e03280e3751fc834051b9f1f0a18c5e95d69ec4985d5393421",
+  "salt": "0xd329bdaa2b0bd1a49cb2792d737d842a096f9230a7c5fe4dee73ca2bc739a931",
+  "rationale": "Net read neutral (-0.05). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); allora -0.41 (Allora ML forecast leans short); nansen +0.45 (Smart money net inflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
