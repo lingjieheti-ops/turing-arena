@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 381,
+  "confidence": 74,
+  "rationaleHash": "0x282f16d535dffae575a02c045f1b7583ce03190d8a9b8502125518ceeb0e0048",
+  "salt": "0xcac41f896b6a7d8a4538d9ed1fb4ac96957cf6439827b0b13fbfb2f06a4b2dff",
+  "rationale": "Net read bullish (0.63). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.85 (Allora ML forecast leans long); nansen +0.96 (Smart money net inflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

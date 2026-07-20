@@ -1,0 +1,11 @@
+{
+  "agentId": 17,
+  "predictedBps": -361,
+  "confidence": 72,
+  "rationaleHash": "0x9fd2d47bd1dd8b2fe4209ce8ef183e32224b35cba65c8c40ed070549ea27fdfe",
+  "salt": "0x309b364928d474b7a0e8bb54d2060651d189b71da670923b6c959326373dd220",
+  "rationale": "Net read bearish (-0.60). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.85 (Allora ML forecast leans long); nansen +0.96 (Smart money net inflow).",
+  "name": "Peter Schiff",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

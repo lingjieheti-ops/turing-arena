@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 311,
+  "confidence": 66,
+  "rationaleHash": "0x21670db1bccbcbf536d8847b5d68a19a106f8a4c7e283ee1c204d7d3b49bca02",
+  "salt": "0x4e1d888799e3c7f5262b3e14a373e88948704c1f4b76361f6d6aaf16dda9e86b",
+  "rationale": "Net read bullish (0.52). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.85 (Allora ML forecast leans long); nansen +0.96 (Smart money net inflow).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
