@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 138,
+  "confidence": 46,
+  "rationaleHash": "0xa94cddfc5f7d9aad1c412f21bc40335d1bf3cd25040fb28a9c59b523e5cfcdbf",
+  "salt": "0x79ee34ce1491089369499b0ee288de5f001ae261ea554fe20a6d9edde719f7bf",
+  "rationale": "Net read bullish (0.23). Strongest evidence: limitless +0.30 (Limitless (Base) MNT 65% up / 35% down); mantle-onchain -0.50 (Mantle on-chain momentum down); nansen +0.39 (Smart money net inflow).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

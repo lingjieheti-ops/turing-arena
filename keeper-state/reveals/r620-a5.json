@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 27,
+  "confidence": 33,
+  "rationaleHash": "0xdc1a85040fd28a34c0c8b09f2a5037ab1889359f625dd7301a168f32e2fe542c",
+  "salt": "0x3b0307cb1ea6a72f04e159369606dad42d0f656f181e02589eff2f553e5c8c3f",
+  "rationale": "Net read neutral (0.05). Strongest evidence: limitless +0.30 (Limitless (Base) MNT 65% up / 35% down); mantle-onchain -0.50 (Mantle on-chain momentum down); nansen +0.39 (Smart money net inflow).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
