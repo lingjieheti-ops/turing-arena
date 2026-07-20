@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -252,
+  "confidence": 59,
+  "rationaleHash": "0x10d1bb06cb1968250c4162230f757635c1b419b3815f03f671fe65b89978176d",
+  "salt": "0xb8e119caff49dc05b1b430c3a971433a9c42d75186682dfeadc75046f0efa8f6",
+  "rationale": "Net read bearish (-0.42). Strongest evidence: momentum -0.78 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless +0.43 (Limitless MNT market unavailable — mock up); mantle-onchain -0.53 (Mantle on-chain momentum down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
