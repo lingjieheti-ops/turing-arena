@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 291,
+  "confidence": 64,
+  "rationaleHash": "0x8c08bb8b27a9d7e71dfcedce79b0f6879411bc674ad324f2eb05c4e5352254ee",
+  "salt": "0x2fab33a2a88cae90a56defb4788ed4e1d515308b6e5da4c821e3b470e4e70d28",
+  "rationale": "Net read bullish (0.48). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); nansen -0.80 (Smart money net outflow); limitless +0.25 (No Limitless market for ETHGAS-GWEI — mock up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
