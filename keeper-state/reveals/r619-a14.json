@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 230,
+  "confidence": 57,
+  "rationaleHash": "0x08cc0ea42f0e234f761a6ef52d67493f3b4508b7514c0cd465711e98d6ce2d19",
+  "salt": "0xb119eaea040936f8916e450b774c190ea9eca9ffb1fc7ef060f1296d61ebee92",
+  "rationale": "Net read bullish (0.38). Strongest evidence: momentum -0.81 (SOL/USD down-momentum since the last tick (Pyth, live)); limitless +0.98 (Limitless (Base) SOL 99% up / 1% down); mantle-onchain +0.87 (Mantle on-chain momentum up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

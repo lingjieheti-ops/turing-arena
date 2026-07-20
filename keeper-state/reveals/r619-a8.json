@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": 173,
+  "confidence": 50,
+  "rationaleHash": "0xb86db85a4c2b2b00f214b8f24af1a9ef3c74d2860b44754170d3b5a348c5fbdd",
+  "salt": "0x2b831edd0f6bf2c0958228c393ffe7636b037766ba5bf4909058f7c30aee67e3",
+  "rationale": "Net read bullish (0.29). Strongest evidence: momentum -0.81 (SOL/USD down-momentum since the last tick (Pyth, live)); limitless +0.98 (Limitless (Base) SOL 99% up / 1% down); mantle-onchain +0.87 (Mantle on-chain momentum up).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
