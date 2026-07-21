@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": -30,
+  "confidence": 33,
+  "rationaleHash": "0xa919aa91294891fe086fab4d1a7e50994db62dc5bd5585318bfcf972d3212843",
+  "salt": "0x4688f36cdf0fbfccaae5056e3eaf231c4e71f5125e63a5d24042af8ac3088d31",
+  "rationale": "Net read neutral (-0.05). Strongest evidence: momentum +0.41 (mETH/USD up-momentum since the last tick (Pyth, live)); allora -0.18 (Allora ML forecast leans short); elfa -0.33 (KOL mindshare cooling).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
