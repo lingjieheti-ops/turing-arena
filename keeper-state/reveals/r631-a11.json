@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 314,
+  "confidence": 67,
+  "rationaleHash": "0x9e24d43e5f31d0af2eaefa41339f2f9de34c82ed9d6ad07cb3929195594408ce",
+  "salt": "0xcd7f16f0d6932d3820b3607462a5f86b6c1747af1474a21165c615088d7aa751",
+  "rationale": "Net read bullish (0.52). Strongest evidence: momentum +0.75 (mETH/USD up-momentum since the last tick (Pyth, live)); elfa -0.40 (KOL mindshare cooling); nansen -0.23 (Smart money net outflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
