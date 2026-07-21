@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -20,
+  "confidence": 32,
+  "rationaleHash": "0x6117c2dff4a525e2c508c823226c270c96bbeff67d17f57ee48d331ad13211bd",
+  "salt": "0x3ab5c3331de2619f13f4b0b250b2e87d1597b386cbd4e6c8b508248467d6b625",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: allora -0.86 (Allora ML forecast leans short); mantle-onchain +0.95 (Mantle on-chain momentum up); elfa -0.90 (KOL mindshare cooling).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

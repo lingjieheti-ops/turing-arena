@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 3,
+  "confidence": 30,
+  "rationaleHash": "0x172b3fdb44129f8fb2ebd5bd934c150c1f36788b157f7a842c25d92e292caaf1",
+  "salt": "0xcb13afc09e202c92273d297ff9416e935ddc9216278fe8194d3277507ca859cf",
+  "rationale": "Net read neutral (0.01). Strongest evidence: allora -0.86 (Allora ML forecast leans short); mantle-onchain +0.95 (Mantle on-chain momentum up); elfa -0.90 (KOL mindshare cooling).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
