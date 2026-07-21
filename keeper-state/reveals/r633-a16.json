@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -92,
+  "confidence": 41,
+  "rationaleHash": "0x3ccf0a2dba4dc39c99df93091cf3f79e798b95b16d73632a7fcc6bf55751f426",
+  "salt": "0x0021a41b0e8d7181bb574d8bde16847d2a1947a5370cb8ac4ed5f4fdaebb4669",
+  "rationale": "Net read bearish (-0.15). Strongest evidence: elfa -0.90 (KOL mindshare cooling); momentum -0.22 (SOL/USD down-momentum since the last tick (Pyth, live)); allora +0.21 (Allora ML forecast leans long).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

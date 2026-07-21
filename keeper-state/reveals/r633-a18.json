@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": -15,
+  "confidence": 32,
+  "rationaleHash": "0x3e6d45c0ad456c4852cfabf8d18d9af0c313b7a8623983e446097ff7804c84e5",
+  "salt": "0x68aebd0310d00c98851d5566bb630465b58c36cc68c2934e861b4a07630844cb",
+  "rationale": "Net read neutral (-0.02). Strongest evidence: elfa -0.90 (KOL mindshare cooling); momentum -0.22 (SOL/USD down-momentum since the last tick (Pyth, live)); allora +0.21 (Allora ML forecast leans long).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

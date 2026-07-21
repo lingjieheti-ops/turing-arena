@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 142,
+  "confidence": 47,
+  "rationaleHash": "0x60a51df289be13b063b8fb6ec32db36b1f0d9a52dae2693781ba6bdda0f20d16",
+  "salt": "0x35a533ae093a8de11095fa5be24d284030e231e5246732488f3ff270a1f991bb",
+  "rationale": "Net read bullish (0.24). Strongest evidence: elfa -0.90 (KOL mindshare cooling); momentum -0.22 (SOL/USD down-momentum (Pyth, live)); limitless +0.37 (Limitless (Base) SOL 69% up / 31% down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
