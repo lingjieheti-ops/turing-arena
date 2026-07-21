@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": 162,
+  "confidence": 49,
+  "rationaleHash": "0xf0c8fdabbe4b282feaec1be2a1aed507ccfa82d001a02dbf521402cd372579ac",
+  "salt": "0x28232f6f8263b98b7fa4a5225aa24c55f0060631e6c4e615273dffdef8d2d17d",
+  "rationale": "Net read bullish (0.27). Strongest evidence: momentum +0.71 (BTC/USD up-momentum since the last tick (Pyth, live)); limitless +0.96 (Limitless (Base) BTC 98% up / 2% down); mantle-onchain -0.93 (Mantle on-chain momentum down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
