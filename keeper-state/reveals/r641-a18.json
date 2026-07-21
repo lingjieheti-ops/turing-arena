@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 7,
+  "confidence": 31,
+  "rationaleHash": "0xdec9425c2a63f52b9122f8a7d770e46bda4a961c9b26bd2e164eb47145e03076",
+  "salt": "0xebb1279bb6865b86399eeb70577f41f387ed74d36a2deef1a40426d0763d6cee",
+  "rationale": "Net read neutral (0.01). Strongest evidence: allora +0.97 (Allora ML forecast leans long); limitless +0.42 (Limitless MNT market unavailable — mock up); nansen -0.51 (Smart money net outflow).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
