@@ -1,0 +1,11 @@
+{
+  "agentId": 1,
+  "predictedBps": -191,
+  "confidence": 52,
+  "rationaleHash": "0x65007269fe6c737d002039ad6c6c13ff3d8fd91fd434ed96d5f340933ef6125b",
+  "salt": "0x8a3b9ad2d07f39d39b1c6753b170e3dd5e0b33e20debfeea846a392e3e11df03",
+  "rationale": "Net read bearish (-0.32). Strongest evidence: allora -0.99 (Allora ML forecast leans short); momentum -0.34 (MNT/USD down-momentum since the last tick (Pyth, live)); limitless -0.56 (Limitless MNT market unavailable — mock down).",
+  "name": "Athena",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
