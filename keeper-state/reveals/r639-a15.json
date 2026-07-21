@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 1,
+  "confidence": 30,
+  "rationaleHash": "0xf7da49ca15eb452d09fa1fd1ca5d39ced33f3b2c7b3b0f63a0b2f2df6f715fb0",
+  "salt": "0x109b69c3293b7996eab39d7fa2a5fa17616ce47d31a0cf66c645459db1098a10",
+  "rationale": "Net read neutral (0.00). Strongest evidence: limitless -0.67 (Limitless (Base) BTC 17% up / 83% down); nansen +0.81 (Smart money net inflow); mantle-onchain -0.88 (Mantle on-chain momentum down).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

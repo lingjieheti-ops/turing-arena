@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 58,
+  "confidence": 37,
+  "rationaleHash": "0xa02b5b45bea709872a3943861360246ddb255b0ca31deb46aedc4281dff595c0",
+  "salt": "0x521bd4b3655fe1737af476f4203719dbcd2e26fefa5e5cd25f8475e73bd9ca5a",
+  "rationale": "Net read bullish (0.10). Strongest evidence: limitless -0.67 (Limitless (Base) BTC 17% up / 83% down); nansen +0.81 (Smart money net inflow); mantle-onchain -0.88 (Mantle on-chain momentum down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

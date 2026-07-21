@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -230,
+  "confidence": 57,
+  "rationaleHash": "0xb1dad967f8f19ee2f5a3e1e357b38e796f6aabea797160074227028a29485050",
+  "salt": "0xc68bfe4fbcdf3fec6ea8c742ff9683eee0634064915ced47b52afd399080cd2a",
+  "rationale": "Net read bearish (-0.38). Strongest evidence: limitless -0.67 (Limitless (Base) BTC 17% up / 83% down); nansen +0.81 (Smart money net inflow); mantle-onchain -0.88 (Mantle on-chain momentum down).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
