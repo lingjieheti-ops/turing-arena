@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": -27,
+  "confidence": 33,
+  "rationaleHash": "0x0f72211ddda12ae306afb8298c3022e7aba1787b910cb6b7b762a495d725daca",
+  "salt": "0x268af5e12934b6fca45f913dd48ab3d0a4e54de82703625e6ada97e0025990e6",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: limitless -0.88 (Limitless (Base) SOL 6% up / 94% down); momentum -0.48 (SOL/USD down-momentum since the last tick (Pyth, live)); nansen +0.99 (Smart money net inflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

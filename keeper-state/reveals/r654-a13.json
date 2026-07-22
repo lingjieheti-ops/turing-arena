@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": -62,
+  "confidence": 37,
+  "rationaleHash": "0x8c8511d8ebb1867f6a5313cb3a408bcaa398444d4ffb4e82452cfcc238be1c0c",
+  "salt": "0xb7c56a1b8bf0293b16f630dac34af3c1d6a8edf8cce67cf563a69f0e85b1163d",
+  "rationale": "Net read bearish (-0.10). Strongest evidence: limitless -0.88 (Limitless (Base) SOL 6% up / 94% down); momentum -0.48 (SOL/USD down-momentum since the last tick (Pyth, live)); nansen +0.99 (Smart money net inflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
