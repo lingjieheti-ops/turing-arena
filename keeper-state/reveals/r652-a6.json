@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 260,
+  "confidence": 60,
+  "rationaleHash": "0x737398b3a6f6ad1a37264ba48a5634e416f8912e85d8b3649466f366bcda3417",
+  "salt": "0xfb00af1a36cd3fb2b3f0dfc42673491beecbc0bf0a3f1a941a2d7f37c81e0e38",
+  "rationale": "Net read bullish (0.43). Strongest evidence: nansen +0.90 (Smart money net inflow); limitless +0.62 (Limitless (Base) ETH 81% up / 19% down); momentum +0.27 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 109,
+  "confidence": 43,
+  "rationaleHash": "0x8ab730a14759364cb6908643e6e0a079bd2728fccae80d95fceac96367a76f48",
+  "salt": "0xda03254a58e034dfefce9978e8b63d1a9ab1fc83b3ccce2e8b1cf5cebc4ef00d",
+  "rationale": "Net read bullish (0.18). Strongest evidence: nansen +0.90 (Smart money net inflow); limitless +0.62 (Limitless (Base) ETH 81% up / 19% down); momentum +0.27 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

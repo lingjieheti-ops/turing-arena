@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 337,
+  "confidence": 69,
+  "rationaleHash": "0xb32faa981bb3b83ed917c2af6555d1e2635c53beb5378c8aaea1753ed5cde134",
+  "salt": "0x315e40749735d7af32a472004b15ec0b844f67fd06b4751bd24d2d0f0b1af78f",
+  "rationale": "Net read bullish (0.56). Strongest evidence: nansen +0.90 (Smart money net inflow); limitless +0.62 (Limitless (Base) ETH 81% up / 19% down); momentum +0.27 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

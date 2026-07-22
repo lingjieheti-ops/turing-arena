@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 59,
+  "confidence": 37,
+  "rationaleHash": "0x4989af4411d9af6dae250ba3a4b7706622e968b6bec994d102471984012b67de",
+  "salt": "0xa20fd32ce60016b88f9b367b163d2d456b59e8f8c7e8ad1da9af16dfcac499f4",
+  "rationale": "Net read bullish (0.10). Strongest evidence: nansen +0.90 (Smart money net inflow); limitless +0.62 (Limitless (Base) ETH 81% up / 19% down); momentum +0.27 (mETH/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
