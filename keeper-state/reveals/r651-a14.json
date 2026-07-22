@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 142,
+  "confidence": 47,
+  "rationaleHash": "0xbed0cb3642acb8b1e4121352aa82ae0caea732387c212cf5c43a76f0c793594e",
+  "salt": "0xd5ee7d30375ae880ca99b24ddeacbc4fb84eb106aa37efaad7f9da938f0b92e9",
+  "rationale": "Net read bullish (0.24). Strongest evidence: momentum -1.00 (BTC Mempool down-momentum since the last tick (Pyth, live)); allora +0.75 (Allora ML forecast leans long); limitless +0.51 (No Limitless market for BTC-MEMPOOL — mock up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
