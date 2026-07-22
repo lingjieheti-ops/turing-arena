@@ -1,36 +1,36 @@
 {
-  "lowWaterMark": 643,
-  "lastPrice": 1926.98935525,
-  "lastPriceAt": 1784719161,
-  "lastChampionRound": 644,
+  "lowWaterMark": 644,
+  "lastPrice": 1918.1875,
+  "lastPriceAt": 1784724778,
+  "lastChampionRound": 645,
   "lastPrices": {
     "METH/USD": {
-      "price": 1926.98935525,
-      "at": 1784719161
+      "price": 1918.1875,
+      "at": 1784724778
     },
     "BTC/USD": {
-      "price": 65946.07671952,
-      "at": 1784719161
+      "price": 65645.06962311,
+      "at": 1784724778
     },
     "SOL/USD": {
-      "price": 77.58413778,
-      "at": 1784719161
+      "price": 77.11153181,
+      "at": 1784724778
     },
     "MNT/USD": {
-      "price": 0.42480346,
-      "at": 1784719161
+      "price": 0.42345166,
+      "at": 1784724778
     },
     "ETHGAS-GWEI": {
-      "price": 0.112100777,
-      "at": 1784719161
+      "price": 0.111660699,
+      "at": 1784724778
     },
     "BTC-MEMPOOL": {
-      "price": 91031,
-      "at": 1784719161
+      "price": 89510,
+      "at": 1784724778
     },
     "CS2-PLAYERS": {
-      "price": 878684,
-      "at": 1784719161
+      "price": 1139356,
+      "at": 1784724778
     }
   }
 }

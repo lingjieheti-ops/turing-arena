@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": -36,
+  "confidence": 34,
+  "rationaleHash": "0x16ee5aa5c3230c0880b6db2f6c78f4338c8f163fc9cc4221f212018a877240fe",
+  "salt": "0x93c959998f3eda69d42109061ae5a923b33bf42ba73c35bcfed6cff939afa244",
+  "rationale": "Net read bearish (-0.06). Strongest evidence: momentum -0.55 (BTC/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.89 (Mantle on-chain momentum down); elfa -0.78 (KOL mindshare cooling).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

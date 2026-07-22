@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": -408,
+  "confidence": 78,
+  "rationaleHash": "0x7eba04fe806695481f45e45760e073f3a9a094116ffb9cf24e5923d032699ea4",
+  "salt": "0xf75e0c503651854a566e380c2c298d3d210a743101f95ba4f07280c9bfde320b",
+  "rationale": "Net read bearish (-0.68). Strongest evidence: momentum -0.55 (BTC/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.89 (Mantle on-chain momentum down); elfa -0.78 (KOL mindshare cooling).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 252,
+  "confidence": 59,
+  "rationaleHash": "0xa6018e3e266b9874416c3365b9f060b25a937a7a45563ab516380fefddba4c86",
+  "salt": "0x64ece6555418111b464925cff79a1bbdef066cfaac89c2bd92525097320d04ea",
+  "rationale": "Net read bullish (0.42). Strongest evidence: momentum -0.55 (BTC/USD down-momentum since the last tick (Pyth, live)); mantle-onchain -0.89 (Mantle on-chain momentum down); elfa -0.78 (KOL mindshare cooling).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
