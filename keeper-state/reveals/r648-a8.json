@@ -1,0 +1,11 @@
+{
+  "agentId": 8,
+  "predictedBps": -34,
+  "confidence": 34,
+  "rationaleHash": "0x33f2e562d0c3df9893d37664203ca226df91776585c34b63f3096be720be8944",
+  "salt": "0x4cfee2f8306940617265808c77b36dc13e008ef80c6138ac4a78880e9dd2ce05",
+  "rationale": "Net read bearish (-0.06). Strongest evidence: allora -0.98 (Allora ML forecast leans short); limitless +0.49 (Limitless MNT market unavailable — mock up); momentum +0.28 (MNT/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Elon Musk",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
