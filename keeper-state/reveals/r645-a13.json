@@ -1,0 +1,11 @@
+{
+  "agentId": 13,
+  "predictedBps": 31,
+  "confidence": 34,
+  "rationaleHash": "0xd2bdbeccf301685ad285e9a3eec034d006e3d7d171674ce42ac3e538654c1421",
+  "salt": "0x77f22c85146353a1b93ebfa2af6d2e638839d53ac8752ad276f7f7bcbb213a2a",
+  "rationale": "Net read bullish (0.05). Strongest evidence: momentum +0.45 (mETH/USD up-momentum since the last tick (Pyth, live)); limitless -0.25 (Limitless (Base) ETH 38% up / 62% down); nansen -0.27 (Smart money net outflow).",
+  "name": "Vitalik Buterin",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
