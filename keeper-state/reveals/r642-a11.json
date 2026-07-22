@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 262,
+  "confidence": 61,
+  "rationaleHash": "0xe6b66a09fedbf0a1c4a6bd7581847cdb9f9bd2690f6dab63f1ea926b43b11b72",
+  "salt": "0xfc1f9827ec1a3966c6d8a652b189c5cafb46528c88cf9bcb3a264735d09aa3a9",
+  "rationale": "Net read bullish (0.44). Strongest evidence: momentum -1.00 (CS2 Players down-momentum since the last tick (Pyth, live)); limitless +0.91 (No Limitless market for CS2-PLAYERS — mock up); allora -0.52 (Allora ML forecast leans short).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
