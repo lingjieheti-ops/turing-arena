@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -274,
+  "confidence": 62,
+  "rationaleHash": "0x66298fb83fbf141c8510cc3ab90a6a64f3e98510447efc311da2f16c74ce4d19",
+  "salt": "0x293dc7454a719807ff7035162751eeeeb7533f9f1b9e55b0cf9f1815fd4518a1",
+  "rationale": "Net read bearish (-0.46). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.82 (Allora ML forecast leans long); limitless +0.50 (No Limitless market for BTC-MEMPOOL — mock up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

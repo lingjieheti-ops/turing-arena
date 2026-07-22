@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 118,
+  "confidence": 44,
+  "rationaleHash": "0x1d802727cdb2f06a7a81ce0544c6c72892d8f681db53e82927f97f268976b3b1",
+  "salt": "0xa830c2779586c17370ed6fc18b297c647ad6449d41417f6f0047a8290f9c3f75",
+  "rationale": "Net read bullish (0.20). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.82 (Allora ML forecast leans long); limitless +0.50 (No Limitless market for BTC-MEMPOOL — mock up).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
