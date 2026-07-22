@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 98,
+  "confidence": 41,
+  "rationaleHash": "0xa36a7e5ac0fa21d8dc1291fda41a75e2990358db54f0b511d8aeb60c4149ea87",
+  "salt": "0x12df4db7745b3f9139c8cd8f3b0e2fcf84b214025cb11b97a86cda0e85e934bb",
+  "rationale": "Net read bullish (0.16). Strongest evidence: mantle-onchain -0.92 (Mantle on-chain momentum down); limitless -0.29 (Limitless (Base) BTC 35% up / 65% down); momentum +0.14 (BTC/USD up-momentum (Pyth, live)).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

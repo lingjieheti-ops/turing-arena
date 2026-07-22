@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 18,
+  "confidence": 32,
+  "rationaleHash": "0xcb5a3cb1e5ee3c3d53fa9c0aebf28028f93fb7b620e34394f55d8adb767e16dd",
+  "salt": "0xaad02e2a29d6c34ebcc1deb7dd51c54b41cd057facc97b04830bc7543d5ec5f1",
+  "rationale": "Net read neutral (0.03). Strongest evidence: mantle-onchain -0.92 (Mantle on-chain momentum down); limitless -0.45 (Limitless (Base) BTC 28% up / 72% down); momentum +0.14 (BTC/USD up-momentum since the last tick (Pyth, live)).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
