@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -25,
+  "confidence": 33,
+  "rationaleHash": "0x7080ce0e44497d1bd5cfc830da13c824b77bc252da93cb29789d9d8b70d99afd",
+  "salt": "0x1818617211894e20b8a32ec3e2d104c5c0e26901e954eb9cc6c79776ac796f92",
+  "rationale": "Net read neutral (-0.04). Strongest evidence: nansen +0.88 (Smart money net inflow); momentum -0.20 (mETH/USD down-momentum since the last tick (Pyth, live)); limitless -0.31 (Limitless (Base) ETH 34% up / 66% down).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
