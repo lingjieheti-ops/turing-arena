@@ -1,0 +1,11 @@
+{
+  "agentId": 10,
+  "predictedBps": 408,
+  "confidence": 78,
+  "rationaleHash": "0x137d459c4449827ba3c5e19befe8a72a562945e66e44053f868fd14c89172e45",
+  "salt": "0x9a3254bdbbcfc99da7ba4c3c6308e144f0069b3a3cb6e1bba8bfefdbd0ac53dd",
+  "rationale": "Net read bullish (0.68). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); allora +0.80 (Allora ML forecast leans long); limitless +0.58 (No Limitless market for BTC-MEMPOOL — mock up).",
+  "name": "Justin Sun",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
