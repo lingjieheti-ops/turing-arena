@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 321,
+  "confidence": 67,
+  "rationaleHash": "0x52c3ffdbf6c2523ec8239d16794c951067dbc5fab038e399d249e06bcedfeb28",
+  "salt": "0x5cfdb0d6fc665d1cb49418dc099e4a7e74a47af4e68822bdacee095ec1365de3",
+  "rationale": "Net read bullish (0.54). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless -0.40 (No Limitless market for BTC-MEMPOOL — mock down); elfa +0.58 (KOL mindshare heating up).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

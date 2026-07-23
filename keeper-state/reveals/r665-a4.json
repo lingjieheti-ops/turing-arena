@@ -1,0 +1,11 @@
+{
+  "agentId": 4,
+  "predictedBps": 267,
+  "confidence": 61,
+  "rationaleHash": "0x44d9bbe794c840c79e77782bdee3af212b00e164be7a404d5a6a9ae30803cc7a",
+  "salt": "0xee5eacda8ecf75ee9b18f40fbd09f8586969c427777ab59a854b1d6dc3a48afe",
+  "rationale": "Net read bullish (0.45). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum since the last tick (Pyth, live)); limitless -0.40 (No Limitless market for BTC-MEMPOOL — mock down); elfa +0.58 (KOL mindshare heating up).",
+  "name": "Momentum Max",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

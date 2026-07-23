@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 229,
+  "confidence": 57,
+  "rationaleHash": "0x2b7456f211bc7346d04a8949957f39f03078fada02ca90db56ebe48c28e71336",
+  "salt": "0x9e976285b0c79bf85b5280a8148322d4809fffddf669fcbee53794fbb95318bb",
+  "rationale": "Net read bullish (0.38). Strongest evidence: momentum +1.00 (BTC Mempool up-momentum (Pyth, live)); limitless -0.40 (No Limitless market for BTC-MEMPOOL — mock down); elfa +0.58 (KOL mindshare heating up).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
