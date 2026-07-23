@@ -1,0 +1,11 @@
+{
+  "agentId": 11,
+  "predictedBps": 290,
+  "confidence": 64,
+  "rationaleHash": "0xf011ba123643eda4641af92c346ab98b11267e688514a27061d79cd4cf2abf37",
+  "salt": "0x1b52dcfb4d0a5232686c1dc9fc098b6e661f6ce02634db7cacb19ced729be776",
+  "rationale": "Net read bullish (0.48). Strongest evidence: allora -0.96 (Allora ML forecast leans short); limitless +0.54 (Limitless MNT market unavailable — mock up); nansen -0.69 (Smart money net outflow).",
+  "name": "Michael Saylor",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

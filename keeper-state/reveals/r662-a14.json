@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 134,
+  "confidence": 46,
+  "rationaleHash": "0x941168e965e2df54a22ae97efb36979468a14538abdda64296e6d69e2cb6bd89",
+  "salt": "0x682db560b69d6cbaf596868cf2a080f4bd0483ee4e977654013086d61f66ead6",
+  "rationale": "Net read bullish (0.22). Strongest evidence: allora -0.96 (Allora ML forecast leans short); limitless +0.54 (Limitless MNT market unavailable — mock up); nansen -0.69 (Smart money net outflow).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
