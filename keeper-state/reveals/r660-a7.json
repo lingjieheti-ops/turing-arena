@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": -17,
+  "confidence": 32,
+  "rationaleHash": "0xf4567e8406281b13101c33411e5005115f0b2e11706d5e1b7b9b8355257aa848",
+  "salt": "0x41859b04248c41ade87db8bb456bc876445a96f177aa2d2b01eb0dfadfddd009",
+  "rationale": "Net read neutral (-0.03). Strongest evidence: momentum -1.00 (BTC/USD down-momentum (Pyth, live)); limitless -0.97 (Limitless (Base) BTC 2% up / 98% down); allora -0.94 (Allora ML forecast leans short).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

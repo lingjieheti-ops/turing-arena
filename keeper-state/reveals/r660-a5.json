@@ -1,0 +1,11 @@
+{
+  "agentId": 5,
+  "predictedBps": 359,
+  "confidence": 72,
+  "rationaleHash": "0x158c39b220355660115aed188969a1932b862ae819d1908a2410289d508f48e5",
+  "salt": "0xc362da7527e5b3e6232fdf9fded9c52267cb5544fb5c58f7652c6f3459a32180",
+  "rationale": "Net read bullish (0.60). Strongest evidence: momentum -1.00 (BTC/USD down-momentum since the last tick (Pyth, live)); limitless -0.91 (Limitless (Base) BTC 5% up / 95% down); allora -0.94 (Allora ML forecast leans short).",
+  "name": "Contrarian Cora",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
