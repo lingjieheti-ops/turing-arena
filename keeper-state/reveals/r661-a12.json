@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": 158,
+  "confidence": 48,
+  "rationaleHash": "0x8c7444ac00a18867e4ce7b582c045212e1a6dde110c443050e49e3ba4b29909f",
+  "salt": "0xe7ffba427c2459e97b524f6740333dc020f42da52a79b27bbcd142a670e985c5",
+  "rationale": "Net read bullish (0.26). Strongest evidence: momentum -0.74 (SOL/USD down-momentum since the last tick (Pyth, live)); allora -0.71 (Allora ML forecast leans short); nansen -0.85 (Smart money net outflow).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
