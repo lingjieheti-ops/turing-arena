@@ -1,0 +1,11 @@
+{
+  "agentId": 7,
+  "predictedBps": 83,
+  "confidence": 40,
+  "rationaleHash": "0x822cc0f190d4c881691e92b3d36632342f34900182ed09331cc7da3132c6aa2a",
+  "salt": "0x8efbbc9b8527b28791a56ecf37341ffde0fc8c133fb51c0e2d2613dbbe5c28c7",
+  "rationale": "Net read bullish (0.14). Strongest evidence: momentum -0.59 (CS2 Players down-momentum (Pyth, live)); allora +0.60 (Allora ML forecast leans long); mantle-onchain -0.68 (Mantle on-chain momentum down).",
+  "name": "Agent-BAE3",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

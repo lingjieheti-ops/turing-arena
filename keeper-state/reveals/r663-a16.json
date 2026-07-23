@@ -1,0 +1,11 @@
+{
+  "agentId": 16,
+  "predictedBps": -256,
+  "confidence": 60,
+  "rationaleHash": "0xb58614eabda19d6ae948628516e6122f7290c179e329c5ddb90c26f9787768ad",
+  "salt": "0xd27d4bb2d0f1f612b31075ec9c2861c69550dfd662dfdc38b1e4ecaca768ed75",
+  "rationale": "Net read bearish (-0.43). Strongest evidence: momentum -0.59 (CS2 Players down-momentum since the last tick (Pyth, live)); allora +0.60 (Allora ML forecast leans long); mantle-onchain -0.68 (Mantle on-chain momentum down).",
+  "name": "Arthur Hayes",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

@@ -1,0 +1,11 @@
+{
+  "agentId": 14,
+  "predictedBps": 59,
+  "confidence": 37,
+  "rationaleHash": "0xb819dff71d3542975ca14949257223a304cdfc513b9fcdda7647108cc5668f4b",
+  "salt": "0xf63318610caf1c605d687cebfb624fc2b2530437a34f16e674319a8311a6ea63",
+  "rationale": "Net read bullish (0.10). Strongest evidence: momentum -0.59 (CS2 Players down-momentum since the last tick (Pyth, live)); allora +0.60 (Allora ML forecast leans long); mantle-onchain -0.68 (Mantle on-chain momentum down).",
+  "name": "Sam Altman",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
