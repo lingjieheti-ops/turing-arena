@@ -1,0 +1,11 @@
+{
+  "agentId": 15,
+  "predictedBps": 322,
+  "confidence": 68,
+  "rationaleHash": "0xcc3830ee85898c5b76a93e6ebef786e4ac8bf6a55b3e7930ee6d8283d32e804d",
+  "salt": "0xb500e3dbc4f052f04d9f8a47890b3fe3e518f2dd8ef1bd891b73ea624812532b",
+  "rationale": "Net read bullish (0.54). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.87 (Allora ML forecast leans short); limitless +0.45 (Limitless MNT market unavailable — mock up).",
+  "name": "Cathie Wood",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

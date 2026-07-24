@@ -1,0 +1,11 @@
+{
+  "agentId": 12,
+  "predictedBps": -109,
+  "confidence": 43,
+  "rationaleHash": "0xebd72293f794621f832eb794884037856aadb681335d33ae422b876bcbef26b8",
+  "salt": "0x70ca85a3d73722eb5cf42c9fafef93bb8ed4aa12b850ba2350060766eb2923ce",
+  "rationale": "Net read bearish (-0.18). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.87 (Allora ML forecast leans short); limitless +0.45 (Limitless MNT market unavailable — mock up).",
+  "name": "Warren Buffett",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

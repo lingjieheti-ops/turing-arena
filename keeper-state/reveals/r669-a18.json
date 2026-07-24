@@ -1,0 +1,11 @@
+{
+  "agentId": 18,
+  "predictedBps": 47,
+  "confidence": 35,
+  "rationaleHash": "0x4579754284528d11c2c0488f3ff3eb147ecbddf38003a5b2e0c79d5df90e2dcf",
+  "salt": "0xb406d00c994394cfbe260eec0feae77b95ab3a5ecf61e18b38c7b30623c9e2cd",
+  "rationale": "Net read bullish (0.08). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.87 (Allora ML forecast leans short); limitless +0.45 (Limitless MNT market unavailable — mock up).",
+  "name": "Ray Dalio",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}

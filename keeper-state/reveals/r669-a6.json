@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 249,
+  "confidence": 59,
+  "rationaleHash": "0xdd9efe8cdbec29be7e7e97a23d02fb9524c205cb0f3972ac77ec51554774d891",
+  "salt": "0x66fa346a8344fd2c44e10a204f3d599b4fdd0cbdecc46ea39d266cc61d3d32df",
+  "rationale": "Net read bullish (0.42). Strongest evidence: momentum +1.00 (MNT/USD up-momentum since the last tick (Pyth, live)); allora -0.87 (Allora ML forecast leans short); limitless +0.45 (Limitless MNT market unavailable — mock up).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
