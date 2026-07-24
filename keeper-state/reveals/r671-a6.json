@@ -1,0 +1,11 @@
+{
+  "agentId": 6,
+  "predictedBps": 256,
+  "confidence": 60,
+  "rationaleHash": "0x57acc761fbcae9861fd2fc0e1540d43e0c496be7378cd873d29e1c057ccd5f7f",
+  "salt": "0xe2487ff024b363cdeeba87323200421aeee00b075939ce656a0fabb92754b697",
+  "rationale": "Net read bullish (0.43). Strongest evidence: momentum +1.00 (ETH Gas up-momentum since the last tick (Pyth, live)); limitless -0.63 (No Limitless market for ETHGAS-GWEI — mock down); allora +0.73 (Allora ML forecast leans long).",
+  "name": "HODLer Hank",
+  "source": "pyth",
+  "model": "heuristic-fusion"
+}
